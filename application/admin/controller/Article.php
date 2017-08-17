@@ -7,12 +7,19 @@ use think\Controller;
  */
 class Article extends Controller {
 
+    private $_db;
+    public function _initialize() {
+        $this->_db = model('Article');
+    }
     /**
      * 咨询列表页
      * @return [type] [description]
      */
     public function index() {
-        return $this->fetch();
+        $articles = $this->_db->getArticleInfo();
+        return $this->fetch('',[
+            'articles' => $articles,
+        ]);
     }
 
     /**
