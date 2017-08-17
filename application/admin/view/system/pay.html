@@ -1,0 +1,53 @@
+{include file="public/_meta"}
+<title>支付设置</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 系统管理 <span class="c-gray en">&gt;</span> 支付设置 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l">
+            <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+            <a class="btn btn-primary radius" data-title="添加支付渠道" data-href="{:url('addPay')}" onclick="member_add('添加支付渠道','{:url('addPay')}','','400')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加支付渠道</a>
+            <a class="btn btn-primary radius" data-title="添加支付方式" data-href="{:url('addPayway')}" onclick="member_add('添加支付方式','{:url('addPayway')}','','400')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加支付方式</a>
+        </span>
+        <span class="r">共有数据：<strong>54</strong> 条</span>
+    </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span>
+            <a class="btn btn-primary radius">星蝶游戏平台</a>
+        </span>
+    </div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
+			<thead>
+				<tr class="text-c">
+					<th width="25"><input type="checkbox" name="" value=""></th>
+					<th width="80">logo</th>
+					<th width="80">支付方式</th>
+					<th width="100">支付简码</th>
+					<th width="200">所属平台</th>
+					<th width="200">所属渠道</th>
+					<th width="120">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="text-c">
+					<td><input type="checkbox" value="" name=""></td>
+					<td>1</td>
+					<td>支付宝</td>
+					<td>alipay</td>
+					<td>星蝶游戏平台</td>
+					<td>支付宝</td>
+					<td class="f-14 td-manage">
+                        <a style="text-decoration:none" class="ml-5" onClick="article_edit('资讯编辑','article-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
+                        <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+{include file="public/_footer"}
+<script type="text/javascript" src="__STATIC__/admin/js/hui.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/article.js"></script>
+</body>
+</html>
