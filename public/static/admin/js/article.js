@@ -26,23 +26,7 @@ function article_edit(title,url,id,w,h){
 	});
 	layer.full(index);
 }
-/*资讯-删除*/
-function article_del(obj,id){
-	layer.confirm('确认要删除吗？',function(index){
-		$.ajax({
-			type: 'POST',
-			url: '',
-			dataType: 'json',
-			success: function(data){
-				$(obj).parents("tr").remove();
-				layer.msg('已删除!',{icon:1,time:1000});
-			},
-			error:function(data) {
-				console.log(data.msg);
-			},
-		});
-	});
-}
+
 /*资讯-下架*/
 function article_stop(obj,id){
 	layer.confirm('确认要下架吗？',function(index){

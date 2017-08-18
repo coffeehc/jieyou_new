@@ -46,14 +46,15 @@ class Article extends Controller {
      */
     public function add() {
         if(request()->isPost()) {
-            $data = input('post.','','htmlentities');
+            $data = input('post.');
+            // 当有ID传入的时候 认为是更新操作
+
             $id = $this->_db->addData($data);
             if($id) {
                 $this->success('添加成功');
             }else {
                 $this->error('添加失败');
             }
-
         }else {
             $game = model('Game')->getGameInfo();
             $articleClass = config('article.article_class');
@@ -88,5 +89,46 @@ class Article extends Controller {
         }catch(\Exception $e) {
             return show(0,$e->getMessage());
         }
+    }
+
+    /**
+     * 编辑
+     * @param  integer $id [description]
+     * @return [type]      [description]
+     */
+    public function edit($id=0) {
+        $article = $this->_db->get($id);
+        $game = model('Game')->getGameInfo();
+        $articleClass = config('article.article_class');
+        return $this->fetch('',[
+            'game' => $game,
+            'articleClass' => $articleClass,
+            'article' => $article,
+        ]);
+    }
+
+    /**
+     * 更新数据操作
+     * @return [type] [description]
+     */
+    public function update() {
+        $data = input('post.');
+        if(!$data['tj']) {
+            $data['tj'] = 0;
+        }
+        if(!request()->isPost()) {
+            return show(0,'请求错误');
+        }
+        try{
+            $res = $this->_db->save($data,['id'=>intval($data['id'])]);
+            if($res) {
+                return show(1,'更新成功');
+            }else {
+                return show(0,'更新失败');
+            }
+        }catch(\Exception $e) {
+            return show(0,$e->getMessage());
+        }
+
     }
 }
