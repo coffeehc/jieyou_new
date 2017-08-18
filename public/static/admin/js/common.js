@@ -22,3 +22,23 @@ function selecttime(flag){
 function window_add(title,url,w,h) {
     layer_show(title,url,w,h);
 }
+
+/**
+ *  删除操作
+ * @param  {[type]} url [地址]
+ * @param  {[type]} id  [主键]
+ * @return {[type]}     [description]
+ */
+function hecheng_del(url,id) {
+    layer.confirm('确认要删除吗？',function(index) {
+        $.post(url,{id:id},function(result) {
+            if(result.code == 1) {
+                layer.msg(result.message,{icon:6,time:1500},function() {
+                    window.location.reload();
+                });
+            }else {
+                dialog.error(result.message);
+            }
+        },'json');
+    });
+}

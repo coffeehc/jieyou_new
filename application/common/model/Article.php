@@ -35,4 +35,9 @@ class Article extends Model {
                     ->count();
         return $result;
     }
+
+    public function delData($id) {
+        $res = $this->where('id',$id)->delete();
+        return $res;
+    }
 }
