@@ -33,7 +33,7 @@ function hecheng_del(url,id) {
     layer.confirm('确认要删除吗？',function(index) {
         $.post(url,{id:id},function(result) {
             if(result.code == 1) {
-                layer.msg(result.message,{icon:6,time:1500},function() {
+                layer.msg(result.message,{icon:6,time:1000},function() {
                     window.location.reload();
                 });
             }else {
@@ -42,3 +42,27 @@ function hecheng_del(url,id) {
         },'json');
     });
 }
+
+/**
+ * 提交表单操作
+ * @return {[type]} [description]
+ */
+$("#hecheng-button-submit").click(function() {
+    var data = $("#hecheng-form").serializeArray();
+    postData = {};
+    $(data).each(function(i) {
+        postData[this.name] = this.value;
+    });
+
+    url = SCOPE.save_url;
+    jump_url = SCOPE.jump_url;
+    $.post(url,postData,function(result) {
+        if(result.code == 1) {
+            layer.msg(result.message,{icon:6,time:1500},function() {
+                window.location.href = jump_url;
+            });
+        }else {
+            return dialog.error(result.message);
+        }
+    },'json');
+});

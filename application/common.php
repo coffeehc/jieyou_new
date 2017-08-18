@@ -12,7 +12,7 @@
 // 应用公共文件
 function show($code,$message='',$data=[]) {
     return [
-        'code' => $code,
+        'code' => intval($code),
         'message' => $message,
         'data' => $data,
     ];

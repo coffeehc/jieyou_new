@@ -4,6 +4,7 @@ use think\Model;
 
 class Article extends Model {
 
+    protected $autoWriteTimestamp = true;
     /**
      * 咨询信息
      * @param   array  $data [查询条件]
@@ -38,6 +39,10 @@ class Article extends Model {
 
     public function delData($id) {
         $res = $this->where('id',$id)->delete();
+        return $res;
+    }
+    public function addData($data) {
+        $res = $this->save($data);
         return $res;
     }
 }

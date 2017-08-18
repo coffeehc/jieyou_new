@@ -6,7 +6,6 @@ use think\Controller;
  *  咨询管理
  */
 class Article extends Controller {
-
     private $_db;
     public function _initialize() {
         $this->_db = model('Article');
@@ -46,7 +45,23 @@ class Article extends Controller {
      * 添加咨询
      */
     public function add() {
-        return $this->fetch();
+        if(request()->isPost()) {
+            $data = input('post.','','htmlentities');
+            $id = $this->_db->addData($data);
+            if($id) {
+                $this->success('添加成功');
+            }else {
+                $this->error('添加失败');
+            }
+
+        }else {
+            $game = model('Game')->getGameInfo();
+            $articleClass = config('article.article_class');
+            return $this->fetch('',[
+                'game' => $game,
+                'articleClass' => $articleClass,
+            ]);
+        }
     }
 
     /**
