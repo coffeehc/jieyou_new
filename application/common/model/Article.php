@@ -19,10 +19,20 @@ class Article extends Model {
                     ->where($data)
                     ->order($order)
                     ->select();
-        $result['count'] = $this
-                            ->where($data)
-                            ->order($order)
-                            ->count();
+        return $result;
+    }
+
+    /**
+     * 获取条数
+     * @param  array  $data [description]
+     * @return [type]       [description]
+     */
+    public function getArticleInfoCount($data=[]) {
+        $data['status'] = 1;
+
+        $result = $this
+                    ->where($data)
+                    ->count();
         return $result;
     }
 }
