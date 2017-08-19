@@ -17,13 +17,14 @@
 	<table class="table table-border table-bordered table-bg">
 		<thead>
 			<tr>
-				<th scope="col" colspan="10">管理员列表</th>
+				<th scope="col" colspan="12">管理员列表</th>
 			</tr>
 			<tr class="text-c">
 				<th width="25"><input type="checkbox" name="" value=""></th>
 				<th width="40">序号</th>
-				<th width="200">登录名</th>
-				<th width="200">昵称</th>
+				<th width="150">登录名</th>
+				<th width="150">昵称</th>
+				<th width="150">角色</th>
 				<th width="150">QQ</th>
 				<th width="200">邮箱</th>
 				<th width="80">登录次数</th>
@@ -40,13 +41,17 @@
 				<td>{$i}</td>
 				<td>{$vo.manager}</td>
 				<td>{$vo.name}</td>
+				<td>{$vo.auth|getAuthName}</td>
 				<td>{$vo.qq}</td>
 				<td>{$vo.email}</td>
 				<td>{$vo.hits}</td>
 				<td>{$vo.ip}</td>
 				<td>{$vo.update_time}</td>
 				<td class="td-status"><span class="label label-success radius">已启用</span></td>
-				<td class="td-manage"><a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+				<td class="td-manage">
+					<a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>
+					<a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','{:url('edit',['id'=>$vo.id])}','','')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+					<a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			</tr>
 			{/volist}
 		</tbody>
@@ -59,5 +64,10 @@
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript" src="__STATIC__/admin/js/manager.js"></script>
+<script type="text/javascript">
+	var SCOPE = {
+		'save_url': '{:url('update')}',
+	};
+</script>
 </body>
 </html>

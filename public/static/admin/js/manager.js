@@ -29,7 +29,7 @@ function admin_del(obj,id){
 }
 
 /*管理员-编辑*/
-function admin_edit(title,url,id,w,h){
+function admin_edit(title,url,w,h){
 	layer_show(title,url,w,h);
 }
 /*管理员-停用*/

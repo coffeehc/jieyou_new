@@ -11,5 +11,6 @@ class Manager extends Validate {
     ];
     protected $scene = [
         'add' => ['manager','name','password','email'],
+        'update' => ['manager','name','email'],
     ];
 }

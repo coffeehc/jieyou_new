@@ -80,3 +80,19 @@ function upOrDown($status,$id) {
     }
     return $str;
 }
+
+function getAuthName($auth) {
+    $str = '';
+    switch ($auth) {
+        case '*':
+            $str = '管理员';
+            break;
+        case '10':
+            $str = '平台用户';
+            break;
+        default:
+            # code...
+            break;
+    }
+    return $str;
+}
