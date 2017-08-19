@@ -11,7 +11,6 @@ class Article extends Model {
      * @return [type]       [description]
      */
     public function getArticleInfo($data=[]) {
-        $data['status'] = 1;
         $order = [
             'id' => 'desc',
         ];
@@ -29,7 +28,6 @@ class Article extends Model {
      * @return [type]       [description]
      */
     public function getArticleInfoCount($data=[]) {
-        $data['status'] = 1;
 
         $result = $this
                     ->where($data)

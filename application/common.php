@@ -50,3 +50,33 @@ function getGameNameById($gid) {
     $result = model('game')->field('name')->find($gid);
     return $result['name'];
 }
+
+function status($status) {
+    $str = '';
+    switch ($status) {
+        case 1:
+            $str = '<span class="label label-success radius">已发布</span>';
+            break;
+        case 0:
+            $str = '<span class="label label-defaunt radius">已下架</span>';
+            break;
+        default:
+            $str = '<span class="label label-defaunt radius">其他</span>';
+            break;
+    }
+    return $str;
+}
+
+function upOrDown($status,$id) {
+    $str = '';
+    switch ($status) {
+        case 0:
+            $str = '<a style="text-decoration:none" onClick="article_start(this,'.$id.',1)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>';
+            break;
+        case 1:
+            $str = '<a style="text-decoration:none" onClick="article_stop(this,'.$id.',0)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>';
+        default:
+            break;
+    }
+    return $str;
+}
