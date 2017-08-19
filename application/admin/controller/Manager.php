@@ -5,7 +5,7 @@ use think\Controller;
 /**
  * 管理员管理
  */
-class Manager extends Controller {
+class Manager extends BaseController {
     private $_db;
     public function _initialize() {
         $this->_db = model('Manager');
@@ -100,23 +100,6 @@ class Manager extends Controller {
                 return show(1,'更新成功');
             }else {
                 return show(0,'更新失败');
-            }
-        }catch(\Exception $e) {
-            return show(0,$e->getMessage());
-        }
-    }
-
-    public function delData() {
-        $id = intval(input('post.id'));
-        if(!request()->isPost()) {
-            return show(0,'请求错误');
-        }
-        try{
-            $res = $this->_db->delData($id);
-            if($res) {
-                return show(1,'删除成功');
-            }else {
-                return show(0,'删除失败');
             }
         }catch(\Exception $e) {
             return show(0,$e->getMessage());

@@ -5,7 +5,7 @@ use think\Controller;
 /**
  *  咨询管理
  */
-class Article extends Controller {
+class Article extends BaseController {
     private $_db;
     public function _initialize() {
         $this->_db = model('Article');
@@ -65,32 +65,6 @@ class Article extends Controller {
                 'game' => $game,
                 'articleClass' => $articleClass,
             ]);
-        }
-    }
-
-    /**
-     * 删除数据
-     * @return [type] [description]
-     */
-    public function delData() {
-        $id = input('post.id');
-        if(!request()->isPost()) {
-            return show(0,'请求错误');
-        }
-        // 安全验证
-        $validate = validate('Article');
-        if(!$validate->scene('del')->check($id)) {
-            return show(0,$validate->getError());
-        }
-        try{
-            $res = $this->_db->delData($id);
-            if($res) {
-                return show(1,'删除成功');
-            }else {
-                return show(0,'删除失败');
-            }
-        }catch(\Exception $e) {
-            return show(0,$e->getMessage());
         }
     }
 
