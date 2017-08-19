@@ -41,6 +41,28 @@ class Manager extends Controller {
      * 添加管理员
      */
     public function add() {
-        return $this->fetch();
+        if(request()->isPost()) {
+            $data = input('post.');
+            $validate = validate('Manager');
+            if(!$validate->scene('add')->check($data)) {
+                return show(0,$validate->getError());
+            }
+            unset($data['password_confirm']);
+            try{
+                $res = $this->_db->save($data);
+                if($res) {
+                    return show(1,'添加成功');
+                }else {
+                    return show(0,'添加失败');
+                }
+            }catch(\Exception $e) {
+                return show(0,$e->getMessage());
+            }
+        }else {
+            $auth = config('manager.auth');
+            return $this->fetch('',[
+                'auth' => $auth,
+            ]);
+        }
     }
 }
