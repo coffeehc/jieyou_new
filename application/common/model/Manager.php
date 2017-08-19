@@ -29,4 +29,9 @@ class Manager extends Model {
         $res = $this->where($data)->count();
         return $res;
     }
+
+    public function delData($id) {
+        $res = $this->where('id',$id)->delete();
+        return $res;
+    }
 }

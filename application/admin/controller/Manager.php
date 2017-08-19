@@ -105,4 +105,21 @@ class Manager extends Controller {
             return show(0,$e->getMessage());
         }
     }
+
+    public function delData() {
+        $id = intval(input('post.id'));
+        if(!request()->isPost()) {
+            return show(0,'请求错误');
+        }
+        try{
+            $res = $this->_db->delData($id);
+            if($res) {
+                return show(1,'删除成功');
+            }else {
+                return show(0,'删除失败');
+            }
+        }catch(\Exception $e) {
+            return show(0,$e->getMessage());
+        }
+    }
 }
