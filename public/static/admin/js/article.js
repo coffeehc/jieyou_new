@@ -41,7 +41,6 @@ function article_stop(obj,id,status){
 				dialog.error(result.message);
 			}
 		},'json');
-
 	});
 }
 /*资讯-发布*/

@@ -29,13 +29,12 @@ function window_add(title,url,w,h) {
  * @param  {[type]} id  [主键]
  * @return {[type]}     [description]
  */
-function hecheng_del(url,id) {
+function hecheng_del(obj,url,id) {
     layer.confirm('确认要删除吗？',function(index) {
         $.post(url,{id:id},function(result) {
             if(result.code == 1) {
-                layer.msg(result.message,{icon:6,time:1000},function() {
-                    window.location.reload();
-                });
+                $(obj).parents("tr").remove();
+                layer.msg(result.message,{icon:1,time:1000});
             }else {
                 dialog.error(result.message);
             }
