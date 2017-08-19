@@ -47,14 +47,17 @@ class Article extends Controller {
     public function add() {
         if(request()->isPost()) {
             $data = input('post.');
-            // 当有ID传入的时候 认为是更新操作
-
-            $id = $this->_db->addData($data);
-            if($id) {
-                $this->success('添加成功');
-            }else {
-                $this->error('添加失败');
+            try{
+                $id = $this->_db->addData($data);
+                if($id) {
+                    return show(1,'添加成功');
+                }else {
+                    return show(0,'添加失败');
+                }
+            }catch(\Exception $e) {
+                return show(0,$e->getMessage());
             }
+
         }else {
             $game = model('Game')->getGameInfo();
             $articleClass = config('article.article_class');
@@ -89,6 +92,29 @@ class Article extends Controller {
         }catch(\Exception $e) {
             return show(0,$e->getMessage());
         }
+    }
+
+    /**
+     * 批量删除
+     * @return [type] [description]
+     */
+    public function delDatas () {
+        $ids = rtrim(input('post.ids'),',');
+        if(!request()->isPost()) {
+            return show(0,'请求错误');
+        }
+
+        try{
+            $res = $this->_db->where('id IN'.'('.$ids.')')->delete();
+            if($res) {
+                return show(1,'删除成功');
+            }else {
+                return show(0,'删除失败');
+            }
+        }catch(\Exception $e) {
+            return show(0,$e->getMessage());
+        }
+
     }
 
     /**

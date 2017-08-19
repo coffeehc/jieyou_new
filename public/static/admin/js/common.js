@@ -43,6 +43,34 @@ function hecheng_del(obj,url,id) {
 }
 
 /**
+ * 批量删除
+ * @param  {[type]} url [description]
+ * @return {[type]}     [description]
+ */
+function hecheng_dels(url) {
+    var checkedNum = $("input[name='box']:checked").length;
+    if(checkedNum == 0) {
+        dialog.error('请至少选择一项:)');
+    }else {
+        var ids = '';
+        $("input[name='box']:checked").each(function(i) {
+            ids += +$(this).val()+',';
+        });
+        layer.confirm('确定要删除吗?',function() {
+            $.post(url,{ids:ids},function(result) {
+                if(result.code == 1) {
+                    layer.msg(result.message,{icon:6,time:1500},function() {
+                        window.location.reload();
+                    });
+                }else {
+                    dialog.error(result.message);
+                }
+            },'json');
+        });
+    }
+}
+
+/**
  * 提交表单操作
  * @return {[type]} [description]
  */
