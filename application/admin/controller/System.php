@@ -20,7 +20,109 @@ class System extends Controller {
      * @return [type] [description]
      */
     public function apikey() {
-        return $this->fetch();
+        $apikeys = model('Apikey')->getApikeyInfo();
+        $count = model('Apikey')->getApikeyCount();
+        return $this->fetch('',[
+            'apikeys' => $apikeys,
+            'count' => $count,
+        ]);
+    }
+
+    /**
+     *  新增apikey
+     */
+    public function addApikey() {
+        if(request()->isPost()) {
+            $data = input('post.');
+            $validate = validate('Apikey');
+            if(!$validate->scene('add')->check($data)) {
+                return show(0,$validate->getError());
+            }
+            try{
+                $res = model('Apikey')->save($data);
+                if($res) {
+                    return show(1,'新增成功');
+                }else {
+                    return show(0,'新增失败');
+                }
+            }catch(\Exception $e) {
+                return show(0,$e->getMessage());
+            }
+        }else {
+            return $this->fetch();
+        }
+    }
+
+    /**
+     * 修改apikey
+     * @param  integer $id [description]
+     * @return [type]      [description]
+     */
+    public function editApikey($id=0) {
+        if(request()->isPost()) {
+            $data = input('post.');
+            $validate = validate('Apikey');
+            if(!$validate->scene('add')->check($data)) {
+                return show(0,$validate->getError());
+            }
+            try{
+                $res = model('Apikey')->save($data,['id'=>intval($data['id'])]);
+                if($res) {
+                    return show(1,'修改成功');
+                }else {
+                    return show(0,'修改失败');
+                }
+            }catch(\Exception $e) {
+                return show(0,$e->getMessage());
+            }
+        }else {
+            $apikey = model('apikey')->get($id);
+            return $this->fetch('',[
+                'apikey' => $apikey,
+            ]);
+        }
+    }
+
+    /**
+     *  删除apikey
+     * @return [type] [description]
+     */
+    public function delApikey() {
+        $id = intval(input('post.id'));
+        if(!request()->isPost()) {
+            return show(0,'请求错误');
+        }
+        try{
+            $res = model('Apikey')->where('id',$id)->delete();
+            if($res) {
+                return show(1,'删除成功');
+            }else {
+                return show(0,'删除失败');
+            }
+        }catch(\Exception $e) {
+            return show(0,$e->getMessage());
+        }
+    }
+
+    /**
+     * 批量删除apikey
+     * @return [type] [description]
+     */
+    public function delApikeys() {
+        $ids = rtrim(input('post.ids'),',');
+        if(!request()->isPost()) {
+            return show(0,'请求错误');
+        }
+        try{
+            $res = model('Apikey')->where('id IN'.'('.$ids.')')->delete();
+            if($res) {
+                return show(1,'删除成功');
+            }else {
+                return show(0,'删除失败');
+            }
+        }catch(\Exception $e) {
+            return show(0,$e->getMessage());
+        }
     }
 
     /**
