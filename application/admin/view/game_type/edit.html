@@ -1,0 +1,48 @@
+{include file="public/_meta"}
+<title>修改类型 - 游戏类型管理</title>
+</head>
+<body>
+<article class="page-container">
+	<form class="form form-horizontal" id="hecheng-form">
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>分类名称：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="{$gameType.name}" placeholder="" name="name">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3">排序：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="{$gameType.sort}" placeholder="" name="sort">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3">是否显示在导航：</label>
+		<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+				<input type="radio" name="qx" value="1" {eq name="$gameType.qx" value="1"}checked{/eq}>显示
+			<div class="check-box">
+				<input type="radio" name="qx" value="0" {eq name="$gameType.qx" value="0"}checked{/eq}>不显示
+			</div>
+		</div>
+	</div>
+	<div class="row cl">
+		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+			<input type="hidden" name="id" value="{$gameType.id}">
+			<input class="btn btn-primary radius" id="hecheng-button-submit" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+		</div>
+	</div>
+	</form>
+</article>
+
+{include file="public/_footer"}
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+	var SCOPE = {
+		'save_url': '{:url('edit')}',
+		'jump_url': '{:url('index')}',
+	};
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

@@ -2,7 +2,7 @@
 namespace app\common\model;
 use think\Model;
 
-class Manager extends Model {
+class Manager extends BaseModel {
 
     /**
      * 获取管理员信息
@@ -30,8 +30,4 @@ class Manager extends Model {
         return $res;
     }
 
-    public function delData($id) {
-        $res = $this->where('id',$id)->delete();
-        return $res;
-    }
 }

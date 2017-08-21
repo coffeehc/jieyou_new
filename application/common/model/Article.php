@@ -2,7 +2,7 @@
 namespace app\common\model;
 use think\Model;
 
-class Article extends Model {
+class Article extends BaseModel {
 
     protected $autoWriteTimestamp = true;
     /**
@@ -35,10 +35,6 @@ class Article extends Model {
         return $result;
     }
 
-    public function delData($id) {
-        $res = $this->where('id',$id)->delete();
-        return $res;
-    }
     public function addData($data) {
         $res = $this->save($data);
         return $res;
