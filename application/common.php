@@ -96,3 +96,19 @@ function getAuthName($auth) {
     }
     return $str;
 }
+
+function getLinkClassName($class) {
+    $str = '';
+    switch ($class) {
+        case 0:
+            $str = '文字链接';
+            break;
+        case 1:
+            $str = '图片链接';
+            break;
+        default:
+            # code...
+            break;
+    }
+    return $str;
+}

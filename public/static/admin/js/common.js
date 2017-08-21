@@ -137,6 +137,5 @@ function hecheng_start(obj,id,status){
 				dialog.error(result.message);
 			}
 		},'json');
-
 	});
 }

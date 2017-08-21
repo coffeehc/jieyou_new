@@ -50,13 +50,36 @@ class System extends Controller {
      * @return [type] [description]
      */
     public function link() {
-        return $this->fetch();
+        $links = model('Link')->getLinkInfo();
+        $count = model('Link')->getLinkCount();
+        return $this->fetch('',[
+            'links' => $links,
+            'count' => $count,
+        ]);
     }
 
     /**
      * 添加友情链接
      */
     public function addLink() {
-        return $this->fetch();
+        if(request()->isPost()) {
+            $data = input('post.');
+            $validate = validate('Link');
+            if(!$validate->scene('add')->check($data)) {
+                return show(0,$validate->getError());
+            }
+            try{
+                $res = model('Link')->save($data);
+                if($res) {
+                    return show(1,'添加成功');
+                }else {
+                    return show(0,'添加失败');
+                }
+            }catch(\Exception $e) {
+                return show(0,$e->getMessage());
+            }
+        }else {
+            return $this->fetch();
+        }
     }
 }
