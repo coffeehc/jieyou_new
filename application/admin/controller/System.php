@@ -111,6 +111,47 @@ class System extends Controller {
                 'link' => $link,
             ]);
         }
+    }
 
+    /**
+     * 删除链接
+     * @return [type] [description]
+     */
+    public function delLink() {
+        $id = intval(input('post.id'));
+        if(!request()->isPost()) {
+            return show(0,'请求错误');
+        }
+        try{
+            $res = model('Link')->where('id',$id)->delete();
+            if($res) {
+                return show(1,'删除成功');
+            }else {
+                return show(0,'删除失败');
+            }
+        }catch(\Exception $e) {
+            return show(0,$e->getMessage());
+        }
+    }
+
+    /**
+     * 批量删除链接
+     * @return [type] [description]
+     */
+    public function delLinks() {
+        $ids = rtrim(input('post.ids'),',');
+        if(!request()->isPost()) {
+            return show(0,'请求错误');
+        }
+        try{
+            $res = model('Link')->where('id IN'.'('.$ids.')')->delete();
+            if($res) {
+                return show(1,'删除成功');
+            }else {
+                return show(0,'删除失败');
+            }
+        }catch(\Exception $e) {
+            return show(0,$e->getMessage());
+        }
     }
 }
