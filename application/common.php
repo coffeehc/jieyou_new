@@ -112,3 +112,34 @@ function getLinkClassName($class) {
     }
     return $str;
 }
+
+function changeTimeToStr($time) {
+    if($time == '1970-01-01 08:00:00') {
+        return '最近没有登录过';
+    }else {
+        return $time;
+    }
+}
+
+function changeTimeToStrForPay($time) {
+    if($time == '1970-01-01 08:00:00') {
+        return '';
+    }else {
+        return $time;
+    }
+}
+
+function getStatusByQx($qx) {
+    $str = '';
+    switch ($qx) {
+        case 1:
+            $str = '<span class="label label-success radius">支付成功</span>';
+            break;
+        case 0:
+            $str = '<span class="label label-default radius">未支付</span>';
+            break;
+        default:
+            break;
+    }
+    return $str;
+}

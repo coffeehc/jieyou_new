@@ -151,3 +151,13 @@ function hecheng_start(obj,id,status){
 function hecheng_edit(title,url,w,h) {
     layer_show(title,url,w,h);
 }
+
+/*打开新页面*/
+function hecheng_open(title,url,w,h){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}

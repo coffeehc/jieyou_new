@@ -4,6 +4,6 @@ $('.table-sort').dataTable({
 	"pading":false,
 	"aoColumnDefs": [
 	  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-	  {"orderable":false,"aTargets":[0,10]}// 不参与排序的列
+	  {"orderable":false,"aTargets":[0,9]}// 不参与排序的列
 	]
 });

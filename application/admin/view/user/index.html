@@ -1,0 +1,71 @@
+{include file="public/_meta"}
+<title>玩家列表</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 玩家管理 <span class="c-gray en">&gt;</span> 玩家列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<form  action="" method="get">
+			<button onclick="removeIframe()" class="btn btn-primary radius">关闭选项卡</button>
+            注册时间：
+			<input type="text" name="start_time" value="{$start_time}" onfocus="selecttime(1)" id="logmin" class="input-text Wdate" style="width:180px;">
+			-
+			<input type="text" name="end_time" value="{$end_time}" onfocus="selecttime(2)" id="logmax" class="input-text Wdate" style="width:180px;">
+			<input type="text" name="users" id="" value="{$name}" placeholder=" 玩家名称" style="width:250px" class="input-text">
+			<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜玩家</button>
+		</form>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l">
+            <a href="javascript:;" onclick="hecheng_dels('{:url('delDatas')}')" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a></span>
+            <span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
+			<thead>
+                <tr class="text-c">
+                  <th width="25"><input type="checkbox" name="" value=""></th>
+                  <th width="80">ID</th>
+                  <th width="100">用户名</th>
+                  <th width="100">昵称</th>
+                  <th width="40">性别</th>
+                  <th width="90">QQ</th>
+                  <th width="150">邮箱</th>
+                  <th width="40">登录次数</th>
+                  <th width="130">注册时间</th>
+                  <th width="130">最近登录</th>
+                  <th width="200">操作</th>
+                </tr>
+			</thead>
+			<tbody>
+                {volist name="users" id="vo"}
+                <tr class="text-c">
+                    <td><input type="checkbox" value="1" name=""></td>
+                    <td>{$i}</td>
+                    <td><u style="cursor:pointer" class="text-primary" onclick="user_show('10001','360','','test','user-show.html')">{$vo.users}</u></td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.sex}</td>
+                    <td>{$vo.qq}</td>
+                    <td>{$vo.email}</td>
+                    <td>{$vo.hits}</td>
+                    <td>{$vo.create_time}</td>
+                    <td>{$vo.update_time|changeTimeToStr}</td>
+                    <td class="f-14 user-manage">
+                        <a class="btn" href="{:url('payRecord',['id'=>$vo.id])}">充值记录</a>
+                        <button class="btn">玩过的游戏</button>
+                  </td>
+                </tr>
+                {/volist}
+			</tbody>
+		</table>
+	</div>
+</div>
+{include file="public/_footer"}
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/player.js"></script>
+
+</body>
+</html>
