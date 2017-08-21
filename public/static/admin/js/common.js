@@ -93,3 +93,50 @@ $("#hecheng-button-submit").click(function() {
         }
     },'json');
 });
+
+/**
+ * 禁用操作
+ * @param  {[type]} obj    [description]
+ * @param  {[type]} id     [description]
+ * @param  {[type]} status [description]
+ * @return {[type]}        [description]
+ */
+function hecheng_stop(obj,id,status){
+	var url = SCOPE.status_url;
+	layer.confirm('确认要禁用吗？',function(index){
+		$.post(url,{id:id,status:status},function(result) {
+			if(result.code == 1) {
+				$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="hecheng_start(this,'+id+',1)" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe615;</i></a>');
+				$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已禁用</span>');
+				$(obj).remove();
+				layer.msg('已禁用!',{icon: 5,time:1000});
+			}else {
+				dialog.error(result.message);
+			}
+		},'json');
+	});
+}
+
+/**
+ * 启用操作
+ * @param  {[type]} obj    [description]
+ * @param  {[type]} id     [description]
+ * @param  {[type]} status [description]
+ * @return {[type]}        [description]
+ */
+function hecheng_start(obj,id,status){
+	var url = SCOPE.status_url;
+	layer.confirm('确认要启用吗？',function(index){
+		$.post(url,{id:id,status:status},function(result) {
+			if(result.code == 1) {
+				$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="hecheng_stop(this,'+id+',0)" href="javascript:;" title="禁用"><i class="Hui-iconfont">&#xe631;</i></a>');
+				$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已启用</span>');
+				$(obj).remove();
+				layer.msg('已启用!',{icon: 6,time:1000});
+			}else {
+				dialog.error(result.message);
+			}
+		},'json');
+
+	});
+}
