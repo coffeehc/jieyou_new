@@ -139,3 +139,15 @@ function hecheng_start(obj,id,status){
 		},'json');
 	});
 }
+
+/**
+ * 修改操作
+ * @param  {[type]} title [description]
+ * @param  {[type]} url   [description]
+ * @param  {[type]} w     [description]
+ * @param  {[type]} h     [description]
+ * @return {[type]}       [description]
+ */
+function hecheng_edit(title,url,w,h) {
+    layer_show(title,url,w,h);
+}

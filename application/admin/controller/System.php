@@ -82,4 +82,35 @@ class System extends Controller {
             return $this->fetch();
         }
     }
+
+    /**
+     * 修改链接
+     * @param  integer $id [description]
+     * @return [type]      [description]
+     */
+    public function editLink($id=0) {
+        if(request()->isPost()) {
+            $data = input('post.');
+            $validate = validate('Link');
+            if(!$validate->scene('add')->check($data)) {
+                return show(0,$validate->getError());
+            }
+            try{
+                $res = model('Link')->save($data,['id'=>intval($data['id'])]);
+                if($res) {
+                    return show(1,'更新成功');
+                }else {
+                    return show(0,'更新失败');
+                }
+            }catch(\Exception $e) {
+                return show(0,$e->getMessage());
+            }
+        }else {
+            $link = model('Link')->get($id);
+            return $this->fetch('',[
+                'link' => $link,
+            ]);
+        }
+
+    }
 }
