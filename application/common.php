@@ -143,3 +143,18 @@ function getStatusByQx($qx) {
     }
     return $str;
 }
+
+function showOrHidden($qx) {
+    $str = '';
+    switch ($qx) {
+        case 1:
+            $str = '<span class="label label-success radius">显示</span>';
+            break;
+        case 0:
+            $str = '<span class="label label-default radius">不显示</span>';
+        default:
+            # code...
+            break;
+    }
+    return $str;
+}
