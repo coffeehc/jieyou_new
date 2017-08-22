@@ -12,7 +12,24 @@ class System extends BaseController {
      * @return [type] [description]
      */
     public function index() {
-        return $this->fetch();
+        if(request()->isPost()) {
+            $data = input('post.');
+            try{
+                $res = model('Config')->allowField(true)->save($data,['id'=>$data['id']]);
+                if($res) {
+                    return show(1,'修改成功');
+                }else {
+                    return show(0,'修改失败');
+                }
+            }catch(\Exception $e) {
+                return show(0,$e->getMessage());
+            }
+        }else {
+            $config = model('Config')->getConfigInfo();
+            return $this->fetch('',[
+                'config' => $config,
+            ]);
+        }
     }
 
     /**
