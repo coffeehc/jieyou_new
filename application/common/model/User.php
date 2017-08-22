@@ -21,4 +21,13 @@ class User extends Model {
         $res = $this->field('users')->find($id);
         return $res['users'];
     }
+
+    /**
+     * 玩家数量
+     * @return [type] [description]
+     */
+    public function getPlayerRegCount() {
+        $res = $this->count();
+        return $res;
+    }
 }

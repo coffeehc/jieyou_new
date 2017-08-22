@@ -5,7 +5,7 @@ use think\Controller;
 /**
  *  系统管理
  */
-class System extends Controller {
+class System extends BaseController {
 
     /**
      *  系统设置

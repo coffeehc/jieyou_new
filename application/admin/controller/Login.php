@@ -5,6 +5,10 @@ use think\Controller;
 class Login extends Controller {
 
     public function index() {
+        $manager = session('manager','','admin');
+        if($manager && $manager->id) {
+            return $this->redirect('index/index');
+        }
         return $this->fetch();
     }
 
@@ -36,7 +40,13 @@ class Login extends Controller {
             return show(0,$e->getMessage());
         }
 
-        session('manager',$res);
+        // manager session 名称     admin 作用域
+        session('manager',$res,'admin');
         return show(1,'登录成功');
+    }
+
+    public function logout() {
+        session(null,'admin');
+        return $this->redirect('login/index');
     }
 }

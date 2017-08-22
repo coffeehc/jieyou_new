@@ -4,6 +4,29 @@ use think\Controller;
 
 class BaseController extends Controller {
 
+    public $manager;
+    public function _initialize() {
+        $isLogin = $this->isLogin();
+        if(!$isLogin) {
+            return $this->redirect('login/index');
+        }
+    }
+
+    public function isLogin() {
+        $user = $this->getLoginUser();
+        if($user && $user->id) {
+            return true;
+        }
+        return false;
+    }
+
+    public function getLoginUser() {
+        if(!$this->manager) {
+            $this->manager = session('manager','','admin');
+        }
+        return $this->manager;
+    }
+
     /**
      * 删除数据
      * @return [type] [description]

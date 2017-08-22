@@ -3,9 +3,9 @@
 </head>
 <body>
 <div class="page-container">
-	<p class="f-20 text-success">欢迎使用一起玩页游平台</p>
-	<p>登录次数：18 </p>
-	<p>上次登录时间：2014-6-14 11:19:55</p>
+	<p class="f-20 text-success"><span class="stress cheng">{$manager.manager}</span> 欢迎使用一起玩页游平台</p>
+	<p>登录次数：{$manager.hits}次</p>
+	<p>登录IP：{$manager.ip}</p>
 	<table class="table table-border table-bordered table-bg ">
 		<thead>
 			<tr>
@@ -15,9 +15,9 @@
 		<tbody>
 			<tr>
 				<td width="10%">游戏数量：</td>
-				<td width="10%"><span class="stress cheng">33</span>个</td>
+				<td width="10%"><span class="stress cheng">{$game}</span>个</td>
 				<td width="10%">游戏服务器：</td>
-				<td>共<span class="stress cheng">963</span>个，其中已经开区的<span class="stress cheng">963</span>个，即将开区的<span class="stress cheng">0</span>个</td>
+				<td>共<span class="stress cheng">{$server}</span>个，其中已经开区的<span class="stress cheng">{$serveropened}</span>个，即将开区的<span class="stress cheng">{$serveropen}</span>个</td>
 			</tr>
 		</tbody>
 	</table>
@@ -31,9 +31,9 @@
         <tbody>
             <tr >
                 <td width="10%";>注册数量：</td>
-                <td width="10%"><span class="stress cheng">867</span>个</td>
+                <td width="10%"><span class="stress cheng">{$player}</span>个</td>
                 <td width="10%">充值金额：</td>
-                <td>支付成功：<span class="stress cheng">￥3349</span>元，未支付成功的有：<span class="stress cheng">￥5369</span>元</td>
+                <td>支付成功：<span class="stress cheng">￥{$paysuccess}.00</span>元，未支付成功的有：<span class="stress cheng">￥{$payerror}.00</span>元</td>
             </tr>
         </tbody>
     </table>
@@ -47,7 +47,7 @@
         <tbody>
             <tr >
                 <td width="10%";>发布数量：</td>
-                <td><span class="stress cheng">117</span>篇</td>
+                <td><span class="stress cheng">{$article}</span>篇</td>
             </tr>
         </tbody>
     </table>

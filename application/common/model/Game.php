@@ -7,4 +7,8 @@ class Game extends Model {
         $res = $this->select();
         return $res;
     }
+    public function getGameCount() {
+        $res = $this->count();
+        return $res;
+    }
 }

@@ -5,7 +5,7 @@ use think\Controller;
 /**
  *  图片管理
  */
-class Picture extends Controller {
+class Picture extends BaseController {
 
     /**
      * 图片列表
