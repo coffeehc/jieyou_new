@@ -255,6 +255,6 @@ return [
         // 验证码位数，根据所需设置验证码位数
         'length'   => 4,
         // 验证成功后是否重置
-        'reset'    => true
+        'reset'    => false
     ],
 ];

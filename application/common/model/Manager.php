@@ -30,4 +30,8 @@ class Manager extends BaseModel {
         return $res;
     }
 
+    public function getManagerByUsername($username) {
+        $res = $this->where('manager="'.$username.'"')->find();
+        return $res;
+    }
 }
