@@ -39,7 +39,7 @@
                     <td>{$vo.id|getTjNumById}</td>
                     <td>{$vo.id|getCpsMoneyById}</td>
                     <td class="f-14 user-manage">
-                        <button class="btn">查看充值记录</button>
+                        <a href="{:url('cpsPay',['id'=>$vo.id])}" class="btn">查看充值记录</a>
                   </td>
                 </tr>
                 {/volist}

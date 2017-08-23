@@ -48,4 +48,20 @@ class Cps extends Controller {
             ]);
         }
     }
+
+    /**
+     * 下线充值记录
+     * @param  integer $id [description]
+     * @return [type]      [description]
+     */
+    public function cpsPay($id=0) {
+        $cpsPay = model('UserPay')->getCpsPayInfo($id);
+        $count = model('UserPay')->getCpsPayCount($id);
+        $users = model('User')->getUserById($id);
+        return $this->fetch('',[
+            'cpsPay' => $cpsPay,
+            'count' => $count,
+            'users' => $users,
+        ]);
+    }
 }
