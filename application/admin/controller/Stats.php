@@ -53,4 +53,22 @@ class Stats extends Controller {
             'data' => $data,
         ]);
     }
+
+    /**
+     * 统计 折线图
+     * @return [type] [description]
+     */
+    public function zhext() {
+        $zhextData = $this->_db->getZhextInfo();
+        $zhextInfo = [];
+        foreach ($zhextData as $key => $value) {
+            $zhextInfo['time'][] = $value['time1'];
+            $zhextInfo['gcd_cli'][] = $value['gcd_cli'];
+            $zhextInfo['gcd_reg'][] = $value['gcd_reg'];
+        }
+        $data = json_encode($zhextInfo);
+        return $this->fetch('',[
+            'data' => $data,
+        ]);
+    }
 }
