@@ -29,7 +29,7 @@ class Login extends Controller {
             return show(0,$e->getMessage());
         }
 
-        if(!$res || $res['status'] != 1 || $res['password'] != md5($data['manager'])) {
+        if(!$res || $res['status'] != 1 || $res['password'] != md5($data['password'])) {
             return show(0,'用户名或密码错误:(');
         }
 

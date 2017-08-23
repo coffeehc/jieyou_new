@@ -46,9 +46,19 @@ function getArticleClassName($cid) {
  * @param  [type] $gid [description]
  * @return [type]      [description]
  */
-function getGameNameById($gid) {
-    $result = model('game')->field('name')->find($gid);
+function getGameNameById($id) {
+    $result = model('game')->field('name')->find($id);
     return $result['name'];
+}
+
+/**
+ * 通过游戏 GID 获取游戏名称
+ * @param  [type] $str [description]
+ * @return [type]      [description]
+ */
+function getGameNameByGid($str) {
+    $res = model('game')->field('name')->where('gid',$str)->find();
+    return $res['name'];
 }
 
 function status($status) {
