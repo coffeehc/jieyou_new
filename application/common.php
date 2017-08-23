@@ -168,3 +168,55 @@ function showOrHidden($qx) {
     }
     return $str;
 }
+
+/**
+ * 通过用户ID 获取到自己充值成功的money
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+function getMoneyById($id) {
+    $res = model('UserPay')->field('sum(money) as money')->where('qx = 1 and uid = '.$id)->find();
+    $str = '';
+    if($res['money'] > 0) {
+        $str = '<span class="label label-warning radius">￥'.$res['money'].'.00</span>';
+    }else {
+        $str = '<span class="label label-default radius">￥0.00</span>';
+    }
+    return $str;
+}
+
+/**
+ * 通过用户ID 获取推荐人数
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+function getTjNumById($id) {
+    $res = model('User')->field('count(id) as num')->where('tjrid='.$id)->find();
+    $str = '';
+    if($res['num'] > 0) {
+        $str = '<span class="label label-warning radius">'.$res['num'].'</span>';
+    }else {
+        $str = '<span class="label label-default radius">0</span>';
+    }
+    return $str;
+}
+
+/**
+ * 通过用户ID 获取佣金
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+function getCpsMoneyById($id) {
+    $res = model('User')->query('select sum(a.money) as money from jy_user_pay as a,jy_user as b where a.uid = b.id and b.tjrid = '.$id.' and a.qx = 1');
+    $cps = model('Config')->field('cps')->find();
+    foreach ($res as $key => $value) {
+        $money = $value['money'];
+    }
+    $money = number_format($money*$cps['cps']/100,2);
+    if($money > 0) {
+        $str = '<span class="label label-warning radius">￥'.$money.'</span>';
+    }else {
+        $str = '<span class="label label-default radius">￥0.00</span>';
+    }
+    return $str;
+}

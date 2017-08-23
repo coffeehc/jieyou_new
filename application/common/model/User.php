@@ -12,6 +12,11 @@ class User extends Model {
         return $res;
     }
 
+    public function getUserInfoForCps($data=[]) {
+        $res = $this->where($data)->paginate(10);
+        return $res;
+    }
+
     public function getUserCount($data=[]) {
         $res = $this->where($data)->count();
         return $res;
