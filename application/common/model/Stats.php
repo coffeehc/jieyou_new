@@ -16,4 +16,13 @@ class Stats extends Model {
         $res = $this->where($data)->count();
         return $res;
     }
+
+    /**
+     * 获取柱状图信息
+     * @return [type] [description]
+     */
+    public function getZhuztInfo() {
+        $res = $this->query("select gid,count(1) zongshu,sum(case when register=1 then 1 else 0 end) zhuceshu from jy_stats GROUP BY gid");
+        return $res;
+    }
 }

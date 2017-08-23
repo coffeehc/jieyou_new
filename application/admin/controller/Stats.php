@@ -8,6 +8,10 @@ class Stats extends Controller {
         $this->_db = model('Stats');
     }
 
+    /**
+     * 统计列表
+     * @return [type] [description]
+     */
     public function index() {
         $data = input('get.');
         $sdata = [];
@@ -28,6 +32,25 @@ class Stats extends Controller {
             'start_time' => !empty($data['start_time']) ? $data['start_time'] : '',
             'end_time' => !empty($data['end_time']) ? $data['end_time'] : '',
             'gid' => !empty($data['gid']) ? $data['gid'] : '',
+        ]);
+    }
+
+    /**
+     * 统计 柱状图
+     * @return [type] [description]
+     */
+    public function zhuzt() {
+        $zhuztData = $this->_db->getZhuztInfo();
+        $zhuztInfo = [];
+        foreach ($zhuztData as $key => $value) {
+            $zhuztInfo['categories'][] = getGameNameByGid($value['gid']);
+            $zhuztInfo['zongshu'][] = $value['zongshu'];
+            $zhuztInfo['zhuceshu'][] = intval($value['zhuceshu']);
+        }
+        // 把数组转成 JSON 格式 传给页面
+        $data = json_encode($zhuztInfo);
+        return $this->fetch('',[
+            'data' => $data,
         ]);
     }
 }
