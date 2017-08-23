@@ -14,3 +14,26 @@
 .pagination li{margin:0px 1px; border:1px solid #e6e6e6;padding: 3px 8px;display: inline-block;}
 .pagination .active{background-color: #5a98de;color: #fff;}
 .pagination .disabled{color:#aaa;}
+
+.game {
+    width: 345px;
+    height: 234px;
+    float: left;
+    padding: 6px;
+    margin: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.7s;
+}
+.game:hover {
+    box-shadow: 0px 0px 30px #5a98de;
+}
+
+.game table tbody tr td{
+    line-height: 25px;
+    font-size: 14px;
+    padding: 3px;
+}
+
+.td-l {
+    width: 100px;
+}
