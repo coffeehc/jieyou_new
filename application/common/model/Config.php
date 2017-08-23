@@ -8,4 +8,9 @@ class Config extends Model {
         $res = $this->field(true)->find();
         return $res;
     }
+
+    public function getCpsInfo() {
+        $res = $this->field('id,cps')->find();
+        return $res;
+    }
 }

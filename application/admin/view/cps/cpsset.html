@@ -1,0 +1,33 @@
+{include file="public/_meta"}
+<title>CPS分成设置 - CPS管理中心</title>
+</head>
+<body>
+<article class="page-container">
+	<form class="form form-horizontal" id="hecheng-form">
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>玩家推广充值分成：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="{$cps.cps}" placeholder="" name="cps">
+		</div>
+	</div>
+	<div class="row cl">
+		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+            <input type="hidden" name="id" value="{$cps.id}">
+			<input class="btn btn-primary radius" id="hecheng-button-submit" type="button" value="&nbsp;&nbsp;设置&nbsp;&nbsp;">
+		</div>
+	</div>
+	</form>
+</article>
+
+{include file="public/_footer"}
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+	var SCOPE = {
+        'save_url': '{:url('cpsSet')}',
+        'jump_url': '{:url('index')}'
+	};
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>
