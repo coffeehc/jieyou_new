@@ -16,4 +16,13 @@ class Apikey extends Model {
         $res = $this->count();
         return $res;
     }
+
+    /**
+     * 获取游戏平台
+     * @return [type] [description]
+     */
+    public function getGamePt() {
+        $res = $this->field('id,name')->select();
+        return $res;
+    }
 }

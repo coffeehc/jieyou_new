@@ -230,3 +230,23 @@ function getServerNumByGid($gid) {
     $res = model('GameServer')->where('gid='."'$gid'")->count();
     return $res;
 }
+
+/**
+ * 通过PTID获取平台名称
+ * @param  [type] $ptid [description]
+ * @return [type]       [description]
+ */
+function getGamePtNameByPtid($ptid) {
+    $res = model('Apikey')->field('name')->where('id='.$ptid)->find();
+    return $res['name'];
+}
+
+/**
+ * 通过LXID获取类型名称
+ * @param  [type] $lxid [description]
+ * @return [type]       [description]
+ */
+function getGametypeNameByLxid($lxid) {
+    $res = model('GameType')->field('name')->where('id='.$lxid)->find();
+    return $res['name'];
+}

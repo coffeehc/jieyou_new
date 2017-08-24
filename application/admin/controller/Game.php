@@ -20,7 +20,36 @@ class Game extends BaseController {
         ]);
     }
 
+    /**
+     * 添加游戏
+     */
     public function add() {
-        return $this->fetch();
+        if(request()->isPost()) {
+            $data = input('post.');
+            $validate = validate('Game');
+            if(!$validate->scene('add')->check($data)) {
+                return show(0,$validate->getError());
+            }
+            $data['zm'] = strtoupper(substr($data['gid'],0,1));
+            $data['pt'] = getGamePtNameByPtid($data['ptid']);
+            $data['lx'] = getGametypeNameByLxid($data['lxid']);
+            try {
+                $res = $this->_db->save($data);
+                if($res) {
+                    return show(1,'添加成功');
+                }else {
+                    return show(0,'添加失败');
+                }
+            } catch (\Exception $e) {
+                return show(0,$e->getMessage());
+            }
+        }else {
+            $gamePt = model('Apikey')->getGamePt();
+            $gameClass = model('GameType')->getGameTypeInfo();
+            return $this->fetch('',[
+                'gamePt' => $gamePt,
+                'gameClass' => $gameClass,
+            ]);
+        }
     }
 }

@@ -46,29 +46,6 @@ $(function() {
         }
     });
 
-    $("#file_upload_pic1").uploadifive({
-        'uploadScript': SCOPE.uploadScript,
-        'buttonText': '图片上传',
-        'fileType': 'Image files',
-        'fileObjName': 'file',
-        'fileTypeExts': '*gif; *.jpg; *.png',
-        'onUploadComplete': function(file, data, response) {
-            var obj = JSON.parse(data);
-            if (obj.code == 1) {
-                $("#upload_org_code_img_pic1").attr("src", obj.data);
-                $("#file_upload_image_pic1").attr("value", obj.data);
-                $("#upload_org_code_img_pic1").show();
-            }
-        },
-        onCancel: function(file) {
-            if (file) {
-                $("#upload_org_code_img_pic1").attr("src", '');
-                $("#file_upload_image_pic1").attr("value", '');
-                $("#upload_org_code_img_pic1").hide();
-            }
-        }
-    });
-
     $("#file_upload_pic2").uploadifive({
         'uploadScript': SCOPE.uploadScript,
         'buttonText': '图片上传',
@@ -134,6 +111,29 @@ $(function() {
                 $("#upload_org_code_img_pic4").attr("src", '');
                 $("#file_upload_image_pic4").attr("value", '');
                 $("#upload_org_code_img_pic4").hide();
+            }
+        }
+    });
+
+    $("#file_upload_picmax").uploadifive({
+        'uploadScript': SCOPE.uploadScript,
+        'buttonText': '图片上传',
+        'fileType': 'Image files',
+        'fileObjName': 'file',
+        'fileTypeExts': '*gif; *.jpg; *.png',
+        'onUploadComplete': function(file, data, response) {
+            var obj = JSON.parse(data);
+            if (obj.code == 1) {
+                $("#upload_org_code_img_picmax").attr("src", obj.data);
+                $("#file_upload_image_picmax").attr("value", obj.data);
+                $("#upload_org_code_img_picmax").show();
+            }
+        },
+        onCancel: function(file) {
+            if (file) {
+                $("#upload_org_code_img_picmax").attr("src", '');
+                $("#file_upload_image_picmax").attr("value", '');
+                $("#upload_org_code_img_picmax").hide();
             }
         }
     });

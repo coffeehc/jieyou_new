@@ -31,9 +31,11 @@
                     <tr>
                         <td class="td-l">游戏图片:</td>
                         <td>
-                            <img src="\upload\20170822\70aaacf732a231ed4f19368a287093c6.png" alt="" width="50" height="50">
-                            <img src="\upload\20170822\70aaacf732a231ed4f19368a287093c6.png" alt="" width="50" height="50">
-                            <img src="\upload\20170822\70aaacf732a231ed4f19368a287093c6.png" alt="" width="50" height="50">
+							{if condition="$vo.pic != ''"}<img src="{$vo.pic}" alt="" width="50" height="50">{/if}
+							{if condition="$vo.pic2 != ''"}<img src="{$vo.pic2}" alt="" width="50" height="50">{/if}
+							{if condition="$vo.pic3 != ''"}<img src="{$vo.pic3}" alt="" width="50" height="50">{/if}
+							{if condition="$vo.pic4 != ''"}<img src="{$vo.pic4}" alt="" width="50" height="50">{/if}
+							{if condition="$vo.picmax != ''"}<img src="{$vo.picmax}" alt="" width="50" height="50">{/if}
                         </td>
                     </tr>
                     <tr>
