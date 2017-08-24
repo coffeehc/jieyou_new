@@ -220,3 +220,13 @@ function getCpsMoneyById($id) {
     }
     return $str;
 }
+
+/**
+ * 通过游戏GID获取服务器数量
+ * @param  [type] $gid [description]
+ * @return [type]      [description]
+ */
+function getServerNumByGid($gid) {
+    $res = model('GameServer')->where('gid='."'$gid'")->count();
+    return $res;
+}
