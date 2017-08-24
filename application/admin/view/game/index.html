@@ -31,10 +31,8 @@
                     <tr>
                         <td class="td-l">游戏图片:</td>
                         <td>
-							{if condition="$vo.pic != ''"}<img src="{$vo.pic}" alt="" width="50" height="50">{/if}
-							{if condition="$vo.pic2 != ''"}<img src="{$vo.pic2}" alt="" width="50" height="50">{/if}
-							{if condition="$vo.pic3 != ''"}<img src="{$vo.pic3}" alt="" width="50" height="50">{/if}
-							{if condition="$vo.pic4 != ''"}<img src="{$vo.pic4}" alt="" width="50" height="50">{/if}
+							{if condition="$vo.pic2 != ''"}<img src="{$vo.pic2}" alt="" width="50" height="50">&nbsp;{/if}
+							{if condition="$vo.pic3 != ''"}<img src="{$vo.pic3}" alt="" width="50" height="50">&nbsp;{/if}
 							{if condition="$vo.picmax != ''"}<img src="{$vo.picmax}" alt="" width="50" height="50">{/if}
                         </td>
                     </tr>
@@ -48,10 +46,11 @@
                     </tr>
                     <tr>
                         <td class="td-l">推 荐 位 :</td>
-                        <td>{$vo.tj}</td>
+                        <td>{$vo.tj|getTjName}</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align:center;line-height:55px;">
+							<a href="{:url('recom',['id'=>$vo.id])}" class="btn">推荐</a>&nbsp;&nbsp;
                             <a href="{:url('edit',['id'=>$vo.id])}" class="btn">修改</a>&nbsp;&nbsp;
                             <a href="#" class="btn">删除</a>
                         </td>

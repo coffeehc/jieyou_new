@@ -96,4 +96,56 @@ class Game extends BaseController {
             ]);
         }
     }
+
+    /**
+     * 推荐设置
+     * @param  integer $id [description]
+     * @return [type]      [description]
+     */
+    public function recom($id=0) {
+        if(request()->isPost()) {
+            $data = input('post.');
+            unset($data['box']);
+            $data['tj'] = rtrim($data['tj'],',');
+            $game = model('Game')->get($data['gid']);
+            // 当 game 数据表里面的 tj 字段为 0 的时候 判断为新增 否则 为修改
+            if($game['tj'] == '0') {
+                try {
+                    $res = model('Adimg')->save($data);
+                    $ret = model('Game')->update(['tj'=>$data['tj'],'id'=>$data['gid']]);
+                    if($res && $ret) {
+                        return show(1,'推荐成功');
+                    }else {
+                        return show(0,'推荐失败');
+                    }
+                } catch (\Exception $e) {
+                    return show(0,$e->getMessage());
+                }
+            }else {
+                try {
+                    $res = model('Adimg')->where('gid='.$data['gid'])->update($data);
+                    $ret = model('Game')->update(['tj'=>$data['tj'],'id'=>$data['gid']]);
+                    if($res && $ret) {
+                        return show(1,'推荐成功');
+                    }else {
+                        return show(0,'推荐失败');
+                    }
+                } catch (\Exception $e) {
+                    return show(0,$e->getMessage());
+                }
+            }
+        }else {
+            $game = $this->_db->get($id);
+            $image = model('Adimg')->where('gid='.$id)->find();
+            return $this->fetch('',[
+                'game' => $game,
+                'banner_img' => !empty($image['banner_img']) ? $image['banner_img'] : '',
+                'jingping_img' => !empty($image['jingping_img']) ? $image['jingping_img'] : '',
+                'zhongbu_img' => !empty($image['zhongbu_img']) ? $image['zhongbu_img'] : '',
+                'dibu_img' => !empty($image['dibu_img']) ? $image['dibu_img'] : '',
+                'youshang_img' => !empty($image['youshang_img']) ? $image['youshang_img'] : '',
+                'youxia_img' => !empty($image['youxia_img']) ? $image['youxia_img'] : '',
+            ]);
+        }
+    }
 }
