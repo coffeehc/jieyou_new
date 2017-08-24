@@ -16,4 +16,14 @@ class Game extends Model {
         $res = $this->where($data)->count();
         return $res;
     }
+
+    public function getGameInfoForPagation($data=[]) {
+        $order = [
+            'sort' => 'desc',
+            'tj' => 'desc',
+            'id' => 'desc',
+        ];
+        $res = $this->where($data)->order($order)->paginate(8);
+        return $res;
+    }
 }

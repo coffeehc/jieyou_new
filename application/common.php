@@ -258,7 +258,7 @@ function getGametypeNameByLxid($lxid) {
  */
 function getTjName($tj) {
     $arr = ['没有推荐','精品游戏推荐','首页banner','首页中部广告','首页底部广告','首页右上广告','首页右下广告'];
-    $arr2 = ['0','1','2','3','4'.'5','6'];
+    $arr2 = ['0','1','2','3','4','5','6'];
     $res = str_replace($arr2,$arr,$tj);
     echo  $res;
 }

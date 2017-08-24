@@ -12,7 +12,7 @@ class Game extends BaseController {
      * @return [type] [description]
      */
     public function index() {
-        $games = $this->_db->getGameInfo();
+        $games = $this->_db->getGameInfoForPagation();
         $count = $this->_db->getGameCount();
         return $this->fetch('',[
             'games' => $games,
