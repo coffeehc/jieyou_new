@@ -4,6 +4,14 @@ use think\Model;
 
 class GameServer extends Model {
 
+    public function getGameServerInfo($data=[]) {
+        $order = [
+            'id' => 'desc',
+        ];
+        $res = $this->where($data)->order($order)->select();
+        return $res;
+    }
+
     /**
      * 服务器数量
      * @return [type] [description]
@@ -18,7 +26,7 @@ class GameServer extends Model {
      * @return [type] [description]
      */
     public function getGameserverOpenedCount() {
-        $res = $this->where('stime < now()')->count();
+        $res = $this->where('create_time < now()')->count();
         return $res;
     }
 
@@ -27,7 +35,7 @@ class GameServer extends Model {
      * @return [type] [description]
      */
     public function getGameserverOpenCount() {
-        $res = $this->where('stime >= now()')->count();
+        $res = $this->where('create_time >= now()')->count();
         return $res;
     }
 }

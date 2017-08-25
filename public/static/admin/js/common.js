@@ -5,7 +5,12 @@ function selecttime(flag){
         if(endTime != ""){
             WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',maxDate:endTime})}else{
             WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})}
-    }else{
+    }else if(flag==3){
+        var startTime = $("#countTimestart").val();
+        if(startTime != ""){
+            WdatePicker({dateFmt:'yyyy-MM-dd HH:00:00',minDate:startTime})}else{
+            WdatePicker({dateFmt:'yyyy-MM-dd HH:00:00'})}
+    }else {
         var startTime = $("#countTimestart").val();
         if(startTime != ""){
             WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:startTime})}else{

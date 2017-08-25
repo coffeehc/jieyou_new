@@ -38,3 +38,10 @@
 .td-l {
     width: 100px;
 }
+
+.game-server-button {
+    float:left;
+    width:160px;
+    padding:3px;
+    margin:3px;
+}
