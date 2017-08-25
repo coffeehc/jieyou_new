@@ -5,23 +5,23 @@
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 游戏管理管理 <span class="c-gray en">&gt;</span> 游戏服务器表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<div class="text-c">
-		<form class="Huiform" method="post" action="" target="_self">
+		<form class="Huiform" action="" target="_self" id="hecheng-form">
             <span class="input" style="width:200px;">
                 <input class="input-text" type="number" name="sid" value="" placeholder="开区编号(数字)" style="width:200px;">
             </span>
             <span>
-                <input type="text" name="stime" value="" placeholder="开区时间" onfocus="selecttime(3)" id="logmin" class="input-text Wdate" style="width:250px;">
+                <input type="text" name="create_time" placeholder="开区时间" onfocus="selecttime(3)" id="logmin" class="input-text Wdate" style="width:250px;">
             </span>
             <span class="select-box" style="width:250px">
-    			<select class="select" name="brandclass" size="1">
-    				<option value="0" >选择游戏</option>
+    			<select class="select" name="gid" size="1">
+    				<option value="">选择游戏</option>
                     {volist name="games" id="vo"}
                     <option value="{$vo.id}">{$vo.name}</option>
                     {/volist}
     			</select>
 			</span>
 
-            <button type="button" class="btn btn-success" id="" name="" onClick="picture_colume_add(this);"><i class="Hui-iconfont">&#xe600;</i> 添加服务器</button>
+            <button type="button" class="btn btn-success" id="hecheng-button-submit"><i class="Hui-iconfont">&#xe600;</i> 添加服务器</button>
 		</form>
 	</div>
 	<div class="cl pd-5 bg-1 bk-gray mt-20">
@@ -73,6 +73,11 @@ $('.table-sort').dataTable({
 	  {"orderable":false,"aTargets":[0,6]}// 制定列不参与排序
 	]
 });
+
+    var SCOPE = {
+        'save_url': '{:url('add')}',
+        'jump_url': '{:url('index')}',
+    };
 </script>
 </body>
 </html>

@@ -9,6 +9,11 @@ class GameServer extends Controller {
         $this->_db = model('GameServer');
     }
 
+    /**
+     * 游戏服务器主页
+     * @param  string $gid [description]
+     * @return [type]      [description]
+     */
     public function index($gid='') {
         $sdata = [];
         if(!empty($gid)) {
@@ -20,5 +25,34 @@ class GameServer extends Controller {
             'games' => $games,
             'gameServers' => $gameServers,
         ]);
+    }
+
+    /**
+     * 服务器添加功能
+     */
+    public function add() {
+        if(!request()->isPost()) {
+            return show(0,'请求错误');
+        }
+        $data = input('post.');
+        $validate = validate('GameServer');
+        if(!$validate->scene('add')->check($data)) {
+            return show(0,$validate->getError());
+        }
+        $data['name'] = '双线'.$data['sid'].'区';
+        $data['game'] = getGameNameById($data['gid']);
+        $data['create_time'] = strtotime($data['create_time']);
+        $data['ptid'] = 2;
+        try {
+            $res = $this->_db->insert($data);
+            if($res) {
+                return show(1,'添加成功');
+            }else {
+                return show(0,'添加失败');
+            }
+        } catch (\Exception $e) {
+            return show(0,$e->getMessage());
+        }
+
     }
 }
