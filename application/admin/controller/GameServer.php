@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 use think\Controller;
 
-class GameServer extends Controller {
+class GameServer extends BaseController {
 
     private $_db;
     public function _initialize() {

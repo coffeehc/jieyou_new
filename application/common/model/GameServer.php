@@ -2,7 +2,7 @@
 namespace app\common\model;
 use think\Model;
 
-class GameServer extends Model {
+class GameServer extends BaseModel {
 
     public function getGameServerInfo($data=[]) {
         $order = [
