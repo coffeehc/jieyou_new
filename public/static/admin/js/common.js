@@ -28,6 +28,19 @@ function window_add(title,url,w,h) {
     layer_show(title,url,w,h);
 }
 
+function hecheng_window_edit(title,url) {
+    layer.open({
+        type: 2,
+        skin:'layui-layer-rim',
+        title:title,
+        area:['80%','240px'],
+        content:url,
+        end: function() {
+            window.location.reload();
+        },
+    });
+}
+
 /**
  *  删除操作
  * @param  {[type]} url [地址]

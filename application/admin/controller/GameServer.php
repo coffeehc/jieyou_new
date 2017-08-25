@@ -53,6 +53,41 @@ class GameServer extends Controller {
         } catch (\Exception $e) {
             return show(0,$e->getMessage());
         }
+    }
 
+    /**
+     * 服务器修改操作
+     * @param  integer $id [description]
+     * @return [type]      [description]
+     */
+    public function edit($id=0) {
+        if(request()->isPost()) {
+            $data = input('post.');
+            $validate = validate('GameServer');
+            if(!$validate->scene('add')->check($data)) {
+                return show(0,$validate->getError());
+            }
+            $data['name'] = '双线'.$data['sid'].'区';
+            $data['game'] = getGameNameById($data['gid']);
+            $data['create_time'] = strtotime($data['create_time']);
+            $data['ptid'] = 2;
+            try {
+                $res = $this->_db->where('id',$data['id'])->update($data);
+                if($res) {
+                    return show(1,'更新成功');
+                }else {
+                    return show(0,'更新失败');
+                }
+            } catch (\Exception $e) {
+                return show(0,$e->getMessage());
+            }
+        }else {
+            $server = $this->_db->get($id);
+            $games = model('Game')->getGameInfo();
+            return $this->fetch('',[
+                'server' => $server,
+                'games' => $games,
+            ]);
+        }
     }
 }
