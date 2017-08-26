@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 use think\Controller;
 
-class Cps extends Controller {
+class Cps extends BaseController {
 
     /**
      * CPS 列表

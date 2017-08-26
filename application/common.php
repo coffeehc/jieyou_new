@@ -262,3 +262,13 @@ function getTjName($tj) {
     $res = str_replace($arr2,$arr,$tj);
     echo  $res;
 }
+
+/**
+ * 根据Id 获取渠道名称
+ * @param  [type] $tid [description]
+ * @return [type]      [description]
+ */
+function getPayNameByTid($tid) {
+    $res = model('PayType')->field('name')->find($tid);
+    return $res['name'];
+}

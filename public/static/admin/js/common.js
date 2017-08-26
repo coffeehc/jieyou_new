@@ -33,7 +33,7 @@ function hecheng_window_edit(title,url) {
         type: 2,
         skin:'layui-layer-rim',
         title:title,
-        area:['80%','240px'],
+        area:['80%','400px'],
         content:url,
         end: function() {
             window.location.reload();

@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 use think\Controller;
 
-class Stats extends Controller {
+class Stats extends BaseController {
     private $_db;
     public function _initialize() {
         $this->_db = model('Stats');
