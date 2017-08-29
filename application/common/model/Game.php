@@ -26,4 +26,30 @@ class Game extends Model {
         $res = $this->where($data)->order($order)->paginate(8);
         return $res;
     }
+
+    /**
+     * 首页热门游戏
+     * @return [type] [description]
+     */
+    public function getHotGame() {
+        $res = $this
+                ->field('id,pic3,name')
+                ->order('hits desc')
+                ->limit(8)
+                ->select();
+        return $res;
+    }
+
+    /**
+     * 获取最新游戏
+     * @return [type] [description]
+     */
+    public function getNewGame() {
+        $res = $this
+                ->field('id,pic3,name')
+                ->order('id desc')
+                ->limit(8)
+                ->select();
+        return $res;
+    }
 }

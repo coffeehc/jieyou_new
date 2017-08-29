@@ -16,7 +16,7 @@
     <div align="center">
         <table width="1200" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td width="29%" height="100" class="top_bt"><a href="" title=""><img src="" height="100" /></a></td>
+                <td width="29%" height="100" class="top_bt"><a href="/" title="首页"><img src="{$config.logo}" height="100" /></a></td>
                 <td width="35%">
                     <form id="formSearch" name="formSearch" method="post" action="">
                         <div>
@@ -26,19 +26,19 @@
                         <div>热门搜索词：神仙道 盛世三国 九阴绝学 剑雨江湖 幻城</div>
                     </form>
                 </td>
-                <td width="36%" align="right" class="hei18B"><span>免费咨询电话</span><br /><span class="phone"></span></td>
+                <td width="36%" align="right" class="hei18B"><span>免费咨询电话</span><br /><span class="phone">{$config.phone}</span></td>
             </tr>
         </table>
     </div>
     <div align="center" class="dh_bg">
         <div class="b_k">
             <li><a href="/" title="网站首页">网站首页</a></li>
-            <li><a href="/gamelist.html" title="游戏大厅">游戏大厅</a></li>
-            <li><a href="/my/" target="_blank" title="充值中心">用户中心</a></li>
-            <li><a href="/server.html">开服表</a></li>
-            <li><a href="/newslist.html" target="_blank" title="游戏资讯">游戏资讯</a></li>
-            <li><a href="/faqlist.html" target="_blank" title="常见问题">常见问题</a></li>
-            <li><a href="/pay.html" target="_blank" title="玩家登录后，可以对游戏角色进行充值!">充值中心</a></li>
+            <li><a href="{:url('Gamelist/index')}" title="游戏大厅">游戏大厅</a></li>
+            <li><a href="" title="充值中心">用户中心</a></li>
+            <li><a href="{:url('Server/index')}">开服表</a></li>
+            <li><a href="{:url('Article/index')}"  title="游戏资讯">游戏资讯</a></li>
+            <li><a href="" target="_blank" title="常见问题">常见问题</a></li>
+            <li><a href="" target="_blank" title="玩家登录后，可以对游戏角色进行充值!">充值中心</a></li>
             <!--li>联系我们</li-->
             <div style="clear:both"></div>
         </div>

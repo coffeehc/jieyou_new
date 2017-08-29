@@ -39,4 +39,17 @@ class Article extends BaseModel {
         $res = $this->save($data);
         return $res;
     }
+
+    /**
+     * 获取首页游戏公报
+     * @return [type] [description]
+     */
+    public function getGameArticle() {
+        $res = $this
+                ->field('id,title,create_time')
+                ->order('create_time desc')
+                ->limit(8)
+                ->select();
+        return $res;
+    }
 }

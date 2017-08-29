@@ -38,4 +38,32 @@ class GameServer extends BaseModel {
         $res = $this->where('create_time >= now()')->count();
         return $res;
     }
+
+    /**
+     * 获取最新开服
+     * @return [type] [description]
+     */
+    public function getNewServer() {
+        $res = $this
+                ->field('name,create_time,game,id')
+                ->where('create_time <='.time())
+                ->order('create_time desc')
+                ->limit(10)
+                ->select();
+        return $res;
+    }
+
+    /**
+     * 获取开服预告
+     * @return [type] [description]
+     */
+    public function getReadyServer() {
+        $res = $this
+                ->field('name,create_time,game,id')
+                ->where('create_time >'.time())
+                ->order('create_time asc')
+                ->limit(10)
+                ->select();
+        return $res;
+    }
 }

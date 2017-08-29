@@ -85,7 +85,7 @@
                         <td>&nbsp;</td>
                         <td>
                             <label><input type="submit" name="Submit" value="-= 登陆 =-" /></label>
-                            <a href="/api/qqlogin.php" title="点击这里使用QQ快速登陆" target="_self"><img src="../images/qq.png" align="absmiddle" border="0" /></a></td>
+                            <a href="/api/qqlogin.php" title="点击这里使用QQ快速登陆" target="_self"><img src="__STATIC__/images/qq.png" align="absmiddle" border="0" /></a></td>
                     </tr>
                     <tr>
                         <td colspan="2"><a href="/include/reg.php#reguser" class="cheng">还没有帐号，点这里免费注册</a></td>
@@ -100,17 +100,21 @@
 <div class="main_visual" style="height:410px;overflow:hidden">
     <div class="flicking_con">
         <div class="flicking_inner" align="center">
-            <a href="<?echo $bb['url']?>"></a>
+            {volist name="banner" id="vo"}
+            <a href="{$vo.id}"></a>
+            {/volist}
         </div>
     </div>
     <div class="main_image">
         <ul>
-            <li><span class="imgs" onClick="javascript:GoUrl();" style="background:url() center top no-repeat"></span></li>
+            {volist name="banner" id="vo"}
+            <li><span class="imgs" onClick="javascript:GoUrl('{:url('Youxi/index')}');" style="background:url('{$vo.banner_img}') center top no-repeat"></span></li>
+            {/volist}
         </ul>
         <a href="javascript:;" id="btn_prev"></a>
         <!--上一个、下一个功能暂时不可用-->
         <a href="javascript:;" id="btn_next"></a>
     </div>
 </div>
-<div style="text-align:center;clear:both">
-</div>
+
+<div style="text-align:center;clear:both"></div>

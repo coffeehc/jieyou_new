@@ -35,4 +35,14 @@ class User extends Model {
         $res = $this->count();
         return $res;
     }
+
+    public function getUserRand() {
+        $res = $this
+                ->field('id,name,pic')
+                ->where("pic <> ('')")
+                ->order('rand()')
+                ->limit(16)
+                ->select();
+        return $res;
+    }
 }

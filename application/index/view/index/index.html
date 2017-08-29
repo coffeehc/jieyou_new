@@ -1,4 +1,8 @@
 {include file="public/_meta"}
+<title>一起玩游戏_网页游戏_手机游戏</title>
+</head>
+<body>
+
     {include file="public/_header"}
     <div style="height:410px;overflow:hidden;">
         {include file="public/_banner"}
@@ -12,8 +16,9 @@
                             <div class="jptjbk">
                                 <div class="hong20T">精品游戏推荐</div>
                                 <div class="box">
-    			                    <div class='jptj'><div class='jptj2'><span class='cheng18B'></span></div><a href=''><img src= width='220' height='330' border='0' /></a></div>";
-                                    <div class="jptj"><img src="" alt="" width="220" height="330" border="0" /></a></div>
+                                    {volist name="jingping_img" id="vo"}
+    			                    <div class='jptj'><div class='jptj2'><span class='cheng18B'>{$vo.gid|getGameNameById}</span></div><a href='{$vo.gid}'><img src="{$vo.jingping_img}" width='220' height='330' border='0' /></a></div>
+                                    {/volist}
                                     <div style="clear:both"></div>
                                 </div>
                             </div>
@@ -23,50 +28,40 @@
                             <div class="box">
                                 <div class="hong20T">热门游戏</div>
                                 <div class="youxibox">
+                                    {volist name="hotGames" id="vo"}
                                     <div class="youxi">
-                                        <div class="youxiimg"><a href="" title=""><img src="" width="200" height="100" border="0" /></div>
+                                        <div class="youxiimg"><a href="{$vo.id}" title="{$vo.name}"><img src="{$vo.pic3}" width="200" height="100" border="0" /></div>
     				                    <div class="youxibt">
-        					                <div class="inyouxi"><a href="" title="点击进入游戏">进入游戏</a></div>
+        					                <div class="inyouxi"><a href="{$vo.id}" title="点击进入游戏">进入游戏</a></div>
                                             <div class="youxiname">
-                                                <a href="" title=""></a>
+                                                <a href="{$vo.id}" title="{$vo.name}">{$vo.name}</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="youxi">
-                                        <div class="youxiimg"><img src="" width="200" height="100" /></div>
-                                        <div class="youxibt">
-                                            <div class="inyouxi">进入游戏</div>
-                                            <div class="youxiname">传奇霸业</div>
-                                        </div>
-                                    </div>
+                                    {/volist}
                                     <div style="clear:both"></div>
                                 </div>
                             </div>
                             <!--@热门游戏-->
 
                             <!-- 首页中部广告图-->
-                            <div class="box"><img src="/images/ggpic/lycq.jpg" width="950" height="144" style="cursor:pointer;" onclick="window.open('/youxi/62.html');" /></div>
+                            <div class="box"><img src="{$zhongbu_img.zhongbu_img}" width="950" height="144" style="cursor:pointer;" onclick="window.open('/youxi/{$zhongbu_img.gid}.html');" /></div>
 
                             <!--最新游戏-->
                             <div class="box">
                                 <div class="hong20T">最新游戏</div>
                                 <div class="youxibox">
+                                    {volist name="newGames" id="vo"}
                                     <div class="youxi">
-                                        <div class="youxiimg"><a href="" title=""><img src="" width="200" height="100" border="0" /></div>
+                                        <div class="youxiimg"><a href="{$vo.id}" title="{$vo.name}"><img src="{$vo.pic3}" width="200" height="100" border="0" /></div>
                 				        <div class="youxibt">
-                					        <div class="inyouxi"><a href="" title="点击进入游戏">进入游戏</a></div>
+                					        <div class="inyouxi"><a href="{$vo.id}" title="点击进入游戏">进入游戏</a></div>
                                             <div class="youxiname">
-                                                <a href="" title=""></a>
+                                                <a href="{$vo.id}" title="{$vo.name}">{$vo.name}</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="youxi">
-                                        <div class="youxiimg"><img src="" width="200" height="100" /></div>
-                                        <div class="youxibt">
-                                            <div class="inyouxi">进入游戏</div>
-                                            <div class="youxiname">传奇霸业</div>
-                                        </div>
-                                    </div>
+                                    {/volist}
                                     <div style="clear:both"></div>
                                 </div>
                             </div>
@@ -78,24 +73,22 @@
                                 <div class="hong20T">最新开服务器</div>
                                 <div>
                                     <table width="100%" border="0" cellspacing="1" cellpadding="0">
-                                    <tr>
-                                        <td width="12%" align="center"><img src="" width="13" height="13" /></td>
-                                        <td width="65%" nowrap="nowrap">
-                                            <a href="" target="_blank" title="">
-                                            </a>
-                                        </td>
-                                        <td width="23%" nowrap="nowrap"><a href="" target="_blank" title=""><span class="hui12"></span></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="50" colspan="3" align="center" class="cheng">还没有游戏开服</td>
-                                    </tr>
+                                        {volist name="newServer" id="vo"}
+                                        <tr>
+                                            <td width="12%" align="center"><img src="__STATIC__/images/no/{$i}.gif" width="13" height="13" /></td>
+                                            <td width="65%" nowrap="nowrap">
+                                                <a href="{$vo.id}" target="_blank" title="点击进入{$vo.game}{$vo.name}">{$vo.game}{$vo.name}</a>
+                                            </td>
+                                            <td width="23%" nowrap="nowrap"><a href="{$vo.id}" target="_blank" title="点击进入{$vo.game}{$vo.name}"><span class="hui12">{$vo.create_time}</span></a></td>
+                                        </tr>
+                                        {/volist}
                                     </table>
                                 </div>
                             </div>
                             <!--@最新开服-->
 
                             <!--右上广告-->
-                            <div class="r_gg3"><a href="/youxi/42.html"><img src="/upfiles/20160713232732_46121.jpg" border="0" /></a></div>
+                            <div class="r_gg3"><a href="/youxi/{$youshang_img.gid}.html"><img src="{$youshang_img.youshang_img}" border="0" /></a></div>
                             <!--@r_gg-->
 
                             <!--@新服预告-->
@@ -103,30 +96,28 @@
                                 <div class="hong20T">游戏开服预告</div>
                                 <div style="min-height:100px">
                                     <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                        {volist name="readyServer" id="vo" empty="$readyEmpty"}
                                         <tr>
-                                            <td width="12%" align="center"><img src="/images/no/1_<? echo $i ?>.gif" /></td>
-                                            <td width="65%" nowrap="nowrap"></td>
-                                            <td width="23%" nowrap="nowrap" class="hui12"></td>
+                                            <td width="12%" align="center"><img src="__STATIC__/images/no/1_{$i}.gif" /></td>
+                                            <td width="65%" nowrap="nowrap">{$vo.game}{$vo.name}</td>
+                                            <td width="23%" nowrap="nowrap" class="hui12">{$vo.create_time}</td>
                                         </tr>
-                                        <tr>
-                                            <td height="50" colspan="3" align="center" class="cheng">还没有游戏开服</td>
-                                        </tr>
+                                        {/volist}
                                     </table>
                                 </div>
                             </div>
                             <!--@新服预告-->
                             <!--右下广告-->
-                            <div class="r_gg2"><img src="/upfiles/20160713220238_17142.jpg" /></div>
+                            <div class="r_gg2"><a href="{$youxia_img.gid}"><img src="{$youxia_img.youxia_img}" /></a></div>
                             <!--@r_gg-->
 
                             <!--游戏公告-->
                             <div class="box">
                                 <div class="hong20T">游戏公告</div>
                                 <div style="min-height:200px;padding:5px">
-                                    <li class="slist">
-                                        <a href="" title="" target="_blank"></a>
-                                    </li>
-                					<div class='cheng' align='center'>当前没有公告</div>
+                                    {volist name="gameArticle" id="vo" empty="$articleEmpty"}
+                                    <li class="slist"><a href="{$vo.id}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
+                                    {/volist}
                                 </div>
                             </div>
                             <!--@游戏公告-->
@@ -136,8 +127,10 @@
 
                 <!--底部广告-->
                 <div class="h_gg">
-                    <div><a href="/youxi/39.html" target="_blank"><img src="/images/ggpic/hc.jpg" width="580" height="150" border="0" /></a></div>
-                    <div><a href="/youxi/25.html"><img src="/images/ggpic/kf_580_150_2.png" width="580" height="150" border="0" /></a></div>
+                    {volist name="dibu_img" id="vo"}
+                    <div><a href="/youxi/{$vo.gid}.html"><img src="{$vo.dibu_img}" width="580" height="150" border="0" /></a></div>
+                    {/volist}
+
                     <span style="clear:both"></span>
                 </div>
                 <!--@广告-->
@@ -146,11 +139,12 @@
                 <div class="box">
                     <div class="hong20T">玩家相片</div>
                     <div>
-                            <div class="w_p">
-                                <div><img src="" width="100" height="100" /></div>
-                                <div>
-                                </div>
-                            </div>
+                        {volist name="users" id="vo"}
+                        <div class="w_p">
+                            <div><img src="{$vo.pic}" width="100" height="100" /></div>
+                            <div>{$vo.name}</div>
+                        </div>
+                        {/volist}
                     </div>
                     <div style="clear:both"></div>
                 </div>
@@ -160,10 +154,9 @@
                 <div>
                     <div class="box hong20T">友情链接</div>
                     <div class="link">
-                            <div>
-                                <a href="" target="_blank" alt="">
-                                </a>
-                            </div>
+                        {volist name="links" id="vo"}
+                        <div><a href="{$vo.url}" target="_blank" alt="{$vo.name}"></a>{$vo.name}</div>
+                        {/volist}
                     </div>
                     <div style="clear:both"></div>
                 </div>

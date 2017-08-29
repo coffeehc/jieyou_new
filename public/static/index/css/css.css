@@ -168,7 +168,7 @@ a:active {text-decoration: none;color: #333333;}
 
 .youxiname{float:left;background-color:#EEEEEE;padding:5px;font-weight: bold;border-radius:5px 0px 0px 5px;width:120px;overflow:hidden}
 
-.slist{padding:3px 0px 3px 15px;list-style-type: none;list-style-image: none;background-image: url( "/images/ico_news.gif" );background-repeat: no-repeat;background-position: left center;}
+.slist{padding:3px 0px 3px 15px;list-style-type: none;list-style-image: none;background-image: url( "../../images/ico_news.gif" );background-repeat: no-repeat;background-position: left center;}
 
 .touming{background-color:#FFFFFF;opacity: 0.8;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);}
 
@@ -226,9 +226,9 @@ div.flicking_con a.on {background-position:0 -21px}
 
 #btn_prev,#btn_next{z-index:101;position:absolute;display:block;width:73px!important;height:74px!important;top:50%;margin-top:-37px;display:none;}
 
-#btn_prev{background:url(/images/hover_left.png) no-repeat left top;left:100px;}
+#btn_prev{background:url(../../images/hover_left.png) no-repeat left top;left:100px;}
 
-#btn_next{background:url(/images/hover_right.png) no-repeat left top;left:200px;}
+#btn_next{background:url(../../images/hover_right.png) no-repeat left top;left:200px;}
 
 .page1{border-radius:10px;padding:5px 10px;margin:2px;background-color:#66CCFF;border:0px}
 

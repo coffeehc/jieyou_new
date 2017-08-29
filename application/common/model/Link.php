@@ -8,7 +8,7 @@ class Link extends Model {
         $order = [
             'id' => 'desc',
         ];
-        $res = $this->order($order)->select();
+        $res = $this->field(true)->order($order)->select();
         return $res;
     }
 
