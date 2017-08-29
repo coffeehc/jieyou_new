@@ -12,7 +12,7 @@ class Gamelist extends BaseController {
         // 游戏分类
         $gameType = model('GameType')->getGameTypeInfo();
         // 游戏列表
-        $games = model('Game')->getGameInfo();
+        $games = model('Game')->getGameInfoForPagation();
         // 最新开服
         $newServer = model('GameServer')->getNewServer();
         // 游戏公告

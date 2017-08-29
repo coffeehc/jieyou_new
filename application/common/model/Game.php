@@ -17,13 +17,13 @@ class Game extends Model {
         return $res;
     }
 
-    public function getGameInfoForPagation($data=[]) {
+    public function getGameInfoForPagation($data=[],$pageSize=8) {
         $order = [
             'sort' => 'desc',
             'tj' => 'desc',
             'id' => 'desc',
         ];
-        $res = $this->where($data)->order($order)->paginate(8);
+        $res = $this->where($data)->order($order)->paginate($pageSize);
         return $res;
     }
 
