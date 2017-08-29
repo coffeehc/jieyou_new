@@ -6,7 +6,7 @@ class GameType extends BaseModel {
 
     public function getGameTypeInfo() {
         $order = [
-            'sort' => 'desc',
+            'sort' => 'asc',
             'id' => 'desc',
         ];
 

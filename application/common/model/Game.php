@@ -9,7 +9,7 @@ class Game extends Model {
             'tj' => 'desc',
             'id' => 'desc',
         ];
-        $res = $this->where($data)->order($order)->select();
+        $res = $this->field(true)->where($data)->order($order)->select();
         return $res;
     }
     public function getGameCount($data=[]) {

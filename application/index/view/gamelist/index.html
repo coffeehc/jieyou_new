@@ -1,5 +1,5 @@
 {include file="public/_meta"}
-<title>资讯列表</title>
+<title>游戏大厅</title>
 </head>
 <body>
     {include file="public/_header"}
@@ -13,31 +13,39 @@
                         <td width="950" valign="top">
                             <!--最新游戏-->
                             <div class="box_top">
-                                <div class="hong20T"><img src="/images/allgame.png" /></div>
+                                <div class="hong20T"><img src="__STATIC__/images/allgame.png" /></div>
                                     <!--快速查询-->
                                     <div class="youxilx">
                                         <div>游戏类型：
-                                            <a href="">不限</a>
-                							<a href=''>仙侠RPG</a>
+                                            <a href="0">不限</a>
+                                            {volist name="gameType" id="vo"}
+                							<a href='{$vo.id}'>{$vo.name}</a>
+                                            {/volist}
                 						</div>
 
                                         <div>游戏首拼：
-                                            <a href="">不限</a>
-											<a href=''>A</a>
+                                            <?php
+                                                echo "<a href='0'>不限</a>";
+                                                foreach(range('A','Z') as $v) {
+                                                    echo "<a href='$v'>".$v."</a>";
+                                                }
+                                            ?>
 										</div>
                                     </div>
                                     <!--@快速查询-->
 
                                     <div style="padding:5px 0px 0px 5px">
+                                        {volist name="games" id="vo"}
                                         <div class="youxi">
-                                            <div class="youxiimg"><a href="" title=""><img src="" width="200" height="100" border="0" alt="" /></div>
+                                            <div class="youxiimg"><a href="{$vo.id}" title="{$vo.name}"><img src="{$vo.pic3}" width="200" height="100" border="0" alt="{$vo.name}" /></div>
 				                            <div class="youxibt">
-    					                        <div class="inyouxi"><a href="" title="点击进入游戏">进入游戏</a></div>
+    					                        <div class="inyouxi"><a href="{$vo.id}" title="点击进入游戏">进入游戏</a></div>
                                                 <div class="youxiname">
-                                                    <a href="" title=""></a>
+                                                    <a href="{$vo.id}" title="{$vo.name}">{$vo.name}</a>
                                                 </div>
                                             </div>
                                         </div>
+                                        {/volist}
                                     </div>
                             </div>
                             <!--@最新游戏-->
@@ -55,17 +63,16 @@
                         <td valign="top">
                             <!--最新开服-->
                             <div class="box_top" style="width:240px">
-                                <div class="hong20T"><img src="/images/zxkf.png" width="72" height="18" /></div>
+                                <div class="hong20T"><img src="__STATIC__/images/zxkf.png" width="72" height="18" /></div>
                                 <div>
                                     <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                        {volist name="newServer" id="vo"}
                                         <tr>
-                                            <td width="12%" align="center"><img src="" width="13" height="13" /></td>
-                                            <td width="65%" nowrap="nowrap">
-                                                <a href="" title="点击进入">
-                                                </a>
-                                            </td>
-                                            <td width="23%" nowrap="nowrap"><a href="" title="点击进入"><img src="/images/newser.gif" border="0" width="37" height="19" /></a></td>
+                                            <td width="12%" align="center"><img src="__STATIC__/images/no/{$i}.gif" width="13" height="13" /></td>
+                                            <td width="65%" nowrap="nowrap"><a href="{$vo.id}" title="点击进入">{$vo.game}{$vo.name}</a></td>
+                                            <td width="23%" nowrap="nowrap"><a href="{$vo.id}" title="点击进入"><img src="__STATIC__/images/newser.gif" border="0" width="37" height="19" /></a></td>
                                         </tr>
+                                        {/volist}
                                     </table>
                                 </div>
                             </div>
@@ -75,9 +82,9 @@
                             <div class="box">
                                 <div class="hong20T">游戏公告</div>
                                 <div style="min-height:200px;padding:5px">
-                                    <li class="slist">
-                                        <a href="" title="" target="_blank"></a>
-                                    </li>
+                                    {volist name="gameArticle" id="vo"}
+                                    <li class="slist"><a href="{$vo.id}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
+                                    {/volist}
                                 </div>
                             </div>
                             <!--@游戏公告-->
@@ -86,7 +93,7 @@
                 </table>
             </div>
         </div>
-        {include fiel="public/_footer"}
+        {include file="public/_footer"}
 </body>
 
 </html>
