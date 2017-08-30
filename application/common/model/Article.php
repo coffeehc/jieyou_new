@@ -52,4 +52,17 @@ class Article extends BaseModel {
                 ->select();
         return $res;
     }
+
+    /**
+     * 获取状态为1的资讯
+     * @return [type] [description]
+     */
+    public function getNormalArticle() {
+        $res = $this
+                ->field(true)
+                ->order('create_time desc')
+                ->where('status = 1')
+                ->paginate(15);
+        return $res;
+    }
 }

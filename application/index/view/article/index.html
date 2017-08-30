@@ -1,8 +1,9 @@
 {include file="public/_meta"}
 <title>资讯列表</title>
+<link href="__STATIC__/index/css/bootstrap.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
+
     {include file="public/_header"}
         <div style="height:410px;overflow:hidden;">
             {include file="public/_banner"}
@@ -15,17 +16,18 @@
                             <!--游戏资讯-->
                             <div class="">
                                 <div class="hong20T">游戏资讯</div>
+                                {volist name="article" id="vo"}
                                 <div class="news_list_bk">
-                                    <div><a href="" title=""><span class="cheng18"></span></a></div>
-                                    <div class="hei12">
-                                    </div>
+                                    <div><a href="{$vo.id}" title="{$vo.title}"><span class="cheng18">{$vo.title}</span></a></div>
+                                    <div class="hei12">{$vo.description}</div>
                                 </div>
+                                {/volist}
                             </div>
                             <!--@游戏资讯-->
 
                             <!--分页-->
                             <div class="box_p10">
-                                <a href="" title="第1页"><span class="fy2">1</span></a>
+                                {$article->render()}
                             </div>
                             <!--@分页-->
                         </td>
@@ -35,17 +37,13 @@
                                 <div class="hong20T">最新开服务器</div>
                                 <div>
                                     <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                        {volist name="newServer" id="vo"}
                                         <tr>
-                                            <td width="12%" align="center"><img src="" width="13" height="13" /></td>
-                                            <td width="65%" nowrap="nowrap">
-                                                <a href="" title="点击进入">
-                                                </a>
-                                            </td>
-                                            <td width="23%" nowrap="nowrap"><a href="" title="点击进入"><img src="/images/newser.gif" border="0" width="37" height="19" /></a></td>
+                                            <td width="12%" align="center"><img src="__STATIC__/images/no/{$i}.gif" width="13" height="13" /></td>
+                                            <td width="65%" nowrap="nowrap"><a href="{$vo.id}" title="点击进入">{$vo.game}{$vo.name}</a></td>
+                                            <td width="23%" nowrap="nowrap"><a href="{$vo.id}" title="点击进入"><img src="__STATIC__/images/newser.gif" border="0" width="37" height="19" /></a></td>
                                         </tr>
-                                        <tr>
-                                            <td height="50" colspan="3" align="center" class="cheng">还没有游戏开服</td>
-                                        </tr>
+                                        {/volist}
                                     </table>
                                 </div>
                             </div>
@@ -56,17 +54,16 @@
                                 <div class="hong20T">游戏开服预告</div>
                                     <div style="min-height:100px">
                                         <table width="100%" border="0" cellspacing="1" cellpadding="0">
-                                                <tr>
-                                                    <td width="16%" align="center"><img src="" /></td>
-                                                    <td width="70%" nowrap="nowrap">
-                                                        <a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content=&time=&advance=15&url=" target="_blank" title="添加提醒">
-                                                        <span class="hui12"></span></a>
-                                                    </td>
-                                                    <td width="14%" nowrap="nowrap"><a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content=&time=&advance=15&url=" target="_blank" title="添加提醒"><img src="/images/naozhong.png" border="0" /></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td height="50" colspan="3" align="center" class="cheng">还没有游戏开服</td>
-                                                </tr>
+                                            {volist name="readyServer" id="vo" empty="$readyEmpty"}
+                                            <tr>
+                                                <td width="16%" align="center"><img src="__STATIC__/images/no/1_{$i}.gif" /></td>
+                                                <td width="70%" nowrap="nowrap">
+                                                    <a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒">{$vo.game}{$vo.name}
+                                                    <span class="hui12">{$vo.create_time}</span></a>
+                                                </td>
+                                                <td width="14%" nowrap="nowrap"><a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒"><img src="__STATIC__/images/naozhong.png" border="0" /></a></td>
+                                            </tr>
+                                            {/volist}
                                         </table>
                                     </div>
                             </div>
@@ -75,10 +72,9 @@
                             <div class="box">
                                 <div class="hong20T">游戏公告</div>
                                 <div style="min-height:200px;padding:5px">
-                                    <li class="slist">
-                                        <a href="" title="" target="_blank"></a>
-                                    </li>
-					                <div class='cheng' align='center'>当前没有公告</div>
+                                    {volist name="gameArticle" id="vo"}
+                                    <li class="slist"><a href="{$vo.id}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
+                                    {/volist}
                                 </div>
                             </div>
                         </td>
