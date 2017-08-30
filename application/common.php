@@ -61,6 +61,16 @@ function getGameNameByGid($str) {
     return $res['name'];
 }
 
+/**
+ * 通过游戏类型ID 获取游戏名字
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+function gameByType($id) {
+    $res = model('game')->field('name,id,gid')->where('lxid='.$id)->select();
+    return $res;
+}
+
 function status($status) {
     $str = '';
     switch ($status) {

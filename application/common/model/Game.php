@@ -52,4 +52,17 @@ class Game extends Model {
                 ->select();
         return $res;
     }
+
+    /**
+     * 根据游戏类型获取游戏
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
+    public function getGameByGameType($id) {
+        $res = $this
+                ->field('id','name')
+                ->where('lxid='.$id)
+                ->select();
+        return $res;
+    }
 }

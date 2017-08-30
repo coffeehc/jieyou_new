@@ -12,6 +12,11 @@ class GameServer extends BaseModel {
         return $res;
     }
 
+    public function getGameServerLimit($data=[]) {
+        $res = $this->field(true)->where($data)->order('create_time desc')->limit(50)->select();
+        return $res;
+    }
+
     /**
      * 服务器数量
      * @return [type] [description]
