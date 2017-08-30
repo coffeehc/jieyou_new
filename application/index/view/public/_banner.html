@@ -60,11 +60,19 @@
     }
 </script>
 
+<script type="text/javascript">
+    $(function() {
+        $("#user-login-submit").click(function() {
+            alert(111);
+        })
+    })
+</script>
+
 <div style="position:absolute;padding-top:10px;z-index:100000;width:100%;overflow:hidden;pointer-events:none;" align="center">
     <div class="bodydiv" style="pointer-events:auto;">
         <div class="touming2" style="float:right;padding:20px" align="left">
             <!-- 用户登录信息-->
-            <form id="form1" name="form1" method="post" action="">
+            <form id="user-login-form">
                 <table width="100%" border="0" cellspacing="1" cellpadding="0">
                     <tr>
                         <td colspan="2"><span class="hei18B">用户登陆</span><br />
@@ -84,11 +92,11 @@
                     <tr>
                         <td>&nbsp;</td>
                         <td>
-                            <label><input type="submit" name="Submit" value="-= 登陆 =-" /></label>
+                            <label><input type="button" id="user-login-submit" value="-= 登陆 =-" /></label>
                             <a href="/api/qqlogin.php" title="点击这里使用QQ快速登陆" target="_self"><img src="__STATIC__/images/qq.png" align="absmiddle" border="0" /></a></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><a href="/include/reg.php#reguser" class="cheng">还没有帐号，点这里免费注册</a></td>
+                        <td colspan="2"><a href="{:url('Register/index')}" class="cheng">还没有帐号，点这里免费注册</a></td>
                     </tr>
                 </table>
             </form>

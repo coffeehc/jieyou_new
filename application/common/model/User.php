@@ -45,4 +45,14 @@ class User extends Model {
                 ->select();
         return $res;
     }
+
+    /**
+     * 通过用户名获取用户
+     * @param  [type] $username [description]
+     * @return [type]           [description]
+     */
+    public function getUserByUsername($username) {
+        $res = $this->field(true)->where('users="'.$username.'"')->find();
+        return $res;
+    }
 }
