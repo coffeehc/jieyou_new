@@ -1,5 +1,26 @@
 {include file="public/_meta"}
 <title>游戏大厅</title>
+<script type="text/javascript">
+    function Filter(a,b){
+        var $ = function(e){return document.getElementById(e);}
+        var ipts = $('filterForm').getElementsByTagName('input'),result=[];
+        for(var i=0,l=ipts.length;i<l;i++){
+            if(ipts[i].getAttribute('to')=='filter'){
+                result.push(ipts[i]);
+            }
+        }
+        if($(a)){
+            $(a).value = b;
+            for(var j=0,len=result.length;j<len;j++){
+                if(result[j].value==''){
+                    result[j].parentNode.removeChild(result[j]);
+                }
+            }
+            document.forms['filterForm'].submit();
+        }
+        return false;
+    }
+</script>
 </head>
 <body>
     {include file="public/_header"}
@@ -14,22 +35,25 @@
                             <!--最新游戏-->
                             <div class="box_top">
                                 <div class="hong20T"><img src="__STATIC__/images/allgame.png" /></div>
+                                <form id="filterForm" action="" method="get">
+                                    <input to="filter" type="hidden" id="lxid" name="lxid" value="{$lxid}" />
+                                    <input to="filter" type="hidden" id="zm" name="zm" value="{$zm}" />
+                                </form>
                                     <!--快速查询-->
                                     <div class="youxilx">
                                         <div>游戏类型：
-                                            <a href="0">不限</a>
+                                            <a href="javascript:Filter('lxid','0')">不限</a>
                                             {volist name="gameType" id="vo"}
-                							<a href='{$vo.id}'>{$vo.name}</a>
+                							<a href="javascript:Filter('lxid','{$vo.id}')" {eq name="$Think.get.lxid" value="$vo.id"}style="background-color:rgb(255,165,0);"{/eq}>{$vo.name}</a>
                                             {/volist}
                 						</div>
 
                                         <div>游戏首拼：
-                                            <?php
-                                                echo "<a href='0'>不限</a>";
-                                                foreach(range('A','Z') as $v) {
-                                                    echo "<a href='$v'>".$v."</a>";
-                                                }
-                                            ?>
+                                            <a href="javascript:Filter('zm','0')">不限</a>
+                                            {volist name="zmArray" id="vo"}
+                                            <a style="margin:3px;" href="javascript:Filter('zm','{$vo}')" {eq name="$Think.get.zm" value="$vo"}style="background-color:rgb(255,165,0);"{/eq}>{$vo}</a>
+                                            {/volist}
+
 										</div>
                                     </div>
                                     <!--@快速查询-->
@@ -95,5 +119,4 @@
         </div>
         {include file="public/_footer"}
 </body>
-
 </html>
