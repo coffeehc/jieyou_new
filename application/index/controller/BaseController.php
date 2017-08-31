@@ -20,6 +20,10 @@ class BaseController extends Controller {
         }else {
             $this->assign('user',$userIsLogin);
         }
+
+        // 最近玩过的游戏
+        $userServerEmpty = "<tr><td colspan='2'> 最近还没有玩过的游戏哦！</td></tr>";
+        $this->assign('userServerEmpty',$userServerEmpty);
     }
 
     public function userIsLogin() {
