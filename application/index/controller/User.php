@@ -59,4 +59,20 @@ class User extends BaseController {
             'payInfos' => $payInfos,
         ]);
     }
+
+    /**
+     * CPS推广中心 推广链接
+     * @return [type] [description]
+     */
+    public function cpsUrl() {
+        return $this->fetch();
+    }
+
+    /**
+     * 我的推广成果
+     * @return [type] [description]
+     */
+    public function cpsUser() {
+
+    }
 }
