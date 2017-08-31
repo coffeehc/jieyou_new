@@ -73,6 +73,10 @@ class User extends BaseController {
      * @return [type] [description]
      */
     public function cpsUser() {
-
+        $user = $this->getLoginUser();
+        $cpsUsers = model('User')->getCpsUserInfoByUid($user['id']);
+        return $this->fetch('',[
+            'cpsUsers' => $cpsUsers,
+        ]);
     }
 }

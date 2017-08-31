@@ -55,4 +55,13 @@ class User extends Model {
         $res = $this->field(true)->where('users="'.$username.'"')->find();
         return $res;
     }
+
+    /**
+     * 根据推荐人获取用户信息
+     * @return [type] [description]
+     */
+    public function getCpsUserInfoByUid($id) {
+        $res = $this->field(true)->where('tjrid='.$id)->order('id desc')->paginate(10);
+        return $res;
+    }
 }
