@@ -288,6 +288,6 @@ function getPayNameByTid($tid) {
  * @return [type] [description]
  */
 function getUserGameByUid($id) {
-    $res = model('UserServer')->field(true)->where('userid='.$id)->order('create_time desc')->select();
+    $res = model('UserServer')->field(true)->where('userid='.$id)->order('create_time desc')->limit(4)->select();
     return $res;
 }

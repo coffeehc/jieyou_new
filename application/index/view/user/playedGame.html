@@ -1,0 +1,104 @@
+{include file="userpublic/_meta"}
+<link href="__STATIC__/index/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<title>最近玩过的游戏</title>
+<script type="text/javascript" language="javascript">
+    $(function() {
+        $(".right .box").children("div").mouseenter(function() {
+            $(this).animate({
+                'background-color': '#FFCCCC'
+            });
+        })
+        $(".right .box").children("div").mouseleave(function() {
+            $(this).animate({
+                'background-color': '#FFFFFF'
+            });
+        })
+        document.getElementById("giftLayer").style.display = "none";
+    })
+
+    function applyGift(gsid) {
+        document.getElementById("giftNo").value = "数据获取中...";
+        document.getElementById("giftLayer").style.display = "";
+        document.getElementById("dataIFrm").src = 'gift.php?gsid=' + gsid;
+    }
+
+    function callbackFunc(vGiftNo) {
+        document.getElementById("giftNo").value = vGiftNo;
+    }
+
+    function closeGiftLayer() {
+        document.getElementById("giftLayer").style.display = "none";
+    }
+</script>
+
+</head>
+
+<body>
+    <div id="giftLayer">
+        <div style="position:relative;float:right;cursor:pointer;" onclick="javascript:closeGiftLayer();" title="点击关闭窗口">关闭</div>
+        获得的礼包卡号：<br />
+        <input type="text" id="giftNo" name="giftNo" style="width:250px;" /><br />
+        <font color="red">备注：</font>
+        <font color="gray">礼包卡可以在游戏中输入获得相应奖励！</font>
+        <iframe name="dataIFrm" id="dataIFrm" frameborder="false" scrolling="none;" style="border:none;" width="0" height="0" allowtransparency="true"></iframe>
+    </div>
+    <div align="center" style="background-color:#EEEEEE">
+        <div style="width:1200px;" align="left">
+            <!--top-->
+            <div style="background-color:#FFFFFF;">
+                {include file="userpublic/_top"}
+            </div>
+            <!--@top-->
+
+            <div class="box" style="height:100%">
+                <!--right-->
+                <div class="right">
+                    <div class="l_bk">当前位置：<a href="">会员中心</a> &gt;&gt; <a href="">最近玩过的游戏</a></div>
+                    <div class="l_bk">
+                        <table class="table table-striped table-bordered table-hover" >
+                            <thead>
+                                <tr bgcolor="#FFFFFF">
+                                    <td width="5%">序号</td>
+                                    <td width="25%">游戏名称</td>
+                                    <td width="26%">游戏时间</td>
+                                    <td width="21%">游戏充值</td>
+                                    <td width="11%">操作</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {volist name="playedGames" id="vo"}
+                                <tr bgcolor="#FFFFFF">
+                                    <td>{$i}</td>
+                                    <td>
+                                        <a href="" target="_blank" title="点击进入游戏">{$vo.name}</a>
+                                    </td>
+                                    <td>{$vo.create_time}</td>
+                                    <td><a href="">我要充值</a>
+                                        <a href="javascript:applyGift('{$vo.gsid}');" style="margin-left:10px;">获得游戏礼包</a></td>
+                                    <td><a href="" target="_blank">进入游戏</a></td>
+                                </tr>
+                                {/volist}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagebox">
+                        {$playedGames->render()}
+                    </div>
+                </div>
+                <!--@right-->
+
+                <!--left-->
+                <div class="left">
+                    {include file="userpublic/_left"}
+                </div>
+                <!--@left-->
+
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+    {include file="public/_footer"}
+</body>
+
+</html>

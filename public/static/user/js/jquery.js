@@ -1,0 +1,45 @@
+$(function(){
+	$(".m_l_1").addClass('hei14B').css({'border':'1px #EEEEEE solid','background-color':'#CCCCCC','padding':'10px'});
+	//$(".m_l_2").hide();
+	$(".m_l_2 li").css({'padding':'5px 0px 5px 20px','list-style-type':'none','background-color':'#EEEEEE'});
+	
+	//鼠标经过一级栏目时
+	$(".m_l_1").mouseenter(function(){
+		$(this).animate({'background-color':'#66CCFF'});
+	});
+	$(".m_l_1").mouseleave(function(){
+		$(this).animate({'background-color':'#CCCCCC'});
+	});
+	//鼠标点击一级菜单时打开子菜单
+	$(".m_l_1").click(function(){
+		$(this).next().slideToggle();
+	});
+	//鼠标点击二级菜单
+	$(".m_l_2").find("li").mouseenter(function(){
+		$(this).animate({'padding-left':'30px','background-color':'#CCCCCC'});
+		//$(this).parent().prev().css({'background-color':'#0066FF'});
+	});
+		$(".m_l_2").find("li").mouseleave(function(){
+		$(this).animate({'padding-left':'20px','background-color':'#EEEEEE'});
+	});
+	//分页的显示效果
+	$(".page2").mouseenter(function(){
+		$(this).animate({'border-radius':'5px','background-color':'#66CCFF'});
+	});
+	$(".page2").mouseleave(function(){
+		$(this).animate({'border-radius':'10px','background-color':'#CCCCCC'});
+	});
+	//鼠标经过变色的公共jquery
+	$(".page").mouseenter(function(){
+		$(this).animate({'border-radius':'5px','background-color':'#66CCFF'});
+	});
+	$(".page").mouseleave(function(){
+		$(this).animate({'border-radius':'10px','background-color':'#CCCCCC'});
+	});
+	$(".page4").mouseenter(function(){
+		$(this).animate({'border-radius':'5px','background-color':'#66CCFF'});
+	});
+	$(".page4").mouseleave(function(){
+		$(this).animate({'border-radius':'10px','background-color':'#CCCCCC'});
+	});
+});

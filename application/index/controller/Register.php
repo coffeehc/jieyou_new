@@ -48,6 +48,7 @@ class Register extends BaseController {
         if($user && $user['password'] == $data['password']) {
             session('user',$user,'index');
             model('User')->where('id',$user['id'])->setInc('hits');
+            model('User')->where('id',$user['id'])->update(['update_time'=>time()]);
             return show(1,$user['users'].'欢迎您！');
         }else {
             return show(0,'用户名或密码错误');

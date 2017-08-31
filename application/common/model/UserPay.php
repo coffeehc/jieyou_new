@@ -4,9 +4,12 @@ use think\Model;
 
 class UserPay extends Model {
 
-    public function getUserPayByUid($id) {
-        $res = $this->where('uid',$id)->select();
-        return $res;
+    public function getUserPayByUid($id,$limit) {
+        $res = $this->field(true)->where('uid',$id);
+        if($limit) {
+            $res = $res->limit($limit);
+        }
+        return $res->select();
     }
     public function getUserPayCount($id) {
         $res = $this->where('uid',$id)->count();
@@ -47,6 +50,16 @@ class UserPay extends Model {
                     ->join('jy_user b','a.uid = b.id')
                     ->where('b.tjrid='.$id)
                     ->count();
+        return $res;
+    }
+
+    /**
+     * 通过用户ID 获取用户充值记录
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
+    public function getUserPayInfoByUid($id) {
+        $res = $this->field(true)->where('uid='.$id)->order('create_time desc')->paginate();
         return $res;
     }
 }
