@@ -44,6 +44,28 @@ class Register extends BaseController {
             return $this->error('请求错误');
         }
         $data = input('post.');
-        dump($data);exit;
+        $user = model('User')->getUserByUsername($data['users']);
+        if($user && $user['password'] == $data['password']) {
+            session('user',$user,'index');
+            model('User')->where('id',$user['id'])->setInc('hits');
+            return show(1,$user['users'].'欢迎您！');
+        }else {
+            return show(0,'用户名或密码错误');
+        }
+    }
+
+    /**
+     * 退出平台
+     * @return [type] [description]
+     */
+    public function logout() {
+        if(!request()->isPost()) {
+            return $this->error('请求错误');
+        }
+        $data = input('post.');
+        if($data['target'] == 1) {
+            session(null,'index');
+            return show(1,'欢迎下次再来');
+        }
     }
 }

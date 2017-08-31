@@ -282,3 +282,12 @@ function getPayNameByTid($tid) {
     $res = model('PayType')->field('name')->find($tid);
     return $res['name'];
 }
+
+/**
+ * 通过用户ID获取玩家最近玩过的4款游戏
+ * @return [type] [description]
+ */
+function getUserGameByUid($id) {
+    $res = model('UserServer')->field(true)->where('userid='.$id)->order('create_time desc')->select();
+    return $res;
+}

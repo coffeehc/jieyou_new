@@ -16,3 +16,17 @@ $("#hecheng-submit").click(function() {
         }
     },'json');
 });
+
+$(function() {
+    $("#logout").click(function() {
+        $.post(logout_url,{target:1},function(result) {
+            if(result.code == 1) {
+                layer.msg(result.message,{icon:6,time:1500},function() {
+                    window.location.reload();
+                });
+            }else {
+                layer.msg(result.message,{icon:5,time:1500});
+            }
+        },'json')
+    })
+})

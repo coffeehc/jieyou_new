@@ -45,6 +45,7 @@
             }, 5000);
         })
     });
+
     function GoUrl(surl) {
         if (surl.length > 0) window.open(surl);
     }
@@ -63,7 +64,33 @@
 <script type="text/javascript">
     $(function() {
         $("#user-login-submit").click(function() {
-            alert(111);
+            if ($("#users").val().length == 0) {
+                return $("#users").addClass('waring-input');
+            }
+            if ($("#password").val().length == 0) {
+                return $("#password").addClass('waring-input');
+            }
+            var data = $('#user-login-form').serializeArray();
+            var url = '{:url('Register/login')}';
+            postData = {};
+            $(data).each(function(i) {
+                postData[this.name] = this.value;
+            })
+            $.post(url, postData, function(result) {
+                if (result.code == 1) {
+                    layer.msg(result.message, {
+                        icon: 6,
+                        time: 1000
+                    }, function() {
+                        window.location.reload();
+                    });
+                } else {
+                    layer.msg(result.message, {
+                        icon: 5,
+                        time: 1500
+                    });
+                }
+            }, 'json')
         })
     })
 </script>
@@ -71,6 +98,31 @@
 <div style="position:absolute;padding-top:10px;z-index:100000;width:100%;overflow:hidden;pointer-events:none;" align="center">
     <div class="bodydiv" style="pointer-events:auto;">
         <div class="touming2" style="float:right;padding:20px" align="left">
+            {if condition="$user"}
+            <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                <tr>
+                    <td colspan="2" class="hei18B">玩家信息</td>
+                </tr>
+                <tr>
+                    <td width="29%"><img src="{if condition='$user.pic'}{$user.pic}{else}/images/nopic.jpg{/if}" width="90" height="90" /></td>
+                    <td width="71%" class="hei12">
+                        <div>昵称：{$user.name}</div>
+                        <div>QQ号：{$user.qq}</div>
+                        <div>邮箱：{$user.email}</div>
+                        <div>登陆次数：{$user.hits}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="hei18B">最近玩过的游戏</td>
+                    {volist name=":getUserGameByUid($user.id)" id="vo"}
+                    <tr>
+                        <td nowrap="nowrap"><a href="{$vo.gsid}" title="点击进入游戏" target="_blank"><span class="hei12">{$vo.name}</span></a></td>
+                        <td align="right"><span class="hei12">{$vo.create_time}</span></td>
+                    </tr>
+                    {/volist}
+                </tr>
+            </table>
+            {else}
             <!-- 用户登录信息-->
             <form id="user-login-form">
                 <table width="100%" border="0" cellspacing="1" cellpadding="0">
@@ -82,12 +134,12 @@
                     <tr>
                         <td width="82">帐号：</td>
                         <td width="215">
-                            <label><input name="username" type="text" id="username" /></label>
+                            <label><input name="users" type="text" id="users"/></label>
                         </td>
                     </tr>
                     <tr>
                         <td>密码：</td>
-                        <td><input name="pass" type="password" id="pass" /></td>
+                        <td><input name="password" type="password" id="password" /></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
@@ -101,6 +153,7 @@
                 </table>
             </form>
             <!--@用户登录信息-->
+            {/if}
         </div>
     </div>
 </div>
@@ -109,8 +162,7 @@
     <div class="flicking_con">
         <div class="flicking_inner" align="center">
             {volist name="banner" id="vo"}
-            <a href="{$vo.id}"></a>
-            {/volist}
+            <a href="{$vo.id}"></a> {/volist}
         </div>
     </div>
     <div class="main_image">
