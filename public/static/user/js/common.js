@@ -1,3 +1,9 @@
+
+/**
+ * 获取游戏礼包
+ * @param  {[type]} gsid [description]
+ * @return {[type]}      [description]
+ */
 function getGift(gsid) {
     $("#giftLayer").css('display','block');
     $("#giftNo").val("数据请求中...");

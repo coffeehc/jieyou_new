@@ -17,9 +17,11 @@ class Gift extends Controller {
             return $this->error('登录过期，请重新登录','index/index/index');
         }
         $gsid = input('post.gsid'); // 游戏服务器ID
+        $flag = true;
         // 如果数据库里面有对应的礼包卡号，则直接返回
         $haveGift = model('UserGift')->getGiftByUid($user['id'],$gsid);
         if($haveGift) {
+            $flag = false;
             return show(1,$haveGift['giftid']);
         }
 
@@ -52,9 +54,18 @@ class Gift extends Controller {
         $response = curl_exec($curl);
         curl_close($curl);
 
+
+
+
         if(strstr($response,'Error')) {
             return show(0,'礼包获取失败');
         }else {
+            // 存入数据库  如果 $flag 为 true 做 insert 操作 如果  为false 做 更新操作
+            if($flag) {
+                model('UserGift')->save(['gsid'=>$gsid,'uid'=>$userInfo['users'],'giftid'=>$response]);
+            }else {
+                model('UserGift')->where(['id'=>$haveGift['id']])->update(['giftid'=>$response]);
+            }
             return show(1,$response);
         }
     }
