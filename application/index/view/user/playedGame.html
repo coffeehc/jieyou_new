@@ -30,7 +30,23 @@
         document.getElementById("giftLayer").style.display = "none";
     }
 </script>
+<style type="text/css">
 
+    #giftLayer {
+    	position:absolute;
+    	width:280px;
+    	height:100px;
+    	z-index:100;
+    	left: 1108px;
+    	top: 30px;
+    	background-color:#FFFFFF;
+    	opacity: 0.8;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+    	border:1px solid black;
+    	display:;
+    	padding:10px;
+    }
+
+</style>
 </head>
 
 <body>
@@ -74,17 +90,14 @@
                                     </td>
                                     <td>{$vo.create_time}</td>
                                     <td><a href="">我要充值</a>
-                                        <a href="javascript:applyGift('{$vo.gsid}');" style="margin-left:10px;">获得游戏礼包</a></td>
+                                        <a href="javascript:;" onclick="getGift('{$vo.gsid}')" style="margin-left:10px;">获得游戏礼包</a></td>
                                     <td><a href="" target="_blank">进入游戏</a></td>
                                 </tr>
                                 {/volist}
                             </tbody>
                         </table>
                     </div>
-
-                    <div class="pagebox">
                         {$playedGames->render()}
-                    </div>
                 </div>
                 <!--@right-->
 
@@ -99,6 +112,11 @@
         </div>
     </div>
     {include file="public/_footer"}
+    <script type="text/javascript">
+        var SCOPE = {
+            'get_url': '{:url('api/Gift/index')}'
+        };
+    </script>
 </body>
 
 </html>

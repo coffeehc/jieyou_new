@@ -64,4 +64,14 @@ class User extends Model {
         $res = $this->field(true)->where('tjrid='.$id)->order('id desc')->paginate(10);
         return $res;
     }
+
+    /**
+     * 根据用户ID 获取用户信息
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
+    public function getUserInfoById($id) {
+        $res = $this->field(true)->find($id);
+        return $res;
+    }
 }

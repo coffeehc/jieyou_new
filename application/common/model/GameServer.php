@@ -71,4 +71,13 @@ class GameServer extends BaseModel {
                 ->select();
         return $res;
     }
+
+    /**
+     * 通过ID 获取服务器信息
+     * @return [type] [description]
+     */
+    public function getGameServerByid($id) {
+        $res = $this->field('gid,sid')->where('id='.$id)->find();
+        return $res;
+    }
 }
