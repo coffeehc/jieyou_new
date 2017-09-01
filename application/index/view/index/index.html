@@ -17,7 +17,7 @@
                                 <div class="hong20T">精品游戏推荐</div>
                                 <div class="box">
                                     {volist name="jingping_img" id="vo"}
-    			                    <div class='jptj'><div class='jptj2'><span class='cheng18B'>{$vo.gid|getGameNameById}</span></div><a href='{$vo.gid}'><img src="{$vo.jingping_img}" width='220' height='330' border='0' /></a></div>
+    			                    <div class='jptj'><div class='jptj2'><span class='cheng18B'>{$vo.gid|getGameNameById}</span></div><a href="{:url('Youxi/index',['id'=>$vo.gid])}"><img src="{$vo.jingping_img}" width='220' height='330' border='0' /></a></div>
                                     {/volist}
                                     <div style="clear:both"></div>
                                 </div>

@@ -1,0 +1,176 @@
+{include file="public/_meta"}
+<title>游戏</title>
+<style type="text/css">
+    body{height:100%;background-image: url('{$youxi.picmax}');	background-repeat: no-repeat;background-position:top;}
+</style>
+</head>
+
+<body>
+    <div align="center">
+        <div style="width:1200px">
+            <div class="touming">
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr align="center">
+                        <td height="50"><a href="/" title="官网首页">官网首页</a></td>
+                        <td><a href="{:url('Gamelist/index')}" title="游戏列表">游戏列表</a></td>
+                        <td><a href="{:url('Article/index')}" title="游戏资讯">游戏资讯</a></td>
+                        <td><span class="hong20T">{$youxi.name}</span>-<span class="hei18B">等你来战！</span></td>
+                        <td><a href="{:url('Article/index')}" title="常见问题">常见问题</a></td>
+                        <td>
+                            <a href="" target="_blank" title="玩家登录后，可以对游戏角色进行充值!">充值中心</a>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="margin-top:400px" align="left">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td width="21%" valign="top">
+                            <div class="box_top"><a href=""><img src="__STATIC__/images/start_game.jpg" width="260" height="133" border="0" /></a></div>
+                            <div class="box" align="center">
+                                <div class="touming2" style="margin-top:10px" align="left">
+                                    <form id="form1" name="form1" method="post" action="">
+                                        <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                            <tr>
+                                                <td colspan="2"><span class="hei18B">用户登陆</span><br />
+                                                    <hr size="1px" style="height:1px" /> </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="82">帐号：</td>
+                                                <td width="215">
+                                                    <label>
+								                        <input name="username" type="text" id="username" />
+							                         </label>
+                                                 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>密码：</td>
+                                                <td><input name="pass" type="password" id="pass" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <label>
+							                            <input type="submit" name="Submit" value="-= 登陆 =-" />
+						                            </label>
+                                                    <a href="/api/qqlogin.php" title="点击这里使用QQ快速登陆" target="_self"><img src="../images/qq.png" align="absmiddle" border="0" /></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2"><a href="/include/reg.php#reguser" class="cheng">还没有帐号，点这里免费注册</a></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+
+                                    <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                        <tr>
+                                            <td colspan="2" class="hei18B">玩家信息</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="29%"><img src="<?if($lrs['pic'] == null){echo '/images/nopic.jpg';} else { echo $lrs['pic'];}?>" width="90" height="90" /></td>
+                                            <td width="71%" class="hei12">
+                                                <div>昵称：
+                                                    <? echo $lrs['name']?>
+                                                </div>
+                                                <div>QQ号：
+                                                    <? echo $lrs['qq']?>
+                                                </div>
+                                                <div>邮箱：
+                                                    <? echo $lrs['email']?>
+                                                </div>
+                                                <div>登陆次数：
+                                                    <? echo $lrs['hits']?>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="hei18B">最近玩过的游戏</td>
+                                        </tr>
+                                        echo "
+                                        <tr>
+                                            <td colspan='2'> 最近还没有玩过的游戏哦！</td>
+                                        </tr>
+                                        <tr>
+                                            <td nowrap='nowrap'><a href='/game/".$rows[' id '].".html' title='点击进入游戏' target='_blank'><span class='hei12'>".$rows['name']."</span></a></td>
+                                            <td align='right'><span class='hei12'>".date('Y-m-d',strtotime($rows['stime']))."</span></td>
+                                        </tr>";
+                                    </table>
+
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="bt_div cheng18B">近期将要开放的服务器</div>
+                                <div>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th width="52%" align="center">游戏服务器</th>
+                                            <th width="30%" align="center">时间</th>
+                                            <th width="18%" align="center">提醒</th>
+                                        </tr>
+                                        <tr>
+                                            <td height="30" align="center">
+                                                <a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content=<? echo urlencode($sg['game'].$sg['name'].'开新区啦！')?>&time=<? echo $sg['stime']?>&advance=15&url=<? echo urlencode(" http://www.175jy.com/youxi/ ".$youxi['id'].".html ")?>" target="_blank"
+                                                    title="添加提醒">
+                                                    <? echo $sg['game'].$sg['name']?>
+                                                </a>
+                                            </td>
+                                            <td height="30" align="center">
+                                                <? echo date('m-d',strtotime($sg['stime']))?>
+                                            </td>
+                                            <td align="center" nowrap="nowrap"><a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content=<? echo urlencode($sg['game'].$sg['name'].'开新区啦！')?>&time=<? echo $sg['stime']?>&advance=15&url=<? echo urlencode(" http://www.175jy.com/youxi/
+                                                    ".$youxi['id'].".html ")?>" target="_blank" title="添加提醒"><img src="/images/naozhong.png" style="border:0px;"/></a></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td height="100" colspan="3" align="center" class="cheng">敬请期待</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="cheng18B bt_div">
+                                    <? echo $youxi['name']?>游戏资讯</div>
+
+                                <div>
+                                    <div style="padding:5px"><a href="/wd/guicd/175jy_gcd.exe" style="color:red;" title="点击下载鬼吹灯之牧野诡事"><img src="/wd/guicd/gcd.jpg"/>微端下载</a></div>
+
+                                    <div style="padding:5px">
+                                        <a href="/news/<? echo $news['id']." .html "?>" title="<? echo $news['title']?>" target="_blank">
+                                            <? echo mb_strimwidth($news['title'],0,30,'...','utf8')?>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </td>
+                        <td width="79%" valign="top">
+                            <div class="hei18B box_top" style="padding:10px">推荐服务器</div>
+                            <div class="box_top" style="height:80px;padding:10px">
+
+                                <div style="width:420px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px"><img src="/images/shou.png" align="absmiddle" /> <a href="/game/<? echo $rs['id']?>.html" title="点击进入游戏" target="_blank"><? echo "[".$rs['game']."]".$rs['name']."-<span class='hui12'>".$rs['stime']."</span>"?> </a><img
+                                        src="/images/hotser.gif" width="37" height="19" align="absmiddle" /> <img src="/images/newser.gif" width="37" height="19" align="absmiddle" /> </div>
+
+                            </div>
+                            <div class="hei18B box" style="padding:10px">所有服务器</div>
+                            <div class="box_top" style="padding:10px">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <div style="width:415px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px"><img src="/images/shou.png" align="absmiddle" /><a href="/game/<? echo $rs['id']?>.html" title="点击进入游戏" target="_blank"> <? echo "[".$rs['game']."]".$rs['name']."-<span class='hui12'>".$rs['stime']."</span>"?></a>                                                <img src="/images/hotser.gif" width="37" height="19" align="absmiddle" /></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="youxipage">
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        {include file="public/_footer"}
+    </div>
+</body>
+
+</html>
