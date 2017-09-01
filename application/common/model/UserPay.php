@@ -30,6 +30,8 @@ class UserPay extends Model {
         return $res['money'];
     }
 
+    
+
     /**
      * 通过ID 获取下线的充值记录
      * @param  [type] $id [description]
@@ -60,6 +62,22 @@ class UserPay extends Model {
      */
     public function getUserPayInfoByUid($id) {
         $res = $this->field(true)->where('uid='.$id)->order('create_time desc')->paginate();
+        return $res;
+    }
+
+    /**
+     * 通过用户ID 获取下线充值记录
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
+    public function getCpsPayInfoByUid($id) {
+        $res = $this
+                ->field('a.oid,a.game,a.money,a.create_time,a.qx,b.id,b.users,b.tjrid')
+                ->alias('a')
+                ->join('jy_user b','a.uid = b.id')
+                ->where('b.tjrid='.$id)
+                ->order('a.id desc')
+                ->paginate(10);
         return $res;
     }
 }

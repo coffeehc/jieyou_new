@@ -34,7 +34,7 @@
                                 <td width="12%">{$vo.name}</td>
                                 <td width="24%">{$vo.email}</td>
                                 <td width="12%">{$vo.qq}</td>
-                                <td width="12%">{$vo.id}</td>
+                                <td width="12%">{$vo.id|getMoneyById}</td>
                                 <td width="25%">{$vo.create_time}</td>
                             </tr>
                             {/volist}

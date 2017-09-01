@@ -79,4 +79,16 @@ class User extends BaseController {
             'cpsUsers' => $cpsUsers,
         ]);
     }
+
+    /**
+     * 玩家充值
+     * @return [type] [description]
+     */
+    public function cpsPay() {
+        $user = $this->getLoginUser();
+        $cpsPays = model('UserPay')->getCpsPayInfoByUid($user['id']);
+        return $this->fetch('',[
+            'cpsPays' => $cpsPays,
+        ]);
+    }
 }

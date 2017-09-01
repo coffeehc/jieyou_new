@@ -1,0 +1,69 @@
+{include file="userpublic/_meta"}
+</head>
+
+<body>
+    <div align="center" style="background-color:#EEEEEE">
+        <div style="width:1200px;" align="left">
+            <!--top-->
+            <div style="background-color:#FFFFFF;">
+                {include file="userpublic/_top"}
+            </div>
+            <!--@top-->
+
+            <div class="box" style="height:100%">
+                <!--right-->
+                <div class="right">
+                    <div>当前位置：<a href="{:url('index')}">会员中心</a> >> 我的下线玩家充值记录</div>
+                    <div class="box">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr bgcolor="#FFFFFF">
+                                    <td width="14%">玩家帐号</td>
+                                    <td width="16%">工单编号</td>
+                                    <td width="18%">游戏服务器</td>
+                                    <td width="16%">充值金额</td>
+                                    <td width="15%">充值时间</td>
+                                    <td width="21%">充值结果</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {volist name="cpsPays" id="vo"}
+                                <tr bgcolor="#FFFFFF">
+                                    <td width="14%">
+                                        {$vo.users}
+                                    </td>
+                                    <td>
+                                        {$vo.oid}
+                                    </td>
+                                    <td>
+                                        {$vo.game}
+                                    </td>
+                                    <td>
+                                        {if condition="$vo.qx" value="1"}<span class='cheng12'>{else}<span class='hui12'>{/if}￥{$vo.money}.00</span></td>
+                                    <td>
+                                        {$vo.create_time}
+                                    </td>
+                                    <td>
+                                        {if condition="$vo.qx" value="1"}<span class='cheng12'>充值成功!</span>{else}<span class='hui12'>未支付{/if}</span></td>
+                                </tr>
+                                {/volist}
+                            </tbody>
+                        </table>
+                    </div>
+                    {$cpsPays->render()}
+                </div>
+                <!--@right-->
+
+                <!--left-->
+                <div class="left">
+                    {include file="userpublic/_left"}
+                </div>
+                <!--@left-->
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+    {include file="public/_footer"}
+</body>
+
+</html>
