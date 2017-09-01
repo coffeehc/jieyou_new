@@ -1,0 +1,84 @@
+{include file="public/_meta"}
+<title>资讯详情页面</title>
+</head>
+
+<body>
+
+    {include file="public/_header"}
+    <div style="height:410px;overflow:hidden;">
+        {include file="public/_banner"}
+    </div>
+    <div align="center" class="bodybk">
+        <div class="bodydiv" align="left">
+            <table width="1200" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="950" valign="top">
+                        <div class="mianbao">当前位置：<a href="/">首页 </a>>>
+                            {$news.gid|getGameNameById}>>{$news.title}
+                        </div>
+                        <!--游戏资讯-->
+                        <div class="box_top">
+                            <div style="padding:10px;margin-top:10px">
+                                <div align="center" style="padding:20px 0px 20px 0px"><span class="hong20T">{$news.title}</span></div>
+                                <div>
+                                    {$news.content}
+                                </div>
+                            </div>
+                        </div>
+                        <!--@游戏资讯-->
+                    </td>
+                    <td valign="top">
+                        <!--最新开服-->
+                        <div class="box_top" style="width:240px">
+                            <div class="hong20T">最新开服务器</div>
+                            <div>
+                                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                    {volist name="newServer" id="vo"}
+                                    <tr>
+                                        <td width="12%" align="center"><img src="__STATIC__/images/no/{$i}.gif" width="13" height="13" /></td>
+                                        <td width="65%" nowrap="nowrap"><a href="{$vo.id}" title="点击进入">{$vo.game}{$vo.name}</a></td>
+                                        <td width="23%" nowrap="nowrap"><a href="{$vo.id}" title="点击进入"><img src="__STATIC__/images/newser.gif" border="0" width="37" height="19" /></a></td>
+                                    </tr>
+                                    {/volist}
+                                </table>
+                            </div>
+                        </div>
+                        <!--@最新开服-->
+
+                        <!--@新服预告-->
+                        <div class="box" style="width:240px">
+                            <div class="hong20T">游戏开服预告</div>
+                                <div style="min-height:100px">
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                        {volist name="readyServer" id="vo" empty="$readyEmpty"}
+                                        <tr>
+                                            <td width="16%" align="center"><img src="__STATIC__/images/no/1_{$i}.gif" /></td>
+                                            <td width="70%" nowrap="nowrap">
+                                                <a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒">{$vo.game}{$vo.name}
+                                                <span class="hui12">{$vo.create_time}</span></a>
+                                            </td>
+                                            <td width="14%" nowrap="nowrap"><a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒"><img src="__STATIC__/images/naozhong.png" border="0" /></a></td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </div>
+                        </div>
+
+                        <!--@新服预告-->
+                        <div class="box">
+                            <div class="hong20T">游戏公告</div>
+                            <div style="min-height:200px;padding:5px">
+                                {volist name="gameArticle" id="vo"}
+                                <li class="slist"><a href="{$vo.id}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
+                                {/volist}
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    {include file="public/_footer"}
+</body>
+
+</html>

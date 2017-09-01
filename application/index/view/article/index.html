@@ -18,7 +18,7 @@
                                 <div class="hong20T">游戏资讯</div>
                                 {volist name="article" id="vo"}
                                 <div class="news_list_bk">
-                                    <div><a href="{$vo.id}" title="{$vo.title}"><span class="cheng18">{$vo.title}</span></a></div>
+                                    <div><a href="{:url('news',['id'=>$vo.id])}" title="{$vo.title}"><span class="cheng18">{$vo.title}</span></a></div>
                                     <div class="hei12">{$vo.description}</div>
                                 </div>
                                 {/volist}
