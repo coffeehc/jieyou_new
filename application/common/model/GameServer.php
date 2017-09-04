@@ -63,9 +63,26 @@ class GameServer extends BaseModel {
      * @return [type] [description]
      */
     public function getReadyServer() {
+
         $res = $this
                 ->field('name,create_time,game,id')
                 ->where('create_time >'.time())
+                ->order('create_time asc')
+                ->limit(10)
+                ->select();
+
+        return $res;
+    }
+
+    /**
+     * 根据GID 获取游戏的开服预告
+     * @param  [type] $gid [description]
+     * @return [type]      [description]
+     */
+    public function getReadyServerByGid($gid) {
+        $res = $this
+                ->field('name,create_time,game,id')
+                ->where("create_time > ".time()." AND gid = '$gid'")
                 ->order('create_time asc')
                 ->limit(10)
                 ->select();
@@ -78,6 +95,35 @@ class GameServer extends BaseModel {
      */
     public function getGameServerByid($id) {
         $res = $this->field('gid,sid')->where('id='.$id)->find();
+        return $res;
+    }
+
+    /**
+     * 通过游戏GID 获取推荐服务器
+     * @param  [type] $gid [description]
+     * @return [type]      [description]
+     */
+    public function getRecServerByGid($gid) {
+        $res = $this
+                ->field(true)
+                ->where("create_time <= ".time()." AND gid= '$gid'")
+                ->order('sid desc')
+                ->limit(2)
+                ->select();
+        return $res;
+    }
+
+    /**
+     * 根据游戏GID 获取游戏服务器
+     * @param  [type] $gid [description]
+     * @return [type]      [description]
+     */
+    public function getGameServerByGid($gid) {
+        $res = $this
+                ->field(true)
+                ->where("create_time <= ".time()." and gid='$gid'")
+                ->order('sid desc')
+                ->paginate();
         return $res;
     }
 }

@@ -65,4 +65,19 @@ class Article extends BaseModel {
                 ->paginate(15);
         return $res;
     }
+
+    /**
+     * 通过游戏ID 获取游戏的资讯
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
+    public function getGameArticleByGid($id) {
+        $res = $this
+                ->field('title,id,gid')
+                ->order('update_time desc')
+                ->where('status = 1 and gid = '.$id)
+                ->limit(10)
+                ->select();
+        return $res;
+    }
 }

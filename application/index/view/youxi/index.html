@@ -30,7 +30,9 @@
                             <div class="box_top"><a href=""><img src="__STATIC__/images/start_game.jpg" width="260" height="133" border="0" /></a></div>
                             <div class="box" align="center">
                                 <div class="touming2" style="margin-top:10px" align="left">
-                                    <form id="form1" name="form1" method="post" action="">
+                                    {if condition="!$user"}
+                                    <!-- 没有登录 -->
+                                    <form id="form1" name="form1" action="">
                                         <table width="100%" border="0" cellspacing="1" cellpadding="0">
                                             <tr>
                                                 <td colspan="2"><span class="hei18B">用户登陆</span><br />
@@ -54,14 +56,16 @@
                                                     <label>
 							                            <input type="submit" name="Submit" value="-= 登陆 =-" />
 						                            </label>
-                                                    <a href="/api/qqlogin.php" title="点击这里使用QQ快速登陆" target="_self"><img src="../images/qq.png" align="absmiddle" border="0" /></a></td>
+                                                    <a href="/api/qqlogin.php" title="点击这里使用QQ快速登陆" target="_self"><img src="__STATIC__/images/qq.png" align="absmiddle" border="0" /></a></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2"><a href="/include/reg.php#reguser" class="cheng">还没有帐号，点这里免费注册</a></td>
+                                                <td colspan="2"><a href="{:url('Register/index')}" class="cheng">还没有帐号，点这里免费注册</a></td>
                                             </tr>
                                         </table>
                                     </form>
-
+                                    <!-- @没有登录 -->
+                                    {else}
+                                    <!-- 已经登录 -->
                                     <table width="100%" border="0" cellspacing="3" cellpadding="0">
                                         <tr>
                                             <td colspan="2" class="hei18B">玩家信息</td>
@@ -95,7 +99,8 @@
                                             <td align='right'><span class='hei12'>".date('Y-m-d',strtotime($rows['stime']))."</span></td>
                                         </tr>";
                                     </table>
-
+                                    <!-- @已经登录 -->
+                                    {/if}
                                 </div>
                             </div>
                             <div class="box">
@@ -107,56 +112,57 @@
                                             <th width="30%" align="center">时间</th>
                                             <th width="18%" align="center">提醒</th>
                                         </tr>
+
+                                        {volist name="readyServer" id="vo" empty="$readyEmpty"}
                                         <tr>
                                             <td height="30" align="center">
-                                                <a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content=<? echo urlencode($sg['game'].$sg['name'].'开新区啦！')?>&time=<? echo $sg['stime']?>&advance=15&url=<? echo urlencode(" http://www.175jy.com/youxi/ ".$youxi['id'].".html ")?>" target="_blank"
-                                                    title="添加提醒">
-                                                    <? echo $sg['game'].$sg['name']?>
-                                                </a>
+                                                <a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒">{$vo.game}{$vo.name}</a>
                                             </td>
                                             <td height="30" align="center">
                                                 <? echo date('m-d',strtotime($sg['stime']))?>
                                             </td>
-                                            <td align="center" nowrap="nowrap"><a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content=<? echo urlencode($sg['game'].$sg['name'].'开新区啦！')?>&time=<? echo $sg['stime']?>&advance=15&url=<? echo urlencode(" http://www.175jy.com/youxi/
-                                                    ".$youxi['id'].".html ")?>" target="_blank" title="添加提醒"><img src="/images/naozhong.png" style="border:0px;"/></a></td>
+                                            <td width="14%" nowrap="nowrap"><a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒"><img src="__STATIC__/images/naozhong.png" border="0" /></a></td>
+                                        </tr>
+                                        {/volist}
 
-                                        </tr>
-                                        <tr>
-                                            <td height="100" colspan="3" align="center" class="cheng">敬请期待</td>
-                                        </tr>
                                     </table>
                                 </div>
                             </div>
                             <div class="box">
-                                <div class="cheng18B bt_div">
-                                    <? echo $youxi['name']?>游戏资讯</div>
-
+                                <div class="cheng18B bt_div">{$youxi.name}游戏资讯</div>
                                 <div>
-                                    <div style="padding:5px"><a href="/wd/guicd/175jy_gcd.exe" style="color:red;" title="点击下载鬼吹灯之牧野诡事"><img src="/wd/guicd/gcd.jpg"/>微端下载</a></div>
-
+                                    {volist name="gameArticle" id="vo" empty="$articleEmpty"}
                                     <div style="padding:5px">
-                                        <a href="/news/<? echo $news['id']." .html "?>" title="<? echo $news['title']?>" target="_blank">
-                                            <? echo mb_strimwidth($news['title'],0,30,'...','utf8')?>
-                                        </a>
+                                        <a href="{:url('Article/news',['id'=>$vo.id])}" title="{$vo.title}" target="_blank">{$vo.title}</a>
                                     </div>
-
+                                    {/volist}
                                 </div>
                             </div>
                         </td>
                         <td width="79%" valign="top">
                             <div class="hei18B box_top" style="padding:10px">推荐服务器</div>
                             <div class="box_top" style="height:80px;padding:10px">
-
-                                <div style="width:420px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px"><img src="/images/shou.png" align="absmiddle" /> <a href="/game/<? echo $rs['id']?>.html" title="点击进入游戏" target="_blank"><? echo "[".$rs['game']."]".$rs['name']."-<span class='hui12'>".$rs['stime']."</span>"?> </a><img
-                                        src="/images/hotser.gif" width="37" height="19" align="absmiddle" /> <img src="/images/newser.gif" width="37" height="19" align="absmiddle" /> </div>
-
+                                {volist name="recServer" id="vo"}
+                                <div style="width:420px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px">
+                                    <img src="__STATIC__/images/shou.png" align="absmiddle" />
+                                    <a href="" title="点击进入游戏" target="_blank">{$vo.game}{$vo.name}-<span class='hui12'>{vo.create_time}</span></a>
+                                    <img src="__STATIC__/images/hotser.gif" width="37" height="19" align="absmiddle" />
+                                    <img src="__STATIC__/images/newser.gif" width="37" height="19" align="absmiddle" />
+                                </div>
+                                {/volist}
                             </div>
                             <div class="hei18B box" style="padding:10px">所有服务器</div>
                             <div class="box_top" style="padding:10px">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                         <td>
-                                            <div style="width:415px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px"><img src="/images/shou.png" align="absmiddle" /><a href="/game/<? echo $rs['id']?>.html" title="点击进入游戏" target="_blank"> <? echo "[".$rs['game']."]".$rs['name']."-<span class='hui12'>".$rs['stime']."</span>"?></a>                                                <img src="/images/hotser.gif" width="37" height="19" align="absmiddle" /></div>
+                                            {volist name="gameServer" id="vo"}
+                                            <div style="width:415px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px">
+                                                <img src="__STATIC__/images/shou.png" align="absmiddle" />
+                                                <a href="" title="点击进入游戏" target="_blank"> {$vo.game}{$vo.name}-<span class='hui12'>{$vo.create_time}</span></a>
+                                                <img src="__STATIC__/images/hotser.gif" width="37" height="19" align="absmiddle" />
+                                            </div>
+                                            {/volist}
                                         </td>
                                     </tr>
                                 </table>
