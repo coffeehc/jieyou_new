@@ -32,7 +32,7 @@
                                 <div class="touming2" style="margin-top:10px" align="left">
                                     {if condition="!$user"}
                                     <!-- 没有登录 -->
-                                    <form id="form1" name="form1" action="">
+                                    <form id="user-login-form" name="form1" action="">
                                         <table width="100%" border="0" cellspacing="1" cellpadding="0">
                                             <tr>
                                                 <td colspan="2"><span class="hei18B">用户登陆</span><br />
@@ -42,19 +42,19 @@
                                                 <td width="82">帐号：</td>
                                                 <td width="215">
                                                     <label>
-								                        <input name="username" type="text" id="username" />
+								                        <input name="users" type="text" id="username" />
 							                         </label>
                                                  </td>
                                             </tr>
                                             <tr>
                                                 <td>密码：</td>
-                                                <td><input name="pass" type="password" id="pass" /></td>
+                                                <td><input name="password" type="password" id="pass" /></td>
                                             </tr>
                                             <tr>
                                                 <td>&nbsp;</td>
                                                 <td>
                                                     <label>
-							                            <input type="submit" name="Submit" value="-= 登陆 =-" />
+							                            <input type="button" id="user-login-submit" value="-= 登陆 =-" />
 						                            </label>
                                                     <a href="/api/qqlogin.php" title="点击这里使用QQ快速登陆" target="_self"><img src="__STATIC__/images/qq.png" align="absmiddle" border="0" /></a></td>
                                             </tr>
@@ -71,33 +71,23 @@
                                             <td colspan="2" class="hei18B">玩家信息</td>
                                         </tr>
                                         <tr>
-                                            <td width="29%"><img src="<?if($lrs['pic'] == null){echo '/images/nopic.jpg';} else { echo $lrs['pic'];}?>" width="90" height="90" /></td>
+                                            <td width="29%"><img src="{if condition='$user.pic'}{$user.pic}{else}/images/nopic.jpg{/if}" width="90" height="90" /></td>
                                             <td width="71%" class="hei12">
-                                                <div>昵称：
-                                                    <? echo $lrs['name']?>
-                                                </div>
-                                                <div>QQ号：
-                                                    <? echo $lrs['qq']?>
-                                                </div>
-                                                <div>邮箱：
-                                                    <? echo $lrs['email']?>
-                                                </div>
-                                                <div>登陆次数：
-                                                    <? echo $lrs['hits']?>
-                                                </div>
+                                                <div>昵称：{$user.name}</div>
+                                                <div>QQ号：{$user.qq}</div>
+                                                <div>邮箱：{$user.email}</div>
+                                                <div>登陆次数：{$user.hits}</div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td colspan="2" class="hei18B">最近玩过的游戏</td>
+                                            {volist name=":getUserGameByUid($user.id)" id="vo" empty="$userServerEmpty"}
+                                            <tr>
+                                                <td nowrap="nowrap"><a href="{$vo.gsid}" title="点击进入游戏" target="_blank"><span class="hei12">{$vo.name}</span></a></td>
+                                                <td align="right"><span class="hei12">{$vo.create_time}</span></td>
+                                            </tr>
+                                            {/volist}
                                         </tr>
-                                        echo "
-                                        <tr>
-                                            <td colspan='2'> 最近还没有玩过的游戏哦！</td>
-                                        </tr>
-                                        <tr>
-                                            <td nowrap='nowrap'><a href='/game/".$rows[' id '].".html' title='点击进入游戏' target='_blank'><span class='hei12'>".$rows['name']."</span></a></td>
-                                            <td align='right'><span class='hei12'>".date('Y-m-d',strtotime($rows['stime']))."</span></td>
-                                        </tr>";
                                     </table>
                                     <!-- @已经登录 -->
                                     {/if}
@@ -176,6 +166,33 @@
             </div>
         </div>
         {include file="public/_footer"}
+        <script type="text/javascript">
+            $(function() {
+                $("#user-login-submit").click(function() {
+                    var data = $('#user-login-form').serializeArray();
+                    var url = '{:url('Register/login')}';
+                    postData = {};
+                    $(data).each(function(i) {
+                        postData[this.name] = this.value;
+                    })
+                    $.post(url, postData, function(result) {
+                        if (result.code == 1) {
+                            layer.msg(result.message, {
+                                icon: 6,
+                                time: 1000
+                            }, function() {
+                                window.location.reload();
+                            });
+                        } else {
+                            layer.msg(result.message, {
+                                icon: 5,
+                                time: 1500
+                            });
+                        }
+                    }, 'json')
+                })
+            })
+        </script>
     </div>
 </body>
 
