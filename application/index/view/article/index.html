@@ -10,7 +10,7 @@
         </div>
         <div align="center" class="bodybk">
             <div class="bodydiv" align="left">
-                <table width="1200" border="0" cellspacing="0" cellpadding="0">
+                <table class="table">
                     <tr>
                         <td width="950" valign="top">
                             <!--游戏资讯-->
@@ -40,8 +40,8 @@
                                         {volist name="newServer" id="vo"}
                                         <tr>
                                             <td width="12%" align="center"><img src="__STATIC__/images/no/{$i}.gif" width="13" height="13" /></td>
-                                            <td width="65%" nowrap="nowrap"><a href="{$vo.id}" title="点击进入">{$vo.game}{$vo.name}</a></td>
-                                            <td width="23%" nowrap="nowrap"><a href="{$vo.id}" title="点击进入"><img src="__STATIC__/images/newser.gif" border="0" width="37" height="19" /></a></td>
+                                            <td width="65%" nowrap="nowrap"><a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入">{$vo.game}{$vo.name}</a></td>
+                                            <td width="23%" nowrap="nowrap"><a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入"><img src="__STATIC__/images/newser.gif" border="0" width="37" height="19" /></a></td>
                                         </tr>
                                         {/volist}
                                     </table>
@@ -73,7 +73,7 @@
                                 <div class="hong20T">游戏公告</div>
                                 <div style="min-height:200px;padding:5px">
                                     {volist name="gameArticle" id="vo"}
-                                    <li class="slist"><a href="{$vo.id}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
+                                    <li class="slist"><a href="{:url('Article/news',['id'=>$vo.id])}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
                                     {/volist}
                                 </div>
                             </div>

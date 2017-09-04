@@ -116,7 +116,7 @@
                     <td colspan="2" class="hei18B">最近玩过的游戏</td>
                     {volist name=":getUserGameByUid($user.id)" id="vo" empty="$userServerEmpty"}
                     <tr>
-                        <td nowrap="nowrap"><a href="{$vo.gsid}" title="点击进入游戏" target="_blank"><span class="hei12">{$vo.name}</span></a></td>
+                        <td nowrap="nowrap"><a href="{:url('Game/index',['id'=>$vo.gsid])}" title="点击进入游戏" target="_blank"><span class="hei12">{$vo.name}</span></a></td>
                         <td align="right"><span class="hei12">{$vo.create_time}</span></td>
                     </tr>
                     {/volist}
@@ -168,7 +168,7 @@
     <div class="main_image">
         <ul>
             {volist name="banner" id="vo"}
-            <li><span class="imgs" onClick="javascript:GoUrl('{:url('Youxi/index')}');" style="background:url('{$vo.banner_img}') center top no-repeat"></span></li>
+            <li><a href="{:url('Youxi/index',['id'=>$vo.gid])}"><span class="imgs" style="background:url('{$vo.banner_img}') center top no-repeat"></span></a></li>
             {/volist}
         </ul>
         <a href="javascript:;" id="btn_prev"></a>

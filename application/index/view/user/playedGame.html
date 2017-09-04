@@ -1,6 +1,6 @@
 {include file="userpublic/_meta"}
 
-<title>最近玩过的游戏</title>
+<title>{$user.users}：欢迎登陆一起玩.游戏用户中心！_一起玩.游戏</title>
 <script type="text/javascript" language="javascript">
     $(function() {
         $(".right .box").children("div").mouseenter(function() {
@@ -86,12 +86,12 @@
                                 <tr bgcolor="#FFFFFF">
                                     <td>{$i}</td>
                                     <td>
-                                        <a href="" target="_blank" title="点击进入游戏">{$vo.name}</a>
+                                        <a href="{:url('Game/index',['id'=>$vo.id])}" target="_blank" title="点击进入游戏">{$vo.name}</a>
                                     </td>
                                     <td>{$vo.create_time}</td>
                                     <td><a href="">我要充值</a>
                                         <a href="javascript:;" onclick="getGift('{$vo.gsid}')" style="margin-left:10px;">获得游戏礼包</a></td>
-                                    <td><a href="" target="_blank">进入游戏</a></td>
+                                    <td><a href="{:url('Game/index',['id'=>$vo.id])}" target="_blank">进入游戏</a></td>
                                 </tr>
                                 {/volist}
                             </tbody>
