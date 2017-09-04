@@ -62,11 +62,11 @@
                                     <div style="padding:5px 0px 0px 5px">
                                         {volist name="games" id="vo"}
                                         <div class="youxi">
-                                            <div class="youxiimg"><a href="{$vo.id}" title="{$vo.name}"><img src="{$vo.pic3}" width="200" height="100" border="0" alt="{$vo.name}" /></div>
+                                            <div class="youxiimg"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}"><img src="{$vo.pic3}" width="200" height="100" border="0" alt="{$vo.name}" /></div>
 				                            <div class="youxibt">
-    					                        <div class="inyouxi"><a href="{$vo.id}" title="点击进入游戏">进入游戏</a></div>
+    					                        <div class="inyouxi"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="点击进入游戏">进入游戏</a></div>
                                                 <div class="youxiname">
-                                                    <a href="{$vo.id}" title="{$vo.name}">{$vo.name}</a>
+                                                    <a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}">{$vo.name}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -94,8 +94,8 @@
                                         {volist name="newServer" id="vo"}
                                         <tr>
                                             <td width="12%" align="center"><img src="__STATIC__/images/no/{$i}.gif" width="13" height="13" /></td>
-                                            <td width="65%" nowrap="nowrap"><a href="{$vo.id}" title="点击进入">{$vo.game}{$vo.name}</a></td>
-                                            <td width="23%" nowrap="nowrap"><a href="{$vo.id}" title="点击进入"><img src="__STATIC__/images/newser.gif" border="0" width="37" height="19" /></a></td>
+                                            <td width="65%" nowrap="nowrap"><a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入">{$vo.game}{$vo.name}</a></td>
+                                            <td width="23%" nowrap="nowrap"><a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入"><img src="__STATIC__/images/newser.gif" border="0" width="37" height="19" /></a></td>
                                         </tr>
                                         {/volist}
                                     </table>
@@ -108,7 +108,7 @@
                                 <div class="hong20T">游戏公告</div>
                                 <div style="min-height:200px;padding:5px">
                                     {volist name="gameArticle" id="vo"}
-                                    <li class="slist"><a href="{$vo.id}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
+                                    <li class="slist"><a href="{:url('Article/news',['id'=>$vo.id])}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
                                     {/volist}
                                 </div>
                             </div>
