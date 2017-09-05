@@ -3,7 +3,8 @@
   RewriteEngine On
 
   RewriteRule ^pay/payok.php$ /api/payok/index
-
+  RewriteRule ^cps/([0-9]+)$ /index/register/index?tjrid=$1
+  RewriteRule ^cps/([0-9a-zA-Z]+)\.html$ /index/register/index?tjr=$1
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]

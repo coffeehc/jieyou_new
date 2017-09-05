@@ -5,7 +5,21 @@ use think\Controller;
 class Register extends BaseController {
 
     public function index() {
-        return $this->fetch();
+        $tjrid = $tjr = '';
+        $data = input('param.');
+        if($data) {
+            if($data['tjrid'] && $data['tjrid'] != '') {
+                $tjrInfo = model('User')->field('id,users')->where('id='.$data['tjrid'])->find();
+            }else if($data['tjr'] && $data['tjr'] != '') {
+                $tjrInfo = model('User')->field('id,users')->where('users='.$data['tjr'])->find();
+            }
+            $tjrid = $tjrInfo['id'];
+            $tjr = $tjrInfo['users'];
+        }
+        return $this->fetch('',[
+            'tjrid' => !empty($tjrid) ? $tjrid : '',
+            'tjr' => !empty($tjr) ? $tjr : '',
+        ]);
     }
     /**
      * 注册用户
@@ -22,6 +36,10 @@ class Register extends BaseController {
         if(model('User')->getUserByUsername($data['users'])) {
             return show(0,'用户名已存在');
         }
+        if($data['name'] == '') {
+            $data['name'] = $data['users'];
+        }
+        $data['hits'] = 1;
         unset($data['password_confirm']);
         try {
             $res = model('User')->save($data);
