@@ -30,7 +30,7 @@ class UserPay extends Model {
         return $res['money'];
     }
 
-    
+
 
     /**
      * 通过ID 获取下线的充值记录
@@ -78,6 +78,16 @@ class UserPay extends Model {
                 ->where('b.tjrid='.$id)
                 ->order('a.id desc')
                 ->paginate(10);
+        return $res;
+    }
+
+    /**
+     * 根据oid 获取订单信息
+     * @param  [type] $oid [description]
+     * @return [type]      [description]
+     */
+    public function getOrderInfoByOid($oid) {
+        $res = $this->field(true)->where("oid = '$oid'")->find();
         return $res;
     }
 }

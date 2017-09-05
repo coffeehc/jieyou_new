@@ -69,7 +69,7 @@ class Pay extends Controller {
                 $serverNo = $gameServerInfo['sid'];
                 $uid = $user['users'];
                 $OrderID = date('Ymdhis',time()).rand(1000,9999);
-                $amount = intval($data['money']);
+                $amount = intval(trim($data['money']));
                 $paytype = $payInfo['pay'];
                 $rel = urlencode("http://".$_SERVER['SERVER_NAME']);  // 星蝶充值参数充值成功跳转地址
                 $time = time();
@@ -90,7 +90,7 @@ class Pay extends Controller {
 
                 $va_url = 'http://www.ufojoy.com/auth/payto.phtml';
                 // post 提交的数据串
-                $post_fields = "agent_id={$agent_id}&game_id={$game_id}&serverNo={$serverNo}&uid={$uid}&OrderID={$OrderID}&amount={$amount}&paytype={$paytype}&rel={$rel}&time={$time}&sign={$sign}";
+                $post_fields = "agent_id={$agent_id}&game_id={$game_id}&serverNo={$serverNo}&uid={$uid}&OrderID={$OrderID}&amount={$amount}&paytype={$paytype}&rel={$rel}&time={$time}&charname={$charname}&sign={$sign}";
                 $curl = curl_init(); //初始化一个cURL会话，必有
     			//curl_setopt()函数用于设置 curl 的参数，其功能非常强大，具体看手册
     			curl_setopt($curl, CURLOPT_URL, $va_url);      //设置验证登陆的 url 链接

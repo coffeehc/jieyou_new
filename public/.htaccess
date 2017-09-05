@@ -2,6 +2,8 @@
   Options +FollowSymlinks -Multiviews
   RewriteEngine On
 
+  RewriteRule ^pay/payok.php$ /api/payok/index
+
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
