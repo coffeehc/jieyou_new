@@ -11,7 +11,7 @@ class User extends BaseController {
         parent::_initialize();
         $isLogin = $this->userIsLogin();
         if(!$isLogin) {
-            return $this->error('你还没有登录哦，请先登录');
+            return $this->error('你还没有登录哦，请先登录','index/index');
         }
     }
 

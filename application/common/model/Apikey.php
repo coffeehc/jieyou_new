@@ -25,4 +25,14 @@ class Apikey extends Model {
         $res = $this->field('id,name')->select();
         return $res;
     }
+
+    /**
+     * 通过ID 获取平台信息
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
+    public function getPtInfoById($id) {
+        $res = $this->field(true)->find();
+        return $res;
+    }
 }

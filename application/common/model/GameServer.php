@@ -94,7 +94,7 @@ class GameServer extends BaseModel {
      * @return [type] [description]
      */
     public function getGameServerByid($id) {
-        $res = $this->field('gid,sid')->where('id='.$id)->find();
+        $res = $this->field(true)->where('id='.$id)->find();
         return $res;
     }
 

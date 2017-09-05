@@ -89,7 +89,7 @@
                                         <a href="{:url('Game/index',['id'=>$vo.id])}" target="_blank" title="点击进入游戏">{$vo.name}</a>
                                     </td>
                                     <td>{$vo.create_time}</td>
-                                    <td><a href="">我要充值</a>
+                                    <td><a href="{:url('Pay/index',['id'=>$vo.gsid])}">我要充值</a>
                                         <a href="javascript:;" onclick="getGift('{$vo.gsid}')" style="margin-left:10px;">获得游戏礼包</a></td>
                                     <td><a href="{:url('Game/index',['id'=>$vo.id])}" target="_blank">进入游戏</a></td>
                                 </tr>
