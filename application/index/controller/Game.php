@@ -51,6 +51,7 @@ class Game extends BaseController {
             // 登录的用户信息
             $user = $this->getLoginUser();
             $serverId = input('param.id');
+            $url = '';
             // 是否有传入游戏编号
             if(empty($serverId)) {
                 // 如果没有服务器ID 则获取最近开服的服务器信息
@@ -108,6 +109,8 @@ class Game extends BaseController {
             }
             return $this->fetch('',[
                 'url' => $url,
+                'game' => $gameInfo,
+                'server' => $serverInfo,
             ]);
         }
     }

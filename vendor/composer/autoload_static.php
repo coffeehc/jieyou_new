@@ -17,6 +17,10 @@ class ComposerStaticInit9e3a93cdff9f581d2814220732d28fbe
             'think\\captcha\\' => 14,
             'think\\' => 6,
         ),
+        'k' => 
+        array (
+            'kuange\\qqconnect\\' => 17,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -31,6 +35,10 @@ class ComposerStaticInit9e3a93cdff9f581d2814220732d28fbe
         'think\\' => 
         array (
             0 => __DIR__ . '/../..' . '/thinkphp/library/think',
+        ),
+        'kuange\\qqconnect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kuange/qqconnect',
         ),
     );
 

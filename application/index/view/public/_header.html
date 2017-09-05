@@ -12,7 +12,7 @@
                 {else}
                 <a href='/#user-login-form'>登陆</a> | <a href="{:url('Register/index')}">注册</a>|
                 {/if}
-                <a href=# onclick="javascript:addFavorite2()">加入收藏</a></span></td>
+                <a href="javascript:;" onclick="addFavorite2()">加入收藏</a></span></td>
             </tr>
         </table>
     </div>
@@ -24,8 +24,8 @@
                 <td width="35%">
                     <form id="formSearch">
                         <div>
-                            <input type="text" name="gamekeyword" class="sosu" />
-                            <input type="button" id="serarch-button" style="border:1px #0099FF solid;border-radius:10px;line-height:30px;width:60px;cursor:pointer;" value="搜索"/>
+                            <input type="text" name="gamekeyword" id="gamekey" class="sosu" placeholder="搜索游戏名称"/>
+                            <input type="button" id="search-button" style="border:1px #0099FF solid;border-radius:10px;line-height:30px;width:60px;cursor:pointer;" value="搜索"/>
                         </div>
                         <div>热门搜索词：<a href="{:url('Youxi/index',['id'=>67])}">鬼吹灯</a> <a href="{:url('Youxi/index',['id'=>73])}">九天封神</a> <a href="{:url('Youxi/index',['id'=>66])}">思美人</a> <a href="{:url('Youxi/index',['id'=>76])}">新焚天之怒</a></div>
                     </form>
@@ -49,5 +49,20 @@
     </div>
     <!--head-->
 <script type="text/javascript">
-    var logout_url = '{:url('Register/logout')}'
+    var logout_url = '{:url('Register/logout')}';
+
+    $(function() {
+        $("#search-button").click(function() {
+            var name = $("#gamekey").val();
+            var url = '{:url('Search/index')}';
+            if(name == '') {
+                layer.msg('还没有输入游戏哦',{icon:5,time:1500});
+            }else {
+                $.post(url,{name:name},function() {
+
+                },'json');
+            }
+
+        });
+    });
 </script>

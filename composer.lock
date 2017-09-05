@@ -4,8 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "786db149f3fc0327c3d1eb9670d10cae",
+    "content-hash": "45f179224203ce6f61457ffddc2ee78e",
     "packages": [
+        {
+            "name": "kuange/qqconnect",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kuange/qqconnect.git",
+                "reference": "3355564ca7bc1f59e6a0220891fc1cd738452f94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/kuange/qqconnect/3355564ca7bc1f59e6a0220891fc1cd738452f94.zip",
+                "reference": "3355564ca7bc1f59e6a0220891fc1cd738452f94",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "kuange\\qqconnect\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "申法宽",
+                    "email": "sfk@live.cn"
+                }
+            ],
+            "description": "qqconnect package",
+            "time": "2016-08-11T08:21:15+00:00"
+        },
         {
             "name": "topthink/framework",
             "version": "v5.0.10",

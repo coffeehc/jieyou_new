@@ -132,5 +132,40 @@
             }
         ],
         "description": "captcha package for thinkphp5"
+    },
+    {
+        "name": "kuange/qqconnect",
+        "version": "0.0.1",
+        "version_normalized": "0.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kuange/qqconnect.git",
+            "reference": "3355564ca7bc1f59e6a0220891fc1cd738452f94"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/kuange/qqconnect/3355564ca7bc1f59e6a0220891fc1cd738452f94.zip",
+            "reference": "3355564ca7bc1f59e6a0220891fc1cd738452f94",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2016-08-11T08:21:15+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "kuange\\qqconnect\\": "/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "申法宽",
+                "email": "sfk@live.cn"
+            }
+        ],
+        "description": "qqconnect package"
     }
 ]
