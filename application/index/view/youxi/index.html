@@ -123,7 +123,7 @@
                                 <div>
                                     {volist name="gameArticle" id="vo" empty="$articleEmpty"}
                                     <div style="padding:5px">
-                                        <a href="{:url('Article/news',['id'=>$vo.id])}" title="{$vo.title}" target="_blank">{$vo.title}</a>
+                                        <a href="{:url('Article/news',['id'=>$vo.id])}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,18,'utf-8')}</a>
                                     </div>
                                     {/volist}
                                 </div>

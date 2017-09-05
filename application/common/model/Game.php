@@ -65,4 +65,14 @@ class Game extends Model {
                 ->select();
         return $res;
     }
+
+    /**
+     * 通过游戏名字获取游戏信息
+     * @param  [type] $gamename [description]
+     * @return [type]           [description]
+     */
+    public function getGameInfoByGameName($gamename) {
+        $res = $this->field(true)->where("name = '$gamename'")->find();
+        return $res;
+    }
 }

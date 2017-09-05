@@ -58,8 +58,12 @@
             if(name == '') {
                 layer.msg('还没有输入游戏哦',{icon:5,time:1500});
             }else {
-                $.post(url,{name:name},function() {
-
+                $.post(url,{name:name},function(result) {
+                    if(result.code == 0) {
+                        layer.msg('没有找到相关游戏',{icon:5,time:1500});
+                    }else {
+                        window.location.href = '/index/youxi/index/id/'+result.data.id;
+                    }
                 },'json');
             }
 
