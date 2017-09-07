@@ -126,4 +126,18 @@ class GameServer extends BaseModel {
                 ->paginate();
         return $res;
     }
+
+    /**
+     * 微端登录的服务器数据
+     * @param  [type] $gid [description]
+     * @return [type]      [description]
+     */
+    public function getGameServerArrayByGid($gid) {
+        $res = $this
+                ->field(true)
+                ->where("create_time <= ".time()." and gid='$gid'")
+                ->order('sid desc')
+                ->select()->toArray();
+        return $res;
+    }
 }

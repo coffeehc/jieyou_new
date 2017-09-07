@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<title>微端</title>
+		<meta name="frontend" content="zhouyh">
+        <link type="text/css" rel="stylesheet" href="css/game1.css">
+		<script type="text/javascript" src="../public/js/jquery181.js"></script>
+		<script type="text/javascript" src="../public/js/common.js"></script>
+	</head>
+
+	<body style="background : url(images/bg.jpg);width:100%;height:100%;">
+		<div class="container relative log">
+			<div class="log-form relative">
+				<div id="loginDiv">
+					<iframe name="iframe_form" width="0" height="0" frameborder="none" marginheight="0" marginwidth="0" style="display:none;"></iframe>
+					<form class="quc-form" target="iframe_form" autocomplete="off" id="Form1" name="Form1">
+						<input name="gameid" id="gameid" type="hidden" value="bwzx"> <!--游戏编号-->
+						<p class="p-l-usr">
+							<label for="log-username">帐号：</label>
+							<input name="username" id="username" class="log-username" type="text"><span class="status status-w"></span>
+						</p>
+						<p class="p-l-pwd">
+							<label for="log-password">密码：</label>
+							<input name="pwd" id="pwd" class="log-password" type="password"><span class="status status-w"></span>
+						</p>
+						<p class="log-form-footer">
+							<span  class="error" id="info_error"></span>
+						</p>
+						<input type="button" name="sub" id="sub"  value=" " class="btn btn-log"/>
+					</form>
+				</div>
+				<div id="gameserver" class="news-wrap2" style="display:none;background-color:gray;">
+				</div>
+			</div>
+
+
+			<div class="news-wrap">
+				<ul class="news">
+					<!--li>
+						<span class="sp1">
+							<a href="/news/127.html" target="_blank" title="鬼吹灯之牧野诡事">
+								鬼吹灯之牧野诡事
+							</a>
+						</span>
+					</li-->
+					<li>
+						<span class="sp1">
+							<a href="javascript:;" target="_blank" title="高手进阶">
+								高手进阶
+							</a>
+						</span>
+					</li>
+				</ul>
+				<div class="kv-focus">
+					<div id="log-kv" class="log-kv">
+						<div class="log-kv-panel" style="display: block;">
+							<img src="images/img01.jpg">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

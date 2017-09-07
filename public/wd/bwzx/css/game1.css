@@ -1,0 +1,647 @@
+@charset "utf-8";
+
+html, body, div, span, iframe, h1, h2, p, blockquote, pre, abbr, em, img, samp, small, strong, sub, b, i, dl, dt, dd, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, header, hgroup, menu, nav, section, summary {
+    margin  : 0;
+    padding : 0;
+    border  : 0;
+    outline : 0;
+}
+
+a, input, button {
+    padding : 0;
+    margin  : 0;
+    outline : 0;
+    border  : none;
+}
+
+html {
+    overflow : hidden;
+}
+
+body {
+    font-size   : 12px;
+    font-family : "Microsoft Yahei", serif;
+    background  : #fff;
+    overflow    : hidden;
+}
+
+ul {
+    list-style : none;
+}
+
+a {
+    text-decoration : none;
+    color           : #c96;
+}
+
+a:hover {
+    text-decoration : underline;
+    color           : #e82b00;
+}
+
+table {
+    border-collapse : collapse;
+    border-spacing  : 0;
+}
+
+input, select, img {
+    vertical-align : middle;
+}
+
+.clearfix {
+    zoom : 1;
+}
+
+.clearfix:after {
+    clear   : both;
+    display : block;
+    content : "";
+}
+
+/* function */
+.relative {
+    position : relative;
+}
+
+.left {
+    float    : left;
+    _display : inline;
+}
+
+.right {
+    float    : right;
+    _display : inline;
+}
+
+.placeholder {
+    color : #6f5850 !important;
+}
+
+.hide {
+    display : none;
+}
+
+.btn {
+    display  : block;
+    position : absolute;
+}
+
+.error{color: red;}
+
+.btn-s {
+    float               : left;
+    _display            : inline;
+    padding             : 0;
+    display             : block;
+    line-height         : 29px;
+    text-align          : center;
+    color               : #d8bd8c;
+    background-image    : url(../images/spritesheet.png);
+    _background-image   : url(../images/spritesheet-p8.png);
+    background-position : -221px 0;
+    width               : 120px;
+    height              : 29px;
+}
+
+.server-list-panel .btn-s{
+    margin: 5px 5px;
+}
+
+.btn-s:hover {
+    background-position : 0px -164px;
+    text-decoration     : none;
+    color               : #fc8f73;
+}
+
+/* layout */
+.container.log, .container.reg, .container.server, .container.history {
+    width      : 624px;
+    height     : 402px;
+    overflow   : hidden;
+    color      : #3e3131;
+    background : #170201;
+    background : url(../images/bg-log.jpg) no-repeat top left;
+}
+
+.container.reg {
+    background : url(../images/bg-log.jpg) no-repeat top left;
+}
+
+.news-wrap {
+    width: 313px;
+    height: 382px;
+    overflow : hidden;
+    position : absolute;
+    left     : 6px;
+   /* top      : 37px;*/
+    z-index  : 2;
+}
+
+.container.server {
+    background : url(../images/bg-ser.jpg) no-repeat top left;
+}
+
+/* log */
+
+/* kv */
+.kv-focus {
+    width: 282px;
+    height: 143px;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    left: 22px;
+}
+
+.log-kv {
+    position : relative;
+    width: 282px;
+    height: 143px;
+    overflow : hidden;
+}
+
+.log-kv img {
+    vertical-align : bottom;
+    width: 282px;
+    height: 143px;
+}
+
+
+
+/* news */
+.news {
+    width: 272px;
+    height: 121px;
+    overflow: hidden;
+    position: absolute;
+    top: 234px;
+    left: 34px;
+}
+
+.news li {
+    height        : 25px;
+    border-bottom : none;
+    line-height   : 25px;
+    *float        : left;
+}
+
+.news li .sp1 {
+    float         : left;
+    display       : inline-block;
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+    width         : 220px;
+    color         : #cccdc8;
+}
+
+.news li a {
+    color : #cccdc8;
+}
+
+.news li a:hover {
+    color : #e5cd9e !important;
+}
+
+.news li .a0 {
+    margin-right : 5px;
+}
+
+.news-date {
+    float : left;
+    color : #cccdc8;
+}
+
+.news-more {
+    position : absolute;
+    left     : 270px;
+    top      : 210px;
+    color    : #e4e4e5;
+}
+
+.news-more:hover {
+    color : #e5cd9e;
+}
+
+.log-reg-top {
+    position   : absolute;
+    left       : 270px;
+    top        : 250px;
+    border-top : 3px #000 solid;
+    width      : 550px;
+    display    : none;
+}
+
+.log-reg-top span {
+    background-position : -468px -33px;
+    width               : 127px;
+    height              : 35px;
+    float               : left;
+    text-align          : center;
+    line-height         : 35px;
+    font-size           : 20px;
+    color               : #fff;
+}
+
+/* log-form */
+.log-form, .reg-form {
+    width: 279px;
+    height: 350px;
+    overflow: hidden;
+    left: 325px;
+    position: absolute;
+    padding-top: 28px;
+}
+
+.log-form p, .reg-form p {
+    width    : 279px;
+    height   : 30px;
+    overflow : hidden;
+    padding  : 29px 0 11px;
+    position : relative;
+}
+
+.reg-form p.p-r-usr {
+    padding-top : 30px;
+}
+
+.reg-form p.p-r-pwd {
+    padding-top : 11px;
+}
+
+.reg-form p.p-r-pwd2 {
+    padding-top : 10px;
+}
+
+.log-form p.p-l-pwd {
+    padding-top    : 11px;
+    padding-bottom : 10px;
+}
+
+.log-form label, .reg-form label {
+    display : none;
+}
+
+.log-form label {
+    /* text-indent: 12px; */
+}
+
+.log-form input, .reg-form input {
+    width: 162px;
+    height: 30px;
+    line-height: 30px \9;
+    color: rgb(204, 202, 181);
+    left: 98px;
+    line-height: 30px;
+    margin-left: 99px;
+    background: none;
+}
+
+.log-form span.status, .reg-form span.status {
+    display : none;
+}
+
+.log-form p.log-form-footer {
+    padding: 6px 0 0 87px;
+    height: 20px;
+    background: none;
+    line-height: 20px;
+    width: 192px;
+}
+
+.log-form-footer .checkbox {
+}
+
+.log-form .btn-log,.log-form .btn-reg {
+    left             : 42px;
+    top              : 183px;
+    width            : 203px;
+    height           : 72px;
+    margin-left: 0;
+}
+
+.log-form .btn-log:hover {
+    background: url(../images/spritesheet.png) no-repeat;
+    background-position: -5px 6px;
+}
+
+.reg-form .reg-tip {
+    width       : 242px;
+    height      : 22px;
+    padding     : 5px 0;
+    line-height : 22px;
+    display     : none;
+}
+
+.reg-form p.sc {
+    width: 230px;
+    padding: 0;
+    height: 20px;
+    line-height: 20px;
+    background: none;
+    position: absolute;
+    top: 197px;
+    left: 50px;
+}
+
+.reg-form p.sc a {
+    margin    : 0;
+    font-size : 12px;
+    color     : #e4e4e5;
+}
+
+/* server */
+.ingame {
+    width    : 205px;
+    height   : 66px;
+    position : absolute;
+    left     : 313px;
+    top      : 34px;
+    display  : none;
+}
+
+.ingame a.btn-s {
+    text-indent         : -9999px;
+    float               : left;
+    margin              : 0;
+    background-image    : url(../images/spritesheet.png);
+    _background-image   : url(../images/spritesheet-p8.png);
+    background-position : 0px -154px;
+    width               : 205px;
+    height              : 66px;
+}
+
+.ingame a.btn-s:hover {
+    background-position : -215px -154px;
+}
+
+.welcome {
+    width       : 550px;
+    height      : 28px;
+    line-height : 28px;
+    color       : #ffab49;
+    position    : absolute;
+    top         : 37px;
+    left        : 40px;
+    text-align  : left;
+}
+
+.welcome .account, .welcome-hty .account {
+    color        : #ffab49;
+}
+
+.welcome a, .welcome-hty a {
+    color       : #ffab49;
+    margin-left : 20px;
+}
+
+.welcome a.logout {
+    color : #958a84;
+}
+
+.lately-text{
+    position    : absolute;
+    top         : 72px;
+    left        : 40px;
+    color       : #958a84;
+    display     : none;
+    overflow    : hidden;
+    font-size   : 12px;
+    height      : 24px;
+    line-height: 24px;
+}
+
+.lately{
+    height     : 29px;
+    position   : absolute;
+    top        : 72px;
+    left       : 120px;
+    text-align : center;
+    color      : #ffd565;
+    overflow   : hidden;
+}
+
+.lately {
+    display : none;
+}
+
+.lately div {
+    display : inline;
+    float   : left;
+    width   : 147px;
+}
+
+.lately span {
+    float   : left;
+    margin  : 4px 0 0 12px;
+    display : none;
+}
+
+.best {
+    display : none;
+}
+
+.server-fastin {
+    width       : 80px;
+    height      : 24px;
+    line-height : 24px;
+    float       : left;
+    display     : inline;
+    padding     : 0;
+    text-align  : center;
+    color       : #d4a864;
+    background  : none;
+}
+.btn-fastin {
+    float          : right;
+    display        : inline-block;
+    vertical-align : middle;
+    width          : 78px;
+    height         : 26px;
+    line-height    : 26px;
+    text-align     : center;
+    color          : #311c0e;
+    text-indent    : -9999px;
+}
+
+.btn-fastin:hover {
+}
+
+.server-list {
+    width    : 544px;
+    height   : 216px;
+    position : absolute;
+    top      : 144px;
+    left     : 40px;
+    z-index  : 5;
+}
+
+.server-list-title {
+    width         : 540px;
+    overflow      : hidden;
+    border        : none;
+    padding       : 0;
+    margin-bottom : 7px;
+    margin-top: 4px;
+    text-align    : center;
+}
+
+.server-list-title li {
+    width        : 81px;
+    height       : 28px;
+    display      : inline-block;
+    margin-top   : 10px;
+    float: left;
+}
+
+.server-list-title li a {
+    display       : block;
+    text-align    : center;
+    line-height   : 22px;
+    border        : none;
+    border-bottom : 0;
+    color         : #958a84;
+    width         : 81px;
+    height        : 22px;
+    background    : url(../images/spritesheet.png) no-repeat;
+    background-position: -221px -137px;
+}
+
+.server-list-title li a.focus {
+    background-position: -221px -105px;
+}
+
+.server-list-p {
+    width                      : 520px;
+    padding: 0 12px;
+    height                     : 159px;
+    overflow                   : auto;
+    scrollbar-arrow-color      : #0e2204;
+    scrollbar-face-color       : #6b3e2a;
+    scrollbar-darkshadow-color : #4e5760;
+    scrollbar-highlight-color  : #2f1d1d;
+    scrollbar-3dlight-color    : #4e5760;
+    scrollbar-shadow-color     : #372215;
+    scrollbar-track-color      : #2f1d1d;
+}
+
+.welcome-hty {
+    padding     : 27px 0 0 54px;
+    height      : 28px;
+    line-height : 28px;
+    color       : #dcedff;
+    width       : 344px;
+}
+
+.welcome-hty a {
+    margin : 0 10px;
+}
+
+.welcome-hty .center {
+    color : #8eacf8;
+}
+
+.logout {
+    color : #3e77f7;
+}
+
+.rl {
+    width       : 860px;
+    height      : 38px;
+    line-height : 38px;
+    position    : absolute;
+    bottom      : 74px;
+    left        : 48px;
+}
+
+.name {
+    color : #dcedff;
+}
+
+.hty-server {
+    width    : 760px;
+    height   : 38px;
+    position : absolute;
+    left     : 94px;
+    top      : 0;
+}
+
+.hty-server li {
+    float        : left;
+    _display     : inline;
+    width        : 196px;
+    height       : 38px;
+    margin-right : 22px;
+    text-align   : center;
+}
+
+.hty-server a {
+    display     : block;
+    width       : 196px;
+    height      : 38px;
+    color       : #fff;
+    line-height : 38px;
+}
+
+.hty-server a:hover {
+    color : #ffd81a;
+}
+
+.server-more { 
+    color    : rgb(255, 180, 0);
+    position : absolute;
+    right    : 361px;
+    bottom   : 148px;
+}
+
+.server-more:hover {
+    color : rgb(255, 180, 0);
+}
+
+.news-wrap2 {
+    width: 313px;
+    height: 382px;
+    overflow : hidden;
+    position : absolute;
+    left     : 6px;
+   /* top      : 37px;*/
+    z-index  : 2;
+}
+
+.news2 {
+    width: 240px;
+    height: 320px;
+    overflow-y: scroll;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.news2 li {
+    height        : 25px;
+    border-bottom : none;
+    line-height   : 25px;
+    *float        : left;
+}
+
+.news2 li .sp1 {
+    float         : left;
+    display       : inline-block;
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+    width         : 150px;
+    color         : #cccdc8;
+}
+
+.news2 li a {
+    color : #cccdc8;
+}
+
+.news2 li a:hover {
+    color : #e5cd9e !important;
+}
+
+.news2 li .a0 {
+    margin-right : 5px;
+}
