@@ -10,6 +10,20 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
+
+/**
+ *对输入过滤
+ * @param  [type] $data [description]
+ * @return [type]       [description]
+ */
+function hc_filter($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    $data = htmlentities($data);
+    return $data;
+}
+
 function show($code,$message='',$data=[]) {
     return [
         'code' => intval($code),

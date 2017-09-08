@@ -113,6 +113,15 @@ class GameServer extends BaseModel {
         return $res;
     }
 
+    public function getRecServerFindByGid($gid) {
+        $res = $this
+                ->field(true)
+                ->where("create_time <= ".time()." AND gid= '$gid'")
+                ->order('sid desc')
+                ->find();
+        return $res;
+    }
+
     /**
      * 根据游戏GID 获取游戏服务器
      * @param  [type] $gid [description]

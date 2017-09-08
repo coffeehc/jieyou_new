@@ -13,4 +13,13 @@ class Flash extends Model {
         $res = $this->count();
         return $res;
     }
+
+    /**
+     * 通过游戏GID 获取flash信息
+     * @return [type] [description]
+     */
+    public function getFlashInfoByGid($gid) {
+        $res = $this->field(true)->where("gid = '$gid'")->find();
+        return $res;
+    }
 }

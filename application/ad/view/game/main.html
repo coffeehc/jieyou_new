@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{$flashInfo.title}</title>
+    <style type="text/css" media="screen">
+        html,
+        body {
+            height: 100%;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            text-align: center;
+            background-color: #0;
+        }
+
+        object:focus {
+            outline: none;
+        }
+
+        #flashContent {
+            display: ;
+        }
+    </style>
+    <script type="text/javascript" src="__STATIC__/index/js/swfobject.js"></script>
+    <script type="text/javascript" src="__STATIC__/index/js/jquery181.js"></script>
+    <script language="javascript">
+        var win_x = 0;
+        var win_y = 0;
+
+        function callbackLogin(x) {
+            var o = document.getElementById('login');
+            o.style.left = ((win_x - 565) / 2) + 'px';
+            o.style.top = ((win_y - 377) / 2 - 50) + 'px';
+            o.style.display = '';
+            var img = new Image();
+            img.src = '/images/cmd2.jpg';
+        }
+
+        function ChkForm() {
+            var accObj = document.getElementById('acc');
+            var pwdObj = document.getElementById('pwd');
+            var pwd2Obj = document.getElementById('pwd2');
+            if (accObj.value.length < 5) {
+                alert('账号长度不能少于5!');
+                accObj.focus();
+                return false;
+            }
+            if (pwdObj.value.length < 5) {
+                alert('密码长度不能少于5!');
+                pwdObj.focus();
+                return false;
+            }
+            if (pwd2Obj.value.length > 0 && pwdObj.value != pwd2Obj.value) {
+                alert('密码不一致!');
+                pwd2Obj.focus();
+                return false;
+            }
+            return true;
+        }
+
+        window.onload = function() {
+            var swfVersionStr = "10.3.0";
+            var xiSwfUrlStr = "/swf/public/playerProductInstall.swf";
+            var flashvars = {};
+
+            var params = {};
+            params.quality = "high";
+            params.bgcolor = "#0";
+            params.allowscriptaccess = "always";
+            params.allowfullscreen = "true";
+            params.wmode = "Transparent";
+            var attributes = {};
+            attributes.id = "main";
+            attributes.name = "Main";
+            attributes.align = "middle";
+            swfobject.embedSWF(
+                "{$flashInfo.swf}", "flashContent",
+                "100%", "100%",
+                swfVersionStr, xiSwfUrlStr,
+                flashvars, params, attributes);
+            swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+
+            var img = new Image();
+            img.src = '/images/login.jpg';
+
+            win_x = document.documentElement.clientWidth;
+            win_y = document.documentElement.clientHeight;
+        }
+    </script>
+</head>
+
+<body onclick="javascript:callbackLogin('1');">
+    <div id="flashContent">
+        <p>
+            <a href='http://www.adobe.com/go/getflashplayer' style='color:black;margin-left:50px;'>您电脑上的Flash Player版本过低，请点击安装最新版本</a>
+        </p>
+    </div>
+    <div id="login" style="background-image:url(/images/login.jpg);width:565px;height:377px;background-repeat:no-repeat;background-position:top;position:absolute;z-index:1;left:400px;top:100px;display:none;">
+        <table width="70%" height="80%" align="center" style="margin-top:70px;">
+            <form id="form1" name="form1" method="post" action="{:url('login')}" target="dataIFrm">
+                <tr>
+                    <td>
+                        用户名：
+                    </td>
+                    <td>
+                        <input type="text" name="users" id="acc" style="width:170px;" />
+                    </td>
+                    <td>
+                        <span id="user-warning">长度5~12位</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        登录密码：
+                    </td>
+                    <td>
+                        <input type="password" name="password" id="pwd" style="width:170px;" />
+                    </td>
+                    <td>
+                        <span id="pwd-warning">长度5~12位</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        重复密码：
+                    </td>
+                    <td>
+                        <input type="password" name="password2" id="pwd2" style="width:170px;" />
+                    </td>
+                    <td>
+                        <span id="repwd-warning">长度5~12位</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="hidden" name="gid" id="gid" value="{$flashInfo.gid}">
+                        <input type="button" id="reg-button" title="点击注册或者登录" style="background-color:#272727;width:203px;height:60px;background-image:url(/images/cmd.png);background-repeat:no-repeat;background-position:top;border:0px;cursor:pointer;" onmouseover="javascript:this.style.backgroundImage='url(/images/cmd2.png)';"
+                            onmouseout="javascript:this.style.backgroundImage='url(/images/cmd.png)';" />
+                    </td>
+                </tr>
+            </form>
+        </table>
+        <iframe name="dataIFrm" id="dataIFrm" frameborder="false" scrolling="none;" style="border:none;" width="0" height="0" allowtransparency="true"></iframe>
+    </div>
+</body>
+    <script type="text/javascript">
+        $(function() {
+            userflag = false;
+            pwdflag = false;
+            pwd2flag = false;
+            /**
+             * 用户名验证
+             * @return {[type]} [description]
+             */
+            $("#acc").blur(function() {
+                if(this.value.length < 5 || this.value.length > 12) {
+                    $("#user-warning").css('color','red');
+                    $("#user-warning").html('格式不正确！');
+                }else {
+                    var url = '{:url('login')}';
+                    $.post(url,{users:this.value,type:'userconfirm'},function(result) {
+                        if(result.code == 1) {
+                            $("#user-warning").css('color','#fff');
+                            $("#user-warning").html('用户名可用！');
+                            userflag = true;
+                        }else {
+                            $("#user-warning").css('color','red');
+                            $("#user-warning").html(result.message);
+                        }
+                    },'json')
+                }
+            });
+
+            $("#pwd").blur(function() {
+                if(this.value.length < 5 || this.value.length > 12) {
+                    $("#pwd-warning").css('color','red');
+                    $("#pwd-warning").html('格式不正确！');
+                }else {
+                    $("#pwd-warning").css('color','#fff');
+                    $("#pwd-warning").html('密码可用');
+                    pwdflag = true;
+                }
+            });
+
+            $("#pwd2").blur(function() {
+                var pwd = $("#pwd").val();
+                if(this.value.length < 5 || this.value != pwd) {
+                    $("#repwd-warning").css('color','red');
+                    $("#repwd-warning").html('两次密码不一致');
+                }else {
+                    $("#repwd-warning").css('color','#fff');
+                    $("#repwd-warning").html('密码可用');
+                    pwd2flag = true;
+                }
+            });
+
+            $("#reg-button").click(function() {
+                var users = $("#acc").val();
+                var password = $("#pwd").val();
+                var gid = $("#gid").val();
+                var url = "{:url('login')}";
+
+                if(userflag && pwdflag && pwd2flag) {
+                    $.post(url,{users:users,password:password,gid:gid,type:'register'},function(result) {
+                        if(result.code == 1) {
+                            top.window.location = '/index/game/index/id/'+result.data+'.html';
+                        }else {
+                            alert('系统繁忙');
+                        }
+                    },'json')
+                }
+            });
+
+        });
+    </script>
+</html>
