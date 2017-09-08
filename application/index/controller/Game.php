@@ -60,6 +60,9 @@ class Game extends BaseController {
                 // 如果有服务器编号 则通过游戏编号获取服务器信息
                 $serverInfo = model('GameServer')->field(true)->where("id = $serverId")->find();
             }
+
+            // 把服务器ID 存入 SESSION  方便充值的时候提取服务器ID
+            session('gameserverid',$serverInfo['id'],'index');
             // 根据游戏gid 获取游戏信息
             $gameGid = $serverInfo['gid'];
             $gameInfo = model('Game')->field(true)->where("gid = '$gameGid'")->find();
