@@ -8,7 +8,12 @@
                 <td width="3%" nowrap="nowrap">&nbsp;</td>
                 <td width="12%" align="right" nowrap="nowrap"><span class="hei12">
                 {if condition="$user"}
-                <img src="{$user.pic}" width='30'  align='absmiddle'  style='border-radius: 15px;overflow:hidden' />:欢迎您！ | <a href="{:url('User/index')}" title='用户中心'>用户中心</a> | <span id="logout" title='点击退出平台'>退出平台</span> |
+                    {if condition = "$user.pic"}
+                    <img src="{$user.pic}" width='30'  align='absmiddle'  style='border-radius: 15px;overflow:hidden' />
+                    {else}
+                    <img src="/images/nopic.jpg" width='30'  align='absmiddle'  style='border-radius: 15px;overflow:hidden' />
+                    {/if}
+                    :欢迎您！ | <a href="{:url('User/index')}" title='用户中心'>用户中心</a> | <span id="logout" title='点击退出平台'>退出平台</span> |
                 {else}
                 <a href='/#user-login-form'>登陆</a> | <a href="{:url('Register/index')}">注册</a>|
                 {/if}

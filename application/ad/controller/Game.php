@@ -3,24 +3,39 @@ namespace app\ad\controller;
 use think\Controller;
 
 class Game extends Controller {
-
     /**
      * 登录主页面
      * @return [type] [description]
      */
     public function index() {
         $data = input('param.');
+        $statsId = '';
         if(isset($data['gid']) && $data['gid'] != '') {
             $flashInfo = model('Flash')->getFlashInfoByGid($data['gid']);
 
+            // 统计来源平台和用户IP地址
+            if(isset($data['ly']) && $data['ly'] != '') {
+                $ip = $_SERVER["REMOTE_ADDR"];
+                $insertData['url'] = hc_filter($data['ly']);
+                $insertData['gid'] = $data['gid'];
+                $insertData['register'] = 0;
+                $insertData['ip'] = ip2long($ip);
+                $res = model("Stats")->where('ip = '.$insertData['ip'])->order('create_time desc')->find();
+                // 限制 在一分钟之内请求页面 只算一次有效
+                if(!$res || ($res['create_time']+60) < time()) {
+                    model('Stats')->save($insertData);
+                    $statsId = model('Stats')->getLastInsID();
+                }else {
+                    $statsId = $res['id'];
+                }
+            }
+            session('sid',$statsId,'index');
             return $this->fetch('',[
                 'flashInfo' => $flashInfo,
             ]);
         }else {
             return '没有相关游戏:)';
         }
-
-
     }
 
     /**
@@ -38,7 +53,7 @@ class Game extends Controller {
 
         $data = input('post.');
         if($data['type'] == 'userconfirm') {
-            if(!preg_match("/^[a-zA-Z0-9]\S*\d$/",$data['users'])) {
+            if(!preg_match("/^[a-zA-Z0-9]\S*$/",$data['users'])) {
                 return show(0,'用户名只能以数字或字母开头');
             }
             if(strpos($data['users']," ")) {
@@ -63,13 +78,15 @@ class Game extends Controller {
             $gameServer = model('GameServer')->getRecServerFindByGid($data['gid']);
             if($res) {
                 session('user',$user,'index');
+                $sid =session('sid','','index');
+                if($sid != null) {
+                    model('Stats')->where('id = '.$sid)->update(['register'=>1,'userid'=>$userid]);
+                    session('sid',null);
+                }
                 return show(1,'注册成功',$gameServer['id']);
             }else {
                 return show(0,'注册失败');
             }
         }
-
-
     }
-
 }
