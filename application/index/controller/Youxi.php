@@ -9,8 +9,8 @@ class Youxi extends BaseController {
      * @return [type] [description]
      */
     public function index() {
-        $id = input('param.');
-        $youxi = model('Game')->get($id);
+        $data = input('param.');
+        $youxi = model('Game')->get($data['id']);
         // 图片路径
         $youxi['picmax'] = str_replace('\\','/',$youxi['picmax']);
 
@@ -27,6 +27,26 @@ class Youxi extends BaseController {
 
         // 所有服务器
         $gameServer = model('GameServer')->getGameServerByGid($youxi['gid']);
+
+        // 来源统计
+        if(isset($data['ly']) && $data['ly'] != '') {
+            $ip = $_SERVER["REMOTE_ADDR"];
+            $insertData['url'] = hc_filter($data['ly']);
+            $insertData['gid'] = $youxi['gid'];
+            $gid = $youxi['gid'];
+            $insertData['register'] = 0;
+            $insertData['ip'] = ip2long($ip);
+            $res = model("Stats")->where('ip = '.$insertData['ip']." and gid = '$gid'")->order('create_time desc')->find();
+            // 限制 在一分钟之内请求页面 只算一次有效
+            if(!$res || ($res['create_time']+60) < time()) {
+                model('Stats')->save($insertData);
+                $statsId = model('Stats')->getLastInsID();
+            }else {
+                $statsId = $res['id'];
+            }
+            session('sid',$statsId,'index');
+        }
+
         return $this->fetch('',[
             'youxi' => $youxi,
             'readyServer' => $readyServer,

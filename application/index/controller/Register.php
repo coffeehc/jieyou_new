@@ -37,13 +37,21 @@ class Register extends BaseController {
             return show(0,'用户名已存在');
         }
         if($data['name'] == '') {
-            $data['name'] = $data['users'];
+            $data['name'] = hc_filter($data['users']);
         }
         $data['hits'] = 1;
-        unset($data['password_confirm']);
+        $data['users'] = hc_filter($data['users']);
         try {
-            $res = model('User')->save($data);
+            $res = model('User')->allowField(true)->save($data);
+            $userid = model('User')->getLastInsID();
+            $user = model('User')->getUserInfoById($userid);
             if($res) {
+                session('user',$user,'index');
+                $sid =session('sid','','index');
+                if($sid != null) {
+                    model('Stats')->where('id = '.$sid)->update(['register'=>1,'userid'=>$userid]);
+                    session('sid',null);
+                }
                 return show(1,'注册成功');
             }else {
                 return show(0,'注册失败');

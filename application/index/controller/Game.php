@@ -17,10 +17,20 @@ class Game extends BaseController {
                 if(model('User')->getUserByUsername($data['users1'])) {
                     return show(0,'用户名已存在');
                 }
-                $data['users'] = $data['users1'];
+                $data['users'] = hc_filter($data['users1']);
+                $data['name'] = hc_filter($data['users1']);
+                $data['hits'] = 1;
                 try {
                     $res = model('User')->allowField(true)->save($data);
+                    $userid = model('User')->getLastInsID();
+                    $user = model('User')->getUserInfoById($userid);
                     if($res) {
+                        session('user',$user,'index');
+                        $sid =session('sid','','index');
+                        if($sid != null) {
+                            model('Stats')->where('id = '.$sid)->update(['register'=>1,'userid'=>$userid]);
+                            session('sid',null);
+                        }
                         return show(1,'注册成功');
                     }else {
                         return show(0,'注册失败');
