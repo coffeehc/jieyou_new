@@ -75,4 +75,9 @@ class Game extends Model {
         $res = $this->field(true)->where("name = '$gamename'")->find();
         return $res;
     }
+
+    public function getGameInfoById($id) {
+        $res = $this->field(true)->find($id);
+        return $res;
+    }
 }

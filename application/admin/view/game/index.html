@@ -1,4 +1,5 @@
 {include file="public/_meta"}
+<link href="__STATIC__/index/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <title>网页游戏列表</title>
 </head>
 <body>
@@ -8,9 +9,9 @@
 		<form  action="" method="get">
 			<button onclick="removeIframe()" class="btn btn-primary radius">关闭选项卡</button>
             日期范围：
-			<input type="text" name="start_time" value="" onfocus="selecttime(1)" id="logmin" class="input-text Wdate" style="width:120px;">
+			<input type="text" name="start_time" value="" onfocus="selecttime(1)" id="logmin" class="input-text Wdate" style="width:180px;">
 			-
-			<input type="text" name="end_time" value="" onfocus="selecttime(2)" id="logmax" class="input-text Wdate" style="width:120px;">
+			<input type="text" name="end_time" value="" onfocus="selecttime(2)" id="logmax" class="input-text Wdate" style="width:180px;">
 			<input type="text" name="title" id="" value="" placeholder=" 资讯名称" style="width:250px" class="input-text">
 			<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜游戏</button>
 		</form>
@@ -31,7 +32,6 @@
                     <tr>
                         <td class="td-l">游戏图片:</td>
                         <td>
-							{if condition="$vo.pic2 != ''"}<img src="{$vo.pic2}" alt="" width="50" height="50">&nbsp;{/if}
 							{if condition="$vo.pic3 != ''"}<img src="{$vo.pic3}" alt="" width="50" height="50">&nbsp;{/if}
 							{if condition="$vo.picmax != ''"}<img src="{$vo.picmax}" alt="" width="50" height="50">{/if}
                         </td>
@@ -60,9 +60,7 @@
         </div>
 		{/volist}
 	</div>
-	<div class="game_page">
-		{$games->render()}
-	</div>
+	{$games->render()}
 </div>
 {include file="public/_footer"}
 

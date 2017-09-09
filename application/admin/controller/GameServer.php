@@ -39,8 +39,10 @@ class GameServer extends BaseController {
         if(!$validate->scene('add')->check($data)) {
             return show(0,$validate->getError());
         }
+        $gameInfo = model("Game")->getGameInfoById($data['gid']);
         $data['name'] = '双线'.$data['sid'].'区';
-        $data['game'] = getGameNameById($data['gid']);
+        $data['game'] = $gameInfo['name'];
+        $data['gid'] =  $gameInfo['gid'];
         $data['create_time'] = strtotime($data['create_time']);
         $data['ptid'] = 2;
         try {
