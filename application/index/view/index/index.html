@@ -29,7 +29,7 @@
                                 <div class="hong20T">热门游戏</div>
                                 <div class="youxibox">
                                     {volist name="hotGames" id="vo"}
-                                    <div class="youxi" style="width:200px;">
+                                    <div class="youxi">
                                         <div class="youxiimg"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}"><img src="{$vo.pic3}" width="200" height="100" border="0" /></div>
     				                    <div class="youxibt">
         					                <div class="inyouxi"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="点击进入游戏">进入游戏</a></div>
@@ -94,17 +94,20 @@
                             <!--@新服预告-->
                             <div class="box" style="width:240px">
                                 <div class="hong20T">游戏开服预告</div>
-                                <div style="min-height:100px">
-                                    <table width="100%" border="0" cellspacing="1" cellpadding="0">
-                                        {volist name="readyServer" id="vo" empty="$readyEmpty"}
-                                        <tr>
-                                            <td width="12%" align="center"><img src="__STATIC__/images/no/1_{$i}.gif" /></td>
-                                            <td width="65%" nowrap="nowrap">{$vo.game}{$vo.name}</td>
-                                            <td width="23%" nowrap="nowrap" class="hui12">{$vo.create_time}</td>
-                                        </tr>
-                                        {/volist}
-                                    </table>
-                                </div>
+                                    <div style="min-height:100px">
+                                        <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                            {volist name="readyServer" id="vo" empty="$readyEmpty"}
+                                            <tr>
+                                                <td width="10%" align="center"><img src="__STATIC__/images/no/1_{$i}.gif" /></td>
+                                                <td width="70%" nowrap="nowrap">
+                                                    <a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒">{$vo.game}{$vo.name}
+                                                    <span class="hui12">{$vo.create_time}</span></a>
+                                                </td>
+                                                <td width="14%" nowrap="nowrap"><a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒"><img src="__STATIC__/images/naozhong.png" border="0" /></a></td>
+                                            </tr>
+                                            {/volist}
+                                        </table>
+                                    </div>
                             </div>
                             <!--@新服预告-->
                             <!--右下广告-->
@@ -155,7 +158,7 @@
                     <div class="box hong20T">友情链接</div>
                     <div class="link">
                         {volist name="links" id="vo"}
-                        <div><a href="{$vo.url}" target="_blank" alt="{$vo.name}"></a>{$vo.name}</div>
+                        <div><a href="{$vo.url}" target="_blank" alt="{$vo.name}">{$vo.name}</a></div>
                         {/volist}
                     </div>
                     <div style="clear:both"></div>

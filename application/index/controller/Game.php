@@ -86,7 +86,7 @@ class Game extends BaseController {
                     // 如果游戏已经开区 则添加一条数据到数据库
                     $isUserServer = model('UserServer')->field(true)->where("gsid = ".$serverInfo['id']." and userid = ".$userInfo['id'])->find();
                     if($isUserServer) {
-                        model('UserServer')->where("userid = ".$userInfo['id']." and gsid = ".$serverInfo['id'])->update();
+                        model('UserServer')->where("userid = ".$userInfo['id']." and gsid = ".$serverInfo['id'])->update(['update_time'=>time()]);
                     }else {
                         $userServer = [
                             'name' => $serverInfo['game'].$serverInfo['name'],

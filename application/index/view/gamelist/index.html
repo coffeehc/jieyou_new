@@ -1,5 +1,5 @@
 {include file="public/_meta"}
-<link href="__STATIC__/index/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
 <title>一起玩.游戏,网页游戏,手机游戏_一起玩.游戏_028-86051177</title>
 <script type="text/javascript">
     function Filter(a,b){
@@ -52,7 +52,7 @@
                                         <div>游戏首拼：
                                             <a href="javascript:Filter('zm','0')">不限</a>
                                             {volist name="zmArray" id="vo"}
-                                            <a style="margin:3px;" href="javascript:Filter('zm','{$vo}')" {eq name="$Think.get.zm" value="$vo"}style="background-color:rgb(255,165,0);"{/eq}>{$vo}</a>
+                                            <a style="margin:2px;" href="javascript:Filter('zm','{$vo}')" {eq name="$Think.get.zm" value="$vo"}style="background-color:rgb(255,165,0);"{/eq}>{$vo}</a>
                                             {/volist}
 
 										</div>
@@ -78,9 +78,7 @@
                             <div style="clear:both"></div>
                             <!--page-->
                             <div class="youxipage">
-                                <div>
-                                    {$games->render()}
-                                </div>
+                                {$games->render()}
                             </div>
                             <!--@page-->
                         </td>
