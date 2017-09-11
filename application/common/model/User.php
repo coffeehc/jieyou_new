@@ -74,4 +74,14 @@ class User extends Model {
         $res = $this->field(true)->find($id);
         return $res;
     }
+
+    /**
+     * 通过 users  获取用户信息
+     * @param  [type] $users [description]
+     * @return [type]        [description]
+     */
+    public function getUserInfoByUsers($users) {
+        $res = $this->field(true)->where("users = '$users'")->find();
+        return $res;
+    }
 }

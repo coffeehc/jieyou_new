@@ -178,6 +178,21 @@ function getStatusByQx($qx) {
     return $str;
 }
 
+function registerOrNo($qx) {
+    $str = '';
+    switch ($qx) {
+        case 1:
+            $str = '<span class="label label-success radius">已注册</span>';
+            break;
+        case 0:
+            $str = '<span class="label label-default radius">未注册</span>';
+            break;
+        default:
+            break;
+    }
+    return $str;
+}
+
 function showOrHidden($qx) {
     $str = '';
     switch ($qx) {
@@ -304,4 +319,9 @@ function getPayNameByTid($tid) {
 function getUserGameByUid($id) {
     $res = model('UserServer')->field(true)->where('userid='.$id)->order('create_time desc')->limit(4)->select();
     return $res;
+}
+
+function getUserUsersById($id) {
+    $res = model('User')->field('users')->find($id);
+    return $res['users'];
 }
