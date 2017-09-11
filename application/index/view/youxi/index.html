@@ -17,7 +17,7 @@
                         <td><span class="hong20T">{$youxi.name}</span>-<span class="hei18B">等你来战！</span></td>
                         <td><a href="{:url('Article/index')}" title="常见问题">常见问题</a></td>
                         <td>
-                            <a href="" target="_blank" title="玩家登录后，可以对游戏角色进行充值!">充值中心</a>
+                            <a href="{:url('User/playedgame')}" target="_blank" title="玩家登录后，可以对游戏角色进行充值!">充值中心</a>
                         </td>
                         <td>&nbsp;</td>
                     </tr>
@@ -27,7 +27,9 @@
                 <table width="100%" border="0" cellspacing="1" cellpadding="0">
                     <tr>
                         <td width="21%" valign="top">
-                            <div class="box_top"><a href=""><img src="__STATIC__/images/start_game.jpg" width="260" height="133" border="0" /></a></div>
+                            <div class="box_top">
+                                <a href="{:url('Game/index',['id'=>$kaishiyouxi])}"><img src="__STATIC__/images/start_game.jpg" width="260" height="133" border="0" /></a>
+                            </div>
                             <div class="box" align="center">
                                 <div class="touming2" style="margin-top:10px" align="left">
                                     {if condition="!$user"}
@@ -84,7 +86,7 @@
                                             {volist name=":getUserGameByUid($user.id)" id="vo" empty="$userServerEmpty"}
                                             <tr>
                                                 <td nowrap="nowrap"><a href="{:url('Game/index',['id'=>$vo.gsid])}" title="点击进入游戏" target="_blank"><span class="hei12">{$vo.name}</span></a></td>
-                                                <td align="right"><span class="hei12">{$vo.create_time}</span></td>
+                                                <td align="right"><span class="hei12">{$vo.update_time}</span></td>
                                             </tr>
                                             {/volist}
                                         </tr>
@@ -121,6 +123,14 @@
                             <div class="box">
                                 <div class="cheng18B bt_div">{$youxi.name}游戏资讯</div>
                                 <div>
+                                    {switch name="$youxi.id"}
+                                        {case value="67"}<div style="padding:5px"><a href="/wd/guicd/175jy_gcd.exe" style="color:red;" title="点击下载鬼吹灯之牧野诡事"><img src="/wd/guicd/gcd.jpg"/>微端下载</a></div>{/case}
+                                        {case value="72"}<div style="padding:5px"><a href="/wd/qmcj/175jy_qmcj.exe" style="color:red;" title="点击下载全民裁决微端"><img src="/wd/qmcj/gcd.jpg"/>微端下载</a></div>{/case}
+                                        {case value="73"}<div style="padding:5px"><a href="/wd/jtfs/175jy_jtfs.exe" style="color:red;" title="点击下载九天封神微端"><img src="/wd/jtfs/gcd.jpg"/>微端下载</a></div>{/case}
+                                        {case value="69"}<div style="padding:5px"><a href="/wd/bwzx/175jy_bwzx.exe" style="color:red;" title="点击下载霸王之心微端"><img src="/wd/bwzx/gcd.jpg"/>微端下载</a></div>{/case}
+                                        {case value="68"}<div style="padding:5px"><a href="/wd/myzs/175jy_myzs.exe" style="color:red;" title="点击下载新暮影战神微端"><img src="/wd/myzs/gcd.jpg"/>微端下载</a></div>{/case}
+                                        {case value="62"}<div style="padding:5px"><a href="/wd/lycq/lycqi.exe" style="color:red;" title="点击下载烈焰传奇微端"><img src="/wd/lycq/lycqi.jpg"/>微端下载</a></div>{/case}
+                                    {/switch}
                                     {volist name="gameArticle" id="vo" empty="$articleEmpty"}
                                     <div style="padding:5px">
                                         <a href="{:url('Article/news',['id'=>$vo.id])}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,18,'utf-8')}</a>
@@ -157,8 +167,8 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="youxipage">
-
+                            <div class="youxipage" style="text-align:left;">
+                                {$gameServer->render()}
                             </div>
                         </td>
                     </tr>

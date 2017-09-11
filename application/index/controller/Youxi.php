@@ -47,6 +47,20 @@ class Youxi extends BaseController {
             session('sid',$statsId,'index');
         }
 
+        $isUser = $this->getLoginUser();
+        $kaishiyouxi = 0;
+        if(!$isUser) {
+            $kaishiyouxi = $recServer[0]['id'];
+        }else {
+            $isPlayedGame = model('UserServer')->getIsPlayedGame($isUser['id'],$data['id']);
+            if($isPlayedGame) {
+                $kaishiyouxi =$isPlayedGame['id'];
+            }else {
+                $kaishiyouxi = $recServer[0]['id'];
+            }
+        }
+
+
         return $this->fetch('',[
             'youxi' => $youxi,
             'readyServer' => $readyServer,
@@ -55,6 +69,7 @@ class Youxi extends BaseController {
             'articleEmpty' => $articleEmpty,
             'recServer' => $recServer,
             'gameServer' => $gameServer,
+            'kaishiyouxi' => $kaishiyouxi,
         ]);
     }
 }
