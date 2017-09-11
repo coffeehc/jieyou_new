@@ -49,7 +49,13 @@
                                         <td>{$vo.game}</td>
                                         <td>￥{$vo.money}.00</td>
                                         <td>{$vo.create_time}</td>
-                                        <td><span class='cheng12'>充值成功</span></td>
+                                        <td>
+                                            {if condition="$vo.qx" value="1"}
+                                            <span class='cheng12'>充值成功</span>
+                                            {else /}
+                                            <span class='hui12'>未支付</span>
+                                            {/if}
+                                        </td>
                                     </tr>
                                     {/volist}
                                 </tbody>

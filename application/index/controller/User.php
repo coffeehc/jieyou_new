@@ -33,7 +33,40 @@ class User extends BaseController {
      * @return [type] [description]
      */
     public function userInfo() {
-        return $this->fetch();
+        if(request()->isPost()) {
+            $data = input('post.');
+            $validate = validate('User');
+            if(!$validate->scene('edit')->check($data)) {
+                return show(0,$validate->getError());
+            }
+            $data['name'] = hc_filter($data['name']);
+            try {
+                if($data['password'] != '') {
+                    $res = model('User')->where('id = '.$data['id'])->update($data);
+                    if($res) {
+                        return show(1,'更新成功');
+                    }else {
+                        return show(0,'更新失败');
+                    }
+                }else {
+                    $res = model('User')->allowField(['name','email','qq'])->save($data,['id'=>$data['id']]);
+                    if($res) {
+                        return show(1,'更新成功');
+                    }else {
+                        return show(0,'更新失败');
+                    }
+                }
+            } catch (\Exception $e) {
+                return show(0,$e->getMessage());
+            }
+
+        }else {
+            $suser = $this->getLoginUser();
+            $user = model('User')->getUserInfoById($suser['id']);
+            return $this->fetch('',[
+                'user' => $user,
+            ]);
+        }
     }
 
     /**
