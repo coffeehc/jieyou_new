@@ -7,4 +7,9 @@ class LoginSession extends Model {
         $res = $this->field(true)->where("user = '$user'")->find();
         return $res;
     }
+
+    public function getLoginSessionCountByUser($user) {
+        $res = $this->field(true)->where("user = '$user'")->count();
+        return $res;
+    }
 }

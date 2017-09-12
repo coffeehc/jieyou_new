@@ -24,10 +24,11 @@
 					<th width="25"><input type="checkbox" name="" value=""></th>
 					<th width="80">序号</th>
 					<th>游戏名称</th>
-					<th width="150">来源</th>
-					<th width="200">时间</th>
-					<th width="75">是否注册</th>
-					<th width="150">注册账号</th>
+					<th width="200">来源</th>
+					<th width="250">时间</th>
+					<th width="120">是否注册</th>
+					<th width="200">注册账号</th>
+					<th width="150">IP</th>
 					<th width="120">操作</th>
 				</tr>
 			</thead>
@@ -41,6 +42,7 @@
 					<td>{$vo.create_time}</td>
 					<td>{$vo.register|registerOrNo}</td>
 					<td>{$vo.userid|getUserUsersById}</td>
+					<td>{:long2ip($vo.ip)}</td>
 					<td class="f-14 td-manage">
 						<a style="text-decoration:none" class="ml-5" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
