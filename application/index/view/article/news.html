@@ -1,5 +1,5 @@
 {include file="public/_meta"}
-<title>资讯详情页面</title>
+<title>{$news.title}_{$news.gid|getGameNameById}_{$config.name}</title>
 </head>
 
 <body>
@@ -19,7 +19,10 @@
                         <!--游戏资讯-->
                         <div class="box_top">
                             <div style="padding:10px;margin-top:10px">
-                                <div align="center" style="padding:20px 0px 20px 0px"><span class="hong20T">{$news.title}</span></div>
+                                <div align="center" style="padding:20px 0px 20px 0px">
+                                    <span class="hong20T">{$news.title}</span><br>
+                                    <span class="hui12">发布时间：{$news.update_time}&nbsp;&nbsp;&nbsp;&nbsp;浏览数：{$news.click}</span>
+                                </div>
                                 <div>
                                     {$news.content}
                                 </div>

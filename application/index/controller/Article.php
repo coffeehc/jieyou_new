@@ -36,6 +36,8 @@ class Article extends BaseController {
     public function news() {
         $id = input('param.');
         $news = model('Article')->get($id);
+        // 浏览数 加1
+        $click = model('Article')->where($id)->setInc('click');
         // 最新开服
         $newServer = model('GameServer')->getNewServer();
         // 游戏公告
