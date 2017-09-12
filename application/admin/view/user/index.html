@@ -51,7 +51,7 @@
                     <td>{$vo.update_time|changeTimeToStr}</td>
                     <td class="f-14 user-manage">
                         <a class="btn" href="{:url('payRecord',['id'=>$vo.id])}">充值记录</a>
-                        <button class="btn">玩过的游戏</button>
+                        <a class="btn" href="{:url('playedGame',['id'=>$vo.id])}">玩过的游戏</a>
                   </td>
                 </tr>
                 {/volist}

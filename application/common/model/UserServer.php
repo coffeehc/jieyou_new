@@ -22,4 +22,5 @@ class UserServer extends Model {
         $res = $this->field(true)->where("userid = $uid and gsid = $sid")->find();
         return $res;
     }
+
 }

@@ -43,13 +43,25 @@ class User extends BaseController {
      * 充值记录
      */
     public function payRecord($id=0) {
-        $payRecords = model('UserPay')->getUserPayByUid($id);
+        $payRecords = model('UserPay')->getUserPayByUid($id,10);
         $count = model('UserPay')->getUserPayCount($id);
         $user = model('User')->getUserByID($id);
         return $this->fetch('',[
             'payRecords' => $payRecords,
             'count' => $count,
             'user' => $user,
+        ]);
+    }
+
+    /**
+     * 玩过的游戏
+     * @return [type] [description]
+     */
+    public function playedGame() {
+        $id = input('param.id');
+        $games = model("UserServer")->getPlayedGameByUid($id);
+        return $this->fetch('',[
+            'games' => $games
         ]);
     }
 
