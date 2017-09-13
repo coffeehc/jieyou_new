@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="__STATIC__/index/js/jquery181.js"></script>
+<script>
+	window.onload = function() {
+		$("form").submit();
+	}
+</script>
+</head>
+<body>
+	<form action="http://www.ufojoy.com/auth/payto.phtml" method="post" target="_parent">
+		<input type="hidden" name="agent_id" value="{$agent_id}">
+		<input type="hidden" name="game_id" value="{$game_id}">
+		<input type="hidden" name="serverNo" value="{$serverNo}">
+		<input type="hidden" name="uid" value="{$uid}">
+		<input type="hidden" name="OrderID" value="{$OrderID}">
+		<input type="hidden" name="amount" value="{$amount}">
+		<input type="hidden" name="paytype" value="{$paytype}">
+		<input type="hidden" name="rel" value="{$rel}">
+		<input type="hidden" name="time" value="{$time}">
+		<input type="hidden" name="charname" value="{$charname}">
+		<input type="hidden" name="sign" value="{$sign}">
+	</form>
+</body>
+</html>
