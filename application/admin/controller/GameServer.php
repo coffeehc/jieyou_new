@@ -62,7 +62,7 @@ class GameServer extends BaseController {
      * @param  integer $id [description]
      * @return [type]      [description]
      */
-    public function edit($id=0) {
+    public function edit() {
         if(request()->isPost()) {
             $data = input('post.');
             $validate = validate('GameServer');
@@ -70,7 +70,7 @@ class GameServer extends BaseController {
                 return show(0,$validate->getError());
             }
             $data['name'] = '双线'.$data['sid'].'区';
-            $data['game'] = getGameNameById($data['gid']);
+            $data['game'] = getGameNameByGid($data['gid']);
             $data['create_time'] = strtotime($data['create_time']);
             $data['ptid'] = 2;
             try {
@@ -84,6 +84,7 @@ class GameServer extends BaseController {
                 return show(0,$e->getMessage());
             }
         }else {
+            $id = input('param.id');
             $server = $this->_db->get($id);
             $games = model('Game')->getGameInfo();
             return $this->fetch('',[
