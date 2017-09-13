@@ -69,6 +69,15 @@ class Flash extends BaseController {
     }
 
     public function edit() {
-        return $this->fetch();
+        if(request()->isPost()) {
+            $data = input('post.');
+            dump($data);exit;
+        }else {
+            $id = input('param.id');
+            $flash = model('Flash')->get($id);
+            return $this->fetch('',[
+                'flash' => $flash,
+            ]);
+        }
     }
 }

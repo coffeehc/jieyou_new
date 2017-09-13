@@ -10,13 +10,15 @@ class Gopay extends Controller {
             // $surl = "Location: http://".$_SERVER['SERVER_NAME']."/my/pay".$gid.".html";
 	        return redirect('index/Pay/index',['id'=>$gid]);
         }else {
-            $uid = input('param.');
-            $res = model('LoginSession')->getLoginSessionInfoByUser($uid);
-            if($res) {
-                session_destroy();
-                session_id($res['sessionid']);
-                session_start();
-            }
+            $uid = input('param.uid');
+            $userInfo = model('User')->getUserByUsername($uid);
+            $gid = model('UserServer')->getGsidByUserid($userInfo['id']);
+            // $res = model('LoginSession')->getLoginSessionInfoByUser($uid);
+            // if($res) {
+            //     session_destroy();
+            //     session_id($res['sessionid']);
+            //     session_start();
+            // }
             return redirect('index/Pay/index',['id'=>$gid]);
         }
     }

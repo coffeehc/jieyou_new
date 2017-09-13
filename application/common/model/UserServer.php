@@ -23,4 +23,8 @@ class UserServer extends Model {
         return $res;
     }
 
+    public function getGsidByUserid($uid) {
+        $res = $this->field('gsid')->where("userid = $uid")->order('id desc')->find();
+        return $res['gsid'];
+    }
 }

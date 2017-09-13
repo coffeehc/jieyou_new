@@ -5,9 +5,9 @@
   RewriteRule ^pay/payok.php$ /api/payok/index
   RewriteRule ^cps/([0-9]+)$ /index/register/index?tjrid=$1
   RewriteRule ^cps/([0-9a-zA-Z]+)\.html$ /index/register/index?tjr=$1
-  RewriteRule ^game/([0-9]+)_pc\.html$ /index/game/index/id/$1/client/$2.html
+  RewriteRule ^game/([0-9]+)_pc\.html$ /index/game/index/id/$1/client/pc/.html
   RewriteRule ^my/gopay.php$ /api/gopay/index
-  
+
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]

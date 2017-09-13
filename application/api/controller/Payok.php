@@ -16,6 +16,7 @@ class Payok extends Controller {
                 return $this->error('没有相应的充值记录');
             }else {
                 model('UserPay')->where("oid = ".$data['OrderID'])->update(['qx'=>1]);
+                return $this->success('恭喜您，成功充值 感谢您的支持!','index/index');
             }
         }else {
             $orderInfo = model('UserPay')->field(true)->where("oid = ".$data['oid']." and uid = ".$data['uid']." and money = ".$data['money'])->find();

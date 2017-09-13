@@ -61,6 +61,7 @@ class Game extends BaseController {
             // 登录的用户信息
             $user = $this->getLoginUser();
             $serverId = input('param.id');
+            $client = input('param.client');
             $url = '';
             // 是否有传入游戏编号
             if(empty($serverId)) {
@@ -113,7 +114,7 @@ class Game extends BaseController {
 
                 if($serverInfo['ptid'] == 2) {
                     $sign = strtolower(md5($mid.$gid.$sid.$uid2.$dateline.$key));
-                    if(!empty($_GET['client']) && $_GET['client'] == 'pc') {
+                    if($client && $client == 'pc') {
                         $url = "http://www.ufojoy.com/auth/go.phtml?agent_id=".$mid."&game_id=".$gid."&serverNo=".$sid."&uid=".$uid2."&time=".$dateline."&sign=".$sign."&client=pc";
                     }else {
                         $url = "http://www.ufojoy.com/auth/go.phtml?agent_id=".$mid."&game_id=".$gid."&serverNo=".$sid."&uid=".$uid2."&time=".$dateline."&sign=".$sign;

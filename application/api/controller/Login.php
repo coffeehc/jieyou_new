@@ -2,6 +2,9 @@
 namespace app\api\controller;
 use think\Controller;
 
+/**
+ * 微端登录
+ */
 class Login extends Controller {
 
     public function index() {

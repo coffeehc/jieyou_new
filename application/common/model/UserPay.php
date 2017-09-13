@@ -7,7 +7,7 @@ class UserPay extends Model {
     public function getUserPayByUid($id,$limit) {
         $res = $this->field(true)->where('uid',$id);
         if($limit) {
-            $res = $res->limit($limit);
+            $res = $res->order('update_time desc')->limit($limit);
         }
         return $res->select();
     }
