@@ -22,14 +22,15 @@
 				<textarea name="title" cols="" rows="" class="textarea"  placeholder="说点什么..." datatype="*10-100" dragonfly="true" >{$flash.title}</textarea>
 			</div>
 		</div>
-        <div class="row cl">
+        <!-- <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">登录flash：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <input type="file" multiple="true">
             </div>
-        </div>
+        </div> -->
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<input type="hidden" name="id" value="{$flash.id}">
                 <button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交</button>
                 <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
             </div>

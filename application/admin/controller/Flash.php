@@ -71,7 +71,12 @@ class Flash extends BaseController {
     public function edit() {
         if(request()->isPost()) {
             $data = input('post.');
-            dump($data);exit;
+            $res = $this->_db->where('id',$data['id'])->update($data);
+            if($res) {
+                $this->success('修改成功');
+            }else {
+                $this->error('修改失败');
+            }
         }else {
             $id = input('param.id');
             $flash = model('Flash')->get($id);
