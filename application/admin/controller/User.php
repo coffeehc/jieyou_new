@@ -28,7 +28,7 @@ class User extends BaseController {
             $sdata['users'] = ['like','%'.$data['users'].'%'];
         }
 
-        $users = $this->_db->getUserInfo($sdata);
+        $users = $this->_db->getUserInfoForPaginate($sdata);
         $count = $this->_db->getUserCount($sdata);
         return $this->fetch('',[
             'users' => $users,

@@ -24,7 +24,7 @@ class Stats extends BaseController {
         if(!empty($data['gid'])) {
             $sdata['gid'] = ['like','%'.$data['gid'].'%'];
         }
-        $stats = $this->_db->getStatsInfo($sdata);
+        $stats = $this->_db->getStatsInfoForPaginate($sdata);
         $count = $this->_db->getStatsCount($sdata);
         return $this->fetch('',[
             'stats' => $stats,

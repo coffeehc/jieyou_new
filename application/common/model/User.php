@@ -12,6 +12,16 @@ class User extends Model {
         return $res;
     }
 
+    /**
+     * 用户列表 带分页
+     * @param  array  $data [description]
+     * @return [type]       [description]
+     */
+    public function getUserInfoForPaginate($data=[]) {
+        $res = $this->where($data)->order('id desc')->paginate();
+        return $res;
+    }
+
     public function getUserInfoForCps($data=[]) {
         $res = $this->where($data)->paginate(10);
         return $res;

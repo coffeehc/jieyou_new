@@ -12,6 +12,16 @@ class Stats extends Model {
         return $res;
     }
 
+    /**
+     * 统计列表 带分页
+     * @param  array  $data [description]
+     * @return [type]       [description]
+     */
+    public function getStatsInfoForPaginate($data=[]) {
+        $res = $this->where($data)->order('id desc')->paginate();
+        return $res;
+    }
+
     public function getStatsCount($data=[]) {
         $res = $this->where($data)->count();
         return $res;
