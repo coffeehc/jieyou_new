@@ -62,10 +62,9 @@
             <!--@top-->
 
             <div class="box" style="height:100%">
-
-
                 <!--right-->
                 <div class="right">
+                    <div>当前位置：<a href="">会员中心</a> >> 最近玩过的游戏</div>
                     <div class="box">
                         <table width="100%" border="0" cellspacing="1" cellpadding="2">
                             <tr>
@@ -131,14 +130,10 @@
                     </div>
                 </div>
                 <!--@right-->
+
                 <!--left-->
                 <div class="left">
-                    <div class="list-group">
-                        <a href="" class="list-group-item active">用户中心</a>
-                        <a href="{:url('User/userInfo')}" title="我的详细资料" class="list-group-item">我的详细资料</a>
-                        <a href="{:url('User/playedGame')}" title="我玩过的游戏" class="list-group-item">我玩过的游戏</a>
-                        <a href="{:url('User/payInfo')}" title="我的充值记录" class="list-group-item">我的充值记录</a>
-                    </div>
+                    {include file="userpublic/_left"}
                 </div>
                 <!--@left-->
                 <div style="clear:both"></div>

@@ -108,6 +108,7 @@ class Game extends BaseController {
             unset($data['box']);
             $data['tj'] = rtrim($data['tj'],',');
             $game = model('Game')->get($data['gid']);
+            $data['banner_img'] = str_replace('\\','/',$data['banner_img']);
             // 当 game 数据表里面的 tj 字段为 0 的时候 判断为新增 否则 为修改
             if($game['tj'] == '0') {
                 try {
