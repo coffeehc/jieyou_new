@@ -11,8 +11,11 @@ class Youxi extends BaseController {
     public function index() {
         $data = input('param.');
         $youxi = model('Game')->get($data['id']);
+
         // 图片路径
+
         $youxi['picmax'] = str_replace('\\','/',$youxi['picmax']);
+
 
         // 近期将要开放的服务器
         $readyServer = model('GameServer')->getReadyServerByGid($youxi['gid']);
@@ -23,6 +26,7 @@ class Youxi extends BaseController {
         $articleEmpty = '<div align="center" style="height:50px;padding-top:30px">暂时还没有游戏资讯!</div>';
 
         // 推荐服务器
+
         $recServer = model('GameServer')->getRecServerByGid($youxi['gid']);
 
         // 所有服务器
@@ -50,13 +54,17 @@ class Youxi extends BaseController {
         $isUser = $this->getLoginUser();
         $kaishiyouxi = 0;
         if(!$isUser) {
-            $kaishiyouxi = $recServer[0]['id'];
+            if(!$recServer->isEmpty()) {
+                $kaishiyouxi = $recServer[0]['id'];
+            }
         }else {
             $isPlayedGame = model('UserServer')->getIsPlayedGame($isUser['id'],$data['id']);
             if($isPlayedGame) {
                 $kaishiyouxi =$isPlayedGame['id'];
             }else {
-                $kaishiyouxi = $recServer[0]['id'];
+                if(!$recServer->isEmpty()) {
+                    $kaishiyouxi = $recServer[0]['id'];
+                }
             }
         }
 

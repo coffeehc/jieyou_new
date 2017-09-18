@@ -57,7 +57,7 @@
                 				        <div class="youxibt">
                 					        <div class="inyouxi"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="点击进入游戏">进入游戏</a></div>
                                             <div class="youxiname">
-                                                <a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}">{$vo.name}</a>
+                                                <a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}">{:mb_substr($vo.name,0,8,'utf-8')}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -100,10 +100,9 @@
                                             <tr>
                                                 <td width="10%" align="center"><img src="__STATIC__/images/no/1_{$i}.gif" /></td>
                                                 <td width="70%" nowrap="nowrap">
-                                                    <a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒">{$vo.game}{$vo.name}
+                                                    {$vo.game}{$vo.name}
                                                     <span class="hui12">{$vo.create_time}</span></a>
                                                 </td>
-                                                <td width="14%" nowrap="nowrap"><a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒"><img src="__STATIC__/images/naozhong.png" border="0" /></a></td>
                                             </tr>
                                             {/volist}
                                         </table>
