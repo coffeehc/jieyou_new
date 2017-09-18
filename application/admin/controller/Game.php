@@ -149,4 +149,26 @@ class Game extends BaseController {
             ]);
         }
     }
+
+    /**
+     * 排序逻辑
+     * @return [type] [description]
+     */
+    public function listorder() {
+        if(!request()->isPost()) {
+            return $this->error('请求错误');
+        }
+        $data = input('post.');
+        try {
+            $res = model('Game')->where('id',$data['id'])->update(['sort'=>$data['sort']]);
+            if($res) {
+                return show(1,'排序成功',$data['sort']);
+            }else {
+                return show(0,'排序失败');
+            }
+        } catch (\Exception $e) {
+            return show(0,$e->getMessage());
+        }
+
+    }
 }

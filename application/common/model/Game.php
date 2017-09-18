@@ -34,7 +34,7 @@ class Game extends Model {
     public function getHotGame() {
         $res = $this
                 ->field('id,pic3,name')
-                ->order('hits desc')
+                ->order('sort desc')
                 ->limit(8)
                 ->select();
         return $res;
@@ -47,8 +47,8 @@ class Game extends Model {
     public function getNewGame() {
         $res = $this
                 ->field('id,pic3,name')
-                ->order('id desc')
-                ->limit(8)
+                ->order('sort desc')
+                ->limit(8,8)
                 ->select();
         return $res;
     }

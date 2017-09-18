@@ -34,7 +34,7 @@
     				                    <div class="youxibt">
         					                <div class="inyouxi"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="点击进入游戏">进入游戏</a></div>
                                             <div class="youxiname">
-                                                <a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}">{$vo.name}</a>
+                                                <a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}">{:mb_substr($vo.name,0,8,'utf-8')}</a>
                                             </div>
                                         </div>
                                     </div>

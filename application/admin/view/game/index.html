@@ -44,6 +44,10 @@
                         <td class="td-l">游戏接口:</td>
                         <td class="stress cheng">{$vo.pt}</td>
                     </tr>
+					<tr>
+                        <td class="td-l">热 门 位 :</td>
+                        <td><input class="sort" type="number" name="sort" style="width:50px;" data-attr="{$vo.id}" value="{$vo.sort}"><span class="cheng">*数字越大越靠前</span></td>
+                    </tr>
                     <tr>
                         <td class="td-l">推 荐 位 :</td>
                         <td>{$vo.tj|getTjName}</td>
@@ -68,6 +72,28 @@
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="__STATIC__/admin/hui/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".sort").blur(function() {
+			var sort = $(this).val();
+			var id = $(this).attr("data-attr");
+			postData = {
+				'id': id,
+				'sort': sort,
+			}
+			var url = '{:url('listorder')}';
 
+			$.post(url,postData,function(result) {
+				if(result.code == 1) {
+					layer.msg(result.message,{icon:6,time:1000},function() {
+						$(this).val(result.data.data)
+					});
+				}else {
+					layer.msg(result.message,{icon:5,time:1500});
+				}
+			},'json');
+		});
+	})
+</script>
 </body>
 </html>
