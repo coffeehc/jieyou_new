@@ -77,12 +77,16 @@ class Game extends Controller {
             $userid = model('User')->getLastInsID();
             $user = model('User')->getUserInfoById($userid);
             $gameServer = model('GameServer')->getRecServerFindByGid($data['gid']);
+            $gameid = model('Game')->getGameIdByGid($data['gid']);
             if($res) {
                 session('user',$user,'index');
                 $sid =session('sid','','index');
                 if($sid != null) {
                     model('Stats')->where('id = '.$sid)->update(['register'=>1,'userid'=>$userid]);
                     session('sid',null);
+                }
+                if(!$gameServer) {
+                    return show(2,'还没开服',$gameid);
                 }
                 return show(1,'注册成功',$gameServer['id']);
             }else {

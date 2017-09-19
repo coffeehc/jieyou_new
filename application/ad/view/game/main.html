@@ -211,6 +211,8 @@
                     $.post(url,{users:users,password:password,gid:gid,type:'register'},function(result) {
                         if(result.code == 1) {
                             top.window.location = '/index/game/index/id/'+result.data+'.html';
+                        }else if(result.code == 2) {
+                            top.window.location = '/index/youxi/index/id/'+result.data+'.html';
                         }else {
                             alert('系统繁忙');
                         }

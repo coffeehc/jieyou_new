@@ -80,4 +80,14 @@ class Game extends Model {
         $res = $this->field(true)->find($id);
         return $res;
     }
+
+    /**
+     * 通过GID 获取游戏ID
+     * @param  [type] $gid [description]
+     * @return [type]      [description]
+     */
+    public function getGameIdByGid($gid) {
+        $res = $this->field('id')->where("gid = '$gid'")->find();
+        return $res['id'];
+    }
 }

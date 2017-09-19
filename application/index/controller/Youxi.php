@@ -32,6 +32,15 @@ class Youxi extends BaseController {
         // 所有服务器
         $gameServer = model('GameServer')->getGameServerByGid($youxi['gid']);
 
+        $emptyServer = '<div>
+                            <span class="cheng">游戏还有</span>
+                            <span id="_d">00</span>
+                            <span id="_h">00</span>
+                            <span id="_m">00</span>
+                            <span id="_s">00</span>
+                            <span class="cheng">开服，敬请期待</span>
+                        </div>';
+
         // 来源统计
         if(isset($data['ly']) && $data['ly'] != '') {
             $ip = $_SERVER["REMOTE_ADDR"];
@@ -78,6 +87,7 @@ class Youxi extends BaseController {
             'recServer' => $recServer,
             'gameServer' => $gameServer,
             'kaishiyouxi' => $kaishiyouxi,
+            'emptyServer' => $emptyServer,
         ]);
     }
 }

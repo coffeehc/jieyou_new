@@ -143,7 +143,7 @@
                         <td width="79%" valign="top">
                             <div class="hei18B box_top" style="padding:10px">推荐服务器</div>
                             <div class="box_top" style="height:80px;padding:10px">
-                                {volist name="recServer" id="vo"}
+                                {volist name="recServer" id="vo" empty="$emptyServer"}
                                 <div style="width:420px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px">
                                     <img src="__STATIC__/images/shou.png" align="absmiddle" />
                                     <a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入游戏" target="_blank">{$vo.game}{$vo.name}-<span class='hui12'>{$vo.create_time}</span></a>
@@ -203,6 +203,36 @@
                     }, 'json')
                 })
             })
+        </script>
+        <script type="text/javascript">
+            function countTime() {
+                // 获取当前时间
+                var date = new Date();
+                var now = date.getTime();
+                // 设置截止时间
+                var endDate = new Date("2017-09-19 15:00:00");
+                var end = endDate.getTime();
+                // 时间差
+                var leftTime = end-now;
+                // 定义变量 d,h,m,s保存倒计时的时间
+                var d,h,m,s;
+
+                d = Math.floor(leftTime/1000/60/60/24);
+                h = Math.floor(leftTime/1000/60/60%24);
+                m = Math.floor(leftTime/1000/60%60);
+                s = Math.floor(leftTime/1000%60);
+                //将倒计时赋值到div中
+                document.getElementById("_d").innerHTML = d+"天";
+                document.getElementById("_h").innerHTML = h+"时";
+                document.getElementById("_m").innerHTML = m+"分";
+                document.getElementById("_s").innerHTML = s+"秒";
+                if(leftTime<0) {
+                    clearInterval(t);
+                    window.location.reload();
+                }
+            }
+            countTime();
+            var t = setInterval(countTime,1000);
         </script>
     </div>
 </body>

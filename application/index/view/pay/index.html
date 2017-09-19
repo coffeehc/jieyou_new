@@ -1,151 +1,68 @@
-{include file="userpublic/_meta"}
-<title>{$user.users}：欢迎登陆一起玩.游戏用户中心！_一起玩.游戏</title>
-<style type="text/css">
-    body,
-    td,
-    th {
-        font-family: 微软雅黑, 宋体;
-    }
-
-    .payfs {
-        background-color: #EEEEEE;
-        margin: 5px;
-        padding: 5px
-    }
-
-    .pay {
-        padding: 10px;
-        margin: 5px;
-        width: 120px;
-        float: left;
-        background-color: #EEEEEE;
-        border-radius: 5px
-    }
-</style>
-
-<script>
-    $(function() {
-        $(".payfs").css({
-            "backbround-color": "#EEEEEE"
-        });
-
-        $(".payfs").click(function() {
-            //$(".payfs").css({"color":""}).not($(this)).css({"color":"red"});
-            $(this).animate({
-                "background-color": "#ffcc66"
-            });
-            $(".payfs").not(this).animate({
-                "background-color": "#EEEEEE"
-            });
-        });
-
-        $(".pay").click(function() {
-            //$(".payfs").css({"color":""}).not($(this)).css({"color":"red"});
-            $(this).animate({
-                "background-color": "#ffcc66"
-            });
-            $(".pay").not(this).animate({
-                "background-color": "#EEEEEE"
-            });
-        });
-    });
-</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="__STATIC__/index/css/pay.css">
+    <title>{$user.users}：欢迎登陆一起玩.游戏用户中心！_一起玩.游戏</title>
 </head>
 
 <body>
-    <div align="center" style="background-color:#EEEEEE">
-        <div style="width:1200px;" align="left">
-            <!--top-->
-            <div style="background-color:#FFFFFF;">
-                {include file="userpublic/_top"}
-            </div>
-            <!--@top-->
 
-            <div class="box" style="height:100%">
-
-
-                <!--right-->
-                <div class="right">
-                    <div class="box">
-                        <table width="100%" border="0" cellspacing="1" cellpadding="2">
-                            <tr>
-                                <td align="center" valign="top">
-                                    <div class="t_bk">
-                                        <table class="table table-striped table-bordered">
-                                            <iframe name="ispay-iframe" style="display:none"></iframe>
-                                            <form name="form1" action="{:url('ispay')}" method="post" target="ispay-iframe">
-                                                <tr bgcolor="#FFFFFF">
-                                                    <td width="15%" align="center">充值的游戏：</td>
-                                                    <td width="85%">
-                                                        {$serverInfo.game}{$serverInfo.name}
-                                                        <input type="hidden" name="sid" id="sid" value="{$serverInfo.id}" /></td>
-                                                </tr>
-                                                <tr bgcolor="#FFFFFF">
-                                                    <td align="center">充值的金额：</td>
-                                                    <td>
-                                                        <!--label class="pay"><input name="money" id="money" value="1" type="radio"/> 1元</label-->
-                                                        <label class="pay"><input name="money" type="radio" id="money" value="10" checked="checked"/>  10元</label>
-                                                        <label class="pay"><input name="money" id="money" value="20" type="radio"/> 20元</label>
-                                                        <label class="pay"><input name="money" id="money" value="30" type="radio"/> 30元</label>
-                                                        <label class="pay"><input name="money" id="money" value="50" type="radio"/> 50元</label>
-                                                        <label class="pay"><input name="money" id="money" value="100" type="radio"/> 100元</label>
-                                                        <label class="pay"><input name="money" id="money" value="200" type="radio"/> 200元</label>
-                                                        <label class="pay"><input name="money" id="money" value="500" type="radio"/> 500元</label>
-                                                        <label class="pay"><input name="money" id="money" value="1000" type="radio"/> 1000元</label>
-                                                        <label class="pay"><input name="money" id="money" value="2000" type="radio"/> 2000元</label>
-                                                        <label class="pay"><input name="money" id="money" value="5000" type="radio"/> 5000元</label>
-                                                        <label class="pay"><input name="money" id="money" value="10000" type="radio"/> 10000元</label>
-                                                    </td>
-                                                </tr>
-                                                <tr bgcolor="#FFFFFF">
-                                                    <td align="center">充值方式：</td>
-                                                    <td>
-                                                        {volist name="payWays" id="vo"}
-                                                        <span class="payfs" style="width:170px;float:left">
-                                                            <label>
-                                                                <div><img src="{$vo.pic}" alt="{$vo.name}" width="150" height="50" /></div>
-                                                        		<span style="text-align:center">
-                                                                    <input name="bank" type="radio" value="{$vo.id}" {if condition="$i" value="0"}checked{/if}/>
-                                                                    {$vo.name}
-                                                                </span>
-                                                            </label>
-                                                        </span>
-                                                        {/volist}
-                                                    </td>
-                                                </tr>
-                                                <tr bgcolor="#FFFFFF">
-                                                    <td align="center">&nbsp;</td>
-                                                    <td>
-                                                        <label>
-                                                            <input name="Submit" type="submit" class="page4" style="width:200px;height:50px" value="-= 充值 =-" />
-                                                            <input name="forms" type="hidden" id="forms" value="pay" />
-                                                        </label>
-                                                    </td>
-                                                </tr>
-                                            </form>
-                                        </table>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+    <div class="header">
+        <div class="hd-top">
+            <div class="w1200">
+                <div class="top-logo fl">
+                    <div class="logo-175">
+                        <a href="#"></a>
                     </div>
+                    <h1 class="logo-pay">
+                        充值中心
+                    </h1>
                 </div>
-                <!--@right-->
-                <!--left-->
-                <div class="left">
-                    <div class="list-group">
-                        <a href="" class="list-group-item active">用户中心</a>
-                        <a href="{:url('User/userInfo')}" title="我的详细资料" class="list-group-item">我的详细资料</a>
-                        <a href="{:url('User/playedGame')}" title="我玩过的游戏" class="list-group-item">我玩过的游戏</a>
-                        <a href="{:url('User/payInfo')}" title="我的充值记录" class="list-group-item">我的充值记录</a>
-                    </div>
-                </div>
-                <!--@left-->
-                <div style="clear:both"></div>
             </div>
         </div>
     </div>
-    {include file="public/_footer"}
+    <div class="container">
+        <div class="pay-main ">
+            <div class="">
+                <!--渠道选择-->
+                <div class="pay-left fl">
+                    <ul>
+                        <li>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <span class="channel-icon left-icon-54"></span>
+                                        <span class="channel-name">微信支付</span>
+                                        <span class="channel-status channel-status-0"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <span class="channel-icon left-icon-12"></span>
+                                        <span class="channel-name">支付宝</span>
+                                        <span class="channel-status channel-status-0"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <span class="channel-icon left-icon-60"></span>
+                                        <span class="channel-name">网上银行</span>
+                                        <span class="channel-status channel-status-0"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!--订单填写-->
+                <div class="pay-right fl">
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

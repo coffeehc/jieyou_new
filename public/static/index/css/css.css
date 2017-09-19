@@ -120,7 +120,7 @@ a:active {text-decoration: none;color: #333333;}
 
 .h_gg{margin:10px 0px;overflow:hidden;padding:10px;background-color:#FFFFFF;}
 
-.h_gg img{background-color:#FFFFFF;border:1px red solid;}
+.h_gg img{background-color:#FFFFFF;border:1px #ff6600 solid;}
 
 .h_gg div:first-child{float:right;width:590px}
 
