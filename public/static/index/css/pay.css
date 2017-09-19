@@ -6,6 +6,24 @@ body{
     color: #666;
     background-color: #f2f2f2;
 }
+ul,div,input{
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+.container, .header, .w1200 {
+    margin: auto;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+.cf {
+    zoom:1;
+}
 
 .header {
     position: relative;
@@ -44,4 +62,209 @@ body{
     left: 165px;
     top:22px;
     position: absolute;
+}
+.container{
+    width: 1200px;
+    background: #fff;
+    margin-bottom: 80px;
+    margin-top: 20px;
+}
+
+.pay-main{
+    width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 2px rgba(0,0,0,.02);
+}
+.pay-left, .pay-main, .paypal-main{
+    position: relative;
+}
+.pay-left{
+    width: 250px;
+    padding-bottom: 50px;
+    background: #f7f7f7;
+    border-right: 1px solid #efe9e9;
+    min-height: 910px!important;
+}
+.channel-a{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    border-top: 1px solid #efe9e9;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.channel-a.on, .channel-a:hover{
+    background-color: #fff;
+    border-top: 1px solid #f7f7f7;
+    border-left: 3px solid #f93;
+    color: #f93;
+    border-bottom: 1px solid #f93;
+    height: 80px;
+    line-height: 80px;
+    zoom:1;
+    margin-left: -2px;
+}
+
+.channel-a, .channel-icon, .channel-name, .channel-status{
+    display: inline-block;;
+}
+.channel-a .on .channel-name, .channel-a:hover .channel-name{
+    color: #f93;
+}
+.channel-name{
+    font-size: 16px;
+    color: #333;
+}
+.channel-icon, .channel-name{
+    vertical-align: top;
+}
+.pay-type-title{
+    text-indent: 48px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 40px;
+    width: 228px;
+    height: 54px;
+    margin: 0 0 10px;
+    right: 6px;
+    background: 0 -97px no-repeat;
+}
+.channel-icon{
+    margin: 23px 6px 0 50px;
+    text-align: center;
+    width: 34px;
+    height: 35px;
+    background: center center no-repeat none;
+}
+
+.left-icon-54{
+    background-position: -86px -62px;
+}
+.left-icon-12{
+    background-position: 0 -62px;
+}
+.left-icon-60{
+    background-position: -40px -62px;
+}
+.left-icon-83{
+    background-position:-301px -146px;
+}
+
+.pay-right{
+    width: 945px;
+    background-color: #fff;
+}
+.channel-order{
+    width: 100%;
+}
+.order-title{
+    height: 63px;
+    line-height: 63px;
+    margin-left: 40px;
+    color: #333;
+    font-size: 24px;
+}
+.order-tr{
+    padding: 15px 0 15px 46px;
+    color: #333;
+    font-size: 14px;
+}
+.pr{
+    position: relative;
+}
+.order-td-left{
+    width: 85px;
+    text-align: left;
+}
+.order-td{
+    float: left;
+}
+.order-td label{
+    line-height: 30px;
+}
+.order-td-left label{
+    margin-right: 6px;
+}
+label{
+    cursor: default;
+}
+.order-td-right{
+    width: 810px;
+    position: relative;
+}
+.order-td input{
+    width: 218px;
+    height: 25px;
+    line-height: 25px;
+    vertical-align: top;
+    margin-right: 10px;
+    border-radius: 4px;
+    padding: 4px 5px;
+    color: #3d3d3d;
+}
+
+
+input{
+    outline: none;
+    font-size: 100%;
+}
+input {
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+}
+.pay-confirm{
+    display: inline-block;
+    text-align: center;
+    width: 180px;
+    height: 54px;
+    line-height: 54px;
+    font-size: 24px;
+    color: #fff;
+    background-color: #f90;
+    border-radius: 3px;
+    margin-left: 270px;
+}
+.pay-confirm:hover{
+    background-color: red;
+}
+.cf:after{
+    clear: both;
+    display: table;
+    content: "";
+}
+.pay-money{
+    padding: 10px;
+    margin: 5px;
+    width: 90px;
+    float: left;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.pay-money input, .pay-bank-input input{
+    width: auto;
+}
+.checked {
+    background-color: #f90;
+}
+.pay-bank{
+    width: 170px;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+.img-div{
+    width: auto;
+    background-color: #fff;
+}
+.hide{
+    display: none;
+}
+.left-icon-card{
+    background-position: -167px -62px;
+}
+.left-icon-54, .left-icon-12, .left-icon-60, .pay-type-title, .left-icon-83, .left-icon-card {
+    background-image: url(../images/pay-icon-sp.png);
 }

@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="__STATIC__/index/css/pay.css">
+    <script type="text/javascript" src="__STATIC__/index/js/jquery181.js"></script>
     <title>{$user.users}：欢迎登陆一起玩.游戏用户中心！_一起玩.游戏</title>
 </head>
 
@@ -31,38 +32,171 @@
                         <li>
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0);">
+                                    <a href="javascript:void(0);" class="channel-a on" date-type="13">
                                         <span class="channel-icon left-icon-54"></span>
                                         <span class="channel-name">微信支付</span>
                                         <span class="channel-status channel-status-0"></span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">
+                                    <a href="javascript:void(0);" class="channel-a" date-type="12">
                                         <span class="channel-icon left-icon-12"></span>
                                         <span class="channel-name">支付宝</span>
                                         <span class="channel-status channel-status-0"></span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">
+                                    <a href="javascript:void(0);" class="channel-a" date-type="14">
                                         <span class="channel-icon left-icon-60"></span>
-                                        <span class="channel-name">网上银行</span>
+                                        <span class="channel-name">中国银联</span>
                                         <span class="channel-status channel-status-0"></span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li></li>
+                        <li>
+                            <div class="pay-type-title">
+                                更多充值方式
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);" class="channel-a" date-type="wy">
+                                        <span class="channel-icon left-icon-83"></span>
+                                        <span class="channel-name">网上银行</span>
+                                        <span class="channel-status channel-status-0"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="channel-a" date-type="card">
+                                        <span class="channel-icon left-icon-card"></span>
+                                        <span class="channel-name">卡类充值</span>
+                                        <span class="channel-status channel-status-0"></span>
+                                    </a>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <!--订单填写-->
                 <div class="pay-right fl">
+                    <div class="channel-order cf">
+                        <h2 class="order-title">微信支付</h2>
+                        <div class="order-table order-table-0">
+                            <!--卡类充值-->
+                            <div class="order-tr cf order-pay-card hide">
+                                <div class="order-td order-td-left">
+                                    <label>支付方式：</label>
+                                </div>
+                                <div class="order-td order-td-right">
 
+                                </div>
+                            </div>
+                            <!--用户名-->
+                            <div class="order-tr cf pr order-account-name">
+                                <div class="order-td order-td-left">
+                                    <label>充值账号：</label>
+                                </div>
+                                <div class="order-td order-td-right">
+                                    <input type="input name-input" maxlength="16" title="充值账号">
+                                </div>
+                            </div>
+                            <!--充值游戏-->
+                            <div class="order-tr cf pr order-account-name">
+                                <div class="order-td order-td-left">
+                                    <label>充值游戏：</label>
+                                </div>
+                                <div class="order-td order-td-right">
+                                    <input type="input name-input" title="充值游戏">
+                                </div>
+                            </div>
+                            <!--选择金额-->
+                            <div class="order-tr cf order-amount hide-8">
+                                <div class="order-td order-td-left">
+                                    <label>选择金额：</label>
+                                </div>
+                                <div class="order-td order-td-right">
+                                    <label class="pay-money checked"><input type="radio" name="money" value="10" checked>10元</label>
+                                    <label class="pay-money"><input type="radio" name="money" value="20" >20元</label>
+                                    <label class="pay-money"><input type="radio" name="money" value="30">30元</label>
+                                    <label class="pay-money"><input type="radio" name="money" value="50" >50元</label>
+                                    <label class="pay-money"><input type="radio" name="money" value="100" >100元</label>
+                                    <label class="pay-money"><input type="radio" name="money" value="200" >200元</label>
+                                    <label class="pay-money"><input type="radio" name="money" value="500" >500元</label>
+                                    <label class="pay-money"><input type="radio" name="money" value="1000" >1000元</label>
+                                    <label class="pay-money"><input type="radio" name="money" value="2000" >2000元</label>
+                                    <label class="pay-money"><input type="radio" name="money" value="5000" >5000元</label>
+                                    <label class="pay-money"><input type="radio" name="money" value="10000" >10000元</label>
+                                </div>
+                            </div>
+                            <!--选择银行-->
+                            <div class="order-tr cf order-pay-bank hide">
+                                <div class="order-td order-td-left">
+                                    <label>选择银行：</label>
+                                </div>
+                                <div class="order-td order-td-right">
+
+                                    <span class="pay-bank checked">
+                                        <label>
+                                            <div class="img-div"><img src="" alt="" width="150" height="50"></div>
+                                            <span class="pay-bank-input">
+                                                <input type="radio" name="bank" value="">工商银行
+                                            </span>
+                                        </label>
+                                    </span>
+
+                                    <span class="pay-bank">
+                                        <label>
+                                            <div><img src="" alt="" width="150" height="50"></div>
+                                            <span class="pay-bank-input">
+                                                <input type="radio" name="bank" value="">建设银行
+                                            </span>
+                                        </label>
+                                    </span>
+
+                                </div>
+                            </div>
+                            <!--提交按钮-->
+                            <div class="order-tr cf order-btn">
+                                <div class="order-td order-td-left">
+                                    <label></label>
+                                </div>
+                                <div class="order-td order-td-right">
+                                    <a href="javascript:;" class="pay-confirm">立即充值</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
+    <script type="text/javascript">
+        $(function() {
+            $(".channel-a").click(function() {
+                $(this).addClass('on');
+                $(".channel-a").not(this).removeClass("on");
+                var type = $(this).attr("date-type");
+                if(type == 13) {
+                    $(".order-title").text("微信支付");
+                }else if(type == 14) {
+                    $(".order-title").text("中国银联");
+                }else if(type == 12) {
+                    $(".order-title").text("支付宝支付");
+                }else if(type == 'wy') {
+                    $(".order-title").text("网上银行");
+                    $(".order-pay-bank").removeClass('hide');
+                }
+            });
+            $(".pay-money").click(function() {
+                $(this).addClass('checked');
+                $(".pay-money").not(this).removeClass("checked");
+            });
+            $(".pay-bank").click(function() {
+                $(this).addClass('checked');
+                $(".pay-bank").not(this).removeClass("checked");
+            })
+        })
+    </script>
 </html>
