@@ -83,22 +83,13 @@
                     <div class="channel-order cf">
                         <h2 class="order-title">微信支付</h2>
                         <div class="order-table order-table-0">
-                            <!--卡类充值-->
-                            <div class="order-tr cf order-pay-card hide">
-                                <div class="order-td order-td-left">
-                                    <label>支付方式：</label>
-                                </div>
-                                <div class="order-td order-td-right">
-
-                                </div>
-                            </div>
                             <!--用户名-->
                             <div class="order-tr cf pr order-account-name">
                                 <div class="order-td order-td-left">
                                     <label>充值账号：</label>
                                 </div>
                                 <div class="order-td order-td-right">
-                                    <input type="input name-input" maxlength="16" title="充值账号">
+                                    <input type="input name-input" maxlength="16" title="充值账号" disabled value="{$user.users}">
                                 </div>
                             </div>
                             <!--充值游戏-->
@@ -107,7 +98,7 @@
                                     <label>充值游戏：</label>
                                 </div>
                                 <div class="order-td order-td-right">
-                                    <input type="input name-input" title="充值游戏">
+                                    <input type="input name-input" title="充值游戏" disabled value="{$serverInfo.game}{$serverInfo.name}">
                                 </div>
                             </div>
                             <!--选择金额-->
@@ -140,7 +131,7 @@
                                         <label>
                                             <div class="img-div"><img src="" alt="" width="150" height="50"></div>
                                             <span class="pay-bank-input">
-                                                <input type="radio" name="bank" value="">工商银行
+                                                <input type="radio" name="bank" value="" checked>工商银行
                                             </span>
                                         </label>
                                     </span>
@@ -150,6 +141,33 @@
                                             <div><img src="" alt="" width="150" height="50"></div>
                                             <span class="pay-bank-input">
                                                 <input type="radio" name="bank" value="">建设银行
+                                            </span>
+                                        </label>
+                                    </span>
+
+                                </div>
+                            </div>
+                            <!--卡类充值-->
+                            <div class="order-tr cf order-pay-card hide">
+                                <div class="order-td order-td-left">
+                                    <label>选择卡类：</label>
+                                </div>
+                                <div class="order-td order-td-right">
+
+                                    <span class="pay-card checked">
+                                        <label>
+                                            <div class="img-div"><img src="" alt="" width="150" height="50"></div>
+                                            <span class="pay-card-input">
+                                                <input type="radio" name="card" value="" checked>移动充值卡
+                                            </span>
+                                        </label>
+                                    </span>
+
+                                    <span class="pay-card">
+                                        <label>
+                                            <div><img src="" alt="" width="150" height="50"></div>
+                                            <span class="pay-card-input">
+                                                <input type="radio" name="card" value="">联通充值卡
                                             </span>
                                         </label>
                                     </span>
@@ -180,13 +198,24 @@
                 var type = $(this).attr("date-type");
                 if(type == 13) {
                     $(".order-title").text("微信支付");
+                    $(".order-pay-bank").addClass('hide');
+                    $(".order-pay-card").addClass('hide');
                 }else if(type == 14) {
                     $(".order-title").text("中国银联");
+                    $(".order-pay-bank").addClass('hide');
+                    $(".order-pay-card").addClass('hide');
                 }else if(type == 12) {
                     $(".order-title").text("支付宝支付");
+                    $(".order-pay-bank").addClass('hide');
+                    $(".order-pay-card").addClass('hide');
                 }else if(type == 'wy') {
                     $(".order-title").text("网上银行");
                     $(".order-pay-bank").removeClass('hide');
+                    $(".order-pay-card").addClass('hide');
+                }else if(type == 'card') {
+                    $(".order-title").text("卡类充值");
+                    $(".order-pay-card").removeClass('hide');
+                    $(".order-pay-bank").addClass('hide');
                 }
             });
             $(".pay-money").click(function() {
@@ -196,6 +225,10 @@
             $(".pay-bank").click(function() {
                 $(this).addClass('checked');
                 $(".pay-bank").not(this).removeClass("checked");
+            })
+            $(".pay-card").click(function() {
+                $(this).addClass('checked');
+                $(".pay-card").not(this).removeClass("checked");
             })
         })
     </script>

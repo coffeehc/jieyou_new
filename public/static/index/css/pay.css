@@ -83,7 +83,7 @@ a, a:hover{
     padding-bottom: 50px;
     background: #f7f7f7;
     border-right: 1px solid #efe9e9;
-    min-height: 910px!important;
+    min-height: 800px!important;
 }
 .channel-a{
     width: 100%;
@@ -156,6 +156,7 @@ a, a:hover{
 .pay-right{
     width: 945px;
     background-color: #fff;
+    min-height: 800px!important;
 }
 .channel-order{
     width: 100%;
@@ -242,18 +243,20 @@ input {
     float: left;
     border: 1px solid #eee;
     border-radius: 5px;
+    cursor: pointer;
 }
-.pay-money input, .pay-bank-input input{
+.pay-money input, .pay-bank-input input, .pay-card-input input{
     width: auto;
 }
 .checked {
     background-color: #f90;
 }
-.pay-bank{
+.pay-bank, .pay-card{
     width: 170px;
     float: left;
     margin: 5px;
     padding: 5px;
+    border: 2px solid #eee;
 }
 .img-div{
     width: auto;
@@ -264,6 +267,9 @@ input {
 }
 .left-icon-card{
     background-position: -167px -62px;
+}
+.order-btn{
+    margin-top: 185px;
 }
 .left-icon-54, .left-icon-12, .left-icon-60, .pay-type-title, .left-icon-83, .left-icon-card {
     background-image: url(../images/pay-icon-sp.png);

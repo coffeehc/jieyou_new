@@ -160,10 +160,19 @@
                                             {volist name="gameServer" id="vo"}
                                             <div style="width:415px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px">
                                                 <img src="__STATIC__/images/shou.png" align="absmiddle" />
-                                                <a href="" title="点击进入游戏" target="_blank"> {$vo.game}{$vo.name}-<span class='hui12'>{$vo.create_time}</span></a>
+                                                <a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入游戏" target="_blank"> {$vo.game}{$vo.name}-<span class='hui12'>{$vo.create_time}</span></a>
                                                 <img src="__STATIC__/images/hotser.gif" width="37" height="19" align="absmiddle" />
                                             </div>
                                             {/volist}
+                                            {in name="$user.users" value="hecheng"}
+                                            {volist name="readyServer" id="vo" empty="$readyEmpty"}
+                                            <div style="width:415px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px">
+                                                <img src="__STATIC__/images/shou.png" align="absmiddle" />
+                                                <a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入游戏" target="_blank"> {$vo.game}{$vo.name}-<span class='hui12'>{$vo.create_time}</span></a>
+                                                <img src="__STATIC__/images/hotser.gif" width="37" height="19" align="absmiddle" />
+                                            </div>
+                                            {/volist}
+                                            {/in}
                                         </td>
                                     </tr>
                                 </table>
