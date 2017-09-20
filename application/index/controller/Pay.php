@@ -13,12 +13,17 @@ class Pay extends User {
         // 获取服务器信息
         $serverInfo = model('GameServer')->getGameServerByid($serverId);
         $user = $this->getLoginUser();
-        // 获取充值方式信息
-        $payWays = model('Payfs')->getPayfsInfo();
+        // $payWays = model('Payfs')->getPayfsInfo();
+        // 网银充值
+        $wy = model('Payfs')->getPayfsInfo(['tid'=>4]);
 
+        // 卡类充值
+        $card = model('Payfs')->getPayfsInfo(['tid'=>5]);
         return $this->fetch('',[
             'serverInfo' => $serverInfo,
-            'payWays' => $payWays,
+            'wy' => $wy,
+            'card' => $card,
+            // 'payWays' => $payWays,
         ]);
     }
 

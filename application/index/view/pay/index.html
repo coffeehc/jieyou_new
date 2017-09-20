@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="__STATIC__/index/css/pay.css">
     <script type="text/javascript" src="__STATIC__/index/js/jquery181.js"></script>
+    <script type="text/javascript" src="__STATIC__/index/js/pay.js"></script>
     <title>{$user.users}：欢迎登陆一起玩.游戏用户中心！_一起玩.游戏</title>
 </head>
 
@@ -13,12 +14,11 @@
         <div class="hd-top">
             <div class="w1200">
                 <div class="top-logo fl">
-                    <div class="logo-175">
-                        <a href="#"></a>
-                    </div>
-                    <h1 class="logo-pay">
-                        充值中心
-                    </h1>
+                    <a href="/" target="_blank"><img src="__STATIC__/images/logo.png" alt="" width="150" height="80"></a>
+                    <h1 class="logo-pay">充值中心</h1>
+                </div>
+                <div class="top-user">
+                    {$user.users}:欢迎您！
                 </div>
             </div>
         </div>
@@ -78,6 +78,10 @@
                         </li>
                     </ul>
                 </div>
+                <iframe name="ispay-iframe" style="display:none"></iframe>
+                <form name="form1" action="{:url('ispay')}" method="post" target="ispay-iframe">
+
+
                 <!--订单填写-->
                 <div class="pay-right fl">
                     <div class="channel-order cf">
@@ -99,6 +103,7 @@
                                 </div>
                                 <div class="order-td order-td-right">
                                     <input type="input name-input" title="充值游戏" disabled value="{$serverInfo.game}{$serverInfo.name}">
+                                    <input type="hidden" name="sid" value="{$serverInfo.id}">
                                 </div>
                             </div>
                             <!--选择金额-->
@@ -118,6 +123,10 @@
                                     <label class="pay-money"><input type="radio" name="money" value="2000" >2000元</label>
                                     <label class="pay-money"><input type="radio" name="money" value="5000" >5000元</label>
                                     <label class="pay-money"><input type="radio" name="money" value="10000" >10000元</label>
+                                    <label class="pay-money" id="else">
+                                        <input type="radio" name="money" value="" >
+                                        <input type="text" value="" class="else" placeholder="其他">
+                                    </label>
                                 </div>
                             </div>
                             <!--选择银行-->
@@ -127,24 +136,16 @@
                                 </div>
                                 <div class="order-td order-td-right">
 
-                                    <span class="pay-bank checked">
+                                    {volist name="wy" id="vo"}
+                                    <span class="pay-bank" bank-id="{$vo.id}">
                                         <label>
-                                            <div class="img-div"><img src="" alt="" width="150" height="50"></div>
+                                            <div class="img-div"><img src="{$vo.pic}" alt="" width="150" height="50"></div>
                                             <span class="pay-bank-input">
-                                                <input type="radio" name="bank" value="" checked>工商银行
+                                                <input type="radio" name="wy" value="">{$vo.name}
                                             </span>
                                         </label>
                                     </span>
-
-                                    <span class="pay-bank">
-                                        <label>
-                                            <div><img src="" alt="" width="150" height="50"></div>
-                                            <span class="pay-bank-input">
-                                                <input type="radio" name="bank" value="">建设银行
-                                            </span>
-                                        </label>
-                                    </span>
-
+                                    {/volist}
                                 </div>
                             </div>
                             <!--卡类充值-->
@@ -154,24 +155,20 @@
                                 </div>
                                 <div class="order-td order-td-right">
 
-                                    <span class="pay-card checked">
+                                    <!-- <span class="pay-card checked">
                                         <label>
                                             <div class="img-div"><img src="" alt="" width="150" height="50"></div>
                                             <span class="pay-card-input">
                                                 <input type="radio" name="card" value="" checked>移动充值卡
                                             </span>
                                         </label>
-                                    </span>
-
-                                    <span class="pay-card">
-                                        <label>
-                                            <div><img src="" alt="" width="150" height="50"></div>
-                                            <span class="pay-card-input">
-                                                <input type="radio" name="card" value="">联通充值卡
-                                            </span>
-                                        </label>
-                                    </span>
-
+                                    </span> -->
+                                    {volist name="card" id="vo"}
+                                    <a href="javascript:;" class="pay-card" bank-id="{$vo.id}">
+                                        <span class="card-icon">{$vo.name}</span>
+                                        <span class="order-checked"></span>
+                                    </a>
+                                    {/volist}
                                 </div>
                             </div>
                             <!--提交按钮-->
@@ -180,56 +177,36 @@
                                     <label></label>
                                 </div>
                                 <div class="order-td order-td-right">
-                                    <a href="javascript:;" class="pay-confirm">立即充值</a>
+                                    <input type="hidden" name="bank" id="bank" value="13">
+                                    <button type="submit" class="pay-confirm">立即充值</button>
+                                    <input type="hidden" name="forms" value="pay">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer" align="center">
+        <div style="width:1200px">
+            <div>防沉迷认证 | 意见反馈 | 家长监护 | 关于我们 | 人才招聘 | 商务合作 </div>
+            <div>＠2015-2017 {$config.bq} <a href="{$config.xukez}" target="_blank" style="color:#333333;">{$config.xuke}</a> 备案号：{$config.icp} 客服电话:{$config.phone}
+            </div>
+            <div>公司地址：成都市天府大道530号天祥广场10楼 邮箱：2477037269@qq.com
+                {if condition="$_SERVER['SERVER_NAME'] eq 'www.comecrazy.com'"}
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002000968 " style="display:inline-block;text-decoration:none;height:14px;line-height:20px;">
+        		<img src="__STATIC__/images/batb.png" style="float:left;"/>
+        		<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#333333;">川公网安备 51019002000968号</p></a>
+                {else /}
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002000995 " style="display:inline-block;text-decoration:none;height:14px;line-height:20px;">
+        		<img src="__STATIC__/images/batb.png" style="float:left;"/>
+        		<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#333333;">川公网安备 51019002000995号</p></a>
+                {/if}
             </div>
         </div>
     </div>
 </body>
-    <script type="text/javascript">
-        $(function() {
-            $(".channel-a").click(function() {
-                $(this).addClass('on');
-                $(".channel-a").not(this).removeClass("on");
-                var type = $(this).attr("date-type");
-                if(type == 13) {
-                    $(".order-title").text("微信支付");
-                    $(".order-pay-bank").addClass('hide');
-                    $(".order-pay-card").addClass('hide');
-                }else if(type == 14) {
-                    $(".order-title").text("中国银联");
-                    $(".order-pay-bank").addClass('hide');
-                    $(".order-pay-card").addClass('hide');
-                }else if(type == 12) {
-                    $(".order-title").text("支付宝支付");
-                    $(".order-pay-bank").addClass('hide');
-                    $(".order-pay-card").addClass('hide');
-                }else if(type == 'wy') {
-                    $(".order-title").text("网上银行");
-                    $(".order-pay-bank").removeClass('hide');
-                    $(".order-pay-card").addClass('hide');
-                }else if(type == 'card') {
-                    $(".order-title").text("卡类充值");
-                    $(".order-pay-card").removeClass('hide');
-                    $(".order-pay-bank").addClass('hide');
-                }
-            });
-            $(".pay-money").click(function() {
-                $(this).addClass('checked');
-                $(".pay-money").not(this).removeClass("checked");
-            });
-            $(".pay-bank").click(function() {
-                $(this).addClass('checked');
-                $(".pay-bank").not(this).removeClass("checked");
-            })
-            $(".pay-card").click(function() {
-                $(this).addClass('checked');
-                $(".pay-card").not(this).removeClass("checked");
-            })
-        })
-    </script>
+
 </html>

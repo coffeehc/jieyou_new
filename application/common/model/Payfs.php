@@ -4,11 +4,11 @@ use think\Model;
 
 class Payfs extends Model {
 
-    public function getPayfsInfo() {
+    public function getPayfsInfo($data=[]) {
         $order = [
             'id' => 'ASC',
         ];
-        $res = $this->order($order)->select();
+        $res = $this->where($data)->order($order)->select();
         return $res;
     }
 

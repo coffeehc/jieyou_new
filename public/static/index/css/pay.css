@@ -14,7 +14,7 @@ ul,div,input{
     border: 0;
     outline: 0;
 }
-.container, .header, .w1200 {
+.container, .header, .w1200, .footer {
     margin: auto;
 }
 
@@ -59,8 +59,8 @@ a, a:hover{
 }
 .logo-pay{
     height: 36px;
-    left: 165px;
-    top:22px;
+    left: 515px;
+    top:8px;
     position: absolute;
 }
 .container{
@@ -83,7 +83,7 @@ a, a:hover{
     padding-bottom: 50px;
     background: #f7f7f7;
     border-right: 1px solid #efe9e9;
-    min-height: 800px!important;
+    min-height: 750px;
 }
 .channel-a{
     width: 100%;
@@ -227,9 +227,11 @@ input {
     background-color: #f90;
     border-radius: 3px;
     margin-left: 270px;
+    border: 1px solid #f93;
+    cursor: pointer;
 }
 .pay-confirm:hover{
-    background-color: red;
+    background-color: #ff5a00;
 }
 .cf:after{
     clear: both;
@@ -251,7 +253,7 @@ input {
 .checked {
     background-color: #f90;
 }
-.pay-bank, .pay-card{
+.pay-bank{
     width: 170px;
     float: left;
     margin: 5px;
@@ -269,8 +271,46 @@ input {
     background-position: -167px -62px;
 }
 .order-btn{
-    margin-top: 185px;
+    margin-top: 40px;
 }
-.left-icon-54, .left-icon-12, .left-icon-60, .pay-type-title, .left-icon-83, .left-icon-card {
+.pay-card{
+    position: relative;
+    text-align: center;
+    width: 154px;
+    height: 40px;
+    line-height: 38px;
+    border: 1px solid #d8dbde;
+    margin-bottom: 9px;
+    float: left;
+    margin-right: 19px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+a{
+    color: #3c3c3c;
+}
+.order-checked{
+    position: absolute;
+    display: none;
+    width: 31px;
+    height: 24px;
+    bottom: -2px;
+    right: -5px;
+    background: -207px -175px no-repeat;
+    border-radius: 10px;
+}
+.pay-card-on{
+    line-height: 38px;
+    border: 1px solid #f93;
+}
+.pay-card-on .order-checked{
+    display: block;
+}
+.footer{
+    height: 80px;
+    margin-top: 840px;
+    z-index: 21;
+}
+.left-icon-54, .left-icon-12, .left-icon-60, .pay-type-title, .left-icon-83, .left-icon-card, .order-checked {
     background-image: url(../images/pay-icon-sp.png);
 }
