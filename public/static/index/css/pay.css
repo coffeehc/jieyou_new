@@ -246,12 +246,14 @@ input {
     border: 1px solid #eee;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
 }
 .pay-money input, .pay-bank-input input, .pay-card-input input{
     width: auto;
 }
 .checked {
     background-color: #f90;
+    color: #fff;
 }
 .pay-bank{
     width: 170px;

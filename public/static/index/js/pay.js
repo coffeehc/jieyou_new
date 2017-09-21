@@ -27,6 +27,8 @@ $(function() {
         }
     });
     $(".pay-money").click(function() {
+        var money = $(this).attr("date-money");
+        $("#money").val(money);
         $(this).addClass('checked');
         $(".pay-money").not(this).removeClass("checked");
     });

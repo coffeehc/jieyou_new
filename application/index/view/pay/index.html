@@ -17,9 +17,6 @@
                     <a href="/" target="_blank"><img src="__STATIC__/images/logo.png" alt="" width="150" height="80"></a>
                     <h1 class="logo-pay">充值中心</h1>
                 </div>
-                <div class="top-user">
-                    {$user.users}:欢迎您！
-                </div>
             </div>
         </div>
     </div>
@@ -112,21 +109,17 @@
                                     <label>选择金额：</label>
                                 </div>
                                 <div class="order-td order-td-right">
-                                    <label class="pay-money checked"><input type="radio" name="money" value="10" checked>10元</label>
-                                    <label class="pay-money"><input type="radio" name="money" value="20" >20元</label>
-                                    <label class="pay-money"><input type="radio" name="money" value="30">30元</label>
-                                    <label class="pay-money"><input type="radio" name="money" value="50" >50元</label>
-                                    <label class="pay-money"><input type="radio" name="money" value="100" >100元</label>
-                                    <label class="pay-money"><input type="radio" name="money" value="200" >200元</label>
-                                    <label class="pay-money"><input type="radio" name="money" value="500" >500元</label>
-                                    <label class="pay-money"><input type="radio" name="money" value="1000" >1000元</label>
-                                    <label class="pay-money"><input type="radio" name="money" value="2000" >2000元</label>
-                                    <label class="pay-money"><input type="radio" name="money" value="5000" >5000元</label>
-                                    <label class="pay-money"><input type="radio" name="money" value="10000" >10000元</label>
-                                    <label class="pay-money" id="else">
-                                        <input type="radio" name="money" value="" >
-                                        <input type="text" value="" class="else" placeholder="其他">
-                                    </label>
+                                    <label class="pay-money checked" date-money="10">10元</label>
+                                    <label class="pay-money" date-money="20">20元</label>
+                                    <label class="pay-money" date-money="30">30元</label>
+                                    <label class="pay-money" date-money="50">50元</label>
+                                    <label class="pay-money" date-money="100">100元</label>
+                                    <label class="pay-money" date-money="200">200元</label>
+                                    <label class="pay-money" date-money="500">500元</label>
+                                    <label class="pay-money" date-money="1000">1000元</label>
+                                    <label class="pay-money" date-money="2000">2000元</label>
+                                    <label class="pay-money" date-money="5000">5000元</label>
+                                    <label class="pay-money" date-money="10000">10000元</label>
                                 </div>
                             </div>
                             <!--选择银行-->
@@ -141,7 +134,7 @@
                                         <label>
                                             <div class="img-div"><img src="{$vo.pic}" alt="" width="150" height="50"></div>
                                             <span class="pay-bank-input">
-                                                <input type="radio" name="wy" value="">{$vo.name}
+                                                {$vo.name}
                                             </span>
                                         </label>
                                     </span>
@@ -177,6 +170,7 @@
                                     <label></label>
                                 </div>
                                 <div class="order-td order-td-right">
+                                    <input type="hidden" name="money" id="money" value="10" >
                                     <input type="hidden" name="bank" id="bank" value="13">
                                     <button type="submit" class="pay-confirm">立即充值</button>
                                     <input type="hidden" name="forms" value="pay">

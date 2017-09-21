@@ -6,7 +6,7 @@ class GameServer extends BaseModel {
 
     public function getGameServerInfo($data=[]) {
         $order = [
-            'id' => 'desc',
+            'id' => 'asc',
         ];
         $res = $this->where($data)->order($order)->select();
         return $res;

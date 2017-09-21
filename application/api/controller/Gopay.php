@@ -13,12 +13,12 @@ class Gopay extends Controller {
             $uid = input('param.uid');
             $userInfo = model('User')->getUserByUsername($uid);
             $gid = model('UserServer')->getGsidByUserid($userInfo['id']);
-            // $res = model('LoginSession')->getLoginSessionInfoByUser($uid);
-            // if($res) {
-            //     session_destroy();
-            //     session_id($res['sessionid']);
-            //     session_start();
-            // }
+            $res = model('LoginSession')->getLoginSessionInfoByUser($uid);
+            if($res) {
+                session_destroy();
+                session_id($res['sessionid']);
+                session_start();
+            }
             return redirect('index/Pay/index',['id'=>$gid]);
         }
     }
