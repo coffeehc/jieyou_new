@@ -76,7 +76,7 @@
                     </ul>
                 </div>
                 <iframe name="ispay-iframe" style="display:none"></iframe>
-                <form name="form1" action="{:url('ispay')}" method="post" target="ispay-iframe">
+                <form name="form1" action="{:url('ispay')}" method="post" target="ispay-iframe" onsubmit="return check()">
 
 
                 <!--订单填写-->
@@ -115,12 +115,16 @@
                                     <label class="pay-money" date-money="50">50元</label>
                                     <label class="pay-money" date-money="100">100元</label>
                                     <label class="pay-money" date-money="200">200元</label>
+                                    <label class="pay-money" date-money="300">300元</label>
                                     <label class="pay-money" date-money="500">500元</label>
                                     <label class="pay-money" date-money="1000">1000元</label>
                                     <label class="pay-money" date-money="2000">2000元</label>
                                     <label class="pay-money" date-money="5000">5000元</label>
                                     <label class="pay-money" date-money="10000">10000元</label>
+                                    <label class="write-money"><input type="number" id="else"></label><label for="else">你还可以填写金额,最低10元:)</label>
+
                                 </div>
+                                <label style="color:red;display:none;" id="error-money">错误的金额:(</label>
                             </div>
                             <!--选择银行-->
                             <div class="order-tr cf order-pay-bank hide">

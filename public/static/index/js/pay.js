@@ -32,6 +32,20 @@ $(function() {
         $(this).addClass('checked');
         $(".pay-money").not(this).removeClass("checked");
     });
+    $(".write-money").click(function() {
+        $(".pay-money").removeClass("checked");
+
+    })
+    $("#else").keyup(function() {
+        var money = $(this).val();
+        if(money < 0) {
+            $(this).val(10);
+        }
+        if(money > 100000) {
+            $(this).val(100000);
+        }
+        $("#money").val(money);
+    })
     $(".pay-bank").click(function() {
         var type = $(this).attr("bank-id");
         $("#bank").val(type);
@@ -43,5 +57,13 @@ $(function() {
         $("#bank").val(type);
         $(this).addClass('pay-card-on');
         $(".pay-card").not(this).removeClass("pay-card-on");
-    })
+    });
 })
+function check() {
+    var money = document.getElementById("money").value;
+    if(money < 10) {
+        $("#error-money").css("display","block");
+        return false;
+    }
+    return true;
+}

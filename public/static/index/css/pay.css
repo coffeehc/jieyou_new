@@ -313,6 +313,13 @@ a{
     margin-top: 840px;
     z-index: 21;
 }
+input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input[type="number"]{
+        -moz-appearance: textfield;
+    }
 .left-icon-54, .left-icon-12, .left-icon-60, .pay-type-title, .left-icon-83, .left-icon-card, .order-checked {
     background-image: url(../images/pay-icon-sp.png);
 }
