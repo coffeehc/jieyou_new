@@ -103,6 +103,139 @@
                                     <input type="hidden" name="sid" value="{$serverInfo.id}">
                                 </div>
                             </div>
+                            <!--选择游戏-->
+                            <div id="pay-game" class="order-tr cf order-game">
+                                <div class="order-td order-td-left">
+                                    <label>选择游戏：</label>
+                                </div>
+                                <div class="order-td order-td-right pr">
+                                    <a class="pay-game pay-game-on">选择游戏</a>
+                                    <div class="gs-sel-panel ">
+                                        <div class="gs-sel-top">
+                                            <span class="gs-sel-title ">选择游戏</span>
+                                            <div class="gs-sel-close-box">
+                                                <a title="关闭" class="gs-sel-gs-bg gs-sel-close-btn opacity-style"></a>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-middle">
+                                            <div class="gs-sel-lastplay">
+                                                <a class="gs-sel-tab-btn last-played f-right">最近玩过</a>
+                                            </div>
+                                            <div class="gs-sel-tab-bar w456">
+                                                <ul class="lastplay-items">
+                                                    <li><a class="gs-sel-tab-btn current-tab">ABC</a></li>
+                                                    <li><a class="gs-sel-tab-btn">DEF</a></li>
+                                                    <li><a class="gs-sel-tab-btn">GHI</a></li>
+                                                    <li><a class="gs-sel-tab-btn">JKL</a></li>
+                                                    <li><a class="gs-sel-tab-btn">MNO</a></li>
+                                                    <li><a class="gs-sel-tab-btn">PQR</a></li>
+                                                    <li><a class="gs-sel-tab-btn">STU</a></li>
+                                                    <li><a class="gs-sel-tab-btn">VWX</a></li>
+                                                    <li><a class="gs-sel-tab-btn">YZ</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-bottom">
+                                            <div class="gs-sel-cate-box">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">A</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items">傲视天地</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">B</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items">百战天下</a></li>
+                                                        <li><a class="server-items">白兔</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">C</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items">传奇霸业</a></li>
+                                                        <li><a class="server-items">传奇盛世</a></li>
+                                                        <li><a class="server-items">超霸传奇</a></li>
+                                                        <li><a class="server-items">赤月传说2</a></li>
+                                                        <li><a class="server-items">代号PK</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-timeout" style="display:none;">
+                                            <p>数据请求超时，请重试！</p>
+                                        </div>
+                                    </div>
+                                    <a class="pay-game" href="javascript">选择区服</a>
+                                    <div class="gs-sel-panel w642 show">
+                                        <div class="gs-sel-top">
+                                            <span class="gs-sel-title">选择服务器</span>
+                                            <div class="gs-sel-searchbar">
+                                                <div class="gs-sel-searchbar-item mar-right-10">
+                                                    <a class="gs-sel-gs-bg gs-sel-shadow drop-down-tag">服务器类型</a>
+                                                    <div id="gs_sel_server_dropdown">
+                                                        <ul class="dropdown-box gs-sel-server-list-dropdow">
+                                                            <li><a class="gs-sel-server-items">双线服</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="gs-sel-search-input">
+                                                    <input type="number" class="gs-sel-searchbar-item gs-sel-shadow server-id-txt" maxlength="8">
+                                                    <a class="gs-sel-gs-bg gs-sel-close-search-btn" style="display:none;"></a>
+                                                </div>
+                                                <a class="gs-sel-gs-bg submit-btn">确定</a>
+                                            </div>
+                                            <div class="gs-sel-close-box">
+                                                <a title="关闭" class="gs-sel-gs-bg gs-sel-close-btn opacity-style"></a>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-middle" style="display:block;">
+                                            <div class="gs-sel-lastplay">
+                                                <a class="gs-sel-tab-btn-two last-played f-right">最近玩过</a>
+                                            </div>
+                                            <span class="col-line-grey"></span>
+                                            <div class="gs-sel-tab-bar w540">
+                                                <div class="tab-list w484">
+                                                    <ul class="tab-list-main">
+                                                        <li><a class="gs-sel-tab-btn-two current-tab">双线服</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="" style="display:block;">
+                                            <div class="gs-sel-bottom hide" id="server_page_lastplay">
+                                                <ul class="lastplay-list-main">
+                                                    <li class="gs-sel-server-empty-tips">请先填写充值账号</li>
+                                                </ul>
+                                            </div>
+                                            <div class="gs-sel-bottom" id="server_page_1">
+                                                <div class="gs-sel-sub">
+                                                    <ul class="sub-list-main">
+                                                        <li><a href="javascript:void(0);" class="gs-sel-sub-btn current-sub">1-100服</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-server-list">
+                                                    <ul class="server-list-main" style="display:block;">
+                                                        <li class="gs-sel-ser-item"><a class="server-items">双线1区</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-search-result" style="display:none;">
+                                            <ul class="search-result-box" style="display:block;">
+                                                <li><a href="javascript:void(0);" class="server-items"></a></li>
+                                            </ul>
+                                            <div class="search-result-empty" style="display:none">
+                                                <p class="empty-title">没有找到您填写的区服，填写其他的试试？</p>
+                                                <p class="empty-tips">提示：区服类型正确选择后，直接在快速服务框填写数字即可</p>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-timeout">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <!--选择金额-->
                             <div class="order-tr cf order-amount hide-8">
                                 <div class="order-td order-td-left">

@@ -111,7 +111,7 @@
                                                 <a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒">{$vo.game}{$vo.name}</a>
                                             </td>
                                             <td height="30" align="center">
-                                                <? echo date('m-d',strtotime($sg['stime']))?>
+                                                {$vo.create_time}
                                             </td>
                                             <td width="14%" nowrap="nowrap"><a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒"><img src="__STATIC__/images/naozhong.png" border="0" /></a></td>
                                         </tr>

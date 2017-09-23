@@ -28,7 +28,7 @@
             display: ;
         }
     </style>
-    <script type="text/javascript" src="__STATIC__/index/js/swfobject.js"></script>
+    <!-- <script type="text/javascript" src="__STATIC__/index/js/swfobject.js"></script> -->
     <script type="text/javascript" src="__STATIC__/index/js/jquery181.js"></script>
     <script language="javascript">
         var win_x = 0;
@@ -43,61 +43,62 @@
             img.src = '/images/cmd2.jpg';
         }
 
-        function ChkForm() {
-            var accObj = document.getElementById('acc');
-            var pwdObj = document.getElementById('pwd');
-            var pwd2Obj = document.getElementById('pwd2');
-            if (accObj.value.length < 5) {
-                alert('账号长度不能少于5!');
-                accObj.focus();
-                return false;
-            }
-            if (pwdObj.value.length < 5) {
-                alert('密码长度不能少于5!');
-                pwdObj.focus();
-                return false;
-            }
-            if (pwd2Obj.value.length > 0 && pwdObj.value != pwd2Obj.value) {
-                alert('密码不一致!');
-                pwd2Obj.focus();
-                return false;
-            }
-            return true;
-        }
+        // function ChkForm() {
+        //     var accObj = document.getElementById('acc');
+        //     var pwdObj = document.getElementById('pwd');
+        //     var pwd2Obj = document.getElementById('pwd2');
+        //     if (accObj.value.length < 5) {
+        //         alert('账号长度不能少于5!');
+        //         accObj.focus();
+        //         return false;
+        //     }
+        //     if (pwdObj.value.length < 5) {
+        //         alert('密码长度不能少于5!');
+        //         pwdObj.focus();
+        //         return false;
+        //     }
+        //     if (pwd2Obj.value.length > 0 && pwdObj.value != pwd2Obj.value) {
+        //         alert('密码不一致!');
+        //         pwd2Obj.focus();
+        //         return false;
+        //     }
+        //     return true;
+        // }
 
-        window.onload = function() {
-            var swfVersionStr = "10.3.0";
-            var xiSwfUrlStr = "/swf/public/playerProductInstall.swf";
-            var flashvars = {};
-
-            var params = {};
-            params.quality = "high";
-            params.bgcolor = "#0";
-            params.allowscriptaccess = "always";
-            params.allowfullscreen = "true";
-            params.wmode = "Transparent";
-            var attributes = {};
-            attributes.id = "main";
-            attributes.name = "Main";
-            attributes.align = "middle";
-            swfobject.embedSWF(
-                "{$flashInfo.swf}", "flashContent",
-                "90%", "80%",
-                swfVersionStr, xiSwfUrlStr,
-                flashvars, params, attributes);
-            swfobject.createCSS("#flashContent", "display:block;text-align:left;");
-
-            var img = new Image();
-            img.src = '/images/login.jpg';
-
-            win_x = document.documentElement.clientWidth;
-            win_y = document.documentElement.clientHeight;
-        }
+        // window.onload = function() {
+        //     var swfVersionStr = "10.3.0";
+        //     var xiSwfUrlStr = "/swf/public/playerProductInstall.swf";
+        //     var flashvars = {};
+        //
+        //     var params = {};
+        //     params.quality = "high";
+        //     params.bgcolor = "#0";
+        //     params.allowscriptaccess = "always";
+        //     params.allowfullscreen = "true";
+        //     params.wmode = "Transparent";
+        //     var attributes = {};
+        //     attributes.id = "main";
+        //     attributes.name = "Main";
+        //     attributes.align = "middle";
+        //     swfobject.embedSWF(
+        //         "{$flashInfo.swf}", "flashContent",
+        //         "90%", "80%",
+        //         swfVersionStr, xiSwfUrlStr,
+        //         flashvars, params, attributes);
+        //     swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+        //
+        //     var img = new Image();
+        //     img.src = '/images/login.jpg';
+        //
+        //     win_x = document.documentElement.clientWidth;
+        //     win_y = document.documentElement.clientHeight;
+        // }
     </script>
 </head>
 
 <body onclick="javascript:callbackLogin('1');">
     <div id="flashContent">
+        <embed  src="{$flashInfo.swf}">
         <p>
             <a href='http://www.adobe.com/go/getflashplayer' style='color:black;margin-left:50px;'>您电脑上的Flash Player版本过低，请点击安装最新版本</a>
         </p>
@@ -209,11 +210,11 @@
 
                 if(userflag && pwdflag && pwd2flag) {
                     $.post(url,{users:users,password:password,gid:gid,type:'register'},function(result) {
-                        if(result.code == 1) {
+                        if(result.code == 1) {  // 值为1 为正常 直接进入游戏
                             top.window.location = '/index/game/index/id/'+result.data+'.html';
-                        }else if(result.code == 2) {
+                        }else if(result.code == 2) {  // 值为2 游戏没有开服 进入等待页面
                             top.window.location = '/index/youxi/index/id/'+result.data+'.html';
-                        }else {
+                        }else {  // 错误  提示系统繁忙
                             alert('系统繁忙');
                         }
                     },'json')
