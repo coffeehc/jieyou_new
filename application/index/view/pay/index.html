@@ -109,12 +109,12 @@
                                     <label>选择游戏：</label>
                                 </div>
                                 <div class="order-td order-td-right pr">
-                                    <a class="pay-game pay-game-on">选择游戏</a>
-                                    <div class="gs-sel-panel ">
+                                    <a id="choosed_game_a" class="pay-game ">选择游戏</a>
+                                    <div id="choosed_game_div" class="gs-sel-panel ">
                                         <div class="gs-sel-top">
                                             <span class="gs-sel-title ">选择游戏</span>
                                             <div class="gs-sel-close-box">
-                                                <a title="关闭" class="gs-sel-gs-bg gs-sel-close-btn opacity-style"></a>
+                                                <a id="choosed_game_div_closed" title="关闭" class="gs-sel-gs-bg gs-sel-close-btn opacity-style"></a>
                                             </div>
                                         </div>
                                         <div class="gs-sel-middle">
@@ -136,28 +136,137 @@
                                             </div>
                                         </div>
                                         <div class="gs-sel-bottom">
-                                            <div class="gs-sel-cate-box">
-                                                <div class="gs-sel-cate">
-                                                    <span class="cate-letter">A</span>
-                                                    <ul class="cate-letter-child">
-                                                        <li><a class="server-items">傲视天地</a></li>
-                                                    </ul>
-                                                </div>
+                                            <div class="gs-sel-cate-box" style="display:block;">
                                                 <div class="gs-sel-cate">
                                                     <span class="cate-letter">B</span>
                                                     <ul class="cate-letter-child">
-                                                        <li><a class="server-items">百战天下</a></li>
-                                                        <li><a class="server-items">白兔</a></li>
+                                                        <li><a class="server-items" data-gid="blr" date-id="44">不良人</a></li>
+                                                        <li><a class="server-items" data-gid="bwzx" date-id="69">霸王之心</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">D</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="dzs" date-id="47">大战神</a></li>
+                                                        <li><a class="server-items" data-gid="dbtx" date-id="60">独步天下</a></li>
+                                                        <li><a class="server-items" data-gid="dtx" date-id="37">打天下</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="gs-sel-cate">
-                                                    <span class="cate-letter">C</span>
+                                                    <span class="cate-letter">F</span>
                                                     <ul class="cate-letter-child">
-                                                        <li><a class="server-items">传奇霸业</a></li>
-                                                        <li><a class="server-items">传奇盛世</a></li>
-                                                        <li><a class="server-items">超霸传奇</a></li>
-                                                        <li><a class="server-items">赤月传说2</a></li>
-                                                        <li><a class="server-items">代号PK</a></li>
+                                                        <li><a class="server-items" data-gid="fbdl" date-id="42">风暴大陆</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">G</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="gcd" date-id="67">鬼吹灯2</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">H</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="hc" date-id="39">幻城</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">J</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="jyjh" date-id="19">剑雨江湖</a></li>
+                                                        <li><a class="server-items" data-gid="jyjx" date-id="25">九阴绝学</a></li>
+                                                        <li><a class="server-items" data-gid="jshtm" date-id="65">绝世唐门</a></li>
+                                                        <li><a class="server-items" data-gid="jyjy" date-id="70">九阴九阳</a></li>
+                                                        <li><a class="server-items" data-gid="jtfs" date-id="73">九天封神</a></li>
+                                                        <li><a class="server-items" data-gid="jjbyc" date-id="77">街机捕鱼城</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">L</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="lycqi" date-id="62">烈焰传奇</a></li>
+                                                        <li><a class="server-items" data-gid="lzyhh" date-id="63">龙之炎黄魂</a></li>
+                                                        <li><a class="server-items" data-gid="ly2" date-id="64">灵域2</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">M</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="myzs" date-id="68">新暮影战神</a></li>
+                                                        <li><a class="server-items" data-gid="mojun" date-id="78">魔君传说</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">Q</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="qyz" date-id="48">青云志</a></li>
+                                                        <li><a class="server-items" data-gid="qmcj" date-id="72">全名裁决</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">R</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="rxsg3" date-id="49">热血三国3</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">S</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="smcs" date-id="55">神魔传说</a></li>
+                                                        <li><a class="server-items" data-gid="sg" date-id="40">盛世三国</a></li>
+                                                        <li><a class="server-items" data-gid="sxd" date-id="71">神仙道</a></li>
+                                                        <li><a class="server-items" data-gid="smr" date-id="66">思美人</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">T</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="ttxy" date-id="53">通天西游</a></li>
+                                                        <li><a class="server-items" data-gid="tssj" date-id="22">天书世界</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">W</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="wldf" date-id="58">武炼巅峰</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">X</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="xtj" date-id="51">修天决</a></li>
+                                                        <li><a class="server-items" data-gid="xljxz" date-id="74">新六界仙尊</a></li>
+                                                        <li><a class="server-items" data-gid="xftzn" date-id="76">新焚天之怒</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">Y</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="ytx" date-id="43">御天下</a></li>
+                                                        <li><a class="server-items" data-gid="yjqc" date-id="45">一剑倾城</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">Z</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="server-items" data-gid="zqzm" date-id="59">足球掌门</a></li>
+                                                        <li><a class="server-items" data-gid="ztzn" date-id="82">战天之怒</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -166,8 +275,8 @@
                                             <p>数据请求超时，请重试！</p>
                                         </div>
                                     </div>
-                                    <a class="pay-game" href="javascript">选择区服</a>
-                                    <div class="gs-sel-panel w642 show">
+                                    <a class="pay-game" href="javascript:void(0);">选择区服</a>
+                                    <div class="gs-sel-panel w642 ">
                                         <div class="gs-sel-top">
                                             <span class="gs-sel-title">选择服务器</span>
                                             <div class="gs-sel-searchbar">

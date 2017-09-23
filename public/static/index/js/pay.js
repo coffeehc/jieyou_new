@@ -58,6 +58,24 @@ $(function() {
         $(this).addClass('pay-card-on');
         $(".pay-card").not(this).removeClass("pay-card-on");
     });
+    $("#choosed_game_a").click(function() {
+        $(this).addClass("pay-game-on");
+        $("#choosed_game_div").addClass("show");
+    });
+    $("#choosed_game_div_closed").click(function() {
+        $("#choosed_game_div").removeClass("show");
+    });
+
+    // 游戏字母切换
+    function initTab(name) {
+        var _tab = $(name);
+        _tab.find('.lastplay-items li').click(function() {
+            _tab.find(".gs-sel-cate-box").hide().eq($(this).index()).show();
+            $(".gs-sel-tab-btn").removeClass("current-tab");
+            $(this).children().addClass("current-tab");
+        }).eq(0).click();
+    };
+    initTab("#choosed_game_div");
 })
 function check() {
     var money = document.getElementById("money").value;
