@@ -325,3 +325,22 @@ function getUserUsersById($id) {
     $res = model('User')->field('users')->find($id);
     return $res['users'];
 }
+
+/**
+ * game_server 表 通过ID 获取游戏名字
+ * @return [type] [description]
+ */
+function getGameByGsid($id) {
+    $res = model('GameServer')->field('game')->group('game')->find($id);
+    return $res['game'];
+}
+
+/**
+ * 通过ID 获取服务器名字
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+function getNameByGsid($id) {
+    $res = model('GameServer')->field('name')->find($id);
+    return $res['game'];
+}

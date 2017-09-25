@@ -79,7 +79,7 @@
                                             <td width="65%" nowrap="nowrap">
                                                 <a href="{:url('game/index',['id'=>$vo.id])}" target="_blank" title="点击进入{$vo.game}{$vo.name}">{$vo.game}{$vo.name}</a>
                                             </td>
-                                            <td width="23%" nowrap="nowrap"><a href="{$vo.id}" target="_blank" title="点击进入{$vo.game}{$vo.name}"><span class="hui12">{$vo.create_time}</span></a></td>
+                                            <td width="23%" nowrap="nowrap"><a href="{:url('game/index',['id'=>$vo.id])}" target="_blank" title="点击进入{$vo.game}{$vo.name}"><span class="hui12">{$vo.create_time}</span></a></td>
                                         </tr>
                                         {/volist}
                                     </table>

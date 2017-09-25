@@ -13,6 +13,11 @@ class Pay extends User {
         // 获取服务器信息
         $serverInfo = model('GameServer')->getGameServerByid($serverId);
         $user = $this->getLoginUser();
+
+        // 最近玩过的游戏
+        $gsidArr = model('UserServer')->getGidByUid($user['id']);
+
+
         // $payWays = model('Payfs')->getPayfsInfo();
         // 网银充值
         $wy = model('Payfs')->getPayfsInfo(['tid'=>4]);
@@ -23,8 +28,30 @@ class Pay extends User {
             'serverInfo' => $serverInfo,
             'wy' => $wy,
             'card' => $card,
+            'gsidArr' => $gsidArr,
             // 'payWays' => $payWays,
         ]);
+    }
+
+    public function choosedGame() {
+        if(!request()->isPost()) {
+            return $this->error('请求错误');
+        }
+
+        $data = input('post.');
+        try {
+            $servers = model("GameServer")->getServerByGid($data['gid']);
+            if($servers) {
+                $arr = array_chunk($servers,100);
+                return show(1,'有服务器',$arr);
+            }else {
+                return show(0,'没有服务器信息');
+            }
+        } catch (\Exception $e) {
+            return show(0,$e->getMessage());
+        }
+
+        dump($arr);exit;
     }
 
     public function ispay() {

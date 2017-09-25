@@ -27,4 +27,19 @@ class UserServer extends Model {
         $res = $this->field('gsid')->where("userid = $uid")->order('id desc')->find();
         return $res['gsid'];
     }
+
+    /**
+     * 通过用户ID 获取 gsid字段数据
+     * @param  [type] $uid [description]
+     * @return [type]      [description]
+     */
+    public function getGsidInfoByUid($uid) {
+        $res = $this->field('gsid')->where("userid = $uid")->order("id desc")->select();
+        return $res;
+    }
+
+    public function getGidByUid($uid) {
+        $res = $this->field('gid')->where("userid = $uid")->group("gid")->select();
+        return $res;
+    }
 }

@@ -58,25 +58,122 @@ $(function() {
         $(this).addClass('pay-card-on');
         $(".pay-card").not(this).removeClass("pay-card-on");
     });
+
+    /**
+     * 点击选择游戏下拉框
+     * @return {[type]} [description]
+     */
     $("#choosed_game_a").click(function() {
+        $(".pay-game").removeClass("pay-game-on");
         $(this).addClass("pay-game-on");
+        $(".gs-sel-panel").removeClass("show");
         $("#choosed_game_div").addClass("show");
     });
     $("#choosed_game_div_closed").click(function() {
         $("#choosed_game_div").removeClass("show");
     });
 
+    $("#choosed_server_div_closed").click(function() {
+        $("#choosed_server_div").removeClass("show");
+    });
+
+
     // 游戏字母切换
     function initTab(name) {
         var _tab = $(name);
         _tab.find('.lastplay-items li').click(function() {
             _tab.find(".gs-sel-cate-box").hide().eq($(this).index()).show();
+            $(".gs-sel-timeout").hide();
             $(".gs-sel-tab-btn").removeClass("current-tab");
             $(this).children().addClass("current-tab");
         }).eq(0).click();
     };
     initTab("#choosed_game_div");
+
+    /**
+     * 点击最近玩过的游戏
+     * @return {[type]} [description]
+     */
+    $("#last-played").click(function() {
+        $(".gs-sel-tab-btn").removeClass("current-tab");
+        $(this).addClass("current-tab");
+        $(".gs-sel-cate-box").hide();
+        $(".gs-sel-timeout").show();
+    });
+
+    // 服务器切换
+    // function servertab(name) {
+    //     var _tab = $(name);
+    //     $(".sub-list-main li").on('click',function() {
+    //         alert(111);return;
+    //         _tab.find(".server-list-main").hide().eq($(this).index()).show();
+    //         $(".gs-sel-sub-btn").removeClass("current-tab");
+    //         $(this).addClass("current-tab");
+    //     }).eq(0).on('click');
+    // }
+    // servertab("#server_page_l");
+    //
+
+
+    /**
+     * 点击游戏
+     * @return {[type]} [description]
+     */
+    $(".game-items").click(function() {
+        var game = $(this).text();
+        var id = $(this).attr("date-id");
+        var gid = $(this).attr("data-gid");
+        $("#choosed_game_a").text(game);
+        $(".pay-game").removeClass("pay-game-on");
+        $(".gs-sel-panel").removeClass("show");
+        $("#choosed_server_a").addClass("pay-game-on");
+        $("#choosed_server_div").addClass("show");
+        var url = SCOPE.choosed_game_url;
+        $.post(url,{gid:gid},function(result) {
+            if(result.code == 1) {
+                var lhtml = [];
+                var rhtml = [];
+                var item = 100;
+                var a = 1
+                $.each(result.data,function(index,value) {
+                    lhtml.push('<li><a href="javascript:;" class="gs-sel-sub-btn">'+a+-+item+'服'+'</a></li>');
+                    a = item + a;
+                    item += 100;
+                    rhtml.push('<ul class="server-list-main" style="display:none;">');
+                    $.each(value,function(inx,val) {
+                        rhtml.push('<li class="gs-sel-ser-item"><a class="server-items">'+val.name+'</a></li>')
+                    });
+                    rhtml.push('</ul>');
+                });
+
+                $(".sub-list-main").html(lhtml.join(""));
+                $(".gs-sel-server-list").html(rhtml.join(""));
+            }else {
+                alert('系统繁忙');
+            }
+        },'json')
+    });
+
+    /**
+     * 点击服务器类型 选择服务器类型
+     * @return {[type]} [description]
+     */
+    $("#server_search").click(function() {
+        if($("#gs_sel_server_dropdown").hasClass("show")) {
+            $("#gs_sel_server_dropdown").removeClass("show");
+        }else {
+            $("#gs_sel_server_dropdown").addClass("show");
+        }
+    });
+    $(".gs-sel-server-items").click(function() {
+        $("#gs_sel_server_dropdown").removeClass("show");
+        $("#server_search").text($(this).text());
+    });
+
+
 })
+
+
 function check() {
     var money = document.getElementById("money").value;
     if(money < 10) {

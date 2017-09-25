@@ -91,6 +91,7 @@ class Game extends BaseController {
                     }else {
                         $userServer = [
                             'name' => $serverInfo['game'].$serverInfo['name'],
+                            'gid' => $serverInfo['gid'],
                             'gsid' => $serverInfo['id'],
                             'userid' => $userInfo['id']
                         ];

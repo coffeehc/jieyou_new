@@ -493,7 +493,7 @@ input::-webkit-outer-spin-button,
     margin-left: 10px;
     float: left;
 }
-.server-items{
+.server-items, .game-items{
     width: 100%;
     height: 100%;
     display: block;
@@ -577,13 +577,21 @@ input::-webkit-outer-spin-button,
 }
 .gs-sel-search-input input{
     width: 96px;
-    height: 14px;
-    line-height: 14px;
+    height: 26px;
+    line-height: 26px;
     padding: 5px;
     margin: 0;
     border: 1px solid #c8c8c8;
     float: left;
     box-shadow: 0 2px 2px #eee inset;
+}
+.gs-sel-server-items:hover{
+    background-color: #f93;
+    color: #fff;
+}
+.gs-sel-sub-btn:hover{
+
+    font-weight: bold;
 }
 .gs-sel-close-search-btn{
     width: 20px;
@@ -783,6 +791,15 @@ input::-webkit-outer-spin-button,
     margin: 0;
     color: #999;
     float: left;
+}
+.gs-sel-timeout p{
+    width: 100%;
+    height: 30px;
+    line-height: 180px;
+    padding-top: 80px;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
 }
 .show{
     display: block!important;
