@@ -102,17 +102,16 @@ $(function() {
     });
 
     // 服务器切换
-    // function servertab(name) {
-    //     var _tab = $(name);
-    //     $(".sub-list-main li").on('click',function() {
-    //         alert(111);return;
-    //         _tab.find(".server-list-main").hide().eq($(this).index()).show();
-    //         $(".gs-sel-sub-btn").removeClass("current-tab");
-    //         $(this).addClass("current-tab");
-    //     }).eq(0).on('click');
-    // }
-    // servertab("#server_page_l");
-    //
+    function servertab(name) {
+        var _tab = $(name);
+        $(".sub-list-main").on('click',"li",function() {
+            _tab.find(".server-list-main").hide().eq($(this).index()).show();
+            $(".gs-sel-sub-btn").removeClass("current-tab");
+            $(this).children().addClass("current-tab");
+        }).eq(0).click("li");
+    }
+    servertab("#server_page_l");
+
 
 
     /**
