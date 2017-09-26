@@ -292,14 +292,54 @@ $(function() {
         $(".gs-sel-bottom-main").css("display","block");
         $(".gs-sel-search-result").css("display","none");
     });
+    $("#else").focus(function() {
+        $("#error-money").css("display","none");
+    });
+
+    $("#pay_user").blur(function() {
+        var user = $(this).val();
+        var url  = SCOPE.check_user;
+        if(user.length > 0) {
+            $.post(url,{user:user},function(result) {
+                if(result.code == 1) {
+                    $("#flag").val(1);
+                }else {
+                    $("#flag").val(0);
+                    $(".error-hint").text("此账号不存在");
+                }
+            },'json')
+        }
+    });
+    $("#pay_user").focus(function() {
+        $(".error-hint").text("");
+    });
+
 })
 
 
+/**
+ * 提交订单作相关验证
+ * @return {[type]} [description]
+ */
 function check() {
     var money = document.getElementById("money").value;
     if(money < 10) {
         $("#error-money").css("display","block");
         return false;
     }
-    return true;
+    var user = $("#pay_user").val();
+    var gsid = $("#pay_game_sid").val();
+    var flag = $("#flag").val();
+    if(user.length == 0) {
+        alert('还没有填写充值账号:(');
+        return false;
+    }
+    if(gsid.length == 0) {
+        alert('还没有选择充值的游戏:(');
+        return false;
+    }
+    if(flag === '0') {
+        alert('请填写正确的账号');
+        return false;
+    }
 }

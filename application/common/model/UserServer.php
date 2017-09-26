@@ -53,4 +53,15 @@ class UserServer extends Model {
         $res = $this->field(true)->where("userid = $uid and gid = '$gid'")->order("gsid desc")->select()->toArray();
         return $res;
     }
+
+    /**
+     * 通过用户ID 和 游戏服务器ID 获取服务器信息
+     * @param  [type] $uid  [description]
+     * @param  [type] $gsid [description]
+     * @return [type]       [description]
+     */
+    public function getServerInfoByUidGsid($uid,$gsid) {
+        $res = $this->field(true)->where("userid = $uid and gsid = $gsid")->find();
+        return $res;
+    }
 }

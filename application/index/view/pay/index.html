@@ -90,7 +90,9 @@
                                     <label>充值账号：</label>
                                 </div>
                                 <div class="order-td order-td-right">
-                                    <input type="input name-input" maxlength="16" title="充值账号" disabled value="{$user.users}">
+                                    <input type="text" name="users" maxlength="16" title="充值账号" id="pay_user" value="{$user.users}">
+                                    <span class="error-hint"></span>
+                                    <input type="hidden" id="flag" value="">
                                 </div>
                             </div>
                             <!--充值游戏-->
@@ -273,7 +275,7 @@
                                         </div>
                                         <div class="gs-sel-timeout" style="display:none;">
                                             <ul class="cate-letter-child">
-                                                {volist name="gsidArr" id="vo"}
+                                                {volist name="gsidArr" id="vo" empty="$lastPlayEmpty"}
                                                 <li><a class="game-items" data-gid="{$vo.gid}">{$vo.gid|getGameNameByGid}</a></li>
                                                 {/volist}
                                             </ul>
@@ -455,7 +457,8 @@
 <script type="text/javascript">
     var SCOPE = {
         'choosed_game_url': "{:url('choosedGame')}",
-        'search_url': "{:url('searchServer')}"
+        'search_url': "{:url('searchServer')}",
+        'check_user': "{:url('checkUser')}"
     }
 </script>
 </html>

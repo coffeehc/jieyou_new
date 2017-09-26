@@ -2,7 +2,7 @@
 namespace app\index\controller;
 use think\Controller;
 
-class Pay extends User {
+class Pay extends BaseController {
 
     /**
      * 充值页面
@@ -10,12 +10,19 @@ class Pay extends User {
      */
     public function index() {
         $serverId = input('param.id');
+        $serverInfo = $gsidArr = [];
+        $serverInfo['game'] = '';
+        $serverInfo['name'] = '';
+        $serverInfo['id'] = '';
+        if($serverId) {
+            $serverInfo = model('GameServer')->getGameServerByid($serverId);
+        }
         // 获取服务器信息
-        $serverInfo = model('GameServer')->getGameServerByid($serverId);
         $user = $this->getLoginUser();
-
-        // 最近玩过的游戏
-        $gsidArr = model('UserServer')->getGidByUid($user['id']);
+        if($user) {
+            // 最近玩过的游戏
+            $gsidArr = model('UserServer')->getGidByUid($user['id']);
+        }
 
 
         // $payWays = model('Payfs')->getPayfsInfo();
@@ -24,11 +31,15 @@ class Pay extends User {
 
         // 卡类充值
         $card = model('Payfs')->getPayfsInfo(['tid'=>5]);
+
+        // 没有登录状态下 获取不到最近玩过的游戏
+        $lastPlayEmpty = '<p>只能查看登录账号的游戏和区服记录:)</p>';
         return $this->fetch('',[
             'serverInfo' => $serverInfo,
             'wy' => $wy,
             'card' => $card,
             'gsidArr' => $gsidArr,
+            'lastPlayEmpty' => $lastPlayEmpty,
             // 'payWays' => $payWays,
         ]);
     }
@@ -49,7 +60,9 @@ class Pay extends User {
         $arrs = [];
         try {
             $servers = model("GameServer")->getServerByGid($data['gid']);
-            $lastPlay = model("UserServer")->getLastPlayedByUidAndGid($user['id'],$data['gid']);
+            if($user) {
+                $lastPlay = model("UserServer")->getLastPlayedByUidAndGid($user['id'],$data['gid']);
+            }
             if($servers) {
                 $arr = array_chunk($servers,100);
                 $arrs['allservers'] = $arr;
@@ -85,6 +98,28 @@ class Pay extends User {
         } catch (\Exception $e) {
             return show(0,$e->getMessage());
         }
+    }
+
+    /**
+     * 提交充值的时候检查用户账号
+     * @return [type] [description]
+     */
+    public function checkUser() {
+        if(!request()->isPost()) {
+            return $this->error('请求错误');
+        }
+        $data = input("post.");
+        $data['user'] = hc_filter($data['user']);
+        try {
+            $user = model("User")->getUserInfoByUsers($data['user']);
+            if($user) {
+                return show(1,'有相关信息');
+            }else {
+                return show(0,'没有相关信息');
+            }
+        } catch (\Exception $e) {
+            return show(0,$e->getMessage());
+        }
 
     }
 
@@ -111,10 +146,13 @@ class Pay extends User {
                 return $this->error('系统错误');
             }
             // 获取登录的用户信息
-            $user = session('user','','index');
-            if(!$user) {
-                return $this->error('登录超时，请重新登录');
-            }
+            // $user = session('user','','index');
+            // if(!$user) {
+            //     return $this->error('登录超时，请重新登录');
+            // }
+            // 用户相关信息
+            $user = model("User")->getUserInfoByUsers($data['users']);
+
 
             // 获取支付方式 信息
             $payInfo = model('Payfs')->getPayfsInfoById($data['bank']);
