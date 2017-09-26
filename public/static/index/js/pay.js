@@ -143,12 +143,12 @@ $(function() {
                 var lasthtml = [];
                 var item = 100;
                 var a = 1
-
+                // console.log(result.data);return;
                 // 判断是否玩过这款游戏
                 if(result.data.myservers.length > 0) {
                     $.each(result.data.myservers,function(index,value) {
                         var str = value.name.split("双");
-                        lasthtml.push('<li class="gs-sel-ser-item"><a class="server-items" data-sid="'+value.id+'">'+'双'+str[1]+'</a></li>');
+                        lasthtml.push('<li class="gs-sel-ser-item"><a class="server-items" data-sid="'+value.gsid+'">'+'双'+str[1]+'</a></li>');
                     });
                 }else {
                     lasthtml.push('<li class="gs-sel-server-empty-tips">你还没有玩过这个游戏哦:)</li>')
