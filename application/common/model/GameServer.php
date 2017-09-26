@@ -159,4 +159,15 @@ class GameServer extends BaseModel {
         $res = $this->field(true)->where("gid = '$gid'")->order('sid')->select()->toArray();
         return $res;
     }
+
+    /**
+     * 通过gid 和 sid 获取服务器信息
+     * @param  [type] $sid [description]
+     * @param  [type] $gid [description]
+     * @return [type]      [description]
+     */
+    public function getServerInfoByGidSid($sid,$gid) {
+        $res = $this->field(true)->where("sid = $sid and gid = '$gid'")->find();
+        return $res;
+    }
 }

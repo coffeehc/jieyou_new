@@ -36,6 +36,10 @@ $(function() {
         $(".pay-money").removeClass("checked");
 
     })
+    /**
+     * 手动输入金额
+     * @return {[type]} [description]
+     */
     $("#else").keyup(function() {
         var money = $(this).val();
         if(money < 0) {
@@ -69,10 +73,13 @@ $(function() {
         $(".gs-sel-panel").removeClass("show");
         $("#choosed_game_div").addClass("show");
     });
+    /**
+     * 关闭按钮
+     * @return {[type]} [description]
+     */
     $("#choosed_game_div_closed").click(function() {
         $("#choosed_game_div").removeClass("show");
     });
-
     $("#choosed_server_div_closed").click(function() {
         $("#choosed_server_div").removeClass("show");
     });
@@ -127,6 +134,7 @@ $(function() {
         $(".gs-sel-panel").removeClass("show");
         $("#choosed_server_a").addClass("pay-game-on");
         $("#choosed_server_div").addClass("show");
+        $("#search_gid").val(gid);
         var url = SCOPE.choosed_game_url;
         $.post(url,{gid:gid},function(result) {
             if(result.code == 1) {
@@ -140,7 +148,7 @@ $(function() {
                 if(result.data.myservers.length > 0) {
                     $.each(result.data.myservers,function(index,value) {
                         var str = value.name.split("双");
-                        lasthtml.push('<li class="gs-sel-ser-item"><a class="server-items">'+'双'+str[1]+'</a></li>');
+                        lasthtml.push('<li class="gs-sel-ser-item"><a class="server-items" data-sid="'+value.id+'">'+'双'+str[1]+'</a></li>');
                     });
                 }else {
                     lasthtml.push('<li class="gs-sel-server-empty-tips">你还没有玩过这个游戏哦:)</li>')
@@ -156,7 +164,7 @@ $(function() {
                     a = item + a;
                     item += 100;
                     $.each(value,function(inx,val) {
-                        rhtml.push('<li class="gs-sel-ser-item"><a class="server-items">'+val.name+'</a></li>')
+                        rhtml.push('<li class="gs-sel-ser-item"><a class="server-items" data-sid="'+val.id+'">'+val.name+'</a></li>')
                     });
                     rhtml.push('</ul>');
                 });
@@ -168,6 +176,42 @@ $(function() {
                 alert('系统繁忙');
             }
         },'json')
+    });
+
+    /**
+     * 选择服务器下 最近玩过
+     * @return {[type]} [description]
+     */
+    $("#last_play_server").click(function() {
+        $(".gs-sel-tab-btn-two").removeClass("current-tab");
+        $(this).addClass("current-tab");
+        $(".gs-sel-bottom").removeClass("hide");
+        $("#server_page_l").addClass("hide");
+    });
+
+    /**
+     * 点击双线服
+     * @return {[type]} [description]
+     */
+    $(".tab-list-main li").click(function() {
+        $(".gs-sel-tab-btn-two").removeClass("current-tab");
+        $(this).children().addClass("current-tab");
+        $(".gs-sel-bottom").removeClass("hide");
+        $("#server_page_lastplay").addClass("hide");
+    })
+
+    /**
+     * 点击选择服务器
+     * @return {[type]} [description]
+     */
+    $(".gs-sel-server-list, .lastplay-list-main, .gs-sel-search-result").on("click","ul li .server-items",function() {
+        var sid = $(this).attr("data-sid");
+        var server = $(this).text();
+        var game = $("#choosed_game_a").text();
+        $("#pay_game_name").val(game+'--'+server);
+        $("#pay_game_sid").val(sid);
+        $("#choosed_server_a").text(server);
+        $("#choosed_server_div").removeClass("show");
     });
 
     /**
@@ -184,6 +228,7 @@ $(function() {
     $(".gs-sel-server-items").click(function() {
         $("#gs_sel_server_dropdown").removeClass("show");
         $("#server_search").text($(this).text());
+        $("#search_server").val(1);
     });
 
     /**
@@ -197,6 +242,8 @@ $(function() {
                 $("#choosed_server_div").removeClass("show");
             }else {
                 $("#choosed_server_div").addClass("show");
+                $(".pay-game").removeClass("pay-game-on");
+                $(this).addClass("pay-game-on");
             }
         }else {
             alert("还没有选择游戏");
@@ -204,6 +251,47 @@ $(function() {
         }
     });
 
+    /**
+     * 搜索服务器
+     * @return {[type]} [description]
+     */
+    $("#search_submit").click(function() {
+        var sid = $("#search_sid").val();
+        var gid = $("#search_gid").val();
+        var server_type = $("#search_server").val();
+        $(".gs-sel-close-search-btn").css("display","block");
+        if(server_type === '0') {
+            alert('请选择服务器类型');
+            return;
+        }
+        $(".gs-sel-middle").css("display","none");
+        $(".gs-sel-bottom-main").css("display","none");
+        $(".gs-sel-search-result").css("display","block");
+        var url = SCOPE.search_url;
+        var shtml = [];
+        $.post(url,{sid:sid,gid:gid},function(result) {
+            if(result.code == 1) {
+                $(".search-result-box").css("display","block");
+                $(".search-result-empty").css("display","none");
+                shtml.push('<li><a href="javascript:void(0);" class="server-items" data-sid="'+result.data.id+'">'+result.data.name+'</a></li>');
+                $(".search-result-box").html(shtml.join(""));
+            }else {
+                $(".search-result-box").css("display","none");
+                $(".search-result-empty").css("display","block");
+            }
+        },'json')
+    })
+
+    /**
+     * 搜索框的 关闭按钮
+     */
+    $(".gs-sel-close-search-btn").click(function() {
+        $(".server-id-txt").val("");
+        $(this).css("display","none");
+        $(".gs-sel-middle").css("display","block");
+        $(".gs-sel-bottom-main").css("display","block");
+        $(".gs-sel-search-result").css("display","none");
+    });
 })
 
 

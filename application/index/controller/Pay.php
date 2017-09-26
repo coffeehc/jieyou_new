@@ -64,6 +64,31 @@ class Pay extends User {
     }
 
     /**
+     * 搜索服务器
+     * @return [type] [description]
+     */
+    public function searchServer() {
+        if(!request()->isPost()) {
+            return $this->error('请求错误');
+        }
+        $data = input('post.');
+        if(!is_numeric($data['sid'])) {
+            return $this->error('服务器编号不合法');
+        }
+        try {
+            $res = model('GameServer')->getServerInfoByGidSid($data['sid'],$data['gid']);
+            if($res) {
+                return show(1,'有服务器信息',$res);
+            }else {
+                return show(0,'没有相关服务器信息');
+            }
+        } catch (\Exception $e) {
+            return show(0,$e->getMessage());
+        }
+
+    }
+
+    /**
      * 确认支付
      * @return [type] [description]
      */
