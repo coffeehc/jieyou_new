@@ -33,27 +33,40 @@ class Pay extends User {
         ]);
     }
 
+    /**
+     * 选择游戏 获取服务器信息
+     * @return [type] [description]
+     */
     public function choosedGame() {
         if(!request()->isPost()) {
             return $this->error('请求错误');
         }
 
+        $user = $this->getLoginUser();
+
         $data = input('post.');
+        $lastPlay = [];
+        $arrs = [];
         try {
             $servers = model("GameServer")->getServerByGid($data['gid']);
+            $lastPlay = model("UserServer")->getLastPlayedByUidAndGid($user['id'],$data['gid']);
             if($servers) {
                 $arr = array_chunk($servers,100);
-                return show(1,'有服务器',$arr);
+                $arrs['allservers'] = $arr;
+                $arrs['myservers'] = $lastPlay;
+                return show(1,'有服务器',$arrs);
             }else {
                 return show(0,'没有服务器信息');
             }
         } catch (\Exception $e) {
             return show(0,$e->getMessage());
         }
-
-        dump($arr);exit;
     }
 
+    /**
+     * 确认支付
+     * @return [type] [description]
+     */
     public function ispay() {
         if(!request()->isPost()) {
             return $this->error('请求错误');

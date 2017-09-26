@@ -108,7 +108,7 @@ $(function() {
             _tab.find(".server-list-main").hide().eq($(this).index()).show();
             $(".gs-sel-sub-btn").removeClass("current-tab");
             $(this).children().addClass("current-tab");
-        }).eq(0).click("li");
+        });
     }
     servertab("#server_page_l");
 
@@ -132,13 +132,29 @@ $(function() {
             if(result.code == 1) {
                 var lhtml = [];
                 var rhtml = [];
+                var lasthtml = [];
                 var item = 100;
                 var a = 1
-                $.each(result.data,function(index,value) {
-                    lhtml.push('<li><a href="javascript:;" class="gs-sel-sub-btn">'+a+-+item+'服'+'</a></li>');
+
+                // 判断是否玩过这款游戏
+                if(result.data.myservers.length > 0) {
+                    $.each(result.data.myservers,function(index,value) {
+                        var str = value.name.split("双");
+                        lasthtml.push('<li class="gs-sel-ser-item"><a class="server-items">'+'双'+str[1]+'</a></li>');
+                    });
+                }else {
+                    lasthtml.push('<li class="gs-sel-server-empty-tips">你还没有玩过这个游戏哦:)</li>')
+                }
+                $.each(result.data.allservers,function(index,value) {
+                    if(index == result.data.allservers.length - 1) {
+                        lhtml.push('<li><a href="javascript:;" class="gs-sel-sub-btn current-tab">'+a+-+item+'服'+'</a></li>');
+                        rhtml.push('<ul class="server-list-main" style="display:block;">');
+                    }else {
+                        lhtml.push('<li><a href="javascript:;" class="gs-sel-sub-btn">'+a+-+item+'服'+'</a></li>');
+                        rhtml.push('<ul class="server-list-main" style="display:none;">');
+                    }
                     a = item + a;
                     item += 100;
-                    rhtml.push('<ul class="server-list-main" style="display:none;">');
                     $.each(value,function(inx,val) {
                         rhtml.push('<li class="gs-sel-ser-item"><a class="server-items">'+val.name+'</a></li>')
                     });
@@ -147,6 +163,7 @@ $(function() {
 
                 $(".sub-list-main").html(lhtml.join(""));
                 $(".gs-sel-server-list").html(rhtml.join(""));
+                $(".lastplay-list-main").html(lasthtml.join(""));
             }else {
                 alert('系统繁忙');
             }
@@ -169,6 +186,23 @@ $(function() {
         $("#server_search").text($(this).text());
     });
 
+    /**
+     * 点击选择区服下拉框
+     * @return {[type]} [description]
+     */
+    $("#choosed_server_a").click(function() {
+        var game = $("#choosed_game_a").text();
+        if(game !== '选择游戏') {
+            if($("#choosed_server_div").hasClass("show")) {
+                $("#choosed_server_div").removeClass("show");
+            }else {
+                $("#choosed_server_div").addClass("show");
+            }
+        }else {
+            alert("还没有选择游戏");
+            return false;
+        }
+    });
 
 })
 

@@ -42,4 +42,15 @@ class UserServer extends Model {
         $res = $this->field('gid')->where("userid = $uid")->group("gid")->select();
         return $res;
     }
+
+    /**
+     * 通过用户ID 和 游戏GID 获取最近玩过的游戏服务
+     * @param  [type] $uid [description]
+     * @param  [type] $gid [description]
+     * @return [type]      [description]
+     */
+    public function getLastPlayedByUidAndGid($uid,$gid) {
+        $res = $this->field(true)->where("userid = $uid and gid = '$gid'")->order("gsid desc")->select()->toArray();
+        return $res;
+    }
 }
