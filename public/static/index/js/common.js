@@ -37,6 +37,18 @@ $(function() {
             }
         },'json');
     });
+
+    $("#user_index").click(function() {
+        var url = $(this).attr("data-url");
+        $.post(url,{},function(result) {
+            if(result.code == 0) {
+                layer.msg('你还没有登录哦，请先登录',{icon:6,time:1500});
+            }else {
+                window.location.href = url;
+            }
+        },'json');
+    });
+
 });
 
 function addFavorite2(){

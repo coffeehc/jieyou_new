@@ -12,6 +12,7 @@ class User extends BaseController {
         $isLogin = $this->userIsLogin();
         if(!$isLogin) {
             return $this->error('你还没有登录哦，请先登录','index/index');
+            // return show(0,'还没有登录');
         }
     }
 
@@ -21,6 +22,9 @@ class User extends BaseController {
      */
     public function index() {
         $user = $this->getLoginUser();
+        if(!$user) {
+            return show(0,'还没有登录');
+        }
         // 最近五笔充值记录
         $userPay = model('UserPay')->getUserPayByUid($user['id'],5);
         return $this->fetch('',[
