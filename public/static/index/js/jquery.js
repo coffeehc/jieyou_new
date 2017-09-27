@@ -1,10 +1,10 @@
 $(function(){
 	//导航条菜单
 	$(".b_k").find('li').mouseenter(function(){
-		$(this).animate({'background-color':'#EEEEEE','border-radius':'10px','font-size':'16px'});
+		$(this).animate({'background-color':'#EEEEEE','border-radius':'10px','font-size':'18px'});
 	});
 	$(".b_k").find('li').mouseleave(function(){
-		$(this).animate({'background-color':'#0099FF','border-radius':'0px','font-size':'14px'});
+		$(this).animate({'background-color':'#0099FF','border-radius':'0px','font-size':'16px'});
 	});
 	//精品推荐游戏图片效果
 	$(".jptj").mouseenter(function(){

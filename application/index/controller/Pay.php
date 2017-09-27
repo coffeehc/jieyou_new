@@ -40,6 +40,8 @@ class Pay extends BaseController {
             'card' => $card,
             'gsidArr' => $gsidArr,
             'lastPlayEmpty' => $lastPlayEmpty,
+            'game' => !empty($serverInfo['game']) ? $serverInfo['game'] : '选择游戏',
+            'name' => !empty($serverInfo['name']) ? $serverInfo['name'] : '选择区服',
             // 'payWays' => $payWays,
         ]);
     }

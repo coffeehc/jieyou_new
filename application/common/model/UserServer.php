@@ -39,7 +39,7 @@ class UserServer extends Model {
     }
 
     public function getGidByUid($uid) {
-        $res = $this->field('gid')->where("userid = $uid")->group("gid")->select();
+        $res = $this->field('gid')->where("userid = $uid")->group("gid")->order("update_time desc")->select();
         return $res;
     }
 
