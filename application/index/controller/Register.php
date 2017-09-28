@@ -71,11 +71,14 @@ class Register extends BaseController {
         }
         $data = input('post.');
         $user = model('User')->getUserByUsername($data['users']);
+        $lastplay = model("UserServer")->field(true)->where('userid='.$user['id'])->order('update_time desc')->limit(4)->select();
+        $callBackArr['user'] = $user;
+        $callBackArr['lastplay'] = $lastplay;
         if($user && $user['password'] == $data['password']) {
             session('user',$user,'index');
             model('User')->where('id',$user['id'])->setInc('hits');
             model('User')->where('id',$user['id'])->update(['update_time'=>time()]);
-            return show(1,$user['users'].'欢迎您！');
+            return show(1,$user['users'].'欢迎您！',$callBackArr);
         }else {
             return show(0,'用户名或密码错误');
         }

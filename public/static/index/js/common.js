@@ -38,6 +38,10 @@ $(function() {
         },'json');
     });
 
+    /**
+     * 顶部导航用户中心按钮
+     * @return {[type]} [description]
+     */
     $("#user_index").click(function() {
         var url = $(this).attr("data-url");
         $.post(url,{},function(result) {
@@ -49,6 +53,58 @@ $(function() {
         },'json');
     });
 
+    /**
+     * banner 上登录操作
+     * @return {[type]} [description]
+     */
+    $("#user-login-submit").click(function() {
+        if ($("#users").val().length == 0) {
+            return $("#users").addClass('waring-input');
+        }
+        if ($("#password").val().length == 0) {
+            return $("#password").addClass('waring-input');
+        }
+        var data = $('#user-login-form').serializeArray();
+        var url = SCOPE.login_url;
+        postData = {};
+        $(data).each(function(i) {
+            postData[this.name] = this.value;
+        });
+        var html = [];  // 用户框
+        var hhtml = []; // 顶部
+        html.push('<table width="100%" border="0" cellspacing="3" cellpadding="0">');
+        html.push('<tr><td colspan="2" class="hei18B">玩家信息</td></tr>');
+        html.push('<tr>');
+        hhtml.push();
+        $.post(url, postData, function(result) {
+            if (result.code == 1) {
+                // console.log(result.data);return;
+                if(result.data.user.pic == "") {
+                    html.push('<td width="29%"><img src="/images/nopic.jpg" width="90" height="90" /></td>');
+                    hhtml.push('<img src="/images/nopic.jpg" width="30"  align="absmiddle"  style="border-radius: 15px;overflow:hidden" />');
+                }else {
+                    html.push('<td width="29%"><img src="'+result.data.user.pic+'" width="90" height="90" /></td>');
+                    hhtml.push('<img src="'+result.data.user.pic+'" width="30"  align="absmiddle"  style="border-radius: 15px;overflow:hidden" />');
+                }
+                html.push('<td width="71%" class="hei12"><div>昵称：'+result.data.user.name+'</div><div>QQ号：'+result.data.user.qq+'</div><div>邮箱：'+result.data.user.email+'</div><div>登陆次数：'+result.data.user.hits+'</div></td>');
+                html.push('<tr><td colspan="2" class="hei18B">最近玩过的游戏</td>');
+                // 构建最近玩过的游戏 html
+                $.each(result.data.lastplay,function(index,val) {
+                    html.push('<tr><td nowrap="nowrap"><a href="/index/game/index/id/'+val.gsid+'.html" title="点击进入游戏" target="_blank"><span class="hei12">'+val.name+'</span></a></td><td align="right"><span class="hei12">'+val.update_time+'</span></td></tr>');
+                });
+                html.push('</tr>');
+                html.push('</table>');
+                hhtml.push(':欢迎您！ | <a href="/index/user/index.html" title="用户中心">用户中心</a> | <span id="logout" title="点击退出平台">退出平台</span> |');
+                hhtml.push('<a href="javascript:;" onclick="addFavorite2()">加入收藏</a>');
+                layer.msg(result.message, {icon: 6,time: 1000}, function() {
+                    $(".touming2").html(html.join(""));
+                    $("#header_user").html(hhtml.join(""));
+                });
+            } else {
+                layer.msg(result.message, {icon: 5,time: 1500});
+            }
+        }, 'json')
+    });
 });
 
 function addFavorite2(){
