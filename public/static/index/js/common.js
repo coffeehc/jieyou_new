@@ -3,7 +3,7 @@ $(function() {
      * 用户退出平台
      * @return {[type]} [description]
      */
-    $("#logout").click(function() {
+    $("#header_user").on('click','#logout',function() {
         $.post(logout_url,{target:1},function(result) {
             if(result.code == 1) {
                 layer.msg(result.message,{icon:6,time:1500},function() {
