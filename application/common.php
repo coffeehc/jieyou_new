@@ -344,3 +344,13 @@ function getNameByGsid($id) {
     $res = model('GameServer')->field('name')->find($id);
     return $res['game'];
 }
+
+/**
+ * 通过支付方式ID 获取支付方式名称
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+function getBankNameById($id) {
+    $res = model('Payfs')->field('name')->find($id);
+    return $res['name'];
+}

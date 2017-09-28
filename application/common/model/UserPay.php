@@ -4,6 +4,15 @@ use think\Model;
 
 class UserPay extends Model {
 
+    /**
+     * 获取充值记录
+     * @return [type] [description]
+     */
+    public function getRechargeInfo() {
+        $res = $this->field(true)->select();
+        return $res;
+    }
+
     public function getUserPayByUid($id,$limit) {
         $res = $this->field(true)->where('uid',$id);
         if($limit) {
@@ -11,6 +20,7 @@ class UserPay extends Model {
         }
         return $res->select();
     }
+
     public function getUserPayCount($id) {
         $res = $this->where('uid',$id)->count();
         return $res;

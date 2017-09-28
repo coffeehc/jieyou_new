@@ -71,4 +71,15 @@ class Stats extends BaseController {
             'data' => $data,
         ]);
     }
+
+    /**
+     * 充值记录页面
+     * @return [type] [description]
+     */
+    public function recharge() {
+        $recharges = model('UserPay')->getRechargeInfo();
+        return $this->fetch('',[
+            'recharges' => $recharges
+        ]);
+    }
 }
