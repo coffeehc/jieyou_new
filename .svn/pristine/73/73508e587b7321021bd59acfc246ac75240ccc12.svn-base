@@ -1,0 +1,36 @@
+{include file="public/_meta"}
+<title>添加支付渠道</title>
+</head>
+<body>
+<div class="pd-20">
+  <div class="Huiform">
+    <form action="/" method="post">
+      <table class="table table-bg">
+        <tbody>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 渠道名称：</th>
+            <td><input type="text" style="width:300px" class="input-text" value="" placeholder="" id="user-name" name="user-name" datatype="*2-16" nullmsg="名称不能为空"></td>
+          </tr>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 渠道标识：</th>
+            <td><input type="text" style="width:300px" class="input-text" value="" placeholder="" id="user-tel" name="user-tel"></td>
+          </tr>
+          <tr>
+            <th class="text-r">所属平台：</th>
+            <td>
+                <select class="select" name="" style="width:300px">
+                    <option value="">星蝶游戏平台</option>
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <th></th>
+            <td><button class="btn btn-success radius" type="submit"><i class="icon-ok"></i> 添加</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+</body>
+</html>

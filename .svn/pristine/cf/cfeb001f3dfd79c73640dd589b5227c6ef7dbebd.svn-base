@@ -1,0 +1,64 @@
+{include file="public/_meta"}
+<title>修改支付方式</title>
+</head>
+<body>
+<div class="pd-20">
+  <div class="Huiform">
+    <form id="hecheng-form">
+      <table class="table table-bg">
+        <tbody>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 支付方式：</th>
+            <td><input type="text" style="width:300px" class="input-text" value="{$payWay.name}" placeholder="" name="name" datatype="*2-16" nullmsg="名称不能为空"></td>
+          </tr>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 支付简码：</th>
+            <td><input type="text" style="width:300px" class="input-text" value="{$payWay.pay}" placeholder="" name="pay"></td>
+          </tr>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> logo：</th>
+            <td>
+                <input id="file_upload"  type="file" multiple="true" >
+                <img id="upload_org_code_img" src="{$payWay.pic}" class="radius">
+                <input id="file_upload_image" name="pic" type="hidden" multiple="true" value="{$payWay.pic}">
+            </td>
+          </tr>
+          <tr>
+            <th class="text-r">所属平台：</th>
+            <td>
+                <select class="select" name="ptid" style="width:300px">
+                    <option value="2">星蝶游戏平台</option>
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <th class="text-r">所属渠道：</th>
+            <td>
+                <select class="select" name="tid" style="width:300px">
+                    {volist name="$gameType" id="vo"}
+                    <option value="{$vo.id}" {eq name="$payWay.tid" value="$vo.id"}selected{/eq}>{$vo.name}</option>
+                    {/volist}
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <th></th>
+            <input type="hidden" name="id" value="{$payWay.id}">
+            <td><button class="btn btn-success radius" type="button" id="hecheng-button-submit"><i class="icon-ok"></i> 添加</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+{include file="public/_footer"}
+<script type="text/javascript" src="__STATIC__/admin/js/upload-image.js"></script>
+<script type="text/javascript">
+	var SCOPE = {
+		'uploadScript': '{:url('api/image/upload')}',
+		'save_url': '{:url('edit')}',
+		'jump_url': '{:url('index')}',
+	};
+</script>
+</body>
+</html>

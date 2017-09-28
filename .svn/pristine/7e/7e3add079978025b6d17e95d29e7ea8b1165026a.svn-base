@@ -1,0 +1,170 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:79:"E:\phpStudy\WWW\newjy.net\public/../application/index\view\user\playedgame.html";i:1505120609;s:80:"E:\phpStudy\WWW\newjy.net\public/../application/index\view\userpublic\_meta.html";i:1505124944;s:79:"E:\phpStudy\WWW\newjy.net\public/../application/index\view\userpublic\_top.html";i:1504180317;s:80:"E:\phpStudy\WWW\newjy.net\public/../application/index\view\userpublic\_left.html";i:1505204559;s:78:"E:\phpStudy\WWW\newjy.net\public/../application/index\view\public\_footer.html";i:1505712868;}*/ ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="__STATIC__/user/css/css.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery181.js"></script>
+    <script type="text/javascript" src="__STATIC__/user/js/jquery.js"></script>
+    <script type="text/javascript" src="__STATIC__/user/js/common.js"></script>
+    <link href="__STATIC__/index/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/admin/hui/lib/layer/2.4/layer.js"></script>
+
+
+<title><?php echo $user['users']; ?>：欢迎登陆一起玩.游戏用户中心！_一起玩.游戏</title>
+<script type="text/javascript" language="javascript">
+    $(function() {
+        $(".right .box").children("div").mouseenter(function() {
+            $(this).animate({
+                'background-color': '#FFCCCC'
+            });
+        })
+        $(".right .box").children("div").mouseleave(function() {
+            $(this).animate({
+                'background-color': '#FFFFFF'
+            });
+        })
+        document.getElementById("giftLayer").style.display = "none";
+    })
+
+    function applyGift(gsid) {
+        document.getElementById("giftNo").value = "数据获取中...";
+        document.getElementById("giftLayer").style.display = "";
+        document.getElementById("dataIFrm").src = 'gift.php?gsid=' + gsid;
+    }
+
+    function callbackFunc(vGiftNo) {
+        document.getElementById("giftNo").value = vGiftNo;
+    }
+
+    function closeGiftLayer() {
+        document.getElementById("giftLayer").style.display = "none";
+    }
+</script>
+<style type="text/css">
+
+    #giftLayer {
+    	position:absolute;
+    	width:280px;
+    	height:100px;
+    	z-index:100;
+    	left: 1108px;
+    	top: 30px;
+    	background-color:#FFFFFF;
+    	opacity: 0.8;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+    	border:1px solid black;
+    	display:;
+    	padding:10px;
+    }
+
+</style>
+</head>
+
+<body>
+    <div id="giftLayer">
+        <div style="position:relative;float:right;cursor:pointer;" onclick="javascript:closeGiftLayer();" title="点击关闭窗口">关闭</div>
+        获得的礼包卡号：<br />
+        <input type="text" id="giftNo" name="giftNo" style="width:250px;" /><br />
+        <font color="red">备注：</font>
+        <font color="gray">礼包卡可以在游戏中输入获得相应奖励！</font>
+        <iframe name="dataIFrm" id="dataIFrm" frameborder="false" scrolling="none;" style="border:none;" width="0" height="0" allowtransparency="true"></iframe>
+    </div>
+    <div align="center" style="background-color:#EEEEEE">
+        <div style="width:1200px;" align="left">
+            <!--top-->
+            <div style="background-color:#FFFFFF;">
+                    <table width="100%" border="0" cellspacing="5" cellpadding="0">
+        <tr>
+            <td width="57%">
+                <h1><?php echo $config['name']; ?>-用户中心<span class="shenhui12"><a href="<?php echo url('Index/index'); ?>">[返回游戏首页]</a></span></h1></td>
+            <td width="33%">&nbsp;</td>
+        </tr>
+    </table>
+
+            </div>
+            <!--@top-->
+
+            <div class="box" style="height:100%">
+                <!--right-->
+                <div class="right">
+                    <div class="l_bk">当前位置：<a href="<?php echo url('index'); ?>">会员中心</a> &gt;&gt; <a href="">最近玩过的游戏</a></div>
+                    <div class="l_bk">
+                        <table class="table table-striped table-bordered table-hover" >
+                            <thead>
+                                <tr bgcolor="#FFFFFF">
+                                    <td width="5%">序号</td>
+                                    <td width="25%">游戏名称</td>
+                                    <td width="26%">游戏时间</td>
+                                    <td width="21%">游戏充值</td>
+                                    <td width="11%">操作</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if(is_array($playedGames) || $playedGames instanceof \think\Collection || $playedGames instanceof \think\Paginator): $i = 0; $__LIST__ = $playedGames;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                <tr bgcolor="#FFFFFF">
+                                    <td><?php echo $i; ?></td>
+                                    <td>
+                                        <a href="<?php echo url('Game/index',['id'=>$vo['id']]); ?>" target="_blank" title="点击进入游戏"><?php echo $vo['name']; ?></a>
+                                    </td>
+                                    <td><?php echo $vo['create_time']; ?></td>
+                                    <td><a href="<?php echo url('Pay/index',['id'=>$vo['gsid']]); ?>">我要充值</a>
+                                        <a href="javascript:;" onclick="getGift('<?php echo $vo['gsid']; ?>')" style="margin-left:10px;">获得游戏礼包</a></td>
+                                    <td><a href="<?php echo url('Game/index',['id'=>$vo['gsid']]); ?>" target="_blank">进入游戏</a></td>
+                                </tr>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                        <?php echo $playedGames->render(); ?>
+                </div>
+                <!--@right-->
+
+                <!--left-->
+                <div class="left">
+                    <div class="list-group">
+    <a href="" class="list-group-item active">用户中心</a>
+    <a href="<?php echo url('User/userInfo'); ?>" title="我的详细资料" class="list-group-item">我的详细资料</a>
+    <a href="<?php echo url('User/playedGame'); ?>" title="我玩过的游戏" class="list-group-item">我玩过的游戏</a>
+    <a href="<?php echo url('User/payInfo'); ?>" title="我的充值记录" class="list-group-item">我的充值记录</a>
+</div>
+<div class="list-group">
+    <a href="" class="list-group-item active">CPS推广中心</a>
+    <a href="<?php echo url('User/cpsUrl'); ?>" title="我的推广链接" class="list-group-item">我的推广链接</a>
+    <a href="<?php echo url('User/cpsUser'); ?>" title="我的推广成果" class="list-group-item">我的推广成果</a>
+    <a href="<?php echo url('User/cpsPay'); ?>" title="玩家充值记录" class="list-group-item">玩家充值记录</a>
+</div>
+
+                </div>
+                <!--@left-->
+
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color:#888888;margin-top:10px" align="center">
+    <div style="width:1200px">
+        <div>防沉迷认证 | 意见反馈 | 家长监护 | 关于我们 | 人才招聘 | 商务合作 </div>
+        <div>＠2015-2017 <?php echo $config['bq']; ?> <a href="<?php echo $config['xukez']; ?>" target="_blank" style="color:#333333;"><?php echo $config['xuke']; ?></a> 备案号：<?php echo $config['icp']; ?> 客服电话:<?php echo $config['phone']; ?>
+        </div>
+        <div>公司地址：成都市天府大道530号天祥广场10楼 邮箱：2477037269@qq.com
+            <?php if($_SERVER['SERVER_NAME'] == 'www.comecrazy.com'): ?>
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002000968 " style="display:inline-block;text-decoration:none;height:14px;line-height:20px;">
+    		<img src="__STATIC__/images/batb.png" style="float:left;"/>
+    		<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#333333;">川公网安备 51019002000968号</p></a>
+            <?php else: ?>
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002000995 " style="display:inline-block;text-decoration:none;height:14px;line-height:20px;">
+    		<img src="__STATIC__/images/batb.png" style="float:left;"/>
+    		<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#333333;">川公网安备 51019002000995号</p></a>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+    <script type="text/javascript">
+        var SCOPE = {
+            'get_url': '<?php echo url('api/Gift/index'); ?>'
+        };
+    </script>
+</body>
+
+</html>

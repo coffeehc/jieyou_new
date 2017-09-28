@@ -1,0 +1,37 @@
+{include file="public/_meta"}
+<title>游戏服务器表</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 游戏管理管理 <span class="c-gray en">&gt;</span> 修改服务器 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<form class="Huiform" action="" target="_self" id="hecheng-form">
+            <span class="input" style="width:200px;">
+                <input class="input-text" type="number" name="sid" value="{$server.sid}" placeholder="开区编号(数字)" style="width:200px;">
+            </span>
+            <span>
+                <input type="text" name="create_time" value="{$server.create_time}" placeholder="开区时间" onfocus="selecttime(3)" id="logmin" class="input-text Wdate" style="width:250px;">
+            </span>
+            <span class="select-box" style="width:250px">
+    			<select class="select" name="gid" size="1">
+    				<option value="">选择游戏</option>
+                    {volist name="games" id="vo"}
+                    <option value="{$vo.gid}" {eq name="$server.gid" value="$vo.gid"}selected{/eq}>{$vo.name}</option>
+                    {/volist}
+    			</select>
+			</span>
+            <input type="hidden" name="id" value="{$server.id}">
+            <button type="button" class="btn btn-success" id="hecheng-button-submit"><i class="Hui-iconfont">&#xe600;</i> 修改</button>
+		</form>
+	</div>
+</div>
+{include file="public/_footer"}
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script>
+    var SCOPE = {
+        'save_url': '{:url('edit')}',
+        'jump_url': '{:url('edit',['id'=>$server.id])}',
+    };
+</script>
+</body>
+</html>

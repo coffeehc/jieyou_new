@@ -1,0 +1,121 @@
+{include file="public/_meta"}
+
+<title>一起玩.游戏,网页游戏,手机游戏_一起玩.游戏_028-86051177</title>
+<script type="text/javascript">
+    function Filter(a,b){
+        var $ = function(e){return document.getElementById(e);}
+        var ipts = $('filterForm').getElementsByTagName('input'),result=[];
+        for(var i=0,l=ipts.length;i<l;i++){
+            if(ipts[i].getAttribute('to')=='filter'){
+                result.push(ipts[i]);
+            }
+        }
+        if($(a)){
+            $(a).value = b;
+            for(var j=0,len=result.length;j<len;j++){
+                if(result[j].value==''){
+                    result[j].parentNode.removeChild(result[j]);
+                }
+            }
+            document.forms['filterForm'].submit();
+        }
+        return false;
+    }
+</script>
+</head>
+<body>
+    {include file="public/_header"}
+        <div style="height:410px;overflow:hidden;">
+            {include file="public/_banner"}
+        </div>
+        <div align="center" class="bodybk">
+            <div class="bodydiv" align="center">
+                <table width="1200" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="950" valign="top">
+                            <!--最新游戏-->
+                            <div class="box_top">
+                                <div class="hong20T"><img src="__STATIC__/images/allgame.png" /></div>
+                                <form id="filterForm" action="" method="get">
+                                    <input to="filter" type="hidden" id="lxid" name="lxid" value="{$lxid}" />
+                                    <input to="filter" type="hidden" id="zm" name="zm" value="{$zm}" />
+                                </form>
+                                    <!--快速查询-->
+                                    <div class="youxilx">
+                                        <div>游戏类型：
+                                            <a href="javascript:Filter('lxid','0')">不限</a>
+                                            {volist name="gameType" id="vo"}
+                							<a href="javascript:Filter('lxid','{$vo.id}')" {eq name="$Think.get.lxid" value="$vo.id"}style="background-color:rgb(255,165,0);"{/eq}>{$vo.name}</a>
+                                            {/volist}
+                						</div>
+
+                                        <div>游戏首拼：
+                                            <a href="javascript:Filter('zm','0')">不限</a>
+                                            {volist name="zmArray" id="vo"}
+                                            <a style="margin:2px;" href="javascript:Filter('zm','{$vo}')" {eq name="$Think.get.zm" value="$vo"}style="background-color:rgb(255,165,0);"{/eq}>{$vo}</a>
+                                            {/volist}
+
+										</div>
+                                    </div>
+                                    <!--@快速查询-->
+
+                                    <div style="padding:5px 0px 0px 5px">
+                                        {volist name="games" id="vo"}
+                                        <div class="youxi">
+                                            <div class="youxiimg"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}"><img src="{$vo.pic3}" width="200" height="100" border="0" alt="{$vo.name}" /></div>
+				                            <div class="youxibt">
+    					                        <div class="inyouxi"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="点击进入游戏">进入游戏</a></div>
+                                                <div class="youxiname">
+                                                    <a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}">{$vo.name}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/volist}
+                                    </div>
+                            </div>
+                            <!--@最新游戏-->
+
+                            <div style="clear:both"></div>
+                            <!--page-->
+                            <div class="youxipage">
+                                {$games->render()}
+                            </div>
+                            <!--@page-->
+                        </td>
+
+                        <td valign="top">
+                            <!--最新开服-->
+                            <div class="box_top" style="width:240px">
+                                <div class="hong20T"><img src="__STATIC__/images/zxkf.png" width="72" height="18" /></div>
+                                <div>
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                        {volist name="newServer" id="vo"}
+                                        <tr>
+                                            <td width="12%" align="center"><img src="__STATIC__/images/no/{$i}.gif" width="13" height="13" /></td>
+                                            <td width="65%" nowrap="nowrap"><a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入">{$vo.game}{$vo.name}</a></td>
+                                            <td width="23%" nowrap="nowrap"><a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入"><img src="__STATIC__/images/newser.gif" border="0" width="37" height="19" /></a></td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </div>
+                            </div>
+                            <!--@最新开服-->
+
+                            <!--游戏公告-->
+                            <div class="box">
+                                <div class="hong20T">游戏公告</div>
+                                <div style="min-height:200px;padding:5px">
+                                    {volist name="gameArticle" id="vo"}
+                                    <li class="slist"><a href="{:url('Article/news',['id'=>$vo.id])}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
+                                    {/volist}
+                                </div>
+                            </div>
+                            <!--@游戏公告-->
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        {include file="public/_footer"}
+</body>
+</html>

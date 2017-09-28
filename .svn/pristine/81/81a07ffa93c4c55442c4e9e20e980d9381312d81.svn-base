@@ -1,0 +1,156 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\user\recharge.html";i:1505093547;s:76:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\public\_meta.html";i:1503034600;s:78:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\public\_footer.html";i:1503034694;}*/ ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/css.css" />
+<script type="text/javascript" src="__STATIC__/dialog.js"></script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/uploadifive/uploadifive.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+
+<title>给玩家充值</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 玩家管理 <span class="c-gray en">&gt;</span>给玩家充值 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container" width="50%">
+	<div class="mt-20" >
+		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive" style="width:23%;">
+			<thead>
+                <tr class="text-l">
+                  <th colspan="2">给玩家充值</th>
+                </tr>
+			</thead>
+			<tbody>
+                <form class="" id="pay-form" method="post" action="<?php echo url('pay'); ?>">
+                    <tr class="text-l">
+                        <td width="80">玩家账号:</td>
+                        <td><input type="text" name="user" id="username" value="" class="input-text" style="width:250px"></td>
+                    </tr>
+                    <tr class="text-l">
+                        <td>游戏:</td>
+                        <td>
+                            <select name="gid" id="gid" class="select" style="width:250px">
+                                <option value="">--选择游戏--</option>
+                                <?php if(is_array($games) || $games instanceof \think\Collection || $games instanceof \think\Paginator): $i = 0; $__LIST__ = $games;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                <option value="<?php echo $vo['gid']; ?>"><?php echo $vo['name']; ?></option>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="text-l">
+                        <td>游戏区:</td>
+                        <td>
+                            <select name="sid" id="sid" class="select" style="width:250px">
+                                <option value="">--选择区--</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="text-l">
+                        <td>金额:</td>
+                        <td>
+                            <input type="number" name="money" id="money" value="" class="input-text" style="width:250px">
+                        </td>
+                    </tr>
+                    <tr class="text-l">
+                        <td>充值方式:</td>
+                        <td>
+                            <input type="radio" name="bank" value="13" checked><img src="__STATIC__/images/weipay.png" alt="微信支付"><br>
+                            <input type="radio" name="bank" value="12"><img src="__STATIC__/images/alipay.png" alt="支付宝支付">
+                        </td>
+                    </tr>
+                    <tr class="text-c">
+                        <input type="hidden" name="forms" value="pay">
+                        <td colspan="2"><input type="button" id="pay-button" value="充值" class="btn btn-primary radius" ></td>
+                    </tr>
+                </form>
+			</tbody>
+		</table>
+	</div>
+</div>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/common.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/uploadifive/jquery.uploadifive.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+	userflag = false;
+	moneyflag = false;
+	/**
+	 * 选择游戏  出来相应的游戏区
+	 * @return {[type]} [description]
+	 */
+    $("#gid").change(function() {
+        var gid = $(this).val();
+        var url = '<?php echo url('getGameServer'); ?>';
+        var postData = {'gid':gid};
+        $.post(url,postData,function(result) {
+            if(result.code == 1) {
+                data = result.data.data;
+                sid_html = "";
+                $(data).each(function(i) {
+                    sid_html += "<option value='"+this.id+"'>"+this.name+"</option>";
+                });
+                $('#sid').html(sid_html);
+            }else {
+                $('#sid').html(result.message);
+                return ;
+            }
+        },'json')
+    });
+
+	$("#username").blur(function() {
+		var user = $(this).val();
+		if(user == '') {
+			return layer.msg('还没得玩家账号',{icon:5,time:1500});
+		}
+		var url = "<?php echo url('recharge'); ?>";
+		$.post(url,{users:user},function(result) {
+			if(result.code == 0) {
+				return layer.msg(result.message,{icon:5,time:1500});
+			}else {
+				return userflag = true;
+			}
+		},'json')
+	});
+
+	$("#money").blur(function() {
+		var money = $(this).val();
+		if(money < 0) {
+			return layer.msg('你不可能扣钱的啊',{icon:5,time:1500});
+		}
+		return moneyflag = true;
+	})
+
+	$("#pay-button").click(function() {
+		if(userflag && moneyflag) {
+			$("#pay-form").submit();
+		}else {
+			layer.msg('信息填写不完整',{icon:5,time:1500});
+		}
+	});
+
+})
+</script>
+</body>
+</html>

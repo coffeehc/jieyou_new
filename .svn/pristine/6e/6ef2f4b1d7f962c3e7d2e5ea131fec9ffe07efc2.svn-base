@@ -1,0 +1,99 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html";i:1503386904;s:76:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\public\_meta.html";i:1505370435;s:78:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\public\_footer.html";i:1503034694;}*/ ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link href="__STATIC__/index/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/css.css" />
+<script type="text/javascript" src="__STATIC__/dialog.js"></script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/uploadifive/uploadifive.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+
+<title>我的桌面</title>
+</head>
+<body>
+<div class="page-container">
+	<p class="f-20 text-success"><span class="stress cheng"><?php echo $manager['manager']; ?></span> 欢迎使用一起玩页游平台</p>
+	<p>登录次数：<?php echo $manager['hits']; ?>次</p>
+	<p>登录IP：<?php echo $manager['ip']; ?></p>
+	<table class="table table-border table-bordered table-bg ">
+		<thead>
+			<tr>
+				<th colspan="5" scope="col">游戏数据</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td width="10%">游戏数量：</td>
+				<td width="10%"><span class="stress cheng"><?php echo $game; ?></span>个</td>
+				<td width="10%">游戏服务器：</td>
+				<td>共<span class="stress cheng"><?php echo $server; ?></span>个，其中已经开区的<span class="stress cheng"><?php echo $serveropened; ?></span>个，即将开区的<span class="stress cheng"><?php echo $serveropen; ?></span>个</td>
+			</tr>
+		</tbody>
+	</table>
+
+    <table class="table table-border table-bordered table-bg">
+        <thead>
+            <tr>
+                <th colspan="5" scope="col">玩家数量</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td width="10%";>注册数量：</td>
+                <td width="10%"><span class="stress cheng"><?php echo $player; ?></span>个</td>
+                <td width="10%">充值金额：</td>
+                <td>支付成功：<span class="stress cheng">￥<?php echo $paysuccess; ?>.00</span>元，未支付成功的有：<span class="stress cheng">￥<?php echo $payerror; ?>.00</span>元</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-border table-bordered table-bg">
+        <thead>
+            <tr>
+                <th colspan="6" scope="col">网站咨询</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td width="10%";>发布数量：</td>
+                <td><span class="stress cheng"><?php echo $article; ?></span>篇</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<footer class="footer mt-20">
+	<div class="container">
+		<p>感谢jQuery、layer、laypage、Validform、UEditor、My97DatePicker、iconfont、Datatables、WebUploaded、icheck、highcharts、bootstrap-Switch<br>
+			Copyright &copy;2015-2017 H-ui.admin v3.1 All Rights Reserved.<br>
+			本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>
+	</div>
+</footer>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/common.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/uploadifive/jquery.uploadifive.min.js"></script>
+
+</body>
+</html>

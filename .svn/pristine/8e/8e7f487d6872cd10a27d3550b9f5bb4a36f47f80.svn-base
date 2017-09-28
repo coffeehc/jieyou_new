@@ -1,0 +1,56 @@
+
+{include file="public/_meta"}
+<title>充值记录</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 玩家管理 <span class="c-gray en">&gt;</span> 充值记录 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l">{$user}的充值记录</span>
+        <span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
+			<thead>
+                <tr class="text-c">
+                  <th width="25"><input type="checkbox" name="" value=""></th>
+                  <th width="30">序号</th>
+                  <th width="100">订单编号</th>
+                  <th width="100">游戏服务器</th>
+                  <th width="40">充值账号</th>
+                  <th width="90">充值金额</th>
+                  <th width="150">预充值时间</th>
+                  <th width="150">充值成功时间</th>
+                  <th width="130">充值状态</th>
+                  <th width="130">充值key</th>
+                </tr>
+			</thead>
+			<tbody>
+                {volist name="payRecords" id="vo"}
+                <tr class="text-c">
+                    <td><input type="checkbox" value="1" name=""></td>
+                    <td>{$i}</td>
+                    <td>{$vo.oid}</td>
+                    <td>{$vo.game}</td>
+                    <td>{$user}</td>
+                    <td>￥{$vo.money}.00</td>
+                    <td>{$vo.create_time}</td>
+                    <td>{$vo.update_time|changeTimeToStrForPay}</td>
+                    <td>{$vo.qx|getStatusByQx}</td>
+                    <td>{$vo.sign}</td>
+                </tr>
+                {/volist}
+			</tbody>
+		</table>
+	</div>
+</div>
+{include file="public/_footer"}
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/payrecord.js"></script>
+
+</body>
+</html>

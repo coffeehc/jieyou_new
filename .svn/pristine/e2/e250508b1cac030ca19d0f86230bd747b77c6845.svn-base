@@ -1,0 +1,19 @@
+
+.waring-input {
+    border-color: red;
+}
+
+#logout {
+    cursor:pointer;
+}
+
+#logout:hover {
+    color: #ff6600;
+}
+
+.pagination {text-align: center;}
+.pagination li{display: inline-block;}
+.pagination li a{margin: 0px 4px;border: 1px solid #e6e6e6;padding: 7px 13px;border-radius: 4px;}
+.pagination .active{background-color: #46A3FF;color: #fff;padding: 5px 15px;border: 1px solid #e6e6e6;margin: 0px 10px;border-radius: 4px;}
+.pagination .disabled{color:#aaa;padding: 4px 13px;border: 1px solid #e6e6e6;margin: 0px 0px;border-radius: 4px;}
+.pagination li a:hover{background-color: #46A3FF;color: #fff;border-radius: 4px;}

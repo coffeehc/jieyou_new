@@ -1,0 +1,97 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:75:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\stats\index.html";i:1505370942;s:76:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\public\_meta.html";i:1505370435;s:78:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\public\_footer.html";i:1503034694;}*/ ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link href="__STATIC__/index/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/css.css" />
+<script type="text/javascript" src="__STATIC__/dialog.js"></script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/uploadifive/uploadifive.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+
+<title>统计列表</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 系统统计 <span class="c-gray en">&gt;</span> 统计列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<form  action="" method="get">
+			<button onclick="removeIframe()" class="btn btn-primary radius">关闭选项卡</button>
+            日期范围：
+			<input type="text" name="start_time" value="<?php echo $start_time; ?>" onfocus="selecttime(1)" id="logmin" class="input-text Wdate" style="width:180px;">
+			-
+			<input type="text" name="end_time" value="<?php echo $end_time; ?>" onfocus="selecttime(2)" id="logmax" class="input-text Wdate" style="width:180px;">
+			<input type="text" name="gid" id="" value="<?php echo $gid; ?>" placeholder=" 游戏名称" style="width:250px" class="input-text">
+			<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜游戏</button>
+		</form>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="r">共有数据：<strong><?php echo $count; ?></strong> 条</span> </div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
+			<thead>
+				<tr class="text-c">
+					<th width="25"><input type="checkbox" name="" value=""></th>
+					<th width="80">序号</th>
+					<th>游戏名称</th>
+					<th width="200">来源</th>
+					<th width="250">时间</th>
+					<th width="120">是否注册</th>
+					<th width="200">注册账号</th>
+					<th width="150">IP</th>
+					<th width="120">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php if(is_array($stats) || $stats instanceof \think\Collection || $stats instanceof \think\Paginator): $i = 0; $__LIST__ = $stats;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+				<tr class="text-c">
+					<td><input type="checkbox" value="<?php echo $vo['id']; ?>" name="box"></td>
+					<td><?php echo $i; ?></td>
+					<td class="text-l"><?php echo getGameNameByGid($vo['gid']); ?></td>
+					<td><?php echo $vo['url']; ?></td>
+					<td><?php echo $vo['create_time']; ?></td>
+					<td><?php echo registerOrNo($vo['register']); ?></td>
+					<td><?php echo getUserUsersById($vo['userid']); ?></td>
+					<td><?php echo long2ip($vo['ip']); ?></td>
+					<td class="f-14 td-manage">
+						<a style="text-decoration:none" class="ml-5" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+				</tr>
+				<?php endforeach; endif; else: echo "" ;endif; ?>
+			</tbody>
+		</table>
+	</div>
+	<?php echo $stats->render(); ?>
+</div>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/common.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/uploadifive/jquery.uploadifive.min.js"></script>
+
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<!-- <script type="text/javascript" src="__STATIC__/admin/hui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> -->
+<!-- <script type="text/javascript" src="__STATIC__/admin/hui/lib/laypage/1.2/laypage.js"></script> -->
+<script type="text/javascript" src="__STATIC__/admin/js/stats.js"></script>
+</body>
+</html>

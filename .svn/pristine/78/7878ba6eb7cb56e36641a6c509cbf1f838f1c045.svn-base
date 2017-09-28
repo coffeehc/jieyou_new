@@ -1,0 +1,84 @@
+{include file="public/_meta"}
+<title>新用户注册</title>
+    <script>
+        $(function(){
+        	$(".tx").mouseenter(function(){
+        		$("#img").css('src',this.src);
+        		$(this).fadeTo(1000,0.5);
+        	});
+
+        });
+    </script>
+</head>
+
+<body>
+    {include file="public/_header"}
+    <div style="height:410px;overflow:hidden;">
+        {include file="public/_banner"}
+    </div>
+    <div align="center" class="bodybk">
+        <div class="bodydiv" align="left">
+            <div class="hong20T box" name="reguser" id="reguser">新用户注册</div>
+            <div class="box" style="padding:20px;background-image:url(__STATIC__/images/login_bg.png); background-repeat:no-repeat; background-position:right top">
+                <form id="hecheng-form" name="form1" action="">
+                    <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                        <tr>
+                            <td height="50" colspan="2" class="hei18B">新用户基本信息</td>
+                        </tr>
+                        <tr>
+                            <td width="14%" align="right">账号：</td>
+                            <td width="86%">
+                                <input name="users" type="text" class="cheng" id="users" /> <span class="cheng12 t1"></span></td>
+                        </tr>
+                        <tr>
+                            <td align="right">密码：</td>
+                            <td><input name="password" type="password" class="cheng" id="pass" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right">确认密码：</td>
+                            <td><input name="password_confirm" type="password" id="pass2" /><span class="t2"></span></td>
+                        </tr>
+                        <tr>
+                            <td align="right">昵称：</td>
+                            <td><input name="name" type="text" id="name" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right">联系邮箱：</td>
+                            <td><input name="email" type="text" id="email" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right">头像：</td>
+                            <td><input name="pic" type="hidden" id="pic" size="50" />
+                                <a href="javascript:"><img src="/images/nopic.jpg" name="img" width="90" height="90" id="img" /></a></td>
+                        </tr>
+                        <tr>
+                            <td align="right">点击右边选择头像：</td>
+                            <td>
+                                {for start="1" end="8"}
+                                <div style="padding:5px;float:left"><a href="javascript:"><img class="tx" src="/images/tx{$i}.jpg" name="img{$i}" width="40" height="40" id="img{$i}" onclick="javascript:img.src=this.src;pic.value=this.src;"/></a></div>
+                                {/for}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">&nbsp;</td>
+                            <input type="hidden" name="tjrid" value="{$tjrid}">
+                            <input type="hidden" name="tjr" value="{$tjr}">
+                            <td><input type="button" id="hecheng-submit" value="-= 免费注册 =-" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    {include file="public/_footer"}
+</body>
+<script type="text/javascript">
+    var SCOPE = {
+        'save_url': '{:url('add')}',
+    };
+</script>
+</html>

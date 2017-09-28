@@ -1,0 +1,156 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:73:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\game\edit.html";i:1503559497;s:76:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\public\_meta.html";i:1503034600;s:78:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\public\_footer.html";i:1503034694;}*/ ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/css.css" />
+<script type="text/javascript" src="__STATIC__/dialog.js"></script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/uploadifive/uploadifive.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+
+<title>修改游戏 - 网页游戏管理</title>
+</head>
+<body>
+<article class="page-container">
+	<form class="form form-horizontal" id="hecheng-form">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>游戏名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="<?php echo $game['name']; ?>" placeholder="" name="name">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>游戏编号：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="<?php echo $game['gid']; ?>" placeholder="" name="gid">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>游戏平台：</label>
+			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+				<select name="ptid" class="select">
+                    <?php if(is_array($gamePt) || $gamePt instanceof \think\Collection || $gamePt instanceof \think\Paginator): $i = 0; $__LIST__ = $gamePt;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                    <option value="<?php echo $vo['id']; ?>" <?php if($game['ptid'] == $vo['id']): ?>selected<?php endif; ?>><?php echo $vo['name']; ?></option>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+				</select>
+				</span> </div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>游戏类型：</label>
+            <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+				<select name="lxid" class="select">
+                <?php if(is_array($gameClass) || $gameClass instanceof \think\Collection || $gameClass instanceof \think\Paginator): $i = 0; $__LIST__ = $gameClass;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                <option value="<?php echo $vo['id']; ?>" <?php if($game['lxid'] == $vo['id']): ?>selected<?php endif; ?>><?php echo $vo['name']; ?></option>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+				</select>
+				</span> </div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">游戏说明：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="description" cols="" rows="" class="textarea"  placeholder="说点什么..." datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！"><?php echo $game['description']; ?></textarea>
+			</div>
+		</div>
+		<!-- <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">游戏小图：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input id="file_upload"  type="file" multiple="true" >
+	            <img style="display: none" id="upload_org_code_img" src="" class="radius">
+	            <input id="file_upload_image" name="pic" type="hidden" multiple="true" value="">（50*50游戏小图标）
+			</div>
+		</div> -->
+        <!-- <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">游戏中图：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input id="file_upload_pic2"  type="file" multiple="true" >（220*330首页精品推荐位置图片）
+                <img id="upload_org_code_img_pic2" src="<?php echo $game['pic2']; ?>" class="radius">
+                <input id="file_upload_image_pic2" name="pic2" type="hidden" multiple="true" value="<?php echo $game['pic2']; ?>">
+            </div>
+        </div> -->
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">游戏中图：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input id="file_upload_pic3"  type="file" multiple="true" >（220*120首页热门游戏小图片）
+                <img id="upload_org_code_img_pic3" src="<?php echo $game['pic3']; ?>" class="radius">
+                <input id="file_upload_image_pic3" name="pic3" type="hidden" multiple="true" value="<?php echo $game['pic3']; ?>">
+            </div>
+        </div>
+        <!-- <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">游戏中图：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input id="file_upload_pic4"  type="file" multiple="true" >（500*300首页正中游戏页面图片）
+                <img style="display: none" id="upload_org_code_img_pic4" src="" class="radius">
+                <input id="file_upload_image_pic4" name="pic4" type="hidden" multiple="true" value="">
+            </div>
+        </div> -->
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">游戏大图：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input id="file_upload_picmax"  type="file" multiple="true" >（游戏主页背景大图，最好是宽1920）
+                <img id="upload_org_code_img_picmax" src="<?php echo $game['picmax']; ?>" class="radius">
+                <input id="file_upload_image_picmax" name="picmax" type="hidden" multiple="true" value="<?php echo $game['picmax']; ?>">
+            </div>
+        </div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">游戏内容：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<script id="editor" name="content" type="text/plain" style="width:100%;height:400px;"><?php echo $game['content']; ?></script>
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<input type="hidden" name="id" value="<?php echo $game['id']; ?>">
+				<button class="btn btn-primary radius" id="hecheng-button-submit" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+				<button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+			</div>
+		</div>
+	</form>
+</article>
+
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/common.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/uploadifive/jquery.uploadifive.min.js"></script>
+
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script src="__STATIC__/admin/js/article-add.js" charset="utf-8"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/upload-image.js"></script>
+<script type="text/javascript">
+	var SCOPE = {
+		'uploadScript': '<?php echo url('api/image/upload'); ?>',
+		'save_url': '<?php echo url('edit'); ?>',
+		'jump_url': '<?php echo url('index'); ?>',
+	};
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

@@ -1,0 +1,59 @@
+{include file="public/_meta"}
+<title>CPS推广中心</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> CPS管理中心 <span class="c-gray en">&gt;</span> CPS列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<form  action="" method="get">
+			<button onclick="removeIframe()" class="btn btn-primary radius">关闭选项卡</button>
+			<input type="text" name="users" id="" value="{$name}" placeholder=" 玩家名称" style="width:250px" class="input-text">
+			<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜玩家</button>
+		</form>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l">
+            <a href="javascript:;" onclick="" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a></span>
+            &nbsp;<a class="btn btn-primary radius" data-title="CPS分成设置" onclick="window_add('CPS分成设置','{:url('Cps/cpsSet')}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> CPS分成设置</a></span>
+            <span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
+			<thead>
+                <tr class="text-c">
+                  <th width="25"><input type="checkbox" name="" value=""></th>
+                  <th width="80">编号</th>
+                  <th width="100">用户名</th>
+                  <th width="100">玩家自己充值（返利）</th>
+                  <th width="40">推广用户数</th>
+                  <th width="90">佣金</th>
+                  <th width="200">操作</th>
+                </tr>
+			</thead>
+			<tbody>
+                {volist name="users" id="vo"}
+                <tr class="text-c">
+                    <td><input type="checkbox" value="1" name=""></td>
+                    <td>{$i}</td>
+                    <td>{$vo.users}</td>
+                    <td>{$vo.id|getMoneyById}</td>
+                    <td>{$vo.id|getTjNumById}</td>
+                    <td>{$vo.id|getCpsMoneyById}</td>
+                    <td class="f-14 user-manage">
+                        <a href="{:url('cpsPay',['id'=>$vo.id])}" class="btn">查看充值记录</a>
+                  </td>
+                </tr>
+                {/volist}
+			</tbody>
+		</table>
+        {$users->render()}
+	</div>
+</div>
+{include file="public/_footer"}
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/laypage/1.2/laypage.js"></script>
+
+</body>
+</html>

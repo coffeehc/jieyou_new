@@ -1,0 +1,249 @@
+{include file="public/_meta"}
+<title>[{$youxi.name}]_一起玩.游戏_全国资讯热线：028-86051177</title>
+<style type="text/css">
+    body{height:100%;background-image: url('{$youxi.picmax}');	background-repeat: no-repeat;background-position:top;}
+</style>
+</head>
+
+<body>
+    <div align="center">
+        <div style="width:1200px">
+            <div class="touming">
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr align="center">
+                        <td height="50"><a href="/" title="官网首页">官网首页</a></td>
+                        <td><a href="{:url('Gamelist/index')}" title="游戏列表">游戏列表</a></td>
+                        <td><a href="{:url('Article/index')}" title="游戏资讯">游戏资讯</a></td>
+                        <td><span class="hong20T">{$youxi.name}</span>-<span class="hei18B">等你来战！</span></td>
+                        <td><a href="{:url('Article/index')}" title="常见问题">常见问题</a></td>
+                        <td>
+                            <a href="{:url('User/playedgame')}" target="_blank" title="玩家登录后，可以对游戏角色进行充值!">充值中心</a>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="margin-top:400px" align="left">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td width="21%" valign="top">
+                            <div class="box_top">
+                                <a href="{:url('Game/index',['id'=>$kaishiyouxi])}"><img src="__STATIC__/images/start_game.jpg" width="260" height="133" border="0" /></a>
+                            </div>
+                            <div class="box" align="center">
+                                <div class="touming2" style="margin-top:10px" align="left">
+                                    {if condition="!$user"}
+                                    <!-- 没有登录 -->
+                                    <form id="user-login-form" name="form1" action="">
+                                        <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                            <tr>
+                                                <td colspan="2"><span class="hei18B">用户登陆</span><br />
+                                                    <hr size="1px" style="height:1px" /> </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="82">帐号：</td>
+                                                <td width="215">
+                                                    <label>
+								                        <input name="users" type="text" id="username" />
+							                         </label>
+                                                 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>密码：</td>
+                                                <td><input name="password" type="password" id="pass" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <label>
+							                            <input type="button" id="user-login-submit" value="-= 登陆 =-" />
+						                            </label>
+                                                    <a href="/api/qqlogin.php" title="点击这里使用QQ快速登陆" target="_self"><img src="__STATIC__/images/qq.png" align="absmiddle" border="0" /></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2"><a href="{:url('Register/index')}" class="cheng">还没有帐号，点这里免费注册</a></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                    <!-- @没有登录 -->
+                                    {else}
+                                    <!-- 已经登录 -->
+                                    <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                        <tr>
+                                            <td colspan="2" class="hei18B">玩家信息</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="29%"><img src="{if condition='$user.pic'}{$user.pic}{else}/images/nopic.jpg{/if}" width="90" height="90" /></td>
+                                            <td width="71%" class="hei12">
+                                                <div>昵称：{$user.name}</div>
+                                                <div>QQ号：{$user.qq}</div>
+                                                <div>邮箱：{$user.email}</div>
+                                                <div>登陆次数：{$user.hits}</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="hei18B">最近玩过的游戏</td>
+                                            {volist name=":getUserGameByUid($user.id)" id="vo" empty="$userServerEmpty"}
+                                            <tr>
+                                                <td nowrap="nowrap"><a href="{:url('Game/index',['id'=>$vo.gsid])}" title="点击进入游戏" target="_blank"><span class="hei12">{$vo.name}</span></a></td>
+                                                <td align="right"><span class="hei12">{$vo.update_time}</span></td>
+                                            </tr>
+                                            {/volist}
+                                        </tr>
+                                    </table>
+                                    <!-- @已经登录 -->
+                                    {/if}
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="bt_div cheng18B">近期将要开放的服务器</div>
+                                <div>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th width="52%" align="center">游戏服务器</th>
+                                            <th width="30%" align="center">时间</th>
+                                            <th width="18%" align="center">提醒</th>
+                                        </tr>
+
+                                        {volist name="readyServer" id="vo" empty="$readyEmpty"}
+                                        <tr>
+                                            <td height="30" align="center">
+                                                <a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒">{$vo.game}{$vo.name}</a>
+                                            </td>
+                                            <td height="30" align="center">
+                                                {$vo.create_time}
+                                            </td>
+                                            <td width="14%" nowrap="nowrap"><a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒"><img src="__STATIC__/images/naozhong.png" border="0" /></a></td>
+                                        </tr>
+                                        {/volist}
+
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="cheng18B bt_div">{$youxi.name}游戏资讯</div>
+                                <div>
+                                    {switch name="$youxi.id"}
+                                        {case value="67"}<div style="padding:5px"><a href="/wd/guicd/175jy_gcd.exe" style="color:red;" title="点击下载鬼吹灯之牧野诡事"><img src="/wd/guicd/gcd.jpg"/>微端下载</a></div>{/case}
+                                        {case value="72"}<div style="padding:5px"><a href="/wd/qmcj/175jy_qmcj.exe" style="color:red;" title="点击下载全民裁决微端"><img src="/wd/qmcj/gcd.jpg"/>微端下载</a></div>{/case}
+                                        {case value="73"}<div style="padding:5px"><a href="/wd/jtfs/175jy_jtfs.exe" style="color:red;" title="点击下载九天封神微端"><img src="/wd/jtfs/gcd.jpg"/>微端下载</a></div>{/case}
+                                        {case value="69"}<div style="padding:5px"><a href="/wd/bwzx/175jy_bwzx.exe" style="color:red;" title="点击下载霸王之心微端"><img src="/wd/bwzx/gcd.jpg"/>微端下载</a></div>{/case}
+                                        {case value="68"}<div style="padding:5px"><a href="/wd/myzs/175jy_myzs.exe" style="color:red;" title="点击下载新暮影战神微端"><img src="/wd/myzs/gcd.jpg"/>微端下载</a></div>{/case}
+                                        {case value="62"}<div style="padding:5px"><a href="/wd/lycq/lycqi.exe" style="color:red;" title="点击下载烈焰传奇微端"><img src="/wd/lycq/lycqi.jpg"/>微端下载</a></div>{/case}
+                                        {case value="82"}<div style="padding:5px"><a href="/wd/ztzn/175jy_ztzn.exe" style="color:red;" title="点击下载战天之怒之秀丽江山微端"><img src="/wd/images/img01.jpg"/>微端下载</a></div>{/case}
+                                    {/switch}
+                                    {volist name="gameArticle" id="vo" empty="$articleEmpty"}
+                                    <div style="padding:5px">
+                                        <a href="{:url('Article/news',['id'=>$vo.id])}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,18,'utf-8')}</a>
+                                    </div>
+                                    {/volist}
+                                </div>
+                            </div>
+                        </td>
+                        <td width="79%" valign="top">
+                            <div class="hei18B box_top" style="padding:10px">推荐服务器</div>
+                            <div class="box_top" style="height:80px;padding:10px">
+                                {volist name="recServer" id="vo" empty="$emptyServer"}
+                                <div style="width:420px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px">
+                                    <img src="__STATIC__/images/shou.png" align="absmiddle" />
+                                    <a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入游戏" target="_blank">{$vo.game}{$vo.name}-<span class='hui12'>{$vo.create_time}</span></a>
+                                    <img src="__STATIC__/images/hotser.gif" width="37" height="19" align="absmiddle" />
+                                    <img src="__STATIC__/images/newser.gif" width="37" height="19" align="absmiddle" />
+                                </div>
+                                {/volist}
+                            </div>
+                            <div class="hei18B box" style="padding:10px">所有服务器</div>
+                            <div class="box_top" style="padding:10px">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            {volist name="gameServer" id="vo"}
+                                            <div style="width:415px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px">
+                                                <img src="__STATIC__/images/shou.png" align="absmiddle" />
+                                                <a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入游戏" target="_blank"> {$vo.game}{$vo.name}-<span class='hui12'>{$vo.create_time}</span></a>
+                                                <img src="__STATIC__/images/hotser.gif" width="37" height="19" align="absmiddle" />
+                                            </div>
+                                            {/volist}
+                                            {in name="$user.users" value="hecheng"}
+                                            {volist name="readyServer" id="vo" empty="$readyEmpty"}
+                                            <div style="width:415px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px">
+                                                <img src="__STATIC__/images/shou.png" align="absmiddle" />
+                                                <a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入游戏" target="_blank"> {$vo.game}{$vo.name}-<span class='hui12'>{$vo.create_time}</span></a>
+                                                <img src="__STATIC__/images/hotser.gif" width="37" height="19" align="absmiddle" />
+                                            </div>
+                                            {/volist}
+                                            {/in}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="youxipage" style="text-align:left;">
+                                {$gameServer->render()}
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        {include file="public/_footer"}
+        <script type="text/javascript">
+            $(function() {
+                $("#user-login-submit").click(function() {
+                    var data = $('#user-login-form').serializeArray();
+                    var url = '{:url('Register/login')}';
+                    postData = {};
+                    $(data).each(function(i) {
+                        postData[this.name] = this.value;
+                    })
+                    $.post(url, postData, function(result) {
+                        if (result.code == 1) {
+                            layer.msg(result.message, {
+                                icon: 6,
+                                time: 1000
+                            }, function() {
+                                window.location.reload();
+                            });
+                        } else {
+                            layer.msg(result.message, {
+                                icon: 5,
+                                time: 1500
+                            });
+                        }
+                    }, 'json')
+                })
+            })
+        </script>
+        <script type="text/javascript">
+            function countTime() {
+                // 获取当前时间
+                var date = new Date();
+                var now = date.getTime();
+                // 设置截止时间
+                var endDate = new Date("2017-09-19 15:00:00");
+                var end = endDate.getTime();
+                // 时间差
+                var leftTime = end-now;
+                // 定义变量 d,h,m,s保存倒计时的时间
+                var d,h,m,s;
+
+                d = Math.floor(leftTime/1000/60/60/24);
+                h = Math.floor(leftTime/1000/60/60%24);
+                m = Math.floor(leftTime/1000/60%60);
+                s = Math.floor(leftTime/1000%60);
+                //将倒计时赋值到div中
+                document.getElementById("_d").innerHTML = d+"天";
+                document.getElementById("_h").innerHTML = h+"时";
+                document.getElementById("_m").innerHTML = m+"分";
+                document.getElementById("_s").innerHTML = s+"秒";
+                if(leftTime<0) {
+                    clearInterval(t);
+                    window.location.reload();
+                }
+            }
+            countTime();
+            var t = setInterval(countTime,1000);
+        </script>
+    </div>
+</body>
+
+</html>

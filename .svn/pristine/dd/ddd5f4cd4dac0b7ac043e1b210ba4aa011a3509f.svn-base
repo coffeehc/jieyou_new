@@ -1,0 +1,127 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\game\recom.html";i:1503571320;s:76:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\public\_meta.html";i:1505370435;s:78:"E:\phpStudy\WWW\newjy.net\public/../application/admin\view\public\_footer.html";i:1503034694;}*/ ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link href="__STATIC__/index/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/hui/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/css.css" />
+<script type="text/javascript" src="__STATIC__/dialog.js"></script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/uploadifive/uploadifive.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+
+<title>添加游戏 - 网页游戏管理</title>
+</head>
+<body>
+<article class="page-container">
+	<form class="form form-horizontal" id="hecheng-form">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">游戏名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<?php echo $game['name']; ?>
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-5 col-sm-2"><input type="checkbox" value="2" name="box" <?php if(in_array((2), is_array($game['tj'])?$game['tj']:explode(',',$game['tj']))): ?>checked<?php endif; ?>>
+			首页banner</label>
+            <div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload"  type="file" multiple="true" >
+				<img id="upload_org_code_img" src="<?php echo $banner_img; ?>" class="thumbnail">
+				<input id="file_upload_image" name="banner_img" type="hidden" multiple="true" value="<?php echo $banner_img; ?>">
+			</div>
+			（图片最佳尺寸1920*410）
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><input type="checkbox" value="1" name="box" <?php if(in_array((1), is_array($game['tj'])?$game['tj']:explode(',',$game['tj']))): ?>checked<?php endif; ?>>
+			精品游戏推荐</label>
+			<div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload_pic2"  type="file" multiple="true" >
+				<img id="upload_org_code_img_pic2" src="<?php echo $jingping_img; ?>" class="thumbnail">
+				<input id="file_upload_image_pic2" name="jingping_img" type="hidden" multiple="true" value="<?php echo $jingping_img; ?>">
+			</div>
+			（图片最佳尺寸220*330）
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><input type="checkbox" value="3" name="box" <?php if(in_array((3), is_array($game['tj'])?$game['tj']:explode(',',$game['tj']))): ?>checked<?php endif; ?>>
+			首页中部广告</label>
+			<div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload_pic3"  type="file" multiple="true" >
+				<img id="upload_org_code_img_pic3" src="<?php echo $zhongbu_img; ?>" class="thumbnail">
+				<input id="file_upload_image_pic3" name="zhongbu_img" type="hidden" multiple="true" value="<?php echo $zhongbu_img; ?>">
+			</div>
+			（图片最佳尺寸950*144）
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><input type="checkbox" value="4" name="box" <?php if(in_array((4), is_array($game['tj'])?$game['tj']:explode(',',$game['tj']))): ?>checked<?php endif; ?>>
+			首页底部广告</label>
+			<div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload_pic4"  type="file" multiple="true" >
+				<img id="upload_org_code_img_pic4" src="<?php echo $dibu_img; ?>" class="thumbnail">
+				<input id="file_upload_image_pic4" name="dibu_img" type="hidden" multiple="true" value="<?php echo $dibu_img; ?>">
+			</div>
+			（图片最佳尺寸580*150）
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><input type="checkbox" value="5" name="box" <?php if(in_array((5), is_array($game['tj'])?$game['tj']:explode(',',$game['tj']))): ?>checked<?php endif; ?>>
+			首页右上广告</label>
+			<div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload_other"  type="file" multiple="true" >
+				<img id="upload_org_code_img_other" src="<?php echo $youshang_img; ?>" class="thumbnail">
+				<input id="file_upload_image_other" name="youshang_img" type="hidden" multiple="true" value="<?php echo $youshang_img; ?>">
+			</div>
+			（图片最佳尺寸240*240）
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><input type="checkbox" value="6" name="box" <?php if(in_array((6), is_array($game['tj'])?$game['tj']:explode(',',$game['tj']))): ?>checked<?php endif; ?>>
+			首页右下广告</label>
+			<div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload_picmax"  type="file" multiple="true" >
+				<img id="upload_org_code_img_picmax" src="<?php echo $youxia_img; ?>" class="thumbnail">
+				<input id="file_upload_image_picmax" name="youxia_img" type="hidden" multiple="true" value="<?php echo $youxia_img; ?>">
+			</div>
+			（图片最佳尺寸240*140）
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<input type="hidden" name="gid" value="<?php echo $game['id']; ?>">
+				<button class="btn btn-primary radius" id="hecheng-button-submit-recom" type="button"><i class="Hui-iconfont">&#xe632;</i> 推荐</button>
+			</div>
+		</div>
+	</form>
+</article>
+
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/common.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/uploadifive/jquery.uploadifive.min.js"></script>
+
+<script type="text/javascript" src="__STATIC__/admin/js/upload-image.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/recom.js"></script>
+<script type="text/javascript">
+	var SCOPE = {
+		'uploadScript': '<?php echo url('api/image/upload'); ?>',
+		'save_url': '<?php echo url('recom'); ?>',
+		'jump_url': '<?php echo url('index'); ?>',
+	};
+</script>
+</body>
+</html>

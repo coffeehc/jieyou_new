@@ -1,0 +1,147 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".main_visual").hover(function() {
+            $("#btn_prev,#btn_next").fadeIn()
+        }, function() {
+            $("#btn_prev,#btn_next").fadeOut()
+        })
+        $dragBln = false;
+        $(".main_image").touchSlider({
+            flexible: true,
+            speed: 200,
+            btn_prev: $("#btn_prev"),
+            btn_next: $("#btn_next"),
+            paging: $(".flicking_con a"),
+            counter: function(e) {
+                $(".flicking_con a").removeClass("on").eq(e.current - 1).addClass("on");
+            }
+        });
+        $(".main_image").bind("mousedown", function() {
+            $dragBln = false;
+        })
+        $(".main_image").bind("dragstart", function() {
+            $dragBln = true;
+        })
+        $(".main_image a").click(function() {
+            if ($dragBln) {
+                return false;
+            }
+        })
+        timer = setInterval(function() {
+            $("#btn_next").click();
+        }, 5000);
+        $(".main_visual").hover(function() {
+            clearInterval(timer);
+        }, function() {
+            timer = setInterval(function() {
+                $("#btn_next").click();
+            }, 5000);
+        })
+        $(".main_image").bind("touchstart", function() {
+            clearInterval(timer);
+        }).bind("touchend", function() {
+            timer = setInterval(function() {
+                $("#btn_next").click();
+            }, 5000);
+        })
+    });
+
+    function GoUrl(surl) {
+        if (surl.length > 0) window.open(surl);
+    }
+</script>
+
+<script>
+    function toLogin() {
+
+        //以下为按钮点击事件的逻辑。注意这里要重新打开窗口
+
+        //否则后面跳转到QQ登录，授权页面时会直接缩小当前浏览器的窗口，而不是打开新窗口
+        var A = window.open("./api/example/oauth/index.php", "TencentLogin", "width=450,height=320,menubar=0,scrollbars=1,resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+    }
+</script>
+
+
+<div style="position:absolute;padding-top:10px;z-index:100000;width:100%;overflow:hidden;pointer-events:none;" align="center">
+    <div class="bodydiv" style="pointer-events:auto;">
+        <div class="touming2" style="float:right;padding:20px" align="left">
+            {if condition="$user"}
+            <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                <tr><td colspan="2" class="hei18B">玩家信息</td></tr>
+                <tr>
+                    <td width="29%"><img src="{if condition='$user.pic'}{$user.pic}{else}/images/nopic.jpg{/if}" width="90" height="90" /></td>
+                    <td width="71%" class="hei12">
+                        <div>昵称：{$user.name}</div>
+                        <div>QQ号：{$user.qq}</div>
+                        <div>邮箱：{$user.email}</div>
+                        <div>登陆次数：{$user.hits}</div>
+                    </td>
+                </tr>
+                <tr><td colspan="2" class="hei18B">最近玩过的游戏</td>
+                    {volist name=":getUserGameByUid($user.id)" id="vo" empty="$userServerEmpty"}
+                    <tr><td nowrap="nowrap"><a href="{:url('Game/index',['id'=>$vo.gsid])}" title="点击进入游戏" target="_blank"><span class="hei12">{$vo.name}</span></a></td><td align="right"><span class="hei12">{$vo.update_time}</span></td></tr>
+                    {/volist}
+                </tr>
+            </table>
+            {else}
+            <!-- 用户登录信息-->
+            <form id="user-login-form">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td colspan="2"><span class="hei18B">用户登陆</span><br />
+                            <hr size="1px" style="height:1px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="82">帐号：</td>
+                        <td width="215">
+                            <label><input name="users" type="text" id="users"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>密码：</td>
+                        <td><input name="password" type="password" id="password" /></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <label><input type="button" id="user-login-submit" value="-= 登陆 =-" /></label>
+                            <!-- <a href="{:url('api/oauthController/qqAction')}" title="点击这里使用QQ快速登陆" target="_self"><img src="__STATIC__/images/qq.png" align="absmiddle" border="0" /></a></td> -->
+                    </tr>
+                    <tr>
+                        <td colspan="2"><a href="{:url('Register/index')}" class="cheng">还没有帐号，点这里免费注册</a></td>
+                    </tr>
+                </table>
+            </form>
+            <!--@用户登录信息-->
+            {/if}
+        </div>
+    </div>
+</div>
+
+<div class="main_visual" style="height:410px;overflow:hidden">
+    <div class="flicking_con">
+        <div class="flicking_inner" align="center">
+            {volist name="banner" id="vo"}
+            <a></a> {/volist}
+        </div>
+    </div>
+    <div class="main_image">
+        <ul>
+            {volist name="banner" id="vo"}
+            <li><a href="{:url('Youxi/index',['id'=>$vo.gid])}"><span class="imgs" style="background:url('{$vo.banner_img}') center top no-repeat"></span></a></li>
+            {/volist}
+        </ul>
+        <a href="javascript:;" id="btn_prev"></a>
+        <!--上一个、下一个功能暂时不可用-->
+        <a href="javascript:;" id="btn_next"></a>
+    </div>
+</div>
+
+<div style="text-align:center;clear:both"></div>
+
+<script type="text/javascript">
+    var SCOPE = {
+        'login_url': "{:url('Register/login')}",
+    }
+</script>

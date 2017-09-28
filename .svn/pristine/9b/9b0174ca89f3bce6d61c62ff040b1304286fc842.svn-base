@@ -1,0 +1,10 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="__STATIC__/user/css/css.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery181.js"></script>
+    <script type="text/javascript" src="__STATIC__/user/js/jquery.js"></script>
+    <script type="text/javascript" src="__STATIC__/user/js/common.js"></script>
+    <link href="__STATIC__/index/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/admin/hui/lib/layer/2.4/layer.js"></script>

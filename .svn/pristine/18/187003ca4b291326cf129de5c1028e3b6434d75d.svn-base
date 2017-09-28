@@ -1,0 +1,99 @@
+{include file="public/_meta"}
+<link href="__STATIC__/index/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<title>网页游戏列表</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 游戏管理 <span class="c-gray en">&gt;</span> 网页游戏管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<form  action="" method="get">
+			<button onclick="removeIframe()" class="btn btn-primary radius">关闭选项卡</button>
+            日期范围：
+			<input type="text" name="start_time" value="" onfocus="selecttime(1)" id="logmin" class="input-text Wdate" style="width:180px;">
+			-
+			<input type="text" name="end_time" value="" onfocus="selecttime(2)" id="logmax" class="input-text Wdate" style="width:180px;">
+			<input type="text" name="title" id="" value="" placeholder=" 资讯名称" style="width:250px" class="input-text">
+			<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜游戏</button>
+		</form>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l">
+            <a class="btn btn-primary radius" data-title="添加游戏"  data-href="{:url('add')}" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加游戏</a></span>
+            <span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<div class="gamelist">
+		{volist name="games" id="vo"}
+        <div class="game" style="background-color:#f5fafe;border-radius:0px;">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="td-l">游戏名称:</td>
+                        <td class="stress cheng" style="font-size:16px;">{$vo.name}</td>
+                    </tr>
+                    <tr>
+                        <td class="td-l">游戏图片:</td>
+                        <td>
+							{if condition="$vo.pic3 != ''"}<img src="{$vo.pic3}" alt="" width="50" height="50">&nbsp;{/if}
+							{if condition="$vo.picmax != ''"}<img src="{$vo.picmax}" alt="" width="50" height="50">{/if}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-l">服务器量:</td>
+                        <td>共有{$vo.gid|getServerNumByGid}个服务器</td>
+                    </tr>
+                    <tr>
+                        <td class="td-l">游戏接口:</td>
+                        <td class="stress cheng">{$vo.pt}</td>
+                    </tr>
+					<tr>
+                        <td class="td-l">热 门 位 :</td>
+                        <td><input class="sort" type="number" name="sort" style="width:50px;" data-attr="{$vo.id}" value="{$vo.sort}"><span class="cheng">*数字越大越靠前</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-l">推 荐 位 :</td>
+                        <td>{$vo.tj|getTjName}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center;line-height:55px;">
+							<a href="{:url('recom',['id'=>$vo.id])}" class="btn">推荐</a>&nbsp;&nbsp;
+                            <a href="{:url('edit',['id'=>$vo.id])}" class="btn">修改</a>&nbsp;&nbsp;
+                            <a href="#" class="btn">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+		{/volist}
+	</div>
+	{$games->render()}
+</div>
+{include file="public/_footer"}
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".sort").blur(function() {
+			var sort = $(this).val();
+			var id = $(this).attr("data-attr");
+			postData = {
+				'id': id,
+				'sort': sort,
+			}
+			var url = '{:url('listorder')}';
+
+			$.post(url,postData,function(result) {
+				if(result.code == 1) {
+					layer.msg(result.message,{icon:6,time:1000},function() {
+						$(this).val(result.data.data)
+					});
+				}else {
+					layer.msg(result.message,{icon:5,time:1500});
+				}
+			},'json');
+		});
+	})
+</script>
+</body>
+</html>

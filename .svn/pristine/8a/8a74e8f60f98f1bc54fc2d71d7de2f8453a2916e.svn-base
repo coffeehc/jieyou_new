@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="__STATIC__/index/css/pay.css">
+    <script type="text/javascript" src="__STATIC__/index/js/jquery181.js"></script>
+    <script type="text/javascript" src="__STATIC__/index/js/pay.js"></script>
+    <title>{$user.users}：欢迎登陆一起玩.游戏用户中心！_一起玩.游戏</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="hd-top">
+            <div class="w1200">
+                <div class="top-logo fl">
+                    <a href="/" target="_blank"><img src="__STATIC__/images/logo.png" alt="" width="150" height="80"></a>
+                    <h1 class="logo-pay">充值中心</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="pay-main ">
+            <div class="">
+                <!--渠道选择-->
+                <div class="pay-left fl">
+                    <ul>
+                        <li>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);" class="channel-a on" date-type="12">
+                                        <span class="channel-icon left-icon-12"></span>
+                                        <span class="channel-name">支付宝</span>
+                                        <span class="channel-status channel-status-0"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="channel-a" date-type="13">
+                                        <span class="channel-icon left-icon-54"></span>
+                                        <span class="channel-name">微信支付</span>
+                                        <span class="channel-status channel-status-0"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="channel-a" date-type="14">
+                                        <span class="channel-icon left-icon-60"></span>
+                                        <span class="channel-name">中国银联</span>
+                                        <span class="channel-status channel-status-0"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="pay-type-title">
+                                更多充值方式
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);" class="channel-a" date-type="wy">
+                                        <span class="channel-icon left-icon-83"></span>
+                                        <span class="channel-name">网上银行</span>
+                                        <span class="channel-status channel-status-0"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="channel-a" date-type="card">
+                                        <span class="channel-icon left-icon-card"></span>
+                                        <span class="channel-name">卡类充值</span>
+                                        <span class="channel-status channel-status-0"></span>
+                                    </a>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <iframe name="ispay-iframe" style="display:none"></iframe>
+                <form name="form1" action="{:url('ispay')}" method="post" target="ispay-iframe" onsubmit="return check()">
+
+
+                <!--订单填写-->
+                <div class="pay-right fl">
+                    <div class="channel-order cf">
+                        <h2 class="order-title">支付宝支付</h2>
+                        <div class="order-table order-table-0">
+                            <!--用户名-->
+                            <div class="order-tr cf pr order-account-name">
+                                <div class="order-td order-td-left">
+                                    <label>充值账号：</label>
+                                </div>
+                                <div class="order-td order-td-right">
+                                    <input type="text" name="users" maxlength="16" title="充值账号" id="pay_user" value="{$user.users}">
+                                    <span class="error-hint"></span>
+                                    <input type="hidden" id="flag" value="">
+                                </div>
+                            </div>
+                            <!--充值游戏-->
+                            <div class="order-tr cf pr order-account-name">
+                                <div class="order-td order-td-left">
+                                    <label>充值游戏：</label>
+                                </div>
+                                <div class="order-td order-td-right">
+                                    <input type="input" title="充值游戏" id="pay_game_name" disabled value="{$serverInfo.game}--{$serverInfo.name}">
+                                    <input type="hidden" name="sid" id="pay_game_sid" value="{$serverInfo.id}">
+                                </div>
+                            </div>
+                            <!--选择游戏-->
+                            <div id="pay-game" class="order-tr cf order-game">
+                                <div class="order-td order-td-left">
+                                    <label>选择游戏：</label>
+                                </div>
+                                <div class="order-td order-td-right pr">
+                                    <a id="choosed_game_a" class="pay-game ">{$game}</a>
+                                    <div id="choosed_game_div" class="gs-sel-panel ">
+                                        <div class="gs-sel-top">
+                                            <span class="gs-sel-title ">选择游戏</span>
+                                            <div class="gs-sel-close-box">
+                                                <a id="choosed_game_div_closed" title="关闭" class="gs-sel-gs-bg gs-sel-close-btn opacity-style"></a>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-middle">
+                                            <div class="gs-sel-lastplay">
+                                                <a class="gs-sel-tab-btn last-played f-right" id="last-played">最近玩过</a>
+                                            </div>
+                                            <div class="gs-sel-tab-bar w456">
+                                                <ul class="lastplay-items">
+                                                    <li><a class="gs-sel-tab-btn current-tab">ABC</a></li>
+                                                    <li><a class="gs-sel-tab-btn">DEF</a></li>
+                                                    <li><a class="gs-sel-tab-btn">GHI</a></li>
+                                                    <li><a class="gs-sel-tab-btn">JKL</a></li>
+                                                    <li><a class="gs-sel-tab-btn">MNO</a></li>
+                                                    <li><a class="gs-sel-tab-btn">PQR</a></li>
+                                                    <li><a class="gs-sel-tab-btn">STU</a></li>
+                                                    <li><a class="gs-sel-tab-btn">VWX</a></li>
+                                                    <li><a class="gs-sel-tab-btn">YZ</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-bottom">
+                                            <div class="gs-sel-cate-box" style="display:block;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">B</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="blr" date-id="44">不良人</a></li>
+                                                        <li><a class="game-items" data-gid="bwzx" date-id="69">霸王之心</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">D</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="dzs" date-id="47">大战神</a></li>
+                                                        <li><a class="game-items" data-gid="dbtx" date-id="60">独步天下</a></li>
+                                                        <li><a class="game-items" data-gid="dtx" date-id="37">打天下</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">F</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="fbdl" date-id="42">风暴大陆</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">G</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="gcd" date-id="67">鬼吹灯之牧野诡事</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">H</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="hc" date-id="39">幻城</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">J</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="jyjh" date-id="19">剑雨江湖</a></li>
+                                                        <li><a class="game-items" data-gid="jyjx" date-id="25">九阴绝学</a></li>
+                                                        <li><a class="game-items" data-gid="jshtm" date-id="65">绝世唐门</a></li>
+                                                        <li><a class="game-items" data-gid="jyjy" date-id="70">九阴九阳</a></li>
+                                                        <li><a class="game-items" data-gid="jtfs" date-id="73">九天封神</a></li>
+                                                        <li><a class="game-items" data-gid="jjbyc" date-id="77">街机捕鱼城</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">L</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="lycqi" date-id="62">烈焰传奇</a></li>
+                                                        <li><a class="game-items" data-gid="lzyhh" date-id="63">龙之炎黄魂</a></li>
+                                                        <li><a class="game-items" data-gid="ly2" date-id="64">灵域2</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">M</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="myzs" date-id="68">新暮影战神</a></li>
+                                                        <li><a class="game-items" data-gid="mojun" date-id="78">魔君传说</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">Q</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="qyz" date-id="48">青云志</a></li>
+                                                        <li><a class="game-items" data-gid="qmcj" date-id="72">全名裁决</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">R</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="rxsg3" date-id="49">热血三国3</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">S</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="smcs" date-id="55">神魔传说</a></li>
+                                                        <li><a class="game-items" data-gid="sg" date-id="40">盛世三国</a></li>
+                                                        <li><a class="game-items" data-gid="sxd" date-id="71">神仙道</a></li>
+                                                        <li><a class="game-items" data-gid="smr" date-id="66">思美人</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">T</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="ttxy" date-id="53">通天西游</a></li>
+                                                        <li><a class="game-items" data-gid="tssj" date-id="22">天书世界</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">W</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="wldf" date-id="58">武炼巅峰</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">X</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="xtj" date-id="51">修天决</a></li>
+                                                        <li><a class="game-items" data-gid="xljxz" date-id="74">新六界仙尊</a></li>
+                                                        <li><a class="game-items" data-gid="xftzn" date-id="76">新焚天之怒</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gs-sel-cate-box" style="display:none;">
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">Y</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="ytx" date-id="43">御天下</a></li>
+                                                        <li><a class="game-items" data-gid="yjqc" date-id="45">一剑倾城</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-cate">
+                                                    <span class="cate-letter">Z</span>
+                                                    <ul class="cate-letter-child">
+                                                        <li><a class="game-items" data-gid="zqzm" date-id="59">足球掌门</a></li>
+                                                        <li><a class="game-items" data-gid="ztzn" date-id="82">战天之怒</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-timeout" style="display:none;">
+                                            <ul class="cate-letter-child">
+                                                {volist name="gsidArr" id="vo" empty="$lastPlayEmpty"}
+                                                <li><a class="game-items" data-gid="{$vo.gid}">{$vo.gid|getGameNameByGid}</a></li>
+                                                {/volist}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <a id="choosed_server_a" class="pay-game" href="javascript:void(0);">{$name}</a>
+                                    <div id="choosed_server_div" class="gs-sel-panel w642 ">
+                                        <div class="gs-sel-top">
+                                            <span class="gs-sel-title">选择服务器</span>
+                                            <div class="gs-sel-searchbar">
+                                                <div class="gs-sel-searchbar-item mar-right-10">
+                                                    <a class="gs-sel-gs-bg gs-sel-shadow drop-down-tag" id="server_search">服务器类型</a>
+                                                    <div id="gs_sel_server_dropdown">
+                                                        <ul class="dropdown-box gs-sel-server-list-dropdow">
+                                                            <li><a class="gs-sel-server-items">双线服</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="gs-sel-search-input">
+                                                    <input type="number" class="gs-sel-searchbar-item gs-sel-shadow server-id-txt" id="search_sid" maxlength="8">
+                                                    <a class="gs-sel-gs-bg gs-sel-close-search-btn" style="display:none;"></a>
+                                                </div>
+                                                <a class="gs-sel-gs-bg submit-btn" id="search_submit">确定</a>
+                                                <input type="hidden" name="gid" value="" id="search_gid">
+                                                <input type="hidden" id="search_server" value="0">
+                                            </div>
+                                            <div class="gs-sel-close-box">
+                                                <a id="choosed_server_div_closed" title="关闭" class="gs-sel-gs-bg gs-sel-close-btn opacity-style"></a>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-middle" style="display:block;">
+                                            <div class="gs-sel-lastplay">
+                                                <a class="gs-sel-tab-btn-two last-played f-right" id="last_play_server">最近玩过</a>
+                                            </div>
+                                            <span class="col-line-grey"></span>
+                                            <div class="gs-sel-tab-bar w540">
+                                                <div class="tab-list w484">
+                                                    <ul class="tab-list-main">
+                                                        <li><a class="gs-sel-tab-btn-two current-tab">双线服</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-bottom-main" style="display:block;">
+                                            <div class="gs-sel-bottom hide" id="server_page_lastplay">
+                                                <ul class="lastplay-list-main">
+
+                                                </ul>
+                                            </div>
+                                            <div class="gs-sel-bottom " id="server_page_l">
+                                                <div class="gs-sel-sub">
+                                                    <ul class="sub-list-main">
+
+                                                    </ul>
+                                                </div>
+                                                <div class="gs-sel-server-list">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-search-result" style="display:none;">
+                                            <ul class="search-result-box" style="display:block;">
+
+                                            </ul>
+                                            <div class="search-result-empty" style="display:none;">
+                                                <p class="empty-title">没有找到您填写的区服，填写其他的试试？</p>
+                                                <p class="empty-tips">提示：区服类型正确选择后，直接在快速服务框填写数字即可</p>
+                                            </div>
+                                        </div>
+                                        <div class="gs-sel-timeout" style="display:none;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--选择金额-->
+                            <div class="order-tr cf order-amount hide-8">
+                                <div class="order-td order-td-left">
+                                    <label>选择金额：</label>
+                                </div>
+                                <div class="order-td order-td-right">
+                                    <label class="pay-money checked" date-money="10">10元</label>
+                                    <label class="pay-money" date-money="20">20元</label>
+                                    <label class="pay-money" date-money="30">30元</label>
+                                    <label class="pay-money" date-money="50">50元</label>
+                                    <label class="pay-money" date-money="100">100元</label>
+                                    <label class="pay-money" date-money="200">200元</label>
+                                    <label class="pay-money" date-money="300">300元</label>
+                                    <label class="pay-money" date-money="500">500元</label>
+                                    <label class="pay-money" date-money="1000">1000元</label>
+                                    <label class="pay-money" date-money="2000">2000元</label>
+                                    <label class="pay-money" date-money="5000">5000元</label>
+                                    <label class="pay-money" date-money="10000">10000元</label>
+                                    <label class="write-money"><input type="number" id="else"></label><label for="else">你还可以填写金额,最低10元:)</label>
+
+                                </div>
+                                <label style="color:red;display:none;" id="error-money">错误的金额:(</label>
+                            </div>
+                            <!--选择银行-->
+                            <div class="order-tr cf order-pay-bank hide">
+                                <div class="order-td order-td-left">
+                                    <label>选择银行：</label>
+                                </div>
+                                <div class="order-td order-td-right">
+
+                                    {volist name="wy" id="vo"}
+                                    <span class="pay-bank" bank-id="{$vo.id}">
+                                        <label>
+                                            <div class="img-div"><img src="{$vo.pic}" alt="" width="150" height="50"></div>
+                                            <span class="pay-bank-input">
+                                                {$vo.name}
+                                            </span>
+                                        </label>
+                                    </span>
+                                    {/volist}
+                                </div>
+                            </div>
+                            <!--卡类充值-->
+                            <div class="order-tr cf order-pay-card hide">
+                                <div class="order-td order-td-left">
+                                    <label>选择卡类：</label>
+                                </div>
+                                <div class="order-td order-td-right">
+
+                                    <!-- <span class="pay-card checked">
+                                        <label>
+                                            <div class="img-div"><img src="" alt="" width="150" height="50"></div>
+                                            <span class="pay-card-input">
+                                                <input type="radio" name="card" value="" checked>移动充值卡
+                                            </span>
+                                        </label>
+                                    </span> -->
+                                    {volist name="card" id="vo"}
+                                    <a href="javascript:;" class="pay-card" bank-id="{$vo.id}">
+                                        <span class="card-icon">{$vo.name}</span>
+                                        <span class="order-checked"></span>
+                                    </a>
+                                    {/volist}
+                                </div>
+                            </div>
+                            <!--提交按钮-->
+                            <div class="order-tr cf order-btn">
+                                <div class="order-td order-td-left">
+                                    <label></label>
+                                </div>
+                                <div class="order-td order-td-right">
+                                    <input type="hidden" name="money" id="money" value="10" >
+                                    <input type="hidden" name="bank" id="bank" value="13">
+                                    <button type="submit" class="pay-confirm">立即充值</button>
+                                    <input type="hidden" name="forms" value="pay">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer" align="center">
+        <div style="width:1200px">
+            <div>防沉迷认证 | 意见反馈 | 家长监护 | 关于我们 | 人才招聘 | 商务合作 </div>
+            <div>＠2015-2017 {$config.bq} <a href="{$config.xukez}" target="_blank" style="color:#333333;">{$config.xuke}</a> 备案号：{$config.icp} 客服电话:{$config.phone}
+            </div>
+            <div>公司地址：成都市天府大道530号天祥广场10楼 邮箱：2477037269@qq.com
+                {if condition="$_SERVER['SERVER_NAME'] eq 'www.comecrazy.com'"}
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002000968 " style="display:inline-block;text-decoration:none;height:14px;line-height:20px;">
+        		<img src="__STATIC__/images/batb.png" style="float:left;"/>
+        		<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#333333;">川公网安备 51019002000968号</p></a>
+                {else /}
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002000995 " style="display:inline-block;text-decoration:none;height:14px;line-height:20px;">
+        		<img src="__STATIC__/images/batb.png" style="float:left;"/>
+        		<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#333333;">川公网安备 51019002000995号</p></a>
+                {/if}
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var SCOPE = {
+        'choosed_game_url': "{:url('choosedGame')}",
+        'search_url': "{:url('searchServer')}",
+        'check_user': "{:url('checkUser')}"
+    }
+</script>
+</html>

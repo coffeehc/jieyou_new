@@ -1,0 +1,82 @@
+<!--head-->
+    <div class="head_top" align="center">
+        <table width="1200" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="8%" nowrap="nowrap">&nbsp;</td>
+                <td width="54%" nowrap="nowrap">&nbsp;玩家QQ群：455092028 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=176903662f155b79532b8bde5877d43dc33facb5bc9fb21b35d21ba20122ed92"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="一起玩玩家群" title="一起玩玩家群"></a></td>
+                <td width="7%" nowrap="nowrap">&nbsp;</td>
+                <td width="3%" nowrap="nowrap">&nbsp;</td>
+                <td width="12%" align="right" nowrap="nowrap">
+                    <span class="hei12" id="header_user">
+                        {if condition="$user"}
+                            {if condition = "$user.pic"}
+                            <img src="{$user.pic}" width='30'  align='absmiddle'  style='border-radius: 15px;overflow:hidden' />
+                            {else}
+                            <img src="/images/nopic.jpg" width='30'  align='absmiddle'  style='border-radius: 15px;overflow:hidden' />
+                            {/if}
+                            :欢迎您！ | <a href="{:url('User/index')}" title="用户中心">用户中心</a> | <span id="logout" title="点击退出平台">退出平台</span> |
+                        {else}
+                        <a href='/#user-login-form'>登陆</a> | <a href="{:url('Register/index')}">注册</a>|
+                        {/if}
+                        <a href="javascript:;" onclick="addFavorite2()">加入收藏</a>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div align="center">
+        <table width="1200" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="29%" height="100" class="top_bt"><a href="/" title="首页"><img src="{$config.logo}" height="100" /></a></td>
+                <td width="35%">
+                    <form id="formSearch">
+                        <div>
+                            <input type="text" name="gamekeyword" id="gamekey" class="sosu" placeholder="搜索游戏名称"/>
+                            <input type="button" id="search-button" style="border:1px #0099FF solid;border-radius:10px;line-height:30px;width:60px;cursor:pointer;" value="搜索"/>
+                        </div>
+                        <div>热门搜索词：<a href="{:url('Youxi/index',['id'=>67])}">鬼吹灯</a> <a href="{:url('Youxi/index',['id'=>73])}">九天封神</a> <a href="{:url('Youxi/index',['id'=>66])}">思美人</a> <a href="{:url('Youxi/index',['id'=>76])}">新焚天之怒</a></div>
+                    </form>
+                </td>
+                <td width="36%" align="right" class="hei18B"><span>免费咨询电话</span><br /><span class="phone">{$config.phone}</span></td>
+            </tr>
+        </table>
+    </div>
+    <div align="center" class="dh_bg">
+        <div class="b_k">
+            <li><a href="/" title="网站首页">网站首页</a></li>
+            <li><a href="{:url('Gamelist/index')}" title="游戏大厅">游戏大厅</a></li>
+            <!-- <li><a href="{:url('User/index')}" title="用户中心">用户中心</a></li> -->
+            <li><a href="javascript:;" id="user_index" data-url="{:url('User/index')}" title="用户中心">用户中心</a></li>
+            <li><a href="{:url('Server/index')}">开服表</a></li>
+            <li><a href="{:url('Article/index')}"  title="游戏资讯">游戏资讯</a></li>
+            <li><a href="{:url('Article/index')}" title="常见问题">常见问题</a></li>
+            <!-- <li><a href="{:url('User/playedgame')}" target="_blank" title="玩家登录后，可以对游戏角色进行充值!">充值中心</a></li> -->
+            <li><a href="{:url('Pay/index')}" target="_blank" title="玩家登录后，可以对游戏角色进行充值!">充值中心</a></li>
+            <!--li>联系我们</li-->
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <!--head-->
+<script type="text/javascript">
+    var logout_url = '{:url('Register/logout')}';
+
+    $(function() {
+        $("#search-button").click(function() {
+            var name = $("#gamekey").val();
+            var url = '{:url('Search/index')}';
+            if(name == '') {
+                layer.msg('还没有输入游戏哦',{icon:5,time:1500});
+            }else {
+                $.post(url,{name:name},function(result) {
+                    if(result.code == 0) {
+                        layer.msg('没有找到相关游戏',{icon:5,time:1500});
+                    }else {
+                        window.location.href = '/index/youxi/index/id/'+result.data.id;
+                    }
+                },'json');
+            }
+
+        });
+    });
+</script>

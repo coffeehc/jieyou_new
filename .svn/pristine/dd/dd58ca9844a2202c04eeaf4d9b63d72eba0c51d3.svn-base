@@ -1,0 +1,79 @@
+<aside class="Hui-aside">
+	<div class="menu_dropdown bk_2">
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{:url('Article/index')}" data-title="资讯管理" href="javascript:void(0)">资讯管理</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<!-- <dl id="menu-picture">
+			<dt><i class="Hui-iconfont">&#xe613;</i> 图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{:url('Picture/index')}" data-title="图片管理" href="javascript:void(0)">图片管理</a></li>
+				</ul>
+			</dd>
+		</dl> -->
+		<dl id="menu-product">
+			<dt><i class="Hui-iconfont">&#xe620;</i> 游戏管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{:url('GameType/index')}" data-title="游戏类型管理" href="javascript:void(0)">游戏类型管理</a></li>
+					<li><a data-href="{:url('Game/index')}" data-title="网页游戏管理" href="javascript:void(0)">网页游戏管理</a></li>
+					<li><a data-href="{:url('GameServer/index')}" data-title="游戏服务器表" href="javascript:void(0)">游戏服务器表</a></li>
+					<li><a data-href="{:url('Flash/index')}" data-title="广告投放管理" href="javascript:void(0)">广告投放管理</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-member">
+			<dt><i class="Hui-iconfont">&#xe60d;</i> 玩家管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{:url('User/index')}" data-title="玩家列表" href="javascript:;">玩家列表</a></li>
+					<li><a data-href="{:url('User/recharge')}" data-title="给玩家充值" href="javascript:;">给玩家充值</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-admin">
+			<dt><i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{:url('Manager/index')}" data-title="管理员列表" href="javascript:void(0)">管理员列表</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-comments">
+			<dt><i class="Hui-iconfont">&#xe622;</i> CPS管理中心<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{:url('Cps/index')}" data-title="CPS推广中心" href="javascript:;">CPS推广中心</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-tongji">
+			<dt><i class="Hui-iconfont">&#xe61a;</i> 系统统计<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{:url('Stats/index')}" data-title="统计列表" href="javascript:void(0)">统计列表</a></li>
+					<li><a data-href="{:url('Stats/recharge')}" data-title="充值记录" href="javascript:void(0)">充值记录</a></li>
+					<li><a data-href="{:url('Stats/zhuzt')}" data-title="柱状图" href="javascript:void(0)">柱状图</a></li>
+					<li><a data-href="{:url('Stats/zhext')}" data-title="折线图" href="javascript:void(0)">折线图</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-system">
+			<dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{:url('System/index')}" data-title="系统设置" href="javascript:void(0)">系统设置</a></li>
+					<li><a data-href="{:url('System/apikey')}" data-title="APIKEY设置" href="javascript:void(0)">APIKEY设置</a></li>
+					<li><a data-href="{:url('Pay/index')}" data-title="支付设置" href="javascript:void(0)">支付设置</a></li>
+					<li><a data-href="{:url('System/link')}" data-title="友情链接" href="javascript:void(0)">友情链接</a></li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>

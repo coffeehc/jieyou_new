@@ -1,0 +1,41 @@
+.table {
+    margin-bottom: 10px;
+}
+.stress {
+    font-size:16px;
+    font-weight: bold;
+}
+
+.cheng {
+    color: #ff6600;
+}
+
+.game {
+    width: 23%;
+    height: 280px;
+    float: left;
+    padding: 6px;
+    margin: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.7s;
+}
+.game:hover {
+    box-shadow: 0px 0px 30px #5a98de;
+}
+
+.game table tbody tr td{
+    line-height: 25px;
+    font-size: 14px;
+    padding: 3px;
+}
+
+.td-l {
+    width: 100px;
+}
+
+.game-server-button {
+    float:left;
+    width:160px;
+    padding:3px;
+    margin:3px;
+}

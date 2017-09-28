@@ -1,0 +1,72 @@
+{include file="public/_meta"}
+<title>网页游戏列表</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 游戏管理 <span class="c-gray en">&gt;</span> 广告投放管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<form  action="" method="get">
+			<button onclick="removeIframe()" class="btn btn-primary radius">关闭选项卡</button>
+            日期范围：
+			<input type="text" name="start_time" value="" onfocus="selecttime(1)" id="logmin" class="input-text Wdate" style="width:120px;">
+			-
+			<input type="text" name="end_time" value="" onfocus="selecttime(2)" id="logmax" class="input-text Wdate" style="width:120px;">
+			<input type="text" name="title" id="" value="" placeholder="游戏名字" style="width:250px" class="input-text">
+			<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜游戏</button>
+		</form>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l">
+            <a class="btn btn-primary radius" data-title="添加游戏"  data-href="{:url('add')}" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加游戏</a></span>
+            <span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<div class="gamelist">
+		{volist name="games" id="vo"}
+        <div class="game" style="background-color:#f5fafe;border-radius:0px;">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="td-l">游戏名称:</td>
+                        <td class="stress cheng" style="font-size:16px;">{$vo.name}</td>
+                    </tr>
+                    <tr>
+                        <td class="td-l">游戏编号:</td>
+                        <td>{$vo.gid}</td>
+                    </tr>
+                    <tr>
+                        <td class="td-l">网站标题:</td>
+                        <td>{$vo.title}</td>
+                    </tr>
+                    <tr>
+                        <td class="td-l">FLASH:</td>
+                        <td>{$vo.swf}</td>
+                    </tr>
+					<tr>
+                        <td class="td-l">广告FLASH:</td>
+                        <td><input type="text"style="width:250px;" disabled value="http://www.175jy.com/ad/game/index/gid/{$vo.gid}/ly/265G/html"> </td>
+                    </tr>
+                    <tr>
+                        <td class="td-l">更新时间:</td>
+                        <td>{$vo.create_time}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center;line-height:55px;">
+                            <a href="{:url('edit',['id'=>$vo.id])}" class="btn">修改</a>&nbsp;&nbsp;
+                            <a href="#" class="btn">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+		{/volist}
+	</div>
+	<div class="game_page">
+		{$games->render()}
+	</div>
+</div>
+{include file="public/_footer"}
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+
+</body>
+</html>

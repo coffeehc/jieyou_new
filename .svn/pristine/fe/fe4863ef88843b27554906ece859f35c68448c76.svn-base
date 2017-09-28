@@ -1,0 +1,59 @@
+{include file="public/_meta"}
+<title>修改链接 - 友情链接</title>
+</head>
+<body>
+<article class="page-container">
+	<form class="form form-horizontal" id="hecheng-form">
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>网站名称：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="{$link.name}" placeholder="" name="name">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>链接地址：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="{$link.url}" placeholder="" name="url">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3">链接类型：</label>
+		<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+				<input type="radio" name="lx" value="0" {eq name="$link.lx" value="0"}checked{/eq}>文字链接
+			<div class="check-box">
+				<input type="radio" name="lx" value="1" {eq name="$link.lx" value="1"}checked{/eq}>图片链接
+			</div>
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3">网站logo：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input id="file_upload"  type="file" multiple="true" >
+			<img id="upload_org_code_img" src="{$link.pic}" class="radius">
+			<input id="file_upload_image" name="pic" type="hidden" multiple="true" value="{$link.pic}">
+		</div>
+	</div>
+
+	<div class="row cl">
+		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+			<input type="hidden" name="id" value="{$link.id}">
+			<input class="btn btn-primary radius" id="hecheng-button-submit" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+		</div>
+	</div>
+	</form>
+</article>
+
+{include file="public/_footer"}
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/admin/js/upload-image.js"></script>
+<script type="text/javascript">
+	var SCOPE = {
+		'uploadScript': '{:url('api/image/upload')}',
+		'save_url': '{:url('editLink')}',
+		'jump_url': '{:url('link')}',
+	};
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

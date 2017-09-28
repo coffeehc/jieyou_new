@@ -1,0 +1,28 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpStudy\WWW\newjy.net\public/../application/index\view\pay\ispay.html";i:1505297497;}*/ ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="__STATIC__/index/js/jquery181.js"></script>
+<script>
+	window.onload = function() {
+		$("form").submit();
+	}
+</script>
+</head>
+<body>
+	<form action="http://www.ufojoy.com/auth/payto.phtml" method="post" target="_parent">
+		<input type="hidden" name="agent_id" value="<?php echo $agent_id; ?>">
+		<input type="hidden" name="game_id" value="<?php echo $game_id; ?>">
+		<input type="hidden" name="serverNo" value="<?php echo $serverNo; ?>">
+		<input type="hidden" name="uid" value="<?php echo $uid; ?>">
+		<input type="hidden" name="OrderID" value="<?php echo $OrderID; ?>">
+		<input type="hidden" name="amount" value="<?php echo $amount; ?>">
+		<input type="hidden" name="paytype" value="<?php echo $paytype; ?>">
+		<input type="hidden" name="rel" value="<?php echo $rel; ?>">
+		<input type="hidden" name="time" value="<?php echo $time; ?>">
+		<input type="hidden" name="charname" value="<?php echo $charname; ?>">
+		<input type="hidden" name="sign" value="<?php echo $sign; ?>">
+	</form>
+</body>
+</html>

@@ -1,0 +1,3763 @@
+---------------------------------------------------------------
+[ 2017-08-16T16:38:43+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.029449s][吞吐率：33.96req/s] [内存消耗：1,011.21kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:39:27+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.028619s][吞吐率：34.94req/s] [内存消耗：1,011.20kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:39:28+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.027817s][吞吐率：35.95req/s] [内存消耗：1,011.20kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:40:04+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.027051s][吞吐率：36.97req/s] [内存消耗：1,011.20kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:40:06+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.027918s][吞吐率：35.82req/s] [内存消耗：1,011.20kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:40:07+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.028372s][吞吐率：35.25req/s] [内存消耗：1,011.20kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:42:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.022392s][吞吐率：44.66req/s] [内存消耗：977.48kb] [文件加载：28]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:43:04+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.020758s][吞吐率：48.17req/s] [内存消耗：977.48kb] [文件加载：28]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:43:06+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.025251s][吞吐率：39.60req/s] [内存消耗：977.48kb] [文件加载：28]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:43:07+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.025333s][吞吐率：39.47req/s] [内存消耗：977.48kb] [文件加载：28]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:43:34+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.049208s][吞吐率：20.32req/s] [内存消耗：1,023.95kb] [文件加载：32]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [1]Call to undefined method app\admin\controller\Index::fetch()[E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php:8]
+---------------------------------------------------------------
+[ 2017-08-16T16:44:05+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.061000s][吞吐率：16.39req/s] [内存消耗：1,393.59kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:44:05+08:00 ] 127.0.0.1 127.0.0.1 GET /include/css.css
+[ info ] newjy.net/include/css.css [运行时间：0.037839s][吞吐率：26.43req/s] [内存消耗：1,010.32kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'include',
+    1 => 'css.css',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:44:05+08:00 ] 127.0.0.1 127.0.0.1 GET /public/head.html
+[ info ] newjy.net/public/head.html [运行时间：0.054308s][吞吐率：18.41req/s] [内存消耗：1,010.88kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'head',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:44:05+08:00 ] 127.0.0.1 127.0.0.1 GET /public/left.html
+[ info ] newjy.net/public/left.html [运行时间：0.081412s][吞吐率：12.28req/s] [内存消耗：1,010.88kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'left',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:44:05+08:00 ] 127.0.0.1 127.0.0.1 GET /public/main.html
+[ info ] newjy.net/public/main.html [运行时间：0.112893s][吞吐率：8.86req/s] [内存消耗：1,010.88kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'main',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:45:00+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.031684s][吞吐率：31.56req/s] [内存消耗：1,393.60kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:45:01+08:00 ] 127.0.0.1 127.0.0.1 GET /head.html
+[ info ] newjy.net/head.html [运行时间：0.032005s][吞吐率：31.25req/s] [内存消耗：1,010.78kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'head',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:45:01+08:00 ] 127.0.0.1 127.0.0.1 GET /left.html
+[ info ] newjy.net/left.html [运行时间：0.030748s][吞吐率：32.52req/s] [内存消耗：1,010.78kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'left',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:45:01+08:00 ] 127.0.0.1 127.0.0.1 GET /include/css.css
+[ info ] newjy.net/include/css.css [运行时间：0.052727s][吞吐率：18.97req/s] [内存消耗：1,010.32kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'include',
+    1 => 'css.css',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:45:01+08:00 ] 127.0.0.1 127.0.0.1 GET /main.html
+[ info ] newjy.net/main.html [运行时间：0.035869s][吞吐率：27.88req/s] [内存消耗：1,010.78kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'main',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:49:04+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.036735s][吞吐率：27.22req/s] [内存消耗：1,393.70kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:49:04+08:00 ] 127.0.0.1 127.0.0.1 GET /public/head.html
+[ info ] newjy.net/public/head.html [运行时间：0.037112s][吞吐率：26.95req/s] [内存消耗：1,010.88kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'head',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:49:04+08:00 ] 127.0.0.1 127.0.0.1 GET /public/left.html
+[ info ] newjy.net/public/left.html [运行时间：0.060922s][吞吐率：16.41req/s] [内存消耗：1,010.88kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'left',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:49:04+08:00 ] 127.0.0.1 127.0.0.1 GET /include/css.css
+[ info ] newjy.net/include/css.css [运行时间：0.074932s][吞吐率：13.35req/s] [内存消耗：1,010.32kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'include',
+    1 => 'css.css',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:49:04+08:00 ] 127.0.0.1 127.0.0.1 GET /public/main.html
+[ info ] newjy.net/public/main.html [运行时间：0.082232s][吞吐率：12.16req/s] [内存消耗：1,010.88kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'main',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:49:06+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.027855s][吞吐率：35.90req/s] [内存消耗：1,254.51kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:49:06+08:00 ] 127.0.0.1 127.0.0.1 GET /public/left.html
+[ info ] newjy.net/public/left.html [运行时间：0.029534s][吞吐率：33.86req/s] [内存消耗：1,010.88kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'left',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:49:06+08:00 ] 127.0.0.1 127.0.0.1 GET /public/head.html
+[ info ] newjy.net/public/head.html [运行时间：0.029365s][吞吐率：34.05req/s] [内存消耗：1,010.88kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'head',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:49:06+08:00 ] 127.0.0.1 127.0.0.1 GET /public/main.html
+[ info ] newjy.net/public/main.html [运行时间：0.038824s][吞吐率：25.76req/s] [内存消耗：1,010.88kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'main',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T16:49:06+08:00 ] 127.0.0.1 127.0.0.1 GET /include/css.css
+[ info ] newjy.net/include/css.css [运行时间：0.056740s][吞吐率：17.62req/s] [内存消耗：1,010.32kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'include',
+    1 => 'css.css',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.036031s][吞吐率：27.75req/s] [内存消耗：1,415.46kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui/css/H-ui.min.css
+[ info ] newjy.net/static/h-ui/css/H-ui.min.css [运行时间：0.036305s][吞吐率：27.54req/s] [内存消耗：1,010.39kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery/1.9.1/jquery.min.js
+[ info ] newjy.net/lib/jquery/1.9.1/jquery.min.js [运行时间：0.047880s][吞吐率：20.89req/s] [内存消耗：1,010.45kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery',
+    2 => '1.9.1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/Hui-iconfont/1.0.8/iconfont.css
+[ info ] newjy.net/lib/Hui-iconfont/1.0.8/iconfont.css [运行时间：0.080134s][吞吐率：12.48req/s] [内存消耗：1,010.42kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'Hui-iconfont',
+    2 => '1.0.8',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/skin/default/skin.css
+[ info ] newjy.net/static/h-ui.admin/skin/default/skin.css [运行时间：0.057810s][吞吐率：17.30req/s] [内存消耗：1,010.85kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'skin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+  'default' => 'skin.css',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/layer/2.4/layer.js
+[ info ] newjy.net/lib/layer/2.4/layer.js [运行时间：0.040518s][吞吐率：24.68req/s] [内存消耗：1,010.29kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'layer',
+    2 => '2.4',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/js/H-ui.admin.js
+[ info ] newjy.net/static/h-ui.admin/js/H-ui.admin.js [运行时间：0.039803s][吞吐率：25.12req/s] [内存消耗：1,010.33kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery.contextmenu/jquery.contextmenu.r2.js
+[ info ] newjy.net/lib/jquery.contextmenu/jquery.contextmenu.r2.js [运行时间：0.037513s][吞吐率：26.66req/s] [内存消耗：1,010.53kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery.contextmenu',
+    2 => 'jquery.contextmenu.r2.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/css/style.css
+[ info ] newjy.net/static/h-ui.admin/css/style.css [运行时间：0.056672s][吞吐率：17.65req/s] [内存消耗：1,010.44kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /welcome.html
+[ info ] newjy.net/welcome.html [运行时间：0.082155s][吞吐率：12.17req/s] [内存消耗：1,010.86kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'welcome',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui/js/H-ui.min.js
+[ info ] newjy.net/static/h-ui/js/H-ui.min.js [运行时间：0.091813s][吞吐率：10.89req/s] [内存消耗：1,010.32kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/css/H-ui.admin.css
+[ info ] newjy.net/static/h-ui.admin/css/H-ui.admin.css [运行时间：0.167623s][吞吐率：5.97req/s] [内存消耗：1,010.43kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/layer/2.4/layer.js
+[ info ] newjy.net/lib/layer/2.4/layer.js [运行时间：0.029522s][吞吐率：33.87req/s] [内存消耗：1,010.27kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'layer',
+    2 => '2.4',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui/js/H-ui.min.js
+[ info ] newjy.net/static/h-ui/js/H-ui.min.js [运行时间：0.027843s][吞吐率：35.92req/s] [内存消耗：1,010.32kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/js/H-ui.admin.js
+[ info ] newjy.net/static/h-ui.admin/js/H-ui.admin.js [运行时间：0.028175s][吞吐率：35.49req/s] [内存消耗：1,010.31kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:25:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery.contextmenu/jquery.contextmenu.r2.js
+[ info ] newjy.net/lib/jquery.contextmenu/jquery.contextmenu.r2.js [运行时间：0.030365s][吞吐率：32.93req/s] [内存消耗：1,010.55kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery.contextmenu',
+    2 => 'jquery.contextmenu.r2.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.033863s][吞吐率：29.53req/s] [内存消耗：1,414.38kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/skin/default/skin.css
+[ info ] newjy.net/static/h-ui.admin/skin/default/skin.css [运行时间：0.035869s][吞吐率：27.88req/s] [内存消耗：1,010.85kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'skin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+  'default' => 'skin.css',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/Hui-iconfont/1.0.8/iconfont.css
+[ info ] newjy.net/lib/Hui-iconfont/1.0.8/iconfont.css [运行时间：0.038896s][吞吐率：25.71req/s] [内存消耗：1,010.42kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'Hui-iconfont',
+    2 => '1.0.8',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/css/H-ui.admin.css
+[ info ] newjy.net/static/h-ui.admin/css/H-ui.admin.css [运行时间：0.062630s][吞吐率：15.97req/s] [内存消耗：1,010.41kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery/1.9.1/jquery.min.js
+[ info ] newjy.net/lib/jquery/1.9.1/jquery.min.js [运行时间：0.051543s][吞吐率：19.40req/s] [内存消耗：1,010.45kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery',
+    2 => '1.9.1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui/css/H-ui.min.css
+[ info ] newjy.net/static/h-ui/css/H-ui.min.css [运行时间：0.076072s][吞吐率：13.15req/s] [内存消耗：1,010.39kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/layer/2.4/layer.js
+[ info ] newjy.net/lib/layer/2.4/layer.js [运行时间：0.042374s][吞吐率：23.60req/s] [内存消耗：1,010.27kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'layer',
+    2 => '2.4',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /welcome.html
+[ info ] newjy.net/welcome.html [运行时间：0.042849s][吞吐率：23.34req/s] [内存消耗：1,010.86kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'welcome',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui/js/H-ui.min.js
+[ info ] newjy.net/static/h-ui/js/H-ui.min.js [运行时间：0.089180s][吞吐率：11.21req/s] [内存消耗：1,010.32kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/layer/2.4/layer.js
+[ info ] newjy.net/lib/layer/2.4/layer.js [运行时间：0.032331s][吞吐率：30.93req/s] [内存消耗：1,010.27kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'layer',
+    2 => '2.4',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/css/style.css
+[ info ] newjy.net/static/h-ui.admin/css/style.css [运行时间：0.163258s][吞吐率：6.13req/s] [内存消耗：1,010.44kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery.contextmenu/jquery.contextmenu.r2.js
+[ info ] newjy.net/lib/jquery.contextmenu/jquery.contextmenu.r2.js [运行时间：0.095384s][吞吐率：10.48req/s] [内存消耗：1,010.55kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery.contextmenu',
+    2 => 'jquery.contextmenu.r2.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/js/H-ui.admin.js
+[ info ] newjy.net/static/h-ui.admin/js/H-ui.admin.js [运行时间：0.127757s][吞吐率：7.83req/s] [内存消耗：1,010.31kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui/js/H-ui.min.js
+[ info ] newjy.net/static/h-ui/js/H-ui.min.js [运行时间：0.035677s][吞吐率：28.03req/s] [内存消耗：1,010.32kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/js/H-ui.admin.js
+[ info ] newjy.net/static/h-ui.admin/js/H-ui.admin.js [运行时间：0.034041s][吞吐率：29.38req/s] [内存消耗：1,010.31kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery.contextmenu/jquery.contextmenu.r2.js
+[ info ] newjy.net/lib/jquery.contextmenu/jquery.contextmenu.r2.js [运行时间：0.032157s][吞吐率：31.10req/s] [内存消耗：1,010.55kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery.contextmenu',
+    2 => 'jquery.contextmenu.r2.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:28:42+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.036912s][吞吐率：27.09req/s] [内存消耗：1,414.48kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:28:42+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery/1.9.1/jquery.min.js
+[ info ] newjy.net/lib/jquery/1.9.1/jquery.min.js [运行时间：0.037426s][吞吐率：26.72req/s] [内存消耗：1,010.45kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery',
+    2 => '1.9.1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:28:42+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/layer/2.4/layer.js
+[ info ] newjy.net/lib/layer/2.4/layer.js [运行时间：0.039708s][吞吐率：25.18req/s] [内存消耗：1,010.27kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'layer',
+    2 => '2.4',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:28:42+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/js/H-ui.admin.js
+[ info ] newjy.net/static/h-ui.admin/js/H-ui.admin.js [运行时间：0.034423s][吞吐率：29.05req/s] [内存消耗：1,010.31kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+o ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:28:42+08:00 ] 127.0.0.1 127.0.0.1 GET /welcome.html
+[ info ] newjy.net/welcome.html [运行时间：0.101259s][吞吐率：9.88req/s] [内存消耗：1,010.86kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'welcome',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:28:42+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui/js/H-ui.min.js
+[ info ] newjy.net/static/h-ui/js/H-ui.min.js [运行时间：0.056679s][吞吐率：17.64req/s] [内存消耗：1,010.32kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:28:42+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/layer/2.4/layer.js
+[ info ] newjy.net/lib/layer/2.4/layer.js [运行时间：0.033009s][吞吐率：30.29req/s] [内存消耗：1,010.27kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'layer',
+    2 => '2.4',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:28:42+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui/js/H-ui.min.js
+[ info ] newjy.net/static/h-ui/js/H-ui.min.js [运行时间：0.033267s][吞吐率：30.06req/s] [内存消耗：1,010.32kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:28:42+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/js/H-ui.admin.js
+[ info ] newjy.net/static/h-ui.admin/js/H-ui.admin.js [运行时间：0.033557s][吞吐率：29.80req/s] [内存消耗：1,010.31kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:28:42+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery.contextmenu/jquery.contextmenu.r2.js
+[ info ] newjy.net/lib/jquery.contextmenu/jquery.contextmenu.r2.js [运行时间：0.032466s][吞吐率：30.80req/s] [内存消耗：1,010.55kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery.contextmenu',
+    2 => 'jquery.contextmenu.r2.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:31:20+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.036692s][吞吐率：27.25req/s] [内存消耗：1,406.52kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:31:20+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery/1.9.1/jquery.min.js
+[ info ] newjy.net/lib/jquery/1.9.1/jquery.min.js [运行时间：0.044002s][吞吐率：22.73req/s] [内存消耗：1,010.45kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery',
+    2 => '1.9.1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:31:20+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/layer/2.4/layer.js
+[ info ] newjy.net/lib/layer/2.4/layer.js [运行时间：0.049092s][吞吐率：20.37req/s] [内存消耗：1,010.27kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'layer',
+    2 => '2.4',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:31:20+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui/js/H-ui.min.js
+[ info ] newjy.net/static/h-ui/js/H-ui.min.js [运行时间：0.053507s][吞吐率：18.69req/s] [内存消耗：1,010.32kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:31:20+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery.contextmenu/jquery.contextmenu.r2.js
+[ info ] newjy.net/lib/jquery.contextmenu/jquery.contextmenu.r2.js [运行时间：0.055269s][吞吐率：18.09req/s] [内存消耗：1,010.55kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery.contextmenu',
+    2 => 'jquery.contextmenu.r2.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:31:20+08:00 ] 127.0.0.1 127.0.0.1 GET /welcome.html
+[ info ] newjy.net/welcome.html [运行时间：0.056209s][吞吐率：17.79req/s] [内存消耗：1,010.86kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'welcome',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:31:20+08:00 ] 127.0.0.1 127.0.0.1 GET /static/h-ui.admin/js/H-ui.admin.js
+[ info ] newjy.net/static/h-ui.admin/js/H-ui.admin.js [运行时间：0.061334s][吞吐率：16.30req/s] [内存消耗：1,010.31kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'h-ui.admin',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:31:20+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery.contextmenu/jquery.contextmenu.r2.js
+[ info ] newjy.net/lib/jquery.contextmenu/jquery.contextmenu.r2.js [运行时间：0.039003s][吞吐率：25.64req/s] [内存消耗：1,010.55kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery.contextmenu',
+    2 => 'jquery.contextmenu.r2.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:33:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.039857s][吞吐率：25.09req/s] [内存消耗：1,406.15kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:33:35+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery.contextmenu/jquery.contextmenu.r2.js
+[ info ] newjy.net/lib/jquery.contextmenu/jquery.contextmenu.r2.js [运行时间：0.035465s][吞吐率：28.20req/s] [内存消耗：1,010.55kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery.contextmenu',
+    2 => 'jquery.contextmenu.r2.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+OG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:33:35+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery.contextmenu/jquery.contextmenu.r2.js
+[ info ] newjy.net/lib/jquery.contextmenu/jquery.contextmenu.r2.js [运行时间：0.036947s][吞吐率：27.07req/s] [内存消耗：1,010.55kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery.contextmenu',
+    2 => 'jquery.contextmenu.r2.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:34:01+08:00 ] 127.0.0.1 127.0.0.1 GET /article-add.html
+[ info ] newjy.net/article-add.html [运行时间：0.030764s][吞吐率：32.51req/s] [内存消耗：1,010.88kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'article-add',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:34:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.029187s][吞吐率：34.26req/s] [内存消耗：1,254.28kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:34:09+08:00 ] 127.0.0.1 127.0.0.1 GET /lib/jquery.contextmenu/jquery.contextmenu.r2.js
+[ info ] newjy.net/lib/jquery.contextmenu/jquery.contextmenu.r2.js [运行时间：0.034264s][吞吐率：29.19req/s] [内存消耗：1,010.55kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'lib',
+    1 => 'jquery.contextmenu',
+    2 => 'jquery.contextmenu.r2.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:34:09+08:00 ] 127.0.0.1 127.0.0.1 GET /welcome.html
+[ info ] newjy.net/welcome.html [运行时间：0.033460s][吞吐率：29.89req/s] [内存消耗：1,010.86kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'welcome',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:37:30+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.034952s][吞吐率：28.61req/s] [内存消耗：1,404.16kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:37:30+08:00 ] 127.0.0.1 127.0.0.1 GET /welcome.html
+[ info ] newjy.net/welcome.html [运行时间：0.035511s][吞吐率：28.16req/s] [内存消耗：1,010.86kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'welcome',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:42:17+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.035618s][吞吐率：28.08req/s] [内存消耗：1,404.39kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:42:17+08:00 ] 127.0.0.1 127.0.0.1 GET /welcome.html
+[ info ] newjy.net/welcome.html [运行时间：0.033533s][吞吐率：29.82req/s] [内存消耗：1,010.86kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'welcome',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:42:20+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.032517s][吞吐率：30.75req/s] [内存消耗：1,254.96kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:42:20+08:00 ] 127.0.0.1 127.0.0.1 GET /welcome.html
+[ info ] newjy.net/welcome.html [运行时间：0.033122s][吞吐率：30.19req/s] [内存消耗：1,010.86kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'welcome',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:42:23+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.032124s][吞吐率：31.13req/s] [内存消耗：1,254.96kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:42:23+08:00 ] 127.0.0.1 127.0.0.1 GET /welcome.html
+[ info ] newjy.net/welcome.html [运行时间：0.032270s][吞吐率：30.99req/s] [内存消耗：1,010.86kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'welcome',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:43:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.037416s][吞吐率：26.73req/s] [内存消耗：1,466.30kb] [文件加载：38]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:43:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.041311s][吞吐率：24.21req/s] [内存消耗：1,401.70kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:46:56+08:00 ] 127.0.0.1 127.0.0.1 GET /aboutHui.shtml
+[ info ] newjy.net/aboutHui.shtml [运行时间：0.028487s][吞吐率：35.10req/s] [内存消耗：1,010.88kb] [文件加载：30]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'aboutHui.shtml',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:48:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.041183s][吞吐率：24.28req/s] [内存消耗：1,466.20kb] [文件加载：38]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:48:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.047664s][吞吐率：20.98req/s] [内存消耗：1,401.69kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:49:07+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.034779s][吞吐率：28.75req/s] [内存消耗：1,466.02kb] [文件加载：38]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:49:07+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.037433s][吞吐率：26.71req/s] [内存消耗：1,255.16kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:52:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.032768s][吞吐率：30.52req/s] [内存消耗：1,316.69kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:52:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.046590s][吞吐率：21.46req/s] [内存消耗：1,397.44kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:56:23+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.033102s][吞吐率：30.21req/s] [内存消耗：1,316.69kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:56:23+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.042748s][吞吐率：23.39req/s] [内存消耗：1,396.20kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:57:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.033680s][吞吐率：29.69req/s] [内存消耗：1,316.69kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:57:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.037131s][吞吐率：26.93req/s] [内存消耗：1,398.16kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:59:06+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.032412s][吞吐率：30.85req/s] [内存消耗：1,316.69kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T17:59:06+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.045152s][吞吐率：22.15req/s] [内存消耗：1,397.96kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:06:37+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.035877s][吞吐率：27.87req/s] [内存消耗：1,466.15kb] [文件加载：38]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:06:37+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.044866s][吞吐率：22.29req/s] [内存消耗：1,398.01kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:06:57+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.035921s][吞吐率：27.84req/s] [内存消耗：1,316.70kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:06:57+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.038499s][吞吐率：25.97req/s] [内存消耗：1,255.13kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:07:05+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.032219s][吞吐率：31.04req/s] [内存消耗：1,316.70kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:07:05+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.035647s][吞吐率：28.05req/s] [内存消耗：1,255.13kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:07:29+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.037089s][吞吐率：26.96req/s] [内存消耗：1,316.70kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:07:29+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.040500s][吞吐率：24.69req/s] [内存消耗：1,255.13kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:09:13+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.032898s][吞吐率：30.40req/s] [内存消耗：1,316.70kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:09:13+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.041523s][吞吐率：24.08req/s] [内存消耗：1,255.13kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:09:57+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.034100s][吞吐率：29.33req/s] [内存消耗：1,316.70kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:09:57+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.042304s][吞吐率：23.64req/s] [内存消耗：1,397.98kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:10:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.028976s][吞吐率：34.51req/s] [内存消耗：1,316.70kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:10:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.043816s][吞吐率：22.82req/s] [内存消耗：1,397.88kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:10:36+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.033657s][吞吐率：29.71req/s] [内存消耗：1,316.70kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:10:36+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.044696s][吞吐率：22.37req/s] [内存消耗：1,397.88kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:11:45+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.030831s][吞吐率：32.43req/s] [内存消耗：1,316.70kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:11:45+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.045895s][吞吐率：21.79req/s] [内存消耗：1,398.09kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:11:57+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.026744s][吞吐率：37.39req/s] [内存消耗：1,316.70kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:11:58+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.048084s][吞吐率：20.80req/s] [内存消耗：1,398.09kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:13:01+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.036082s][吞吐率：27.71req/s] [内存消耗：1,316.70kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:13:01+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.035488s][吞吐率：28.18req/s] [内存消耗：1,397.96kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:13:25+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] newjy.net/admin [运行时间：0.028477s][吞吐率：35.12req/s] [内存消耗：1,316.70kb] [文件加载：36]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-16T18:13:25+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ info ] newjy.net/admin/index/welcome.html [运行时间：0.039032s][吞吐率：25.62req/s] [内存消耗：1,397.98kb] [文件加载：37]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; pgv_si=s1404005376',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\phpStudy\WWW\newjy.net\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File

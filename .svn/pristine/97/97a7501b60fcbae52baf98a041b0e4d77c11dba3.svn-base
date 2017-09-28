@@ -1,0 +1,142 @@
+{include file="public/_meta"}
+<title>[{$game.name}{$server.name}]_{$game.name}_{$config.name}</title>
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+        }
+        .gamebox {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        input {
+            border: 0px
+        }
+        .login_bk {
+            width: 350px;
+            height: 210px;
+            border-radius: 10px;
+            background-color: #EEEEEE;
+            padding: 30px;
+            padding: 20px;
+            opacity: 0.9
+        }
+    </style>
+    <script>
+        $(function() {
+            $(".lid").click(function() {
+                $(this).animate({
+                    'background-color': '#FF9900'
+                });
+                $(".lid").not(this).animate({
+                    'background-color': '#999999'
+                });
+            });
+
+            $("#l1").click(function() {
+                $(".t1").html("请输入要注册的新帐号！");
+                $(".newid").show();
+                $(".oldid").hide();
+                $("#qx").val("1");
+            });
+
+            $("#l2").click(function() {
+                $(".t1").html("请输入您的帐号和密码！");
+                $(".newid").hide();
+                $(".oldid").show();
+                $("#qx").val("2");
+            });
+
+            $("#user").keyup(function() {
+                $user = $(this).val();
+                $.post("/include/yz.php", {
+                    "user": $user
+                }, function(data, status) {
+                    $(".t3").html(data);
+                });
+            });
+
+            $("#pass").keyup(function() {
+                $pass = $(this).val();
+                if (len($pass) < 6) {
+                    $(".t4").html("密码不能小于6位");
+                };
+            });
+        });
+    </script>
+</head>
+
+<body>
+    {if condition="!$user"}
+    <div align="center" style="background-image:url(<? echo $youxisql['youxipic']?>); background-position:top;height:100%; background-repeat:no-repeat">
+        <div style="padding:100px"></div>
+        <div class="login_bk">
+            <table width="100%" border="0" cellpadding="0" cellspacing="2">
+                <form id="form1" name="form1">
+                    <tr>
+                        <td height="60" align="center">&nbsp;</td>
+                        <td height="60" align="left"><input name="button" type="button" class="lid" id="l1" style="border-radius:5px;padding:10px;width:100px;background-color:#999999" value="帐号注册" />
+                            <input name="button2" type="button" class="lid" id="l2" style="border-radius:5px;padding:10px;width:100px;background-color:#FF9900" value="老帐号登陆" /></td>
+                    </tr>
+                    <tr class="newid" style="display:none">
+                        <td width="24%" height="30" align="center">
+                            <span class="t">新帐号：</span></td>
+                        <td width="76%" align="left"><input name="users1" type="text" style="border-radius:5px;padding:5px;height:30px;" placeholder="用户名/手机号码/邮箱" size="20" />
+                            <span class="cheng12 t3"> </span></td>
+                    </tr>
+                    <tr class="oldid">
+                        <td height="30" align="center">帐号：</td>
+                        <td width="76%" align="left"><input name="users2" type="text" style="border-radius:5px;padding:5px;height:30px;" placeholder="用户名/手机号码/邮箱" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td height="30" align="center">密码：</td>
+                        <td height="30" align="left"><input name="password" type="password" style="border-radius:5px;padding:5px;height:30px;" size="20" /><span class="cheng12 t4"> </span></td>
+                    </tr>
+                    <tr>
+                        <td height="30" align="center">
+                            <label></label>
+                            <input name="forms" type="hidden" id="forms" value="login" />
+                            <input name="qx" type="hidden" id="qx" value="2" /></td>
+                        <td height="30" align="left"><input type="button" id="submit-button" name="Submit" value="快速登陆或注册" class="page1" style="border-radius:5px;padding:10px;width:200px" /></td>
+                    </tr>
+                </form>
+            </table>
+        </div>
+    </div>
+    </div>
+    {else}
+    <div class="gamebox">
+        <iframe src="{$url}" width="100%" height="100%" scrolling="no" frameborder="0"></iframe>
+    </div>
+    {/if}
+
+</body>
+    <script type="text/javascript">
+        $(function() {
+            $("#submit-button").click(function() {
+                var data = $('#form1').serializeArray();
+                var url = '{:url('index')}';
+                postData = {};
+                $(data).each(function(i) {
+                    postData[this.name] = this.value;
+                })
+                $.post(url, postData, function(result) {
+                    if (result.code == 1) {
+                        layer.msg(result.message, {
+                            icon: 6,
+                            time: 1000
+                        }, function() {
+                            window.location.reload();
+                        });
+                    } else {
+                        layer.msg(result.message, {
+                            icon: 5,
+                            time: 1500
+                        });
+                    }
+                }, 'json')
+            })
+        });
+    </script>
+</html>

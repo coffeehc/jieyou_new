@@ -1,0 +1,2797 @@
+---------------------------------------------------------------
+[ 2017-09-06T08:57:49+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] newjy.net/ [运行时间：1.962235s][吞吐率：0.51req/s] [内存消耗：3,058.82kb] [文件加载：59]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\index\index.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'jingping_img',
+  5 => 'hotGames',
+  6 => 'newGames',
+  7 => 'newServer',
+  8 => 'readyServer',
+  9 => 'readyEmpty',
+  10 => 'gameArticle',
+  11 => 'users',
+  12 => 'links',
+  13 => 'zhongbu_img',
+  14 => 'dibu_img',
+  15 => 'youshang_img',
+  16 => 'youxia_img',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.088404s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.133009s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.003651s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.056771s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.016727s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`jingping_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('1',tj) AND jingping_img <> ('') ) ORDER BY rand() LIMIT 4 [ RunTime:0.004009s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game` [ RunTime:0.050768s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY hits desc LIMIT 8 [ RunTime:0.011441s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY id desc LIMIT 8 [ RunTime:0.002588s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.058220s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time <=1504659469 ) ORDER BY create_time desc LIMIT 10 [ RunTime:0.040102s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time >1504659469 ) ORDER BY create_time asc LIMIT 10 [ RunTime:0.002046s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_article` [ RunTime:0.053982s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`create_time` FROM `jy_article` ORDER BY create_time desc LIMIT 8 [ RunTime:0.053265s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.072826s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic` FROM `jy_user` WHERE  (  pic <> ('') ) ORDER BY rand() LIMIT 16 [ RunTime:0.010926s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_link` [ RunTime:0.060760s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic`,`url`,`qx`,`px`,`lx`,`create_time`,`update_time`,`status` FROM `jy_link` ORDER BY `id`  desc [ RunTime:0.009504s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`zhongbu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('3',tj) AND zhongbu_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.001516s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`dibu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('4',tj) AND dibu_img <> ('') ) ORDER BY update_time desc LIMIT 2 [ RunTime:0.001503s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youshang_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('5',tj) AND youshang_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.001380s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youxia_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('6',tj) AND youxia_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000913s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 66 LIMIT 1 [ RunTime:0.014362s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 76 LIMIT 1 [ RunTime:0.001364s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 70 LIMIT 1 [ RunTime:0.001272s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 73 LIMIT 1 [ RunTime:0.001241s ]
+---------------------------------------------------------------
+[ 2017-09-06T08:57:58+08:00 ] 127.0.0.1 127.0.0.1 POST /index/register/login.html
+[ info ] newjy.net/index/register/login.html [运行时间：0.133260s][吞吐率：7.50req/s] [内存消耗：2,640.82kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'register',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '29',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://newjy.net',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://newjy.net/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=sj2vr0pr4irbbgrvo7fc08ng50',
+)
+[ info ] [ PARAM ] array (
+  'users' => 'hecheng',
+  'password' => '123123',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Register->login[ E:\phpStudy\WWW\newjy.net\application\index\controller\Register.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002241s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.007749s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.006603s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.006305s ]
+[ sql ] [ SQL ] SELECT `id`,`users`,`password`,`name`,`email`,`pic`,`qq`,`create_time`,`update_time`,`hits`,`money`,`xingming`,`sex`,`noid`,`tjrid`,`tjr`,`alipay`,`openid`,`cps` FROM `jy_user` WHERE  (  users="hecheng" ) LIMIT 1 [ RunTime:0.008906s ]
+---------------------------------------------------------------
+[ 2017-09-06T08:58:02+08:00 ] 127.0.0.1 127.0.0.1 POST /index/register/login.html
+[ info ] newjy.net/index/register/login.html [运行时间：0.175949s][吞吐率：5.68req/s] [内存消耗：2,719.65kb] [文件加载：56]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'register',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '29',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://newjy.net',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://newjy.net/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=sj2vr0pr4irbbgrvo7fc08ng50',
+)
+[ info ] [ PARAM ] array (
+  'users' => 'hecheng',
+  'password' => '123456',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Register->login[ E:\phpStudy\WWW\newjy.net\application\index\controller\Register.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001964s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.007106s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.006227s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.005999s ]
+[ sql ] [ SQL ] SELECT `id`,`users`,`password`,`name`,`email`,`pic`,`qq`,`create_time`,`update_time`,`hits`,`money`,`xingming`,`sex`,`noid`,`tjrid`,`tjr`,`alipay`,`openid`,`cps` FROM `jy_user` WHERE  (  users="hecheng" ) LIMIT 1 [ RunTime:0.000693s ]
+[ sql ] [ SQL ] UPDATE `jy_user`  SET `hits`=hits+1  WHERE  `id` = 910 [ RunTime:0.020767s ]
+[ sql ] [ SQL ] UPDATE `jy_user`  SET `update_time`=1504659482  WHERE  `id` = 910 [ RunTime:0.001264s ]
+---------------------------------------------------------------
+[ 2017-09-06T08:58:03+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] newjy.net/ [运行时间：0.250037s][吞吐率：4.00req/s] [内存消耗：3,102.42kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=sj2vr0pr4irbbgrvo7fc08ng50',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\index\index.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'jingping_img',
+  5 => 'hotGames',
+  6 => 'newGames',
+  7 => 'newServer',
+  8 => 'readyServer',
+  9 => 'readyEmpty',
+  10 => 'gameArticle',
+  11 => 'users',
+  12 => 'links',
+  13 => 'zhongbu_img',
+  14 => 'dibu_img',
+  15 => 'youshang_img',
+  16 => 'youxia_img',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002141s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.007371s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000948s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.007234s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`jingping_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('1',tj) AND jingping_img <> ('') ) ORDER BY rand() LIMIT 4 [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game` [ RunTime:0.008126s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY hits desc LIMIT 8 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY id desc LIMIT 8 [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.006242s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time <=1504659483 ) ORDER BY create_time desc LIMIT 10 [ RunTime:0.000789s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time >1504659483 ) ORDER BY create_time asc LIMIT 10 [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_article` [ RunTime:0.007322s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`create_time` FROM `jy_article` ORDER BY create_time desc LIMIT 8 [ RunTime:0.000973s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.007576s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic` FROM `jy_user` WHERE  (  pic <> ('') ) ORDER BY rand() LIMIT 16 [ RunTime:0.002105s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_link` [ RunTime:0.006367s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic`,`url`,`qx`,`px`,`lx`,`create_time`,`update_time`,`status` FROM `jy_link` ORDER BY `id`  desc [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`zhongbu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('3',tj) AND zhongbu_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`dibu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('4',tj) AND dibu_img <> ('') ) ORDER BY update_time desc LIMIT 2 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youshang_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('5',tj) AND youshang_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000343s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youxia_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('6',tj) AND youxia_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_server` [ RunTime:0.052120s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`userid`,`create_time`,`gid`,`ptid`,`gsid`,`update_time` FROM `jy_user_server` WHERE  (  userid=910 ) ORDER BY create_time desc LIMIT 4 [ RunTime:0.045992s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 76 LIMIT 1 [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 73 LIMIT 1 [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 70 LIMIT 1 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 66 LIMIT 1 [ RunTime:0.000400s ]
+---------------------------------------------------------------
+[ 2017-09-06T08:58:07+08:00 ] 127.0.0.1 127.0.0.1 GET /index/user/playedgame.html
+[ info ] newjy.net/index/user/playedgame.html [运行时间：0.223928s][吞吐率：4.47req/s] [内存消耗：2,860.09kb] [文件加载：58]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'playedgame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=sj2vr0pr4irbbgrvo7fc08ng50',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\User->playedGame[ E:\phpStudy\WWW\newjy.net\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\user\playedgame.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'playedGames',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001880s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.007492s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000506s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.006165s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000458s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_server` [ RunTime:0.005923s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jy_user_server` WHERE  (  userid=910 ) LIMIT 1 [ RunTime:0.015851s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`userid`,`create_time`,`gid`,`ptid`,`gsid`,`update_time` FROM `jy_user_server` WHERE  (  userid=910 ) ORDER BY create_time desc LIMIT 0,15 [ RunTime:0.000883s ]
+---------------------------------------------------------------
+[ 2017-09-06T08:58:09+08:00 ] 127.0.0.1 127.0.0.1 GET /index/pay/index/id/2551.html
+[ info ] newjy.net/index/pay/index/id/2551.html [运行时间：0.326885s][吞吐率：3.06req/s] [内存消耗：2,984.55kb] [文件加载：58]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/user/playedgame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=sj2vr0pr4irbbgrvo7fc08ng50',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2551',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\index\controller\Pay.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\pay\index.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'serverInfo',
+  5 => 'payWays',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004747s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.015844s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.001395s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.014940s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.001352s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.008138s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=2551 ) LIMIT 1 [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.035785s ]
+[ sql ] [ SQL ] SELECT * FROM `jy_payfs` ORDER BY `id`  ASC [ RunTime:0.006043s ]
+---------------------------------------------------------------
+[ 2017-09-06T08:58:12+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.581208s][吞吐率：1.72req/s] [内存消耗：2,713.74kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/2551.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=sj2vr0pr4irbbgrvo7fc08ng50',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '2551',
+  'money' => '10',
+  'bank' => '12',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001838s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.008046s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=2551 ) LIMIT 1 [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.060519s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.014630s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.020252s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.043356s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709060858125380' , '新焚天之怒' , 10 , 0 , 910 , 'hecheng' , 2 , 12 , 'alipay' , 1504659492 , 1504659492) [ RunTime:0.052156s ]
+---------------------------------------------------------------
+[ 2017-09-06T08:58:22+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.231995s][吞吐率：4.31req/s] [内存消耗：2,713.77kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/2551.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=sj2vr0pr4irbbgrvo7fc08ng50',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '2551',
+  'money' => '10',
+  'bank' => '13',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001822s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.007555s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=2551 ) LIMIT 1 [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.006241s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.005903s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.006253s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709060858227650' , '新焚天之怒' , 10 , 0 , 910 , 'hecheng' , 2 , 13 , 'weixin' , 1504659502 , 1504659502) [ RunTime:0.000449s ]
+---------------------------------------------------------------
+[ 2017-09-06T08:58:30+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.254677s][吞吐率：3.93req/s] [内存消耗：2,713.77kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/2551.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=sj2vr0pr4irbbgrvo7fc08ng50',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '2551',
+  'money' => '10',
+  'bank' => '14',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001849s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.007652s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=2551 ) LIMIT 1 [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.005645s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.007461s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.000443s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.005944s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709060858307445' , '新焚天之怒' , 10 , 0 , 910 , 'hecheng' , 2 , 14 , 'unionpay' , 1504659510 , 1504659510) [ RunTime:0.000365s ]
+---------------------------------------------------------------
+[ 2017-09-06T08:59:23+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.228189s][吞吐率：4.38req/s] [内存消耗：2,713.60kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/2551.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=sj2vr0pr4irbbgrvo7fc08ng50',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '2551',
+  'money' => '10',
+  'bank' => '53',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001828s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.007709s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=2551 ) LIMIT 1 [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.005862s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.006134s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 53 LIMIT 1 [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.006455s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709060859231253' , '新焚天之怒' , 10 , 0 , 910 , 'hecheng' , 2 , 53 , '64' , 1504659563 , 1504659563) [ RunTime:0.000485s ]
+---------------------------------------------------------------
+[ 2017-09-06T09:12:12+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.331946s][吞吐率：3.01req/s] [内存消耗：2,713.76kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/2551.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=sj2vr0pr4irbbgrvo7fc08ng50',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '2551',
+  'money' => '10',
+  'bank' => '12',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002151s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.007868s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=2551 ) LIMIT 1 [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.008646s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.009388s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.007906s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709060912119101' , '新焚天之怒' , 10 , 0 , 910 , 'hecheng' , 2 , 12 , 'alipay' , 1504660331 , 1504660331) [ RunTime:0.000546s ]
+---------------------------------------------------------------
+[ 2017-09-06T09:15:19+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/index.html
+[ info ] newjy.net/index/index/index.html [运行时间：0.149518s][吞吐率：6.69req/s] [内存消耗：3,102.41kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/2551.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=sj2vr0pr4irbbgrvo7fc08ng50',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\index\index.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'jingping_img',
+  5 => 'hotGames',
+  6 => 'newGames',
+  7 => 'newServer',
+  8 => 'readyServer',
+  9 => 'readyEmpty',
+  10 => 'gameArticle',
+  11 => 'users',
+  12 => 'links',
+  13 => 'zhongbu_img',
+  14 => 'dibu_img',
+  15 => 'youshang_img',
+  16 => 'youxia_img',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001993s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.008762s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.008067s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`jingping_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('1',tj) AND jingping_img <> ('') ) ORDER BY rand() LIMIT 4 [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game` [ RunTime:0.007665s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY hits desc LIMIT 8 [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY id desc LIMIT 8 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.007556s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time <=1504660519 ) ORDER BY create_time desc LIMIT 10 [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time >1504660519 ) ORDER BY create_time asc LIMIT 10 [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_article` [ RunTime:0.008568s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`create_time` FROM `jy_article` ORDER BY create_time desc LIMIT 8 [ RunTime:0.001198s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.008147s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic` FROM `jy_user` WHERE  (  pic <> ('') ) ORDER BY rand() LIMIT 16 [ RunTime:0.001586s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_link` [ RunTime:0.007821s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic`,`url`,`qx`,`px`,`lx`,`create_time`,`update_time`,`status` FROM `jy_link` ORDER BY `id`  desc [ RunTime:0.000360s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`zhongbu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('3',tj) AND zhongbu_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`dibu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('4',tj) AND dibu_img <> ('') ) ORDER BY update_time desc LIMIT 2 [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youshang_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('5',tj) AND youshang_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000296s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youxia_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('6',tj) AND youxia_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_server` [ RunTime:0.007281s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`userid`,`create_time`,`gid`,`ptid`,`gsid`,`update_time` FROM `jy_user_server` WHERE  (  userid=910 ) ORDER BY create_time desc LIMIT 4 [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 73 LIMIT 1 [ RunTime:0.000343s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 70 LIMIT 1 [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 66 LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 76 LIMIT 1 [ RunTime:0.000285s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:12+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] newjy.net/ [运行时间：0.149417s][吞吐率：6.69req/s] [内存消耗：3,058.49kb] [文件加载：59]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\index\index.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'jingping_img',
+  5 => 'hotGames',
+  6 => 'newGames',
+  7 => 'newServer',
+  8 => 'readyServer',
+  9 => 'readyEmpty',
+  10 => 'gameArticle',
+  11 => 'users',
+  12 => 'links',
+  13 => 'zhongbu_img',
+  14 => 'dibu_img',
+  15 => 'youshang_img',
+  16 => 'youxia_img',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003018s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.009367s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000685s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.008677s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`jingping_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('1',tj) AND jingping_img <> ('') ) ORDER BY rand() LIMIT 4 [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game` [ RunTime:0.009438s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY hits desc LIMIT 8 [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY id desc LIMIT 8 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.008432s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time <=1504663212 ) ORDER BY create_time desc LIMIT 10 [ RunTime:0.000783s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time >1504663212 ) ORDER BY create_time asc LIMIT 10 [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_article` [ RunTime:0.008098s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`create_time` FROM `jy_article` ORDER BY create_time desc LIMIT 8 [ RunTime:0.001511s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.007979s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic` FROM `jy_user` WHERE  (  pic <> ('') ) ORDER BY rand() LIMIT 16 [ RunTime:0.001581s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_link` [ RunTime:0.008723s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic`,`url`,`qx`,`px`,`lx`,`create_time`,`update_time`,`status` FROM `jy_link` ORDER BY `id`  desc [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`zhongbu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('3',tj) AND zhongbu_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`dibu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('4',tj) AND dibu_img <> ('') ) ORDER BY update_time desc LIMIT 2 [ RunTime:0.000476s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youshang_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('5',tj) AND youshang_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000390s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youxia_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('6',tj) AND youxia_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000344s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 76 LIMIT 1 [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 66 LIMIT 1 [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 73 LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 70 LIMIT 1 [ RunTime:0.000448s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:20+08:00 ] 127.0.0.1 127.0.0.1 POST /index/register/login.html
+[ info ] newjy.net/index/register/login.html [运行时间：0.082827s][吞吐率：12.07req/s] [内存消耗：2,640.82kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'register',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '29',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://newjy.net',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://newjy.net/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'users' => 'hecheng',
+  'password' => '123123',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Register->login[ E:\phpStudy\WWW\newjy.net\application\index\controller\Register.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001997s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.008335s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.008205s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000497s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.007305s ]
+[ sql ] [ SQL ] SELECT `id`,`users`,`password`,`name`,`email`,`pic`,`qq`,`create_time`,`update_time`,`hits`,`money`,`xingming`,`sex`,`noid`,`tjrid`,`tjr`,`alipay`,`openid`,`cps` FROM `jy_user` WHERE  (  users="hecheng" ) LIMIT 1 [ RunTime:0.001029s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:24+08:00 ] 127.0.0.1 127.0.0.1 POST /index/register/login.html
+[ info ] newjy.net/index/register/login.html [运行时间：0.084322s][吞吐率：11.86req/s] [内存消耗：2,719.65kb] [文件加载：56]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'register',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '29',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://newjy.net',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://newjy.net/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'users' => 'hecheng',
+  'password' => '123456',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Register->login[ E:\phpStudy\WWW\newjy.net\application\index\controller\Register.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001902s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.008682s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.007413s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000423s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.007804s ]
+[ sql ] [ SQL ] SELECT `id`,`users`,`password`,`name`,`email`,`pic`,`qq`,`create_time`,`update_time`,`hits`,`money`,`xingming`,`sex`,`noid`,`tjrid`,`tjr`,`alipay`,`openid`,`cps` FROM `jy_user` WHERE  (  users="hecheng" ) LIMIT 1 [ RunTime:0.000846s ]
+[ sql ] [ SQL ] UPDATE `jy_user`  SET `hits`=hits+1  WHERE  `id` = 910 [ RunTime:0.000683s ]
+[ sql ] [ SQL ] UPDATE `jy_user`  SET `update_time`=1504663224  WHERE  `id` = 910 [ RunTime:0.000415s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:26+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] newjy.net/ [运行时间：0.164522s][吞吐率：6.08req/s] [内存消耗：3,102.42kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\index\index.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'jingping_img',
+  5 => 'hotGames',
+  6 => 'newGames',
+  7 => 'newServer',
+  8 => 'readyServer',
+  9 => 'readyEmpty',
+  10 => 'gameArticle',
+  11 => 'users',
+  12 => 'links',
+  13 => 'zhongbu_img',
+  14 => 'dibu_img',
+  15 => 'youshang_img',
+  16 => 'youxia_img',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002017s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.008418s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000960s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.007290s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`jingping_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('1',tj) AND jingping_img <> ('') ) ORDER BY rand() LIMIT 4 [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game` [ RunTime:0.007828s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY hits desc LIMIT 8 [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY id desc LIMIT 8 [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.008294s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time <=1504663226 ) ORDER BY create_time desc LIMIT 10 [ RunTime:0.000893s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time >1504663226 ) ORDER BY create_time asc LIMIT 10 [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_article` [ RunTime:0.007718s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`create_time` FROM `jy_article` ORDER BY create_time desc LIMIT 8 [ RunTime:0.001066s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.007676s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic` FROM `jy_user` WHERE  (  pic <> ('') ) ORDER BY rand() LIMIT 16 [ RunTime:0.001634s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_link` [ RunTime:0.008177s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic`,`url`,`qx`,`px`,`lx`,`create_time`,`update_time`,`status` FROM `jy_link` ORDER BY `id`  desc [ RunTime:0.000560s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`zhongbu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('3',tj) AND zhongbu_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000376s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`dibu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('4',tj) AND dibu_img <> ('') ) ORDER BY update_time desc LIMIT 2 [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youshang_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('5',tj) AND youshang_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000314s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youxia_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('6',tj) AND youxia_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_server` [ RunTime:0.007917s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`userid`,`create_time`,`gid`,`ptid`,`gsid`,`update_time` FROM `jy_user_server` WHERE  (  userid=910 ) ORDER BY create_time desc LIMIT 4 [ RunTime:0.000799s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 76 LIMIT 1 [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 66 LIMIT 1 [ RunTime:0.000296s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 73 LIMIT 1 [ RunTime:0.000342s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 70 LIMIT 1 [ RunTime:0.000383s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:28+08:00 ] 127.0.0.1 127.0.0.1 GET /index/user/playedgame.html
+[ info ] newjy.net/index/user/playedgame.html [运行时间：0.094575s][吞吐率：10.57req/s] [内存消耗：2,860.09kb] [文件加载：58]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'playedgame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\User->playedGame[ E:\phpStudy\WWW\newjy.net\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\user\playedgame.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'playedGames',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003784s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.008298s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000589s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.008504s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_server` [ RunTime:0.009855s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jy_user_server` WHERE  (  userid=910 ) LIMIT 1 [ RunTime:0.000750s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`userid`,`create_time`,`gid`,`ptid`,`gsid`,`update_time` FROM `jy_user_server` WHERE  (  userid=910 ) ORDER BY create_time desc LIMIT 0,15 [ RunTime:0.000803s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:30+08:00 ] 127.0.0.1 127.0.0.1 GET /index/pay/index/id/1624.html
+[ info ] newjy.net/index/pay/index/id/1624.html [运行时间：0.100629s][吞吐率：9.94req/s] [内存消耗：2,984.55kb] [文件加载：58]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/user/playedgame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1624',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\index\controller\Pay.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\pay\index.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'serverInfo',
+  5 => 'payWays',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001967s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.008343s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.008052s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.007461s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.009025s ]
+[ sql ] [ SQL ] SELECT * FROM `jy_payfs` ORDER BY `id`  ASC [ RunTime:0.000538s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:34+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.275201s][吞吐率：3.63req/s] [内存消耗：2,713.73kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '12',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002034s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.009090s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.009616s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.007430s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.000616s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.008908s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061000346269' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 12 , 'alipay' , 1504663234 , 1504663234) [ RunTime:0.000431s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:41+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.238588s][吞吐率：4.19req/s] [内存消耗：2,713.58kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '50',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001919s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.009992s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.009175s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.007351s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.008779s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061000416994' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 50 , '61' , 1504663241 , 1504663241) [ RunTime:0.000457s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:44+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.248948s][吞吐率：4.02req/s] [内存消耗：2,713.56kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '41',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002036s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.009440s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.009502s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.010004s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 41 LIMIT 1 [ RunTime:0.000698s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.015266s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061000448294' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 41 , 'YDXH' , 1504663244 , 1504663244) [ RunTime:0.000943s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:49+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.267460s][吞吐率：3.74req/s] [内存消耗：2,713.57kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '47',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001939s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.010249s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.008053s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.007861s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.008879s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061000497537' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 47 , '31' , 1504663249 , 1504663249) [ RunTime:0.000436s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:52+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.275659s][吞吐率：3.63req/s] [内存消耗：2,713.58kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '44',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002707s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.012010s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.011037s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000724s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.011939s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 44 LIMIT 1 [ RunTime:0.000746s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.011663s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061000523548' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 44 , '76' , 1504663252 , 1504663252) [ RunTime:0.000622s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:00:56+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.244441s][吞吐率：4.09req/s] [内存消耗：2,713.57kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '30',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002217s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.008015s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.009451s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 30 LIMIT 1 [ RunTime:0.000600s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.008458s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061000561184' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 30 , 'PSBC' , 1504663256 , 1504663256) [ RunTime:0.000348s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:01:15+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.230051s][吞吐率：4.35req/s] [内存消耗：2,713.72kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '23',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002710s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.007951s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.009279s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.009886s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 23 LIMIT 1 [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.007499s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061001145494' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 23 , 'SPDB' , 1504663274 , 1504663274) [ RunTime:0.000397s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:09:40+08:00 ] 127.0.0.1 127.0.0.1 POST /wd/login.html
+[ info ] newjy.net/wd/login.html [运行时间：0.109793s][吞吐率：9.11req/s] [内存消耗：1,212.02kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'wd',
+    1 => 'login',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '31',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/wd/guicd/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'gcd',
+  'username' => '',
+  'pwd' => '',
+  'sub' => ' ',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-06T10:13:48+08:00 ] 127.0.0.1 127.0.0.1 GET /static/index/css/bootstrap.css.map
+[ info ] newjy.net/static/index/css/bootstrap.css.map [运行时间：0.032239s][吞吐率：31.02req/s] [内存消耗：1,209.13kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-06T10:13:52+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.107627s][吞吐率：9.29req/s] [内存消耗：2,714.00kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '12',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002249s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.009147s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.011581s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.010882s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.007554s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061013526559' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 12 , 'alipay' , 1504664032 , 1504664032) [ RunTime:0.000403s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:23:41+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.091613s][吞吐率：10.92req/s] [内存消耗：2,714.00kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '12',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002517s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.008104s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000403s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.008579s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000389s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.008997s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.000672s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.007100s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061023411594' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 12 , 'alipay' , 1504664621 , 1504664621) [ RunTime:0.000391s ]
+---------------------------------------------------------------
+[ 2017-09-06T10:33:26+08:00 ] 127.0.0.1 127.0.0.1 POST /wd/login.html
+[ info ] newjy.net/wd/login.html [运行时间：0.040839s][吞吐率：24.49req/s] [内存消耗：1,212.02kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'wd',
+    1 => 'login',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '31',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/wd/guicd/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'gcd',
+  'username' => '',
+  'pwd' => '',
+  'sub' => ' ',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-06T10:54:06+08:00 ] 127.0.0.1 127.0.0.1 POST /wd/login.html
+[ info ] newjy.net/wd/login.html [运行时间：0.040172s][吞吐率：24.89req/s] [内存消耗：1,484.42kb] [文件加载：40]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'wd',
+    1 => 'login',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '44',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/wd/guicd/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'gcd',
+  'username' => 'hecheng',
+  'pwd' => '123123',
+  'sub' => ' ',
+)
+[ info ] [ RUN ] app\wd\controller\Login->index[ E:\phpStudy\WWW\newjy.net\application\wd\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-06T11:03:10+08:00 ] 127.0.0.1 127.0.0.1 POST /wd/login.html
+[ info ] newjy.net/wd/login.html [运行时间：0.040587s][吞吐率：24.64req/s] [内存消耗：1,484.42kb] [文件加载：40]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'wd',
+    1 => 'login',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '44',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/wd/guicd/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'gcd',
+  'username' => 'hecheng',
+  'pwd' => '123456',
+  'sub' => ' ',
+)
+[ info ] [ RUN ] app\wd\controller\Login->index[ E:\phpStudy\WWW\newjy.net\application\wd\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-06T11:03:18+08:00 ] 127.0.0.1 127.0.0.1 POST /wd/login.html
+[ info ] newjy.net/wd/login.html [运行时间：0.038246s][吞吐率：26.15req/s] [内存消耗：1,484.42kb] [文件加载：40]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'wd',
+    1 => 'login',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '44',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/wd/guicd/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'gcd',
+  'username' => 'hecheng',
+  'pwd' => '123456',
+  'sub' => ' ',
+)
+[ info ] [ RUN ] app\wd\controller\Login->index[ E:\phpStudy\WWW\newjy.net\application\wd\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-06T11:03:37+08:00 ] 127.0.0.1 127.0.0.1 POST /wd/login.html
+[ info ] newjy.net/wd/login.html [运行时间：0.036424s][吞吐率：27.45req/s] [内存消耗：1,484.36kb] [文件加载：40]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'wd',
+    1 => 'login',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '31',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/wd/guicd/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'gcd',
+  'username' => '',
+  'pwd' => '',
+  'sub' => ' ',
+)
+[ info ] [ RUN ] app\wd\controller\Login->index[ E:\phpStudy\WWW\newjy.net\application\wd\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-06T11:05:03+08:00 ] 127.0.0.1 127.0.0.1 POST /wd/login.html
+[ info ] newjy.net/wd/login.html [运行时间：0.036186s][吞吐率：27.64req/s] [内存消耗：1,484.36kb] [文件加载：40]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'wd',
+    1 => 'login',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '31',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/wd/guicd/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'gcd',
+  'username' => '',
+  'pwd' => '',
+  'sub' => ' ',
+)
+[ info ] [ RUN ] app\wd\controller\Login->index[ E:\phpStudy\WWW\newjy.net\application\wd\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-06T11:12:31+08:00 ] 127.0.0.1 127.0.0.1 POST /wd/bwzx/api/Login/index
+[ info ] newjy.net/wd/bwzx/api/Login/index [运行时间：0.034478s][吞吐率：29.00req/s] [内存消耗：1,212.01kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'wd',
+    1 => 'bwzx',
+    2 => 'api',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '26',
+  'origin' => 'http://newjy.net',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'referer' => 'http://newjy.net/wd/bwzx/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'bwzx',
+  'username' => '',
+  'pwd' => '',
+  'Login' => 'index',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-06T11:13:00+08:00 ] 127.0.0.1 127.0.0.1 POST /api/Login/index
+[ info ] newjy.net/api/Login/index [运行时间：0.062889s][吞吐率：15.90req/s] [内存消耗：2,517.20kb] [文件加载：50]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '26',
+  'origin' => 'http://newjy.net',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'referer' => 'http://newjy.net/wd/bwzx/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'bwzx',
+  'username' => '',
+  'pwd' => '',
+)
+[ info ] [ RUN ] app\api\controller\Login->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004119s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.009503s ]
+[ sql ] [ SQL ] SELECT `id`,`users`,`password`,`name`,`email`,`pic`,`qq`,`create_time`,`update_time`,`hits`,`money`,`xingming`,`sex`,`noid`,`tjrid`,`tjr`,`alipay`,`openid`,`cps` FROM `jy_user` WHERE  (  users="" ) LIMIT 1 [ RunTime:0.001011s ]
+---------------------------------------------------------------
+[ 2017-09-06T11:13:05+08:00 ] 127.0.0.1 127.0.0.1 POST /api/Login/index
+[ info ] newjy.net/api/Login/index [运行时间：0.062452s][吞吐率：16.01req/s] [内存消耗：2,517.20kb] [文件加载：50]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '26',
+  'origin' => 'http://newjy.net',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'referer' => 'http://newjy.net/wd/bwzx/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'bwzx',
+  'username' => '',
+  'pwd' => '',
+)
+[ info ] [ RUN ] app\api\controller\Login->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002239s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.008618s ]
+[ sql ] [ SQL ] SELECT `id`,`users`,`password`,`name`,`email`,`pic`,`qq`,`create_time`,`update_time`,`hits`,`money`,`xingming`,`sex`,`noid`,`tjrid`,`tjr`,`alipay`,`openid`,`cps` FROM `jy_user` WHERE  (  users="" ) LIMIT 1 [ RunTime:0.000856s ]
+---------------------------------------------------------------
+[ 2017-09-06T11:13:24+08:00 ] 127.0.0.1 127.0.0.1 POST /api/Login/index
+[ info ] newjy.net/api/Login/index [运行时间：0.061370s][吞吐率：16.29req/s] [内存消耗：2,518.33kb] [文件加载：50]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'origin' => 'http://newjy.net',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'referer' => 'http://newjy.net/wd/bwzx/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'bwzx',
+  'username' => 'hecheng',
+  'pwd' => '123123',
+)
+[ info ] [ RUN ] app\api\controller\Login->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001895s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.008109s ]
+[ sql ] [ SQL ] SELECT `id`,`users`,`password`,`name`,`email`,`pic`,`qq`,`create_time`,`update_time`,`hits`,`money`,`xingming`,`sex`,`noid`,`tjrid`,`tjr`,`alipay`,`openid`,`cps` FROM `jy_user` WHERE  (  users="hecheng" ) LIMIT 1 [ RunTime:0.000804s ]
+---------------------------------------------------------------
+[ 2017-09-06T11:13:28+08:00 ] 127.0.0.1 127.0.0.1 POST /api/Login/index
+[ info ] newjy.net/api/Login/index [运行时间：0.062132s][吞吐率：16.09req/s] [内存消耗：2,598.41kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'origin' => 'http://newjy.net',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'referer' => 'http://newjy.net/wd/bwzx/pc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'gameid' => 'bwzx',
+  'username' => 'hecheng',
+  'pwd' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Login->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001976s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.007699s ]
+[ sql ] [ SQL ] SELECT `id`,`users`,`password`,`name`,`email`,`pic`,`qq`,`create_time`,`update_time`,`hits`,`money`,`xingming`,`sex`,`noid`,`tjrid`,`tjr`,`alipay`,`openid`,`cps` FROM `jy_user` WHERE  (  users="hecheng" ) LIMIT 1 [ RunTime:0.000883s ]
+[ sql ] [ SQL ] UPDATE `jy_user`  SET `hits`=hits+1  WHERE  `id` = 910 [ RunTime:0.000688s ]
+[ sql ] [ SQL ] UPDATE `jy_user`  SET `update_time`=1504667608  WHERE  `id` = 910 [ RunTime:0.000447s ]
+---------------------------------------------------------------
+[ 2017-09-06T11:17:52+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.245370s][吞吐率：4.08req/s] [内存消耗：2,713.73kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '12',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002531s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.011628s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.009158s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.010731s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.008934s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061117521647' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 12 , 'alipay' , 1504667872 , 1504667872) [ RunTime:0.000392s ]
+---------------------------------------------------------------
+[ 2017-09-06T11:17:58+08:00 ] 127.0.0.1 127.0.0.1 GET /index/pay/index/id/1624.html
+[ info ] newjy.net/index/pay/index/id/1624.html [运行时间：0.130691s][吞吐率：7.65req/s] [内存消耗：2,984.61kb] [文件加载：58]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/user/playedgame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1624',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\index\controller\Pay.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\pay\index.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'serverInfo',
+  5 => 'payWays',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002772s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.013688s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000786s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.009707s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.008904s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000399s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.010115s ]
+[ sql ] [ SQL ] SELECT * FROM `jy_payfs` ORDER BY `id`  ASC [ RunTime:0.000600s ]
+---------------------------------------------------------------
+[ 2017-09-06T11:17:58+08:00 ] 127.0.0.1 127.0.0.1 GET /static/index/css/bootstrap.css.map
+[ info ] newjy.net/static/index/css/bootstrap.css.map [运行时间：0.044019s][吞吐率：22.72req/s] [内存消耗：1,209.13kb] [文件加载：35]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-06T11:18:04+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.331934s][吞吐率：3.01req/s] [内存消耗：2,713.75kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '13',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001796s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.010117s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.006990s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000848s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.007725s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.011187s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061118046604' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 13 , 'weixin' , 1504667884 , 1504667884) [ RunTime:0.000413s ]
+---------------------------------------------------------------
+[ 2017-09-06T11:18:09+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.265091s][吞吐率：3.77req/s] [内存消耗：2,713.57kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '33',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002423s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.008356s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.007595s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000324s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.009579s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 33 LIMIT 1 [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.007888s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061118095942' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 33 , 'BOCD' , 1504667889 , 1504667889) [ RunTime:0.000475s ]
+---------------------------------------------------------------
+[ 2017-09-06T11:18:15+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.248940s][吞吐率：4.02req/s] [内存消耗：2,713.59kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '24',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001987s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.008988s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.007735s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.008965s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 24 LIMIT 1 [ RunTime:0.000482s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.008113s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061118143934' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 24 , 'SZPAB' , 1504667894 , 1504667894) [ RunTime:0.000551s ]
+---------------------------------------------------------------
+[ 2017-09-06T11:18:23+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.241919s][吞吐率：4.13req/s] [内存消耗：2,713.72kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '15',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002010s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.010082s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.007506s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000313s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.008515s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 15 LIMIT 1 [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.010132s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061118238793' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 15 , 'ICBC' , 1504667903 , 1504667903) [ RunTime:0.000451s ]
+---------------------------------------------------------------
+[ 2017-09-06T11:18:38+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.246622s][吞吐率：4.05req/s] [内存消耗：2,713.73kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '12',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002147s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.007603s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.008137s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.008446s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.007676s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061118384529' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 12 , 'alipay' , 1504667918 , 1504667918) [ RunTime:0.000392s ]
+---------------------------------------------------------------
+[ 2017-09-06T11:18:48+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.288106s][吞吐率：3.47req/s] [内存消耗：2,713.75kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/1624.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '1624',
+  'money' => '10',
+  'bank' => '14',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001853s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.009473s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=1624 ) LIMIT 1 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.007405s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.008543s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.008724s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709061118489795' , '幻城' , 10 , 0 , 910 , 'hecheng' , 2 , 14 , 'unionpay' , 1504667928 , 1504667928) [ RunTime:0.000610s ]
+---------------------------------------------------------------
+[ 2017-09-06T14:31:33+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] newjy.net/ [运行时间：0.341913s][吞吐率：2.92req/s] [内存消耗：3,129.29kb] [文件加载：60]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\phpStudy\WWW\newjy.net\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\index\index.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'jingping_img',
+  5 => 'hotGames',
+  6 => 'newGames',
+  7 => 'newServer',
+  8 => 'readyServer',
+  9 => 'readyEmpty',
+  10 => 'gameArticle',
+  11 => 'users',
+  12 => 'links',
+  13 => 'zhongbu_img',
+  14 => 'dibu_img',
+  15 => 'youshang_img',
+  16 => 'youxia_img',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003654s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.014746s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000706s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.010816s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`jingping_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('1',tj) AND jingping_img <> ('') ) ORDER BY rand() LIMIT 4 [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game` [ RunTime:0.009600s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY hits desc LIMIT 8 [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SELECT `id`,`pic3`,`name` FROM `jy_game` ORDER BY id desc LIMIT 8 [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.008619s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time <=1504679493 ) ORDER BY create_time desc LIMIT 10 [ RunTime:0.000899s ]
+[ sql ] [ SQL ] SELECT `name`,`create_time`,`game`,`id` FROM `jy_game_server` WHERE  (  create_time >1504679493 ) ORDER BY create_time asc LIMIT 10 [ RunTime:0.000520s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_article` [ RunTime:0.008865s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`create_time` FROM `jy_article` ORDER BY create_time desc LIMIT 8 [ RunTime:0.001148s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user` [ RunTime:0.008554s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic` FROM `jy_user` WHERE  (  pic <> ('') ) ORDER BY rand() LIMIT 16 [ RunTime:0.001485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_link` [ RunTime:0.009473s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pic`,`url`,`qx`,`px`,`lx`,`create_time`,`update_time`,`status` FROM `jy_link` ORDER BY `id`  desc [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`zhongbu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('3',tj) AND zhongbu_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`dibu_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('4',tj) AND dibu_img <> ('') ) ORDER BY update_time desc LIMIT 2 [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youshang_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('5',tj) AND youshang_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`tj`,`youxia_img` FROM `jy_adimg` WHERE  (  FIND_IN_SET('6',tj) AND youxia_img <> ('') ) ORDER BY update_time desc LIMIT 1 [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_server` [ RunTime:0.009139s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`userid`,`create_time`,`gid`,`ptid`,`gsid`,`update_time` FROM `jy_user_server` WHERE  (  userid=910 ) ORDER BY create_time desc LIMIT 4 [ RunTime:0.000964s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 73 LIMIT 1 [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 76 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 70 LIMIT 1 [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jy_game` WHERE  `id` = 66 LIMIT 1 [ RunTime:0.000360s ]
+---------------------------------------------------------------
+[ 2017-09-06T14:31:35+08:00 ] 127.0.0.1 127.0.0.1 GET /index/user/playedgame.html
+[ info ] newjy.net/index/user/playedgame.html [运行时间：0.087016s][吞吐率：11.49req/s] [内存消耗：2,880.54kb] [文件加载：58]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'playedgame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\User->playedGame[ E:\phpStudy\WWW\newjy.net\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\user\playedgame.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'playedGames',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002533s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.009704s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.008281s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_server` [ RunTime:0.011021s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jy_user_server` WHERE  (  userid=910 ) LIMIT 1 [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`userid`,`create_time`,`gid`,`ptid`,`gsid`,`update_time` FROM `jy_user_server` WHERE  (  userid=910 ) ORDER BY create_time desc LIMIT 0,15 [ RunTime:0.000747s ]
+---------------------------------------------------------------
+[ 2017-09-06T14:31:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index/pay/index/id/2551.html
+[ info ] newjy.net/index/pay/index/id/2551.html [运行时间：0.094165s][吞吐率：10.62req/s] [内存消耗：3,007.03kb] [文件加载：58]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/user/playedgame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2551',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\index\controller\Pay.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\newjy.net\public/../application/index\view\pay\index.html [ array (
+  0 => 'config',
+  1 => 'banner',
+  2 => 'user',
+  3 => 'userServerEmpty',
+  4 => 'serverInfo',
+  5 => 'payWays',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002228s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_config` [ RunTime:0.009039s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`keyword`,`description`,`logo`,`phone`,`email`,`url`,`icp`,`qq`,`hits`,`tj`,`bq`,`appkey`,`pid`,`qqappid`,`qqopenkey`,`qqreurl`,`mb`,`cps`,`xuke`,`xukez`,`update_time` FROM `jy_config` LIMIT 1 [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_adimg` [ RunTime:0.008732s ]
+[ sql ] [ SQL ] SELECT `id`,`gid`,`banner_img`,`tj` FROM `jy_adimg` WHERE  (  FIND_IN_SET('2',tj) AND banner_img <> ('') ) [ RunTime:0.000480s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.007758s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=2551 ) LIMIT 1 [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.009044s ]
+[ sql ] [ SQL ] SELECT * FROM `jy_payfs` ORDER BY `id`  ASC [ RunTime:0.000694s ]
+---------------------------------------------------------------
+[ 2017-09-06T14:31:41+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.080203s][吞吐率：12.47req/s] [内存消耗：2,678.46kb] [文件加载：52]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/2551.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '2551',
+  'money' => '10',
+  'bank' => '12',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001852s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.010526s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=2551 ) LIMIT 1 [ RunTime:0.000553s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.008749s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.007808s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.000469s ]
+---------------------------------------------------------------
+[ 2017-09-06T14:38:33+08:00 ] 127.0.0.1 127.0.0.1 POST /api/pay/index.html
+[ info ] newjy.net/api/pay/index.html [运行时间：0.098397s][吞吐率：10.16req/s] [内存消耗：2,735.40kb] [文件加载：53]
+[ info ] [ LANG ] E:\phpStudy\WWW\newjy.net\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'pay',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'newjy.net',
+  'connection' => 'keep-alive',
+  'content-length' => '71',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://newjy.net',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://newjy.net/index/pay/index/id/2551.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8068023296; PHPSESSID=5lkfn4k9ukjcuiaogni5oa64i6',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '2551',
+  'money' => '10',
+  'bank' => '12',
+  'Submit' => '-= 充值 =-',
+  'forms' => 'pay',
+)
+[ info ] [ RUN ] app\api\controller\Pay->index[ E:\phpStudy\WWW\newjy.net\application\api\controller\Pay.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002697s ] mysql:dbname=newjy;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_game_server` [ RunTime:0.011344s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`sid`,`gid`,`create_time`,`game`,`ptid` FROM `jy_game_server` WHERE  (  id=2551 ) LIMIT 1 [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_apikey` [ RunTime:0.009030s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pid`,`apikey`,`paykey`,`create_time`,`update_time` FROM `jy_apikey` LIMIT 1 [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_payfs` [ RunTime:0.010002s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`pay`,`ptid`,`pic`,`tid`,`create_time`,`update_time`,`type` FROM `jy_payfs` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jy_user_pay` [ RunTime:0.009761s ]
+[ sql ] [ SQL ] INSERT INTO `jy_user_pay` (`oid` , `game` , `money` , `qx` , `uid` , `uidname` , `ptid` , `tid` , `bank` , `create_time` , `update_time`) VALUES ('201709060238338470' , '新焚天之怒' , 10 , 0 , 910 , 'hecheng' , 2 , 12 , 'alipay' , 1504679913 , 1504679913) [ RunTime:0.000452s ]

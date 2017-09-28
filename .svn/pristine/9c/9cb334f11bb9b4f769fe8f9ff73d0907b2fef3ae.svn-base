@@ -1,0 +1,47 @@
+{include file="public/_meta"}
+<title>游戏分类管理</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 游戏管理管理 <span class="c-gray en">&gt;</span> 游戏分类管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+		<span class="l">
+			<a href="javascript:;" onclick="hecheng_dels('{:url('delDatas')}')" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+			<a class="btn btn-primary radius" data-title="添加apikey" onclick="window_add('添加分类','{:url('add')}','','')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加分类</a></span>
+			<span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
+			<thead>
+				<tr class="text-c">
+					<th width="25"><input type="checkbox" name="" value=""></th>
+					<th width="80">序号</th>
+                    <th width="80">排序</th>
+					<th width="80">名称</th>
+					<th width="100">是否显示在导航</th>
+					<th width="200">添加时间</th>
+					<th width="120">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{volist name="gameTypes" id="vo"}
+				<tr class="text-c">
+					<td><input type="checkbox" value="{$vo.id}" name="box"></td>
+					<td>{$i}</td>
+					<td>{$vo.sort}</td>
+					<td>{$vo.name}</td>
+					<td>{$vo.qx|showOrHidden}</td>
+					<td>{$vo.create_time}</td>
+					<td class="f-14 td-manage">
+                        <a style="text-decoration:none" class="ml-5" onClick="hecheng_edit('分类编辑','{:url('edit',['id'=>$vo.id])}','')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
+                        <a style="text-decoration:none" class="ml-5" onClick="hecheng_del(this,'{:url('delData')}','{$vo.id}')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+				</tr>
+				{/volist}
+			</tbody>
+		</table>
+	</div>
+</div>
+{include file="public/_footer"}
+
+<script type="text/javascript" src="__STATIC__/admin/js/article.js"></script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:75:"E:\phpStudy\WWW\newjy.net\public/../application/index\view\index\index.html";i:1506318980;s:76:"E:\phpStudy\WWW\newjy.net\public/../application/index\view\public\_meta.html";i:1504513557;s:78:"E:\phpStudy\WWW\newjy.net\public/../application/index\view\public\_header.html";i:1506568399;s:78:"E:\phpStudy\WWW\newjy.net\public/../application/index\view\public\_banner.html";i:1506566350;s:78:"E:\phpStudy\WWW\newjy.net\public/../application/index\view\public\_footer.html";i:1505712868;}*/ ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="<?php echo $config['keyword']; ?>">
+    <meta name="description" content="<?php echo $config['description']; ?>">
+    <meta property="qc:admins" content="2444407777621456375" />
+    <link href="__STATIC__/index/css/css.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/index/css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery181.js"></script>
+    <script type="text/javascript" src="__STATIC__/index/js/jquery.js"></script>
+    <script type="text/javascript" src="__STATIC__/index/js/jquery.event.drag-1.5.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/index/js/jquery.touchSlider.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/hui/lib/layer/2.4/layer.js"></script>
+    <script type="text/javascript" src="__STATIC__/index/js/common.js"></script>
+
+<title>一起玩.游戏,网页游戏,手机游戏_一起玩.游戏_028-86051177</title>
+</head>
+<body>
+
+    <!--head-->
+    <div class="head_top" align="center">
+        <table width="1200" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="8%" nowrap="nowrap">&nbsp;</td>
+                <td width="54%" nowrap="nowrap">&nbsp;玩家QQ群：455092028 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=176903662f155b79532b8bde5877d43dc33facb5bc9fb21b35d21ba20122ed92"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="一起玩玩家群" title="一起玩玩家群"></a></td>
+                <td width="7%" nowrap="nowrap">&nbsp;</td>
+                <td width="3%" nowrap="nowrap">&nbsp;</td>
+                <td width="12%" align="right" nowrap="nowrap">
+                    <span class="hei12" id="header_user">
+                        <?php if($user): if($user['pic']): ?>
+                            <img src="<?php echo $user['pic']; ?>" width='30'  align='absmiddle'  style='border-radius: 15px;overflow:hidden' />
+                            <?php else: ?>
+                            <img src="/images/nopic.jpg" width='30'  align='absmiddle'  style='border-radius: 15px;overflow:hidden' />
+                            <?php endif; ?>
+                            :欢迎您！ | <a href="<?php echo url('User/index'); ?>" title="用户中心">用户中心</a> | <span id="logout" title="点击退出平台">退出平台</span> |
+                        <?php else: ?>
+                        <a href='/#user-login-form'>登陆</a> | <a href="<?php echo url('Register/index'); ?>">注册</a>|
+                        <?php endif; ?>
+                        <a href="javascript:;" onclick="addFavorite2()">加入收藏</a>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div align="center">
+        <table width="1200" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="29%" height="100" class="top_bt"><a href="/" title="首页"><img src="<?php echo $config['logo']; ?>" height="100" /></a></td>
+                <td width="35%">
+                    <form id="formSearch">
+                        <div>
+                            <input type="text" name="gamekeyword" id="gamekey" class="sosu" placeholder="搜索游戏名称"/>
+                            <input type="button" id="search-button" style="border:1px #0099FF solid;border-radius:10px;line-height:30px;width:60px;cursor:pointer;" value="搜索"/>
+                        </div>
+                        <div>热门搜索词：<a href="<?php echo url('Youxi/index',['id'=>67]); ?>">鬼吹灯</a> <a href="<?php echo url('Youxi/index',['id'=>73]); ?>">九天封神</a> <a href="<?php echo url('Youxi/index',['id'=>66]); ?>">思美人</a> <a href="<?php echo url('Youxi/index',['id'=>76]); ?>">新焚天之怒</a></div>
+                    </form>
+                </td>
+                <td width="36%" align="right" class="hei18B"><span>免费咨询电话</span><br /><span class="phone"><?php echo $config['phone']; ?></span></td>
+            </tr>
+        </table>
+    </div>
+    <div align="center" class="dh_bg">
+        <div class="b_k">
+            <li><a href="/" title="网站首页">网站首页</a></li>
+            <li><a href="<?php echo url('Gamelist/index'); ?>" title="游戏大厅">游戏大厅</a></li>
+            <!-- <li><a href="<?php echo url('User/index'); ?>" title="用户中心">用户中心</a></li> -->
+            <li><a href="javascript:;" id="user_index" data-url="<?php echo url('User/index'); ?>" title="用户中心">用户中心</a></li>
+            <li><a href="<?php echo url('Server/index'); ?>">开服表</a></li>
+            <li><a href="<?php echo url('Article/index'); ?>"  title="游戏资讯">游戏资讯</a></li>
+            <li><a href="<?php echo url('Article/index'); ?>" title="常见问题">常见问题</a></li>
+            <!-- <li><a href="<?php echo url('User/playedgame'); ?>" target="_blank" title="玩家登录后，可以对游戏角色进行充值!">充值中心</a></li> -->
+            <li><a href="<?php echo url('Pay/index'); ?>" target="_blank" title="玩家登录后，可以对游戏角色进行充值!">充值中心</a></li>
+            <!--li>联系我们</li-->
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <!--head-->
+<script type="text/javascript">
+    var logout_url = '<?php echo url('Register/logout'); ?>';
+
+    $(function() {
+        $("#search-button").click(function() {
+            var name = $("#gamekey").val();
+            var url = '<?php echo url('Search/index'); ?>';
+            if(name == '') {
+                layer.msg('还没有输入游戏哦',{icon:5,time:1500});
+            }else {
+                $.post(url,{name:name},function(result) {
+                    if(result.code == 0) {
+                        layer.msg('没有找到相关游戏',{icon:5,time:1500});
+                    }else {
+                        window.location.href = '/index/youxi/index/id/'+result.data.id;
+                    }
+                },'json');
+            }
+
+        });
+    });
+</script>
+
+    <div style="height:410px;overflow:hidden;">
+        <script type="text/javascript">
+    $(document).ready(function() {
+        $(".main_visual").hover(function() {
+            $("#btn_prev,#btn_next").fadeIn()
+        }, function() {
+            $("#btn_prev,#btn_next").fadeOut()
+        })
+        $dragBln = false;
+        $(".main_image").touchSlider({
+            flexible: true,
+            speed: 200,
+            btn_prev: $("#btn_prev"),
+            btn_next: $("#btn_next"),
+            paging: $(".flicking_con a"),
+            counter: function(e) {
+                $(".flicking_con a").removeClass("on").eq(e.current - 1).addClass("on");
+            }
+        });
+        $(".main_image").bind("mousedown", function() {
+            $dragBln = false;
+        })
+        $(".main_image").bind("dragstart", function() {
+            $dragBln = true;
+        })
+        $(".main_image a").click(function() {
+            if ($dragBln) {
+                return false;
+            }
+        })
+        timer = setInterval(function() {
+            $("#btn_next").click();
+        }, 5000);
+        $(".main_visual").hover(function() {
+            clearInterval(timer);
+        }, function() {
+            timer = setInterval(function() {
+                $("#btn_next").click();
+            }, 5000);
+        })
+        $(".main_image").bind("touchstart", function() {
+            clearInterval(timer);
+        }).bind("touchend", function() {
+            timer = setInterval(function() {
+                $("#btn_next").click();
+            }, 5000);
+        })
+    });
+
+    function GoUrl(surl) {
+        if (surl.length > 0) window.open(surl);
+    }
+</script>
+
+<script>
+    function toLogin() {
+
+        //以下为按钮点击事件的逻辑。注意这里要重新打开窗口
+
+        //否则后面跳转到QQ登录，授权页面时会直接缩小当前浏览器的窗口，而不是打开新窗口
+        var A = window.open("./api/example/oauth/index.php", "TencentLogin", "width=450,height=320,menubar=0,scrollbars=1,resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+    }
+</script>
+
+
+<div style="position:absolute;padding-top:10px;z-index:100000;width:100%;overflow:hidden;pointer-events:none;" align="center">
+    <div class="bodydiv" style="pointer-events:auto;">
+        <div class="touming2" style="float:right;padding:20px" align="left">
+            <?php if($user): ?>
+            <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                <tr><td colspan="2" class="hei18B">玩家信息</td></tr>
+                <tr>
+                    <td width="29%"><img src="<?php if($user['pic']): ?><?php echo $user['pic']; else: ?>/images/nopic.jpg<?php endif; ?>" width="90" height="90" /></td>
+                    <td width="71%" class="hei12">
+                        <div>昵称：<?php echo $user['name']; ?></div>
+                        <div>QQ号：<?php echo $user['qq']; ?></div>
+                        <div>邮箱：<?php echo $user['email']; ?></div>
+                        <div>登陆次数：<?php echo $user['hits']; ?></div>
+                    </td>
+                </tr>
+                <tr><td colspan="2" class="hei18B">最近玩过的游戏</td>
+                    <?php $_result=getUserGameByUid($user['id']);if(is_array($_result) || $_result instanceof \think\Collection || $_result instanceof \think\Paginator): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "$userServerEmpty" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                    <tr><td nowrap="nowrap"><a href="<?php echo url('Game/index',['id'=>$vo['gsid']]); ?>" title="点击进入游戏" target="_blank"><span class="hei12"><?php echo $vo['name']; ?></span></a></td><td align="right"><span class="hei12"><?php echo $vo['update_time']; ?></span></td></tr>
+                    <?php endforeach; endif; else: echo "$userServerEmpty" ;endif; ?>
+                </tr>
+            </table>
+            <?php else: ?>
+            <!-- 用户登录信息-->
+            <form id="user-login-form">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td colspan="2"><span class="hei18B">用户登陆</span><br />
+                            <hr size="1px" style="height:1px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="82">帐号：</td>
+                        <td width="215">
+                            <label><input name="users" type="text" id="users"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>密码：</td>
+                        <td><input name="password" type="password" id="password" /></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <label><input type="button" id="user-login-submit" value="-= 登陆 =-" /></label>
+                            <!-- <a href="<?php echo url('api/oauthController/qqAction'); ?>" title="点击这里使用QQ快速登陆" target="_self"><img src="__STATIC__/images/qq.png" align="absmiddle" border="0" /></a></td> -->
+                    </tr>
+                    <tr>
+                        <td colspan="2"><a href="<?php echo url('Register/index'); ?>" class="cheng">还没有帐号，点这里免费注册</a></td>
+                    </tr>
+                </table>
+            </form>
+            <!--@用户登录信息-->
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+<div class="main_visual" style="height:410px;overflow:hidden">
+    <div class="flicking_con">
+        <div class="flicking_inner" align="center">
+            <?php if(is_array($banner) || $banner instanceof \think\Collection || $banner instanceof \think\Paginator): $i = 0; $__LIST__ = $banner;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+            <a></a> <?php endforeach; endif; else: echo "" ;endif; ?>
+        </div>
+    </div>
+    <div class="main_image">
+        <ul>
+            <?php if(is_array($banner) || $banner instanceof \think\Collection || $banner instanceof \think\Paginator): $i = 0; $__LIST__ = $banner;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+            <li><a href="<?php echo url('Youxi/index',['id'=>$vo['gid']]); ?>"><span class="imgs" style="background:url('<?php echo $vo['banner_img']; ?>') center top no-repeat"></span></a></li>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
+        </ul>
+        <a href="javascript:;" id="btn_prev"></a>
+        <!--上一个、下一个功能暂时不可用-->
+        <a href="javascript:;" id="btn_next"></a>
+    </div>
+</div>
+
+<div style="text-align:center;clear:both"></div>
+
+<script type="text/javascript">
+    var SCOPE = {
+        'login_url': "<?php echo url('Register/login'); ?>",
+    }
+</script>
+
+    </div>
+        <div align="center" class="bodybk">
+            <div class="bodydiv" align="left">
+                <table width="1200" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="950" valign="top">
+                            <!--精品推荐-->
+                            <div class="jptjbk">
+                                <div class="hong20T">精品游戏推荐</div>
+                                <div class="box">
+                                    <?php if(is_array($jingping_img) || $jingping_img instanceof \think\Collection || $jingping_img instanceof \think\Paginator): $i = 0; $__LIST__ = $jingping_img;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+    			                    <div class='jptj'><div class='jptj2'><span class='cheng18B'><?php echo getGameNameById($vo['gid']); ?></span></div><a href="<?php echo url('Youxi/index',['id'=>$vo['gid']]); ?>"><img src="<?php echo $vo['jingping_img']; ?>" width='220' height='330' border='0' /></a></div>
+                                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                                    <div style="clear:both"></div>
+                                </div>
+                            </div>
+                            <!--@精品推荐-->
+
+                            <!--热门游戏-->
+                            <div class="box">
+                                <div class="hong20T">热门游戏</div>
+                                <div class="youxibox">
+                                    <?php if(is_array($hotGames) || $hotGames instanceof \think\Collection || $hotGames instanceof \think\Paginator): $i = 0; $__LIST__ = $hotGames;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                    <div class="youxi">
+                                        <div class="youxiimg"><a href="<?php echo url('Youxi/index',['id'=>$vo['id']]); ?>" title="<?php echo $vo['name']; ?>"><img src="<?php echo $vo['pic3']; ?>" width="200" height="100" border="0" /></div>
+    				                    <div class="youxibt">
+        					                <div class="inyouxi"><a href="<?php echo url('Youxi/index',['id'=>$vo['id']]); ?>" title="点击进入游戏">进入游戏</a></div>
+                                            <div class="youxiname">
+                                                <a href="<?php echo url('Youxi/index',['id'=>$vo['id']]); ?>" title="<?php echo $vo['name']; ?>"><?php echo mb_substr($vo['name'],0,8,'utf-8'); ?></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                                    <div style="clear:both"></div>
+                                </div>
+                            </div>
+                            <!--@热门游戏-->
+
+                            <!-- 首页中部广告图-->
+                            <div class="box"><a href="<?php echo url('Youxi/index',['id'=>$zhongbu_img['gid']]); ?>"><img src="<?php echo $zhongbu_img['zhongbu_img']; ?>" width="950" height="144" style="cursor:pointer;" /></a></div>
+
+                            <!--最新游戏-->
+                            <div class="box">
+                                <div class="hong20T">最新游戏</div>
+                                <div class="youxibox">
+                                    <?php if(is_array($newGames) || $newGames instanceof \think\Collection || $newGames instanceof \think\Paginator): $i = 0; $__LIST__ = $newGames;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                    <div class="youxi" style="width:200px;">
+                                        <div class="youxiimg"><a href="<?php echo url('Youxi/index',['id'=>$vo['id']]); ?>" title="<?php echo $vo['name']; ?>"><img src="<?php echo $vo['pic3']; ?>" width="200" height="100" border="0" /></div>
+                				        <div class="youxibt">
+                					        <div class="inyouxi"><a href="<?php echo url('Youxi/index',['id'=>$vo['id']]); ?>" title="点击进入游戏">进入游戏</a></div>
+                                            <div class="youxiname">
+                                                <a href="<?php echo url('Youxi/index',['id'=>$vo['id']]); ?>" title="<?php echo $vo['name']; ?>"><?php echo mb_substr($vo['name'],0,8,'utf-8'); ?></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                                    <div style="clear:both"></div>
+                                </div>
+                            </div>
+                            <!--@最新游戏-->
+                        </td>
+                        <td valign="top">
+                            <!--最新开服-->
+                            <div class="box_top" style="width:240px">
+                                <div class="hong20T">最新开服务器</div>
+                                <div>
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                        <?php if(is_array($newServer) || $newServer instanceof \think\Collection || $newServer instanceof \think\Paginator): $i = 0; $__LIST__ = $newServer;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                        <tr>
+                                            <td width="12%" align="center"><img src="__STATIC__/images/no/<?php echo $i; ?>.gif" width="13" height="13" /></td>
+                                            <td width="65%" nowrap="nowrap">
+                                                <a href="<?php echo url('game/index',['id'=>$vo['id']]); ?>" target="_blank" title="点击进入<?php echo $vo['game']; ?><?php echo $vo['name']; ?>"><?php echo $vo['game']; ?><?php echo $vo['name']; ?></a>
+                                            </td>
+                                            <td width="23%" nowrap="nowrap"><a href="<?php echo url('game/index',['id'=>$vo['id']]); ?>" target="_blank" title="点击进入<?php echo $vo['game']; ?><?php echo $vo['name']; ?>"><span class="hui12"><?php echo $vo['create_time']; ?></span></a></td>
+                                        </tr>
+                                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                                    </table>
+                                </div>
+                            </div>
+                            <!--@最新开服-->
+
+                            <!--右上广告-->
+                            <div class="r_gg3"><a href="<?php echo url('youxi/index',['id'=>$youshang_img['gid']]); ?>"><img src="<?php echo $youshang_img['youshang_img']; ?>" border="0" /></a></div>
+                            <!--@r_gg-->
+
+                            <!--@新服预告-->
+                            <div class="box" style="width:240px">
+                                <div class="hong20T">游戏开服预告</div>
+                                    <div style="min-height:100px">
+                                        <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                            <?php if(is_array($readyServer) || $readyServer instanceof \think\Collection || $readyServer instanceof \think\Paginator): $i = 0; $__LIST__ = $readyServer;if( count($__LIST__)==0 ) : echo "$readyEmpty" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                            <tr>
+                                                <td width="10%" align="center"><img src="__STATIC__/images/no/1_<?php echo $i; ?>.gif" /></td>
+                                                <td width="70%" nowrap="nowrap">
+                                                    <?php echo $vo['game']; ?><?php echo $vo['name']; ?>
+                                                    <span class="hui12"><?php echo $vo['create_time']; ?></span></a>
+                                                </td>
+                                            </tr>
+                                            <?php endforeach; endif; else: echo "$readyEmpty" ;endif; ?>
+                                        </table>
+                                    </div>
+                            </div>
+                            <!--@新服预告-->
+                            <!--右下广告-->
+                            <div class="r_gg2"><a href="<?php echo url('Youxi/index',['id'=>$youxia_img['gid']]); ?>"><img src="<?php echo $youxia_img['youxia_img']; ?>" /></a></div>
+                            <!--@r_gg-->
+
+                            <!--游戏公告-->
+                            <div class="box">
+                                <div class="hong20T">游戏公告</div>
+                                <div style="min-height:200px;padding:5px">
+                                    <?php if(is_array($gameArticle) || $gameArticle instanceof \think\Collection || $gameArticle instanceof \think\Paginator): $i = 0; $__LIST__ = $gameArticle;if( count($__LIST__)==0 ) : echo "$articleEmpty" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                    <li class="slist"><a href="<?php echo url('Article/news',['id'=>$vo['id']]); ?>" title="<?php echo $vo['title']; ?>" target="_blank"><?php echo mb_substr($vo['title'],0,15,'utf-8'); ?></a></li>
+                                    <?php endforeach; endif; else: echo "$articleEmpty" ;endif; ?>
+                                </div>
+                            </div>
+                            <!--@游戏公告-->
+                        </td>
+                    </tr>
+                </table>
+
+                <!--底部广告-->
+                <div class="h_gg">
+                    <?php if(is_array($dibu_img) || $dibu_img instanceof \think\Collection || $dibu_img instanceof \think\Paginator): $i = 0; $__LIST__ = $dibu_img;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                    <div><a href="<?php echo url('youxi/index',['id'=>$vo['gid']]); ?>"><img src="<?php echo $vo['dibu_img']; ?>" width="580" height="150" border="0" /></a></div>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+
+                    <span style="clear:both"></span>
+                </div>
+                <!--@广告-->
+
+                <!--玩家相片-->
+                <div class="box">
+                    <div class="hong20T">玩家相片</div>
+                    <div>
+                        <?php if(is_array($users) || $users instanceof \think\Collection || $users instanceof \think\Paginator): $i = 0; $__LIST__ = $users;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                        <div class="w_p">
+                            <div><img src="<?php echo $vo['pic']; ?>" width="100" height="100" /></div>
+                            <div><?php echo $vo['name']; ?></div>
+                        </div>
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <!--@玩家相片-->
+
+                <!--link-->
+                <div>
+                    <div class="box hong20T">友情链接</div>
+                    <div class="link">
+                        <?php if(is_array($links) || $links instanceof \think\Collection || $links instanceof \think\Paginator): $i = 0; $__LIST__ = $links;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                        <div><a href="<?php echo $vo['url']; ?>" target="_blank" alt="<?php echo $vo['name']; ?>"><?php echo $vo['name']; ?></a></div>
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <!--@link-->
+            </div>
+        </div>
+        <div style="background-color:#888888;margin-top:10px" align="center">
+    <div style="width:1200px">
+        <div>防沉迷认证 | 意见反馈 | 家长监护 | 关于我们 | 人才招聘 | 商务合作 </div>
+        <div>＠2015-2017 <?php echo $config['bq']; ?> <a href="<?php echo $config['xukez']; ?>" target="_blank" style="color:#333333;"><?php echo $config['xuke']; ?></a> 备案号：<?php echo $config['icp']; ?> 客服电话:<?php echo $config['phone']; ?>
+        </div>
+        <div>公司地址：成都市天府大道530号天祥广场10楼 邮箱：2477037269@qq.com
+            <?php if($_SERVER['SERVER_NAME'] == 'www.comecrazy.com'): ?>
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002000968 " style="display:inline-block;text-decoration:none;height:14px;line-height:20px;">
+    		<img src="__STATIC__/images/batb.png" style="float:left;"/>
+    		<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#333333;">川公网安备 51019002000968号</p></a>
+            <?php else: ?>
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002000995 " style="display:inline-block;text-decoration:none;height:14px;line-height:20px;">
+    		<img src="__STATIC__/images/batb.png" style="float:left;"/>
+    		<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#333333;">川公网安备 51019002000995号</p></a>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

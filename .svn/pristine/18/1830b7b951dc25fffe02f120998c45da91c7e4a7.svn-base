@@ -1,0 +1,93 @@
+{include file="public/_meta"}
+<title>添加游戏 - 网页游戏管理</title>
+</head>
+<body>
+<article class="page-container">
+	<form class="form form-horizontal" id="hecheng-form">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">游戏名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				{$game.name}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-5 col-sm-2"><input type="checkbox" value="2" name="box" {in name="2" value="$game.tj"}checked{/in}>
+			首页banner</label>
+            <div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload"  type="file" multiple="true" >
+				<img id="upload_org_code_img" src="{$banner_img}" class="thumbnail">
+				<input id="file_upload_image" name="banner_img" type="hidden" multiple="true" value="{$banner_img}">
+			</div>
+			（图片最佳尺寸1920*410）
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><input type="checkbox" value="1" name="box" {in name="1" value="$game.tj"}checked{/in}>
+			精品游戏推荐</label>
+			<div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload_pic2"  type="file" multiple="true" >
+				<img id="upload_org_code_img_pic2" src="{$jingping_img}" class="thumbnail">
+				<input id="file_upload_image_pic2" name="jingping_img" type="hidden" multiple="true" value="{$jingping_img}">
+			</div>
+			（图片最佳尺寸220*330）
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><input type="checkbox" value="3" name="box" {in name="3" value="$game.tj"}checked{/in}>
+			首页中部广告</label>
+			<div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload_pic3"  type="file" multiple="true" >
+				<img id="upload_org_code_img_pic3" src="{$zhongbu_img}" class="thumbnail">
+				<input id="file_upload_image_pic3" name="zhongbu_img" type="hidden" multiple="true" value="{$zhongbu_img}">
+			</div>
+			（图片最佳尺寸950*144）
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><input type="checkbox" value="4" name="box" {in name="4" value="$game.tj"}checked{/in}>
+			首页底部广告</label>
+			<div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload_pic4"  type="file" multiple="true" >
+				<img id="upload_org_code_img_pic4" src="{$dibu_img}" class="thumbnail">
+				<input id="file_upload_image_pic4" name="dibu_img" type="hidden" multiple="true" value="{$dibu_img}">
+			</div>
+			（图片最佳尺寸580*150）
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><input type="checkbox" value="5" name="box" {in name="5" value="$game.tj"}checked{/in}>
+			首页右上广告</label>
+			<div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload_other"  type="file" multiple="true" >
+				<img id="upload_org_code_img_other" src="{$youshang_img}" class="thumbnail">
+				<input id="file_upload_image_other" name="youshang_img" type="hidden" multiple="true" value="{$youshang_img}">
+			</div>
+			（图片最佳尺寸240*240）
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><input type="checkbox" value="6" name="box" {in name="6" value="$game.tj"}checked{/in}>
+			首页右下广告</label>
+			<div class="formControls col-xs-8 col-sm-2">
+				<input id="file_upload_picmax"  type="file" multiple="true" >
+				<img id="upload_org_code_img_picmax" src="{$youxia_img}" class="thumbnail">
+				<input id="file_upload_image_picmax" name="youxia_img" type="hidden" multiple="true" value="{$youxia_img}">
+			</div>
+			（图片最佳尺寸240*140）
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<input type="hidden" name="gid" value="{$game.id}">
+				<button class="btn btn-primary radius" id="hecheng-button-submit-recom" type="button"><i class="Hui-iconfont">&#xe632;</i> 推荐</button>
+			</div>
+		</div>
+	</form>
+</article>
+
+{include file="public/_footer"}
+<script type="text/javascript" src="__STATIC__/admin/js/upload-image.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/recom.js"></script>
+<script type="text/javascript">
+	var SCOPE = {
+		'uploadScript': '{:url('api/image/upload')}',
+		'save_url': '{:url('recom')}',
+		'jump_url': '{:url('index')}',
+	};
+</script>
+</body>
+</html>
