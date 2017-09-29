@@ -4,10 +4,19 @@ $(function() {
      * @return {[type]} [description]
      */
     $("#header_user").on('click','#logout',function() {
+        var html = [];
+        var hhtml = [];
+        html.push('<form id="user-login-form"><table width="100%" border="0" cellspacing="1" cellpadding="0"><tr><td colspan="2"><span class="hei18B">用户登陆</span><br /><hr size="1px" style="height:1px" /></td></tr>');
+        html.push('<tr><td width="82">帐号：</td><td width="215"><label><input name="users" type="text" id="users"/></label></td></tr>');
+        html.push('<tr><td>密码：</td><td><input name="password" type="password" id="password" /></td></tr>');
+        html.push('<tr><td>&nbsp;</td><td><label><input type="button" id="user-login-submit" value="-= 登陆 =-" /></label></tr>');
+        html.push('<tr><td colspan="2"><a href="/index/register/index.html" class="cheng">还没有帐号，点这里免费注册</a></td></tr></table></form>');
+        hhtml.push('<a href="/#user-login-form">登陆</a> | <a href="/index/register/index.html">注册</a>|<a href="javascript:;" onclick="addFavorite2()">加入收藏</a>');
         $.post(logout_url,{target:1},function(result) {
             if(result.code == 1) {
                 layer.msg(result.message,{icon:6,time:1500},function() {
-                    window.location.reload();
+                    $(".touming2").html(html.join(""));
+                    $("#header_user").html(hhtml.join(""));
                 });
             }else {
                 layer.msg(result.message,{icon:5,time:1500});
@@ -57,7 +66,7 @@ $(function() {
      * banner 上登录操作
      * @return {[type]} [description]
      */
-    $("#user-login-submit").click(function() {
+    $(".touming2").on('click','#user-login-submit',function() {
         if ($("#users").val().length == 0) {
             return $("#users").addClass('waring-input');
         }
