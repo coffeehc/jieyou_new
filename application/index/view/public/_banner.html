@@ -106,10 +106,29 @@
                         <td>&nbsp;</td>
                         <td>
                             <label><input type="button" id="user-login-submit" value="-= 登陆 =-" /></label>
-                            <!-- <a href="{:url('api/oauthController/qqAction')}" title="点击这里使用QQ快速登陆" target="_self"><img src="__STATIC__/images/qq.png" align="absmiddle" border="0" /></a></td> -->
+                            <label><input type="button" id="user-register-button" value="-= 注册 =-" /></label>
+                        </td>
                     </tr>
                     <tr>
-                        <td colspan="2"><a href="{:url('Register/index')}" class="cheng">还没有帐号，点这里免费注册</a></td>
+                        <td colspan="2" style="text-align:center;">
+                            <hr size="1px" style="height:1px" />
+                            <span class="hei14B">使用第三方登录</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <ul class="clear_here">
+                                <li class="o_qq">
+                                    <a href="{:url('qqlogin/oauth/qqAction')}">QQ账号登录</a>
+                                </li>
+                                <li class="o_wechat">
+                                    <a href="#">微信账号登录</a>
+                                </li>
+                                <li class="o_weibo">
+                                    <a href="{:url('wblogin/index/index')}">新浪微博账号</a>
+                                </li>
+                            </ul>
+                        </td>
                     </tr>
                 </table>
             </form>
@@ -143,5 +162,7 @@
 <script type="text/javascript">
     var SCOPE = {
         'login_url': "{:url('Register/login')}",
+        'register_url' : "{:url('Register/index')}",
     }
+
 </script>

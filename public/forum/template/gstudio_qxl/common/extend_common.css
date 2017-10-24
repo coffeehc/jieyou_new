@@ -1,0 +1,82 @@
+/* 
+
+Based on Discuz! X CSS file
+Added from green studio
+
+Created & Modified by Tianjian.
+
+ */
+
+
+/* 通用容器，定义页面宽度 */.wp { margin: 0 auto; width: 1000px; } #wp .wp { width: auto; }
+
+/* 页头 */
+#toptb { min-width: 1000px; border-bottom: 1px solid {COMMONBORDER}; background: {COMMONBG}; line-height: 28px; }
+		#toptb a { float: left; padding: 0 4px; height: 28px; }
+		
+/* 导航 */
+#nv { border:1px solid #3f93ed; border-bottom:none;}
+#nv li { font-weight:500; background:none; }
+.nvw { width:1000px; margin:0 auto; }
+#nv li a {text-decoration:none; }
+#nv li.a { margin-left:0px; border-bottom:1px solid #FFF; }
+#nv li a:hover { background: #FFF; color:#000; }
+#nv li.hover a:hover, #nv li.hover a { background: #FFF; color:#000; }
+
+/* 导航弹出菜单 */
+#hd .p_pop { padding:2px; box-shadow:none; border-color:#3f93ed; }
+#hd .h_pop { margin-left:-1px; min-width:114px; }
+#hd .p_pop a { padding:5px; }
+#hd .p_pop a:hover { background-color: rgba(158,196,236,0.1); color: #707070; text-decoration: none; }
+
+/* 二级导航 */
+#mu { border-left:none; border-right:none; width:1000px; overflow:hidden; }
+#mu ul { background:#F2F2F2; border-bottom:none; }
+#mu a:hover { background:none; border:1px solid #a2cfff; }
+
+/* 用户信息 */
+#gum { height:60px; }
+
+/* 快捷导航 */
+.qp_pop { padding: 4px; border: 1px solid; min-width: 60px; border-color: {DROPMENUBORDER}; {DROPMENUBGCODE}; box-shadow: 1px 2px 2px rgba(0,0,0,0.3); }
+.qp_pop a { display: block;  white-space: nowrap; }
+
+/* 搜索 */
+#scbar {overflow: hidden; margin-top:3px; height: 23px; line-height: 28px; border-top: none; border-bottom: none; background: #FFF; }
+#scbar_txt { width:130px; padding-left:5px; }
+.scbar_btn_td { width: 38px; background: url({STYLEIMGDIR}/sbtn.png) no-repeat 
+center center; }
+
+/* 图标 */
+#chart { height:35px; line-height:35px; }
+
+/* DIY按钮 */
+#diy-tg { margin-right:10px; }
+
+/* 板块 */
+.fl { border:none; }
+.fl .bm { border:1px solid #CDCDCD; margin-bottom:10px; }
+.fl .bm_h { background:#F2F2F2; border:none; }                         /*标题栏*/
+.bmw .bm_h a { font-weight:500; font-size:14px; color:#333; }
+.fl_g dt a { font-weight:500; }
+
+/* 论坛页面第一个DIY */
+.gfdiyo .tab-title { background:transparent; }
+.gfdiyo .tb a {  }
+.gfdiyo .frame-tab .tb .a a { border:1px solid #dedede; border-top:1px solid #238bec; border-bottom:1px solid #fff; color:#238bec; }
+.gfdiyo .frame-tab .tb li { background:#F8F8F8; margin-left:0px; border-top:1px solid #dedede; }
+.gfdiyo .frame-tab .tb { height:31px; line-height:30px; border-bottom:1px solid #dedede; }
+
+/* */
+.title { font-weight:500; }
+
+/* 进度条 */
+.pbg { height:16px!important; }
+
+/* 页面主区域 */
+.ct2 .mn { width:770px; }
+.ct2_a .mn { width:840px; }
+.ct3_a .mn { width:590px; }
+
+.tb a { background:#f6f6f6; }
+

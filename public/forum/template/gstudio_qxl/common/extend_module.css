@@ -1,0 +1,43 @@
+/* -------------------
+
+Based on Discuz! X CSS file
+Added from green studio
+
+Created & Modified by Tianjian.
+-------------------
+ */
+
+ /** forum::index **/
+ /* 图表 */
+ .chart { background: url({STYLEIMGDIR}/chart.png)no-repeat 0 50% ; padding-left:30px;  padding-top:3px; font-size:14px; }
+ .chart em { font-size:16px; }
+ 
+  /* 板块 */
+ .fl_icn_g { width:70px; }
+ 
+ /** end **/
+ 
+ /** forum::viewthread,group::viewthread,forum::trade,forum::misc **/
+ 
+ /* 帖子列表用户信息 */
+.pls { background:#f9f7f7; }
+ 
+ /** end **/
+ 
+ /* ----------------------------------------------------------------------- 空间相关样式 */
+/** home::space,misc::ranklist **/
+/* .mi --> my_infomation 空间首页个人信息部分 */
+#moodfm textarea { width:670px; }
+#mood_mystatus { width:440px; }
+.mi .moodfm_input { width:375px; background:transparent; border:1px solid #cdcdcd; }
+.mi #moodfm textarea { width:365px; }
+
+/** end **/
+
+/* ------------------------------------------------------------------------ 排行榜相关样式 */
+/** misc::ranklist **/
+/* 重定义 */
+.xl2 li { margin-right: 20px; width: 395px; }
+
+ /** end **/
+ 

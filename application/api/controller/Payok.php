@@ -9,7 +9,7 @@ class Payok extends Controller {
         // 判断充值是星蝶，还是265G  265G 返回的是 oid  星蝶返回的是OrderID
         if(empty($data['oid'])) {
             if(empty($data['OrderID'])) {
-                return $this->error('订单号为空');
+                $this->error('订单号为空');
             }
             $orderInfo = model('UserPay')->getOrderInfoByOid($data['OrderID']);
             if(!$orderInfo) {

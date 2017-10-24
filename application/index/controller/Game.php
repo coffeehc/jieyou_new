@@ -25,6 +25,12 @@ class Game extends BaseController {
                     $userid = model('User')->getLastInsID();
                     $user = model('User')->getUserInfoById($userid);
                     if($res) {
+                        // 门户网站注册同时注册到论坛
+
+                        $uc_email = $data['users'].'@mail.com';
+
+                        uc_user_register($data['users'],$data['password'],$uc_email);
+
                         session('user',$user,'index');
                         $sid =session('sid','','index');
                         if($sid != null) {
@@ -39,7 +45,7 @@ class Game extends BaseController {
                     return show(0,$e->getMessage());
                 }
 
-            }else if($data['qx'] == 2) {  // 老账号注册
+            }else if($data['qx'] == 2) {  // 老账号登录
                 if(empty($data['users2'])) {
                     return show(0,'账号不能为空');
                 }
@@ -49,6 +55,19 @@ class Game extends BaseController {
                 $data['users'] = $data['users2'];
                 $user = model('User')->getUserByUsername($data['users']);
                 if($user && $user['password'] == $data['password']) {
+                    // UC 同步到论坛操作
+                    $uc_user = uc_get_user($data['users']);  // 检查用户
+
+                    if($uc_user['0'] > 0) {
+                        $uc_uid = $uc_user['0'];            // 存在用户 记录用户ID
+                    }else {                                 // 不存在  注册用户
+                        if($user['email'] == '') {
+                            $uc_mail = $data['users'].'@mail.com';   //  如果在门户网站的用户没有邮箱 则构造一个邮箱地址
+                        }else {
+                            $uc_mail = $user['email'];
+                        }
+                        $uc_uid = uc_user_register($data['users'],$data['password'],$uc_mail);
+                    }
                     session('user',$user,'index');
                     model('User')->allowField(true)->where('id',$user['id'])->setInc('hits');
                     model('User')->allowField(true)->where('id',$user['id'])->update(['update_time'=>time()]);

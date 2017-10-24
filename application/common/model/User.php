@@ -94,4 +94,14 @@ class User extends Model {
         $res = $this->field(true)->where("users = '$users'")->find();
         return $res;
     }
+
+    /**
+     * 通过openid获取用户信息
+     * @param $openid
+     * @return array
+     */
+    public function getUserInfoByOpenid($openid) {
+        $res = $this->field(true)->where("openid = '$openid'")->find();
+        return $res;
+    }
 }

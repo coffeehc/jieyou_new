@@ -21,6 +21,9 @@ class Game extends Controller {
                 $gid = $data['gid'];
                 $insertData['register'] = 0;
                 $insertData['ip'] = ip2long($ip);
+                if($insertData['ip'] < 0) {
+                    $insertData['ip'] = intval(sprintf('%u',ip2long($ip)));
+                }
                 $res = model("Stats")->where('ip = '.$insertData['ip']." and gid = '$gid'")->order('create_time desc')->find();
                 // 限制 在一分钟之内请求页面 只算一次有效
                 if(!$res || ($res['create_time']+60) < time()) {
@@ -79,6 +82,12 @@ class Game extends Controller {
             $gameServer = model('GameServer')->getRecServerFindByGid($data['gid']);
             $gameid = model('Game')->getGameIdByGid($data['gid']);
             if($res) {
+                // 门户网站注册同时注册到论坛
+
+                $uc_email = $data['users'].'@mail.com';
+
+                uc_user_register($data['users'],$data['password'],$uc_email);
+
                 session('user',$user,'index');
                 $sid =session('sid','','index');
                 if($sid != null) {

@@ -33,6 +33,7 @@ class Register extends BaseController {
         if(!$validate->scene('add')->check($data)) {
             return show(0,$validate->getError());
         }
+
         if(model('User')->getUserByUsername($data['users'])) {
             return show(0,'用户名已存在');
         }
@@ -46,6 +47,15 @@ class Register extends BaseController {
             $userid = model('User')->getLastInsID();
             $user = model('User')->getUserInfoById($userid);
             if($res) {
+
+                // 门户网站注册同时注册到论坛
+                if($data['email'] == '') {
+                    $uc_email = $data['users'].'@mail.com';
+                }else {
+                    $uc_email = $data['email'];
+                }
+                uc_user_register($data['users'],$data['password'],$uc_email);
+
                 session('user',$user,'index');
                 $sid =session('sid','','index');
                 if($sid != null) {
@@ -70,11 +80,38 @@ class Register extends BaseController {
             return $this->error('请求错误');
         }
         $data = input('post.');
+
+
         $user = model('User')->getUserByUsername($data['users']);
         $lastplay = model("UserServer")->field(true)->where('userid='.$user['id'])->order('update_time desc')->limit(4)->select();
         $callBackArr['user'] = $user;
         $callBackArr['lastplay'] = $lastplay;
+
+
+
         if($user && $user['password'] == $data['password']) {
+            // UC 同步到论坛操作
+            $uc_user = uc_get_user($data['users']);  // 检查用户
+
+            if($uc_user['0'] > 0) {
+                $uc_uid = $uc_user['0'];            // 存在用户 记录用户ID
+            }else {                                 // 不存在  注册用户
+                if($user['email'] == '') {
+                    $uc_mail = $data['users'].'@mail.com';   //  如果在门户网站的用户没有邮箱 则构造一个邮箱地址
+                }else {
+                    $uc_mail = $user['email'];
+                }
+                $uc_uid = uc_user_register($data['users'],$data['password'],$uc_mail);
+            }
+
+            if($uc_uid > 0) {
+                list($uid,$username,$password,$email) = uc_user_login($data['users'],$data['password']);
+            }
+
+            if($uid > 0) {
+                $callBackArr['uc_login']  = uc_user_synlogin($uid);
+            }
+
             session('user',$user,'index');
             model('User')->where('id',$user['id'])->setInc('hits');
             model('User')->where('id',$user['id'])->update(['update_time'=>time()]);

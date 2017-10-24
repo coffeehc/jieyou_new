@@ -19,8 +19,8 @@ class Recorder{
         if(empty($this->inc)){
             $this->error->showError("20001");
         }
-
-        if(empty(session('QC_userData'))){
+        $userData = session('QC_userData');
+        if(empty($userData)){
             self::$data = array();
         }else{
             self::$data = session('QC_userData');

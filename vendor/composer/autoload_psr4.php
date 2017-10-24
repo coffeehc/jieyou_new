@@ -10,4 +10,6 @@ return array(
     'think\\captcha\\' => array($vendorDir . '/topthink/think-captcha/src'),
     'think\\' => array($baseDir . '/thinkphp/library/think'),
     'kuange\\qqconnect\\' => array($vendorDir . '/kuange/qqconnect'),
+    'anerg\\helper\\' => array($vendorDir . '/anerg2046/helper/src'),
+    'anerg\\OAuth2\\' => array($vendorDir . '/anerg2046/sns_auth/src'),
 );

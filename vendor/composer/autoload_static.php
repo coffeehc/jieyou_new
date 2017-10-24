@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit9e3a93cdff9f581d2814220732d28fbe
 {
     public static $files = array (
+        'b9118ae149d0ad190a8abf45189312f2' => __DIR__ . '/..' . '/anerg2046/helper/src/helper.php',
         '1cfd2761b63b0a29ed23657ea394cb2d' => __DIR__ . '/..' . '/topthink/think-captcha/src/helper.php',
     );
 
@@ -20,6 +21,11 @@ class ComposerStaticInit9e3a93cdff9f581d2814220732d28fbe
         'k' => 
         array (
             'kuange\\qqconnect\\' => 17,
+        ),
+        'a' => 
+        array (
+            'anerg\\helper\\' => 13,
+            'anerg\\OAuth2\\' => 13,
         ),
     );
 
@@ -39,6 +45,14 @@ class ComposerStaticInit9e3a93cdff9f581d2814220732d28fbe
         'kuange\\qqconnect\\' => 
         array (
             0 => __DIR__ . '/..' . '/kuange/qqconnect',
+        ),
+        'anerg\\helper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/anerg2046/helper/src',
+        ),
+        'anerg\\OAuth2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/anerg2046/sns_auth/src',
         ),
     );
 

@@ -167,5 +167,85 @@
             }
         ],
         "description": "qqconnect package"
+    },
+    {
+        "name": "anerg2046/helper",
+        "version": "1.0.6.2",
+        "version_normalized": "1.0.6.2",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/anerg2046/helper.git",
+            "reference": "7e58d17ebd3bf6233de97795ca2d8b95b92e906e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/anerg2046/helper/7e58d17ebd3bf6233de97795ca2d8b95b92e906e.zip",
+            "reference": "7e58d17ebd3bf6233de97795ca2d8b95b92e906e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0"
+        },
+        "time": "2017-08-07T07:14:23+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "anerg\\helper\\": "src"
+            },
+            "files": [
+                "src/helper.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Coeus",
+                "email": "r.anerg@gmail.com"
+            }
+        ],
+        "description": "some helper libaray function"
+    },
+    {
+        "name": "anerg2046/sns_auth",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/anerg2046/sns_auth.git",
+            "reference": "ab98c8028872f9f3ec66ab2cd19cac0f85315bf6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/anerg2046/sns_auth/ab98c8028872f9f3ec66ab2cd19cac0f85315bf6.zip",
+            "reference": "ab98c8028872f9f3ec66ab2cd19cac0f85315bf6",
+            "shasum": ""
+        },
+        "require": {
+            "anerg2046/helper": "^1.0",
+            "php": ">=5.6.0"
+        },
+        "time": "2017-01-16T08:50:49+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "anerg\\OAuth2\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Coeus",
+                "email": "r.anerg@gmail.com"
+            }
+        ],
+        "description": "weixin weibo qq sns oauth"
     }
 ]

@@ -1,0 +1,17 @@
+/* 
+
+Based on Discuz! X CSS file
+Added from green studio
+
+Created & Modified by Tianjian.
+
+ */
+
+
+ /* 页面宽度 */
+.wp { width: 1000px; }
+	#hd .wp, #wp { min-width: 1000px; }
+
+/* 二级导航 */
+#mu { border-left:none; border-right:none; }
+#mu ul { background:#F2F2F2; border-bottom:none; }

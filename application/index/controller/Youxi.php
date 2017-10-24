@@ -49,6 +49,9 @@ class Youxi extends BaseController {
             $gid = $youxi['gid'];
             $insertData['register'] = 0;
             $insertData['ip'] = ip2long($ip);
+            if($insertData['ip'] < 0) {
+                $insertData['ip'] = intval(sprintf('%u',ip2long($ip)));
+            }
             $res = model("Stats")->where('ip = '.$insertData['ip']." and gid = '$gid'")->order('create_time desc')->find();
             // 限制 在一分钟之内请求页面 只算一次有效
             if(!$res || ($res['create_time']+60) < time()) {

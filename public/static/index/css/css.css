@@ -250,3 +250,29 @@ div.flicking_con a.on {background-position:0 -21px}
 
 .l_bk{margin:5px;;padding:10px;border:0px #CCCCCC solid; background-color:#EEEEEE;border-radius:5px;}
 .b_k li a{font-size: 16px;}
+
+.clear_here{margin-top: -23px;}
+.clear_here {list-style: none;list-style-type: none;}
+.clear_here li{list-style-type: none;width: 58px;float: left;}
+.clear_here li.o_qq a, .clear_here li.o_qq a:hover{
+    background-position: center 0;
+}
+.clear_here li.o_wechat a, .clear_here li.o_wechat a:hover{
+    background-position: center -266px;
+}
+.clear_here li.o_weibo a, .clear_here li.o_weibo a:hover{
+    background-position: center -100px;
+}
+.clear_here li a{
+    display: inline-block;
+    color: #7f7e7e;
+    text-decoration: none;
+}
+.clear_here li a, .clear_here li a:hover{
+    background: url(../images/lrway.png) no-repeat;
+    width: 47px;
+    height: 22px;
+    padding: 30px 0 0;
+    font-size: 0;
+    line-height: 0;
+}
