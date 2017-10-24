@@ -20,6 +20,7 @@ class Index extends Controller{
                 'default' => 'http://175jy.com/wblogin/index/callback',
             ]
         ];
+        session('last_url',$_SERVER['HTTP_REFERER'],'index');
         $Oauth = OAuth::getInstance($config ,'weibo');
         return redirect($Oauth->getAuthorizeUrl());
     }
@@ -59,7 +60,10 @@ class Index extends Controller{
             $userid = model('User')->getLastInsID();
             $loginUser = model('User')->getUserInfoById($userid);
             session('user',$loginUser,'index');
-            return redirect('/');
+            $last_url = session('last_url','','index');
+            session('last_url',null);
+            $url = !$last_url ? '/' : $last_url;
+            return redirect($url);
         }else {
             // update
             $updateData = [];
@@ -68,7 +72,10 @@ class Index extends Controller{
             session('user',$user,'index');
             model('User')->where('id',$user['id'])->setInc('hits');
             model('User')->where('id',$user['id'])->update($updateData);
-            return redirect('/');
+            $last_url = session('last_url','','index');
+            session('last_url',null);
+            $url = !$last_url ? '/' : $last_url;
+            return redirect($url);
         }
     }
 }
