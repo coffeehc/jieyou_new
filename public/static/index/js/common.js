@@ -12,7 +12,7 @@ $(function() {
         html.push('<tr><td>&nbsp;</td><td><label><input type="button" id="user-login-submit" value="-= 登陆 =-" /></label>');
         html.push('<label style="margin-left:5px;"><input type="button" id="user-register-button" value="-= 注册 =-" /></label></td></tr>');
         html.push('<tr><td colspan="2" style="text-align:center;"><hr size="1px" style="height:1px" /><span class="hei14B">使用第三方登录</span></td></tr>');
-        html.push('<tr><td colspan="2"><ul class="clear_here"><li class="o_qq"><a href="/qqlogin/oauth/qqaction.html">QQ账号登录</a></li><li class="o_wechat"><a href="#">微信账号登录</a></li><li class="o_weibo"><a href="/wblogin/index/index.html">新浪微博账号</a></li></ul></td></tr>');
+        html.push('<tr><td colspan="2"><ul class="clear_here"><li class="o_qq"><a href="/qqlogin/index/index.html">QQ账号登录</a></li><li class="o_wechat"><a href="/wxlogin/index/index.html">微信账号登录</a></li><li class="o_weibo"><a href="/wblogin/index/index.html">新浪微博账号</a></li></ul></td></tr>');
         hhtml.push('<a href="/#user-login-form">登陆</a> | <a href="/index/register/index.html">注册</a>|<a href="javascript:;" onclick="addFavorite2()">加入收藏</a>');
         $.post(logout_url,{target:1},function(result) {
             if(result.code == 1) {

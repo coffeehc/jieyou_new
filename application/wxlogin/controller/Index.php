@@ -13,8 +13,15 @@ class Index {
      */
     public function index() {
         $config = [
-            'app_key' => 'xxxx'
+            'app_key' => 'wx3b3cd9b60e250226',
+            'app_secret' => '377cb67b5891326c13f83b94602f0f93',
+            'scope' => 'snsapi_login',
+            'callback' => [
+                'default' => 'http://175jy.com/wxlogin/index/callback',
+            ]
         ];
+        $Oauth = OAuth::getInstance($config ,'wx_qrcode');
+        return redirect($Oauth->getAuthorizeUrl());
     }
 
     /**
@@ -22,6 +29,46 @@ class Index {
      * @return function [description]
      */
     public function callback() {
+        $config = [
+            'app_key' => 'wx3b3cd9b60e250226',
+            'app_secret' => '377cb67b5891326c13f83b94602f0f93',
+            'scope' => 'snsapi_login',
+            'callback' => [
+                'default' => 'http://175jy.com/wxlogin/index/callback',
+            ]
+        ];
+        $OAuth    = OAuth::getInstance($config, 'wx_qrcode');
+        $OAuth->getAccessToken();
 
+        $userInfo = $OAuth->userinfo();
+        $insertData['openid'] = $userInfo['openid'] ;
+        $user = model('User')->getUserInfoByOpenid($insertData['openid']);  // 通过openid获取用户信息
+        if(!$user) {
+            // add
+            $insertData['name'] = hc_filter($userInfo['nick']);
+            $insertData['users'] = hc_filter($userInfo['nick']);
+            $insertData['sex'] = $userInfo['gender'];
+			$insertData['pic'] = $userInfo['avatar'];
+            $isUser = model('User')->getUserInfoByUsers($userInfo['nick']); // 判断这个users 是否被注册
+            if($isUser) {
+                $insertData['users'] = $insertData['users'].rand(1000,9999);
+            }
+            $insertData['hits'] = 1;
+
+            $res = model('User')->save($insertData);
+            $userid = model('User')->getLastInsID();
+            $loginUser = model('User')->getUserInfoById($userid);
+            session('user',$loginUser,'index');
+            return redirect('/');
+        }else {
+            // update
+            $updateData = [];
+            $updateData['name'] = $userInfo['nick'];
+            $updateData['update_time'] = time();
+            session('user',$user,'index');
+            model('User')->where('id',$user['id'])->setInc('hits');
+            model('User')->where('id',$user['id'])->update($updateData);
+            return redirect('/');
+        }
     }
 }
