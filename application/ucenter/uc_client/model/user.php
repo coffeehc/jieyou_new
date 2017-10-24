@@ -135,6 +135,20 @@ class usermodel {
 		$this->db->query("INSERT INTO ".UC_DBTABLEPRE."members SET $sqladd username='$username', password='$password', email='$email', regip='$regip', regdate='".$this->base->time."', salt='$salt'");
 		$uid = $this->db->insert_id();
 		$this->db->query("INSERT INTO ".UC_DBTABLEPRE."memberfields SET uid='$uid'");
+
+		// 在门户网站注册 或登录后 同步到UCenter 里面需要激活一次 这里处理不需激活
+		// BEGIN
+		$discuz_dbname = 'ultrax';
+        $discuz_table_pre = 'pre_';
+        $table_info = $discuz_dbname.'.'.$discuz_table_pre;
+
+        $this->db->query("INSERT INTO ".$table_info."common_member SET uid='$uid', username='$username', password='$password', email='$email', adminid='0', groupid='10', regdate='".$this->base->time."', credits='0', timeoffset='9999'");
+        $this->db->query("INSERT INTO ".$table_info."common_member_status SET uid='$uid', regip='$regip', lastip='$regip', lastvisit='".$this->base->time."', lastactivity='".$this->base->time."', lastpost='0', lastsendmail='0'");
+        $this->db->query("INSERT INTO ".$table_info."common_member_profile SET uid='$uid'");
+        $this->db->query("INSERT INTO ".$table_info."common_member_field_forum SET uid='$uid'");
+        $this->db->query("INSERT INTO ".$table_info."common_member_field_home SET uid='$uid'");
+        $this->db->query("INSERT INTO ".$table_info."common_member_count SET uid='$uid', extcredits1='0', extcredits2='0', extcredits3='0', extcredits4='0', extcredits5='0', extcredits6='0', extcredits7='0', extcredits8='0'");
+	   // END
 		return $uid;
 	}
 
