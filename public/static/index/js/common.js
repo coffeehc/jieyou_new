@@ -16,6 +16,7 @@ $(function() {
         hhtml.push('<a href="/#user-login-form">登陆</a> | <a href="/index/register/index.html">注册</a>|<a href="javascript:;" onclick="addFavorite2()">加入收藏</a>');
         $.post(logout_url,{target:1},function(result) {
             if(result.code == 1) {
+                $("body").append(result.data.uc_logout);
                 layer.msg(result.message,{icon:6,time:1500},function() {
                     $(".touming2").html(html.join(""));
                     $("#header_user").html(hhtml.join(""));

@@ -133,8 +133,9 @@ class Register extends BaseController {
         }
         $data = input('post.');
         if($data['target'] == 1) {
+            $callBackArr['uc_logout'] = uc_user_synlogout();
             session(null,'index');
-            return show(1,'欢迎下次再来');
+            return show(1,'欢迎下次再来',$callBackArr);
         }
     }
 }
