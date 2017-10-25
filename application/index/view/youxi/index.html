@@ -43,14 +43,12 @@
                                             <tr>
                                                 <td width="82">帐号：</td>
                                                 <td width="215">
-                                                    <label>
-								                        <input name="users" type="text" id="username" />
-							                         </label>
+                                                    <label><input name="users" type="text" id="users"/></label>
                                                  </td>
                                             </tr>
                                             <tr>
                                                 <td>密码：</td>
-                                                <td><input name="password" type="password" id="pass" /></td>
+                                                <td><input name="password" type="password" id="password" /></td>
                                             </tr>
                                             <tr>
                                                 <td>&nbsp;</td>
@@ -204,61 +202,40 @@
         </div>
         {include file="public/_footer"}
         <script type="text/javascript">
-            $(function() {
-                $("#user-login-submit").click(function() {
-                    var data = $('#user-login-form').serializeArray();
-                    var url = '{:url('Register/login')}';
-                    postData = {};
-                    $(data).each(function(i) {
-                        postData[this.name] = this.value;
-                    })
-                    $.post(url, postData, function(result) {
-                        if (result.code == 1) {
-                            layer.msg(result.message, {
-                                icon: 6,
-                                time: 1000
-                            }, function() {
-                                window.location.reload();
-                            });
-                        } else {
-                            layer.msg(result.message, {
-                                icon: 5,
-                                time: 1500
-                            });
-                        }
-                    }, 'json')
-                })
-            })
+            var SCOPE = {
+                'login_url': "{:url('Register/login')}",
+                'register_url' : "{:url('Register/index')}",
+            }
         </script>
         <script type="text/javascript">
-            function countTime() {
-                // 获取当前时间
-                var date = new Date();
-                var now = date.getTime();
-                // 设置截止时间
-                var endDate = new Date("2017-10-17 11:00:00");
-                var end = endDate.getTime();
-                // 时间差
-                var leftTime = end-now;
-                // 定义变量 d,h,m,s保存倒计时的时间
-                var d,h,m,s;
-
-                d = Math.floor(leftTime/1000/60/60/24);
-                h = Math.floor(leftTime/1000/60/60%24);
-                m = Math.floor(leftTime/1000/60%60);
-                s = Math.floor(leftTime/1000%60);
-                //将倒计时赋值到div中
-                document.getElementById("_d").innerHTML = d+"天";
-                document.getElementById("_h").innerHTML = h+"时";
-                document.getElementById("_m").innerHTML = m+"分";
-                document.getElementById("_s").innerHTML = s+"秒";
-                if(leftTime<0) {
-                    clearInterval(t);
-                    window.location.reload();
-                }
-            }
-            countTime();
-            var t = setInterval(countTime,1000);
+            // function countTime() {
+            //     // 获取当前时间
+            //     var date = new Date();
+            //     var now = date.getTime();
+            //     // 设置截止时间
+            //     var endDate = new Date("2017-10-17 11:00:00");
+            //     var end = endDate.getTime();
+            //     // 时间差
+            //     var leftTime = end-now;
+            //     // 定义变量 d,h,m,s保存倒计时的时间
+            //     var d,h,m,s;
+            //
+            //     d = Math.floor(leftTime/1000/60/60/24);
+            //     h = Math.floor(leftTime/1000/60/60%24);
+            //     m = Math.floor(leftTime/1000/60%60);
+            //     s = Math.floor(leftTime/1000%60);
+            //     //将倒计时赋值到div中
+            //     document.getElementById("_d").innerHTML = d+"天";
+            //     document.getElementById("_h").innerHTML = h+"时";
+            //     document.getElementById("_m").innerHTML = m+"分";
+            //     document.getElementById("_s").innerHTML = s+"秒";
+            //     if(leftTime<0) {
+            //         clearInterval(t);
+            //         window.location.reload();
+            //     }
+            // }
+            // countTime();
+            // var t = setInterval(countTime,1000);
         </script>
     </div>
 </body>
