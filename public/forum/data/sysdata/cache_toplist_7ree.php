@@ -1,6 +1,6 @@
 <?php
 //Discuz! cache file, DO NOT modify me!
-//Identify: 2b022264a94b60d5be2560ba486edb8f
+//Identify: 21d7d6697e20975fedd0d31a0b27a5fc
 
 $new_post_threadlist = array (
   0 => 
@@ -268,75 +268,96 @@ $hot_post_threadlist = '';
 $newbie_list_7ree = array (
   0 => 
   array (
+    'username' => 'wll05',
+    'uid' => '20',
+    'regdate' => '2017-10-25 15:16:58',
+    'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=20&size=small" />',
+  ),
+  1 => 
+  array (
+    'username' => 'wll04',
+    'uid' => '19',
+    'regdate' => '2017-10-25 15:13:18',
+    'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=19&size=small" />',
+  ),
+  2 => 
+  array (
+    'username' => 'wll01',
+    'uid' => '18',
+    'regdate' => '2017-10-25 15:08:05',
+    'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=18&size=small" />',
+  ),
+  3 => 
+  array (
     'username' => 'wll03',
     'uid' => '17',
     'regdate' => '2017-10-24 17:23:08',
     'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=17&size=small" />',
   ),
-  1 => 
+  4 => 
   array (
     'username' => 'hecheng123',
     'uid' => '13',
     'regdate' => '2017-10-19 15:59:43',
     'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=13&size=small" />',
   ),
-  2 => 
+  5 => 
   array (
     'username' => 'wanghe055',
     'uid' => '12',
     'regdate' => '2017-10-19 15:51:04',
     'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=12&size=small" />',
   ),
-  3 => 
+  6 => 
   array (
     'username' => 'hcwll',
     'uid' => '11',
     'regdate' => '2017-10-18 17:56:02',
     'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=11&size=small" />',
   ),
-  4 => 
+  7 => 
   array (
     'username' => 'luntcs03',
     'uid' => '10',
     'regdate' => '2017-10-18 16:04:51',
     'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=10&size=small" />',
   ),
-  5 => 
+  8 => 
   array (
     'username' => 'hecheng',
     'uid' => '8',
     'regdate' => '2017-10-25 13:33:10',
     'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=8&size=small" />',
   ),
-  6 => 
+  9 => 
   array (
     'username' => '18829396478',
     'uid' => '6',
     'regdate' => '2017-10-18 14:58:42',
     'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=6&size=small" />',
   ),
-  7 => 
+  10 => 
   array (
     'username' => 'hc123',
     'uid' => '5',
     'regdate' => '2017-10-18 14:40:11',
     'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=5&size=small" />',
   ),
-  8 => 
+  11 => 
   array (
     'username' => 'uchcs',
     'uid' => '4',
     'regdate' => '2017-10-18 13:55:57',
     'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=4&size=small" />',
   ),
-  9 => 
+  12 => 
   array (
     'username' => 'ceshi',
     'uid' => '3',
     'regdate' => '2017-10-12 15:50:51',
     'avatar_7ree' => '<img src="http://127.0.0.1/discuz/upload/uc_server/avatar.php?uid=3&size=small" />',
   ),
-  10 => 
+  13 => 
   array (
     'username' => 'admin',
     'uid' => '1',

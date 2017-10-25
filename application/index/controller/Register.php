@@ -54,7 +54,14 @@ class Register extends BaseController {
                 }else {
                     $uc_email = $data['email'];
                 }
-                uc_user_register($data['users'],$data['password'],$uc_email);
+                $uc_uid = uc_user_register($data['users'],$data['password'],$uc_email);
+                if($uc_uid > 0) {
+                    list($uid,$username,$password,$email) = uc_user_login($data['users'],$data['password']);
+                }
+
+                if($uid > 0) {
+                    $callBackArr['uc_login']  = uc_user_synlogin($uid);
+                }
 
                 session('user',$user,'index');
                 $sid =session('sid','','index');
@@ -62,7 +69,7 @@ class Register extends BaseController {
                     model('Stats')->where('id = '.$sid)->update(['register'=>1,'userid'=>$userid]);
                     session('sid',null);
                 }
-                return show(1,'注册成功');
+                return show(1,'注册成功',$callBackArr);
             }else {
                 return show(0,'注册失败');
             }

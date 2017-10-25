@@ -41,8 +41,9 @@ $(function() {
         url = SCOPE.save_url;
         $.post(url,postData,function(result) {
             if(result.code == 1) {
+                $("body").append(result.data.uc_login);
                 layer.msg(result.message,{icon:6,time:1500},function() {
-                    window.location.reload();
+                    window.location.href = '/';
                 });
             }else {
                 layer.msg(result.message,{icon:5,time:1500});
