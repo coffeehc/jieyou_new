@@ -13,3 +13,7 @@
 <?PHP exit;?>	UCenterAdministrator	127.0.0.1	1508226517	login	succeed
 <?PHP exit;?>	UCenterAdministrator	127.0.0.1	1508228908	login	succeed
 <?PHP exit;?>	UCenterAdministrator	127.0.0.1	1508232898	login	succeed
+<?PHP exit;?>	UCenterAdministrator	127.0.0.1	1508908743	login	succeed
+<?PHP exit;?>	UCenterAdministrator	127.0.0.1	1508908778	app_edit	appid=1
+<?PHP exit;?>	UCenterAdministrator	127.0.0.1	1508908804	app_edit	appid=2
+<?PHP exit;?>	UCenterAdministrator	127.0.0.1	1508910125	login	succeed

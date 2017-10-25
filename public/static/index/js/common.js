@@ -89,6 +89,7 @@ $(function() {
         hhtml.push();
         $.post(url, postData, function(result) {
             if (result.code == 1) {
+                $(".touming2").append(result.data.uc_login);
                 // console.log(result.data);return;
                 if(result.data.user.pic == "") {
                     html.push('<td width="29%"><img src="/images/nopic.jpg" width="90" height="90" /></td>');

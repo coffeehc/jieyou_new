@@ -81,8 +81,10 @@ class Register extends BaseController {
         }
         $data = input('post.');
 
-
         $user = model('User')->getUserByUsername($data['users']);
+        if(!$user) {
+            return show(0,'该用户还没有注册，请先注册');
+        }
         $lastplay = model("UserServer")->field(true)->where('userid='.$user['id'])->order('update_time desc')->limit(4)->select();
         $callBackArr['user'] = $user;
         $callBackArr['lastplay'] = $lastplay;

@@ -564,3 +564,7 @@
 <?PHP exit;?>	1508485440	admin	1	127.0.0.1	plugins	GET={operation=config; do=1; identifier=qqconnect; pmod=admincp; anchor=setting; connectnew={allow=1; register_uinlimit=1; register_rewardcredit=1; register_regverify=1; }; connectappidnew=101436262; connectappkeynew=5346de702f8948668b98feadb9b71a0e; connectsubmit=提交; }; POST={anchor=setting; connectnew={allow=1; register_uinlimit=1; register_rewardcredit=1; register_regverify=1; }; connectappidnew=101436262; connectappkeynew=5346de702f8948668b98feadb9b71a0e; connectsubmit=提交; };
 <?PHP exit;?>	1508485445	admin	1	127.0.0.1	plugins	GET={operation=config; do=1; identifier=qqconnect; pmod=admincp; }; POST={};
 <?PHP exit;?>	1508485446	admin	1	127.0.0.1	plugins	GET={operation=config; do=1; identifier=qqconnect; pmod=admincp; }; POST={};
+<?PHP exit;?>	1508908722	admin	1	127.0.0.1		GET={}; POST={};
+<?PHP exit;?>	1508908723	admin	1	127.0.0.1	index	GET={}; POST={};
+<?PHP exit;?>	1508910113	admin	1	127.0.0.1		GET={}; POST={};
+<?PHP exit;?>	1508910114	admin	1	127.0.0.1	index	GET={}; POST={};
