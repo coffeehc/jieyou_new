@@ -8,6 +8,7 @@
   RewriteRule ^game/([0-9]+)_pc\.html$ /index/game/index/id/$1/client/pc/.html
   RewriteRule ^my/gopay.php$ /api/gopay/index
   RewriteRule ^youxi/([0-9]+)\.html$ /index/youxi/index/id/$1/html
+  RewriteRule ^ad/cq/login.html /ad/game/index/gid/xftzn/html
 
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
