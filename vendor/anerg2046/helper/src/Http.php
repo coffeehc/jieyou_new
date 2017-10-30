@@ -13,7 +13,7 @@ class Http {
         if (function_exists('curl_init')) {
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_HEADER, false);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 80);
             if ($params !== null) {
                 self::setParams($ch, $params);
             }

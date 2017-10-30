@@ -48,7 +48,11 @@ class Index {
         if(!$user) {
             // add
             $insertData['name'] = hc_filter($userInfo['nick']);
-            $insertData['users'] = time().rand(1000,9999);   // 第三方登录账号 统一时间戳加 4 位随机数
+            $insertData['users'] = hc_filter($userInfo['nick']);
+            $has_user = model('User')->getUserInfoByUsers($insertData);
+            if($has_user) {  // 判断用户名是否被注册
+                $insertData['users'] = hc_filter($userInfo['nick']).rand(100,999);
+            }
             $insertData['sex'] = $userInfo['gender'];
 			$insertData['pic'] = $userInfo['avatar'];
             $insertData['hits'] = 1;
@@ -58,16 +62,12 @@ class Index {
             $loginUser = model('User')->getUserInfoById($userid);
 
             // 登录成功 同步到论坛
-            $uc_email = $loginUser['users'].'@mail.com';
+            $uc_email = time().'@mail.com';
             $uc_uid = uc_user_register($loginUser['users'],$loginUser['openid'],$uc_email);  // 第三方登录同步到论坛 让openid作为密码
-            if($uc_uid > 0) {
+            if($uc_uid > 0) {  // 如果注册成功
                 list($uid,$username,$password,$email) = uc_user_login($loginUser['users'],$loginUser['openid']);
+                $jump_str .= uc_user_synlogin($uid);
             }
-
-            if($uid > 0) {
-                $jump_str .= uc_user_synlogin($uid);   // 同步完成输出一次 JS 脚本  让论坛登录
-            }
-
             session('user',$loginUser,'index');
             $last_url = session('last_url','','index');
             session('last_url',null);
