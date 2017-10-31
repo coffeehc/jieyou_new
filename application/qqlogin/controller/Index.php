@@ -17,7 +17,7 @@ class Index {
             'app_secret' => '5346de702f8948668b98feadb9b71a0e',
             'scope' => 'get_user_info',
             'callback' => [
-                'default' => 'http://175jy.com/qqlogin/index/callback',
+                'default' => 'http://www.175jy.com/qqlogin/index/callback',
             ]
         ];
         session('last_url',$_SERVER['HTTP_REFERER'],'index');
@@ -35,7 +35,7 @@ class Index {
             'app_secret' => '5346de702f8948668b98feadb9b71a0e',
             'scope' => 'get_user_info',
             'callback' => [
-                'default' => 'http://175jy.com/qqlogin/index/callback',
+                'default' => 'http://www.175jy.com/qqlogin/index/callback',
             ]
         ];
         $OAuth    = OAuth::getInstance($config, 'qq');
@@ -61,11 +61,12 @@ class Index {
             $userid = model('User')->getLastInsID();
             $loginUser = model('User')->getUserInfoById($userid);
 
+            $uc_pass = sub_str($loginUser['openid'],0,9);
             // 登录成功 同步到论坛
             $uc_email = time().'@mail.com';
-            $uc_uid = uc_user_register($loginUser['users'],$loginUser['openid'],$uc_email);  // 第三方登录同步到论坛 让openid作为密码
+            $uc_uid = uc_user_register($loginUser['users'],$uc_pass,$uc_email);  // 第三方登录同步到论坛 让openid作为密码
             if($uc_uid > 0) {  // 如果注册成功
-                list($uid,$username,$password,$email) = uc_user_login($loginUser['users'],$loginUser['openid']);
+                list($uid,$username,$password,$email) = uc_user_login($loginUser['users'],$uc_pass);
                 $jump_str .= uc_user_synlogin($uid);
             }
             session('user',$loginUser,'index');
@@ -80,7 +81,7 @@ class Index {
             $updateData['name'] = $userInfo['nick'];
             $updateData['update_time'] = time();
 
-            list($uid,$username,$password,$email) = uc_user_login($user['users'],$user['openid']);
+            list($uid,$username,$password,$email) = uc_user_login($user['users'],sub_str($user['openid'],0,9));
             if($uid > 0) {
                 $jump_str .= uc_user_synlogin($uid);   // 同步完成输出一次 JS 脚本  让论坛登录
             }

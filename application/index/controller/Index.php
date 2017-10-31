@@ -32,7 +32,6 @@ class Index extends BaseController
         $youshang_img = model('Adimg')->getYoushangImg();
         // 首页右下广告
         $youxia_img = model('Adimg')->getYouxiaImg();
-
         return $this->fetch('',[
             'jingping_img' => $jingping_img,
             'hotGames' => $hotGames,
