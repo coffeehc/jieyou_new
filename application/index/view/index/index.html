@@ -17,7 +17,7 @@
                                 <div class="hong20T">精品游戏推荐</div>
                                 <div class="box">
                                     {volist name="jingping_img" id="vo"}
-    			                    <div class='jptj'><div class='jptj2'><span class='cheng18B'>{$vo.gid|getGameNameById}</span></div><a href="{:url('Youxi/index',['id'=>$vo.gid])}"><img src="{$vo.jingping_img}" width='220' height='330' border='0' /></a></div>
+    			                    <div class='jptj'><div class='jptj2'><span class='cheng18B'>{$vo.gid|getGameNameById}</span></div><a href="{:url('Youxi/index',['id'=>$vo.gid])}" target="_blank"><img src="{$vo.jingping_img}" width='220' height='330' border='0' /></a></div>
                                     {/volist}
                                     <div style="clear:both"></div>
                                 </div>
@@ -30,11 +30,11 @@
                                 <div class="youxibox">
                                     {volist name="hotGames" id="vo"}
                                     <div class="youxi">
-                                        <div class="youxiimg"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}"><img src="{$vo.pic3}" width="200" height="100" border="0" /></div>
+                                        <div class="youxiimg"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}"  target="_blank"><img src="{$vo.pic3}" width="200" height="100" border="0" /></div>
     				                    <div class="youxibt">
-        					                <div class="inyouxi"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="点击进入游戏">进入游戏</a></div>
+        					                <div class="inyouxi"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="点击进入游戏"  target="_blank">进入游戏</a></div>
                                             <div class="youxiname">
-                                                <a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}">{:mb_substr($vo.name,0,8,'utf-8')}</a>
+                                                <a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}" target="_blank">{:mb_substr($vo.name,0,8,'utf-8')}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -45,7 +45,7 @@
                             <!--@热门游戏-->
 
                             <!-- 首页中部广告图-->
-                            <div class="box"><a href="{:url('Youxi/index',['id'=>$zhongbu_img.gid])}"><img src="{$zhongbu_img.zhongbu_img}" width="950" height="144" style="cursor:pointer;" /></a></div>
+                            <div class="box"><a href="{:url('Youxi/index',['id'=>$zhongbu_img.gid])}" target="_blank"><img src="{$zhongbu_img.zhongbu_img}" width="950" height="144" style="cursor:pointer;" /></a></div>
 
                             <!--最新游戏-->
                             <div class="box">
@@ -53,11 +53,11 @@
                                 <div class="youxibox">
                                     {volist name="newGames" id="vo"}
                                     <div class="youxi" style="width:200px;">
-                                        <div class="youxiimg"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}"><img src="{$vo.pic3}" width="200" height="100" border="0" /></div>
+                                        <div class="youxiimg"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}"  target="_blank"><img src="{$vo.pic3}" width="200" height="100" border="0" /></div>
                 				        <div class="youxibt">
-                					        <div class="inyouxi"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="点击进入游戏">进入游戏</a></div>
+                					        <div class="inyouxi"><a href="{:url('Youxi/index',['id'=>$vo.id])}" title="点击进入游戏"  target="_blank">进入游戏</a></div>
                                             <div class="youxiname">
-                                                <a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}">{:mb_substr($vo.name,0,8,'utf-8')}</a>
+                                                <a href="{:url('Youxi/index',['id'=>$vo.id])}" title="{$vo.name}" target="_blank">{:mb_substr($vo.name,0,8,'utf-8')}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@
                             <!--@最新开服-->
 
                             <!--右上广告-->
-                            <div class="r_gg3"><a href="{:url('youxi/index',['id'=>$youshang_img.gid])}"><img src="{$youshang_img.youshang_img}" border="0" /></a></div>
+                            <div class="r_gg3"><a href="{:url('youxi/index',['id'=>$youshang_img.gid])}" target="_blank"><img src="{$youshang_img.youshang_img}" border="0" /></a></div>
                             <!--@r_gg-->
 
                             <!--@新服预告-->
@@ -110,7 +110,7 @@
                             </div>
                             <!--@新服预告-->
                             <!--右下广告-->
-                            <div class="r_gg2"><a href="{:url('Youxi/index',['id'=>$youxia_img.gid])}"><img src="{$youxia_img.youxia_img}" /></a></div>
+                            <div class="r_gg2"><a href="{:url('Youxi/index',['id'=>$youxia_img.gid])}" target="_blank"><img src="{$youxia_img.youxia_img}" /></a></div>
                             <!--@r_gg-->
 
                             <!--游戏公告-->
@@ -130,7 +130,7 @@
                 <!--底部广告-->
                 <div class="h_gg">
                     {volist name="dibu_img" id="vo"}
-                    <div><a href="{:url('youxi/index',['id'=>$vo.gid])}"><img src="{$vo.dibu_img}" width="580" height="150" border="0" /></a></div>
+                    <div><a href="{:url('youxi/index',['id'=>$vo.gid])}" target="_blank"><img src="{$vo.dibu_img}" width="580" height="150" border="0" /></a></div>
                     {/volist}
 
                     <span style="clear:both"></span>
@@ -138,7 +138,7 @@
                 <!--@广告-->
 
                 <!--玩家相片-->
-                <div class="box">
+                <!-- <div class="box">
                     <div class="hong20T">玩家相片</div>
                     <div>
                         {volist name="users" id="vo"}
@@ -149,7 +149,7 @@
                         {/volist}
                     </div>
                     <div style="clear:both"></div>
-                </div>
+                </div> -->
                 <!--@玩家相片-->
 
                 <!--link-->

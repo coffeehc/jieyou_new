@@ -148,7 +148,7 @@
     <div class="main_image">
         <ul>
             {volist name="banner" id="vo"}
-            <li><a href="{:url('Youxi/index',['id'=>$vo.gid])}"><span class="imgs" style="background:url('{$vo.banner_img}') center top no-repeat"></span></a></li>
+            <li><a href="{:url('Youxi/index',['id'=>$vo.gid])}" target="_blank"><span class="imgs" style="background:url('{$vo.banner_img}') center top no-repeat"></span></a></li>
             {/volist}
         </ul>
         <a href="javascript:;" id="btn_prev"></a>
