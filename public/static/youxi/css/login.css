@@ -1,0 +1,38 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*网页公用登录*/
+.login_wrap{ position:relative}
+.loginLableBox{height:40px; line-height:40px; text-align:center; font-size:14px; color:#666666;position: absolute;top:1px;background: #E0E0E0;width: 298px; left:1px;}
+.loginLableBox ul li{width:149px;height:40px;line-height:40px;float:left;cursor:pointer}
+.loginLableBox ul li.loginLabel{color:#fff;background:#46A7B9;}
+.popBg{position:fixed;z-index:9998;top:0px;left:0px;background: rgb(0, 0, 0);opacity: 0.4;width:100%;height:100%; display:none}
+.popSignInfoBox{position:fixed;z-index:9999;background:#fafafb;border: 1px solid #d6d6d8;width:400px;height:auto;top:200px;left:50%;margin:0 0 0 -200px;padding-bottom:30px;display:none}
+.popSignInfoBox .popTopTit{ height:30px;line-height:30px;text-align:center;font-size:16px;color:#888;border-bottom:1px solid #ccc;padding:10px}
+.popSignInfoBox .popTopTit .popClose{position:absolute;top:0px;right:10px;font-size:30px;color:#999}
+.popSignInfoBox .popTopCont{ padding:20px 30px;text-align:left;font-size:20px;color:#f4614d;min-height:100px;height:auto !important;height:100px;text-indent:30px}
+.popSignInfoBox a.popBtn{ width:200px;padding:10px 20px; line-height:20px;background: #fc6e00;color: #fff;text-align:center;display:block;font-size:16px;margin:auto}
+/*未登录*/
+#user{ width:250px; height:185px;}
+#user-login-form1{width:230px; position:absolute; top:53px; left:40px; overflow:hidden;}
+#user-login-form1 ul{width:210px;}
+#user-login-form1 li{padding-bottom:9px;width:220px;}
+#user-login-form1 li img{vertical-align:middle;}
+#user-login-form1 .text1{width:215px;height:28px;line-height:22px;font-size:12px;text-indent:4px;border:1px solid #BDBDBD;background:#DCDCDC; color:#6C6C6C;}
+#user-login-form1 .text2{width:80px;height:22px;line-height:22px;font-size:12px;text-indent:4px;border:1px solid #BDBDBD;background:#DCDCDC; color:#6C6C6C;}
+#user-login-form1 .log_btn{border:0;width:100px;height:37px; float:left;background:url(../images/log_btn.png) no-repeat 0px -5px; cursor:pointer}
+#user-login-form1 .reg_btn{ width: 100px;height: 37px; float:left; background:url(../images/log_btn.png) no-repeat -114px -5px; display:inline-block; margin-left:9px; text-indent:-10000em; overflow:hidden;}
+#user-login-form1 input{vertical-align:middle;}
+#user-login-form1 a.lose{margin-left:10px;display:inline-block;padding-left:20px;height: 20px;line-height: 20px;}
+#user-login-form1 .auto{ margin-top:-5px; padding:0;}
+#user-login-form1 .auto a{ color:#707070;}
+#user-login-form1 .auto label{color:#707070;}
+/*登录后*/
+#logined{width:260px;padding:10px 0 0 20px;color:#4D4D4D;line-height: 30px;}
+#logined .Avatar{height:44px;line-height:20px;color:#fedf0b;padding-left:48px;background:url(../images/icon.png) no-repeat 4px -424px;}
+#logined .Avatar span a{color:#fedf0b;}
+#logined a{ color:#4D4D4D;}
+#logined a.play{background:url(../images/01.jpg) -561px -415px;height:41px;width:127px; margin:5px 0 10px 35px;display:block;overflow:hidden;text-indent:-1000em;}
+#logined strong{font-weight:normal;}
+#logined li{height:20px;line-height:20px;overflow:hidden;}
+.logindv{width: 215px; float:left; height: 42px;}

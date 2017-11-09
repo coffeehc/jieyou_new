@@ -1,243 +1,122 @@
-{include file="public/_meta"}
-<title>[{$youxi.name}]_一起玩.游戏_全国资讯热线：028-86051177</title>
+{include file="youxipublic/_meta"}
 <style type="text/css">
     body{height:100%;background-image: url('{$youxi.picmax}');	background-repeat: no-repeat;background-position:top;}
 </style>
 </head>
 
 <body>
-    <div align="center">
-        <div style="width:1200px">
-            <div class="touming">
-                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                    <tr align="center">
-                        <td height="50"><a href="/" title="官网首页">官网首页</a></td>
-                        <td><a href="{:url('Gamelist/index')}" title="游戏列表">游戏列表</a></td>
-                        <td><a href="{:url('Article/index')}" title="游戏资讯">游戏资讯</a></td>
-                        <td><span class="hong20T">{$youxi.name}</span>-<span class="hei18B">等你来战！</span></td>
-                        <td><a href="{:url('Article/index')}" title="常见问题">常见问题</a></td>
-                        <td>
-                            <a href="{:url('User/playedgame')}" target="_blank" title="玩家登录后，可以对游戏角色进行充值!">充值中心</a>
-                        </td>
-                        <td>&nbsp;</td>
-                    </tr>
-                </table>
+    <div class="main wrap clearfix">
+        {include file="youxipublic/_top"}
+        {include file="youxipublic/_left"}
+        <div class="banner_and_new clearfix">
+            <div class="banner fl" id="focus">
+                <ul>
+                    <li><a href="" target="_blank"><img src="{$youxi.pic4}"></a></li>
+                </ul>
             </div>
-            <div style="margin-top:400px" align="left">
-                <table width="100%" border="0" cellspacing="1" cellpadding="0">
-                    <tr>
-                        <td width="21%" valign="top">
-                            <div class="box_top">
-                                <a href="{:url('Game/index',['id'=>$kaishiyouxi])}"><img src="__STATIC__/images/start_game.jpg" width="260" height="133" border="0" /></a>
-                            </div>
-                            <div class="box" align="center">
-                                <div class="touming2" style="margin-top:10px" align="left">
-                                    {if condition="!$user"}
-                                    <!-- 没有登录 -->
-                                    <form id="user-login-form" name="form1" action="">
-                                        <table width="100%" border="0" cellspacing="1" cellpadding="0">
-                                            <tr>
-                                                <td colspan="2"><span class="hei18B">用户登陆</span><br />
-                                                    <hr size="1px" style="height:1px" /> </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="82">帐号：</td>
-                                                <td width="215">
-                                                    <label><input name="users" type="text" id="users"/></label>
-                                                 </td>
-                                            </tr>
-                                            <tr>
-                                                <td>密码：</td>
-                                                <td><input name="password" type="password" id="password" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>&nbsp;</td>
-                                                <td>
-                                                    <label><input type="button" id="user-login-submit" value="-= 登陆 =-" /></label>
-                                                    <label><input type="button" id="user-register-button" value="-= 注册 =-" /></label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" style="text-align:center;">
-                                                    <hr size="1px" style="height:1px" />
-                                                    <span class="hei14B">使用第三方登录</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <ul class="clear_here">
-                                                        <li class="o_qq">
-                                                            <a href="{:url('qqlogin/index/index')}">QQ账号登录</a>
-                                                        </li>
-                                                        <li class="o_wechat">
-                                                            <a href="{:url('wxlogin/index/index')}">微信账号登录</a>
-                                                        </li>
-                                                        <li class="o_weibo">
-                                                            <a href="{:url('wblogin/index/index')}">新浪微博账号</a>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </form>
-                                    <!-- @没有登录 -->
-                                    {else}
-                                    <!-- 已经登录 -->
-                                    <table width="100%" border="0" cellspacing="3" cellpadding="0">
-                                        <tr>
-                                            <td colspan="2" class="hei18B">玩家信息</td>
-                                        </tr>
-                                        <tr>
-                                            <td width="29%"><img src="{if condition='$user.pic'}{$user.pic}{else}/images/nopic.jpg{/if}" width="90" height="90" /></td>
-                                            <td width="71%" class="hei12">
-                                                <div>昵称：{$user.name}</div>
-                                                <div>QQ号：{$user.qq}</div>
-                                                <div>邮箱：{$user.email}</div>
-                                                <div>登陆次数：{$user.hits}</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2" class="hei18B">最近玩过的游戏</td>
-                                            {volist name=":getUserGameByUid($user.id)" id="vo" empty="$userServerEmpty"}
-                                            <tr>
-                                                <td nowrap="nowrap"><a href="{:url('Game/index',['id'=>$vo.gsid])}" title="点击进入游戏" target="_blank"><span class="hei12">{$vo.name}</span></a></td>
-                                                <td align="right"><span class="hei12">{$vo.update_time}</span></td>
-                                            </tr>
-                                            {/volist}
-                                        </tr>
-                                    </table>
-                                    <!-- @已经登录 -->
-                                    {/if}
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="bt_div cheng18B">近期将要开放的服务器</div>
-                                <div>
-                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                            <th width="52%" align="center">游戏服务器</th>
-                                            <th width="30%" align="center">时间</th>
-                                            <th width="18%" align="center">提醒</th>
-                                        </tr>
+            <!--微端下载 新手卡 VIP -->
+            <div class="threebtn">
+                <a href="{:url('Pay/index')}" target="_blank" class="btn2"><em></em><span><i>充值中心</i><br>好礼享不停</span></a>
+                {switch name="$youxi.id"}
+                    {case value="67"}<a href="/wd/guicd/175jy_gcd.exe" class=""><em></em><span><i>微端下载</i><br>仅需1秒急速下载</span></a>{/case}
+                    {case value="72"}<a href="/wd/qmcj/175jy_qmcj.exe" class=""><em></em><span><i>微端下载</i><br>仅需1秒急速下载</span></a>{/case}
+                    {case value="73"}<a href="/wd/jtfs/175jy_jtfs.exe" class=""><em></em><span><i>微端下载</i><br>仅需1秒急速下载</span></a>{/case}
+                    {case value="69"}<a href="/wd/bwzx/175jy_bwzx.exe" class=""><em></em><span><i>微端下载</i><br>仅需1秒急速下载</span></a>{/case}
+                    {case value="68"}<a href="/wd/myzs/175jy_myzs.exe" class=""><em></em><span><i>微端下载</i><br>仅需1秒急速下载</span></a>{/case}
+                    {case value="62"}<a href="/wd/lycq/lycqi.exe" class=""><em></em><span><i>微端下载</i><br>仅需1秒急速下载</span></a>{/case}
+                    {case value="82"}<a href="/wd/ztzn/175jy_ztzn.exe" class=""><em></em><span><i>微端下载</i><br>仅需1秒急速下载</span></a>{/case}
+                    {default /}<a href="" class=""><em></em><span><i>微端下载</i><br>仅需1秒急速下载</span></a>
+                {/switch}
 
-                                        {volist name="readyServer" id="vo" empty="$readyEmpty"}
-                                        <tr>
-                                            <td height="30" align="center">
-                                                <a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒">{$vo.game}{$vo.name}</a>
-                                            </td>
-                                            <td height="30" align="center">
-                                                {$vo.create_time}
-                                            </td>
-                                            <td width="14%" nowrap="nowrap"><a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm?content={:urlencode($vo.game.$vo.name.'开新区啦！')}&time={$vo.create_time}&advance=15&url={:urlencode("http://www.175jy.com/youxi/".$vo.id.".html")}" target="_blank" title="添加提醒"><img src="__STATIC__/images/naozhong.png" border="0" /></a></td>
-                                        </tr>
-                                        {/volist}
+                <a href="{:url('xinshouka',['id' => $youxi.id])}" target="_blank" class="btn"><em></em><span><i>新手礼包</i><br>新手必备</span></a>
+            </div>
+            <!--微端下载 新手卡 VIP -->
+        </div>
 
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="cheng18B bt_div">{$youxi.name}游戏资讯</div>
-                                <div>
-                                    {switch name="$youxi.id"}
-                                        {case value="67"}<div style="padding:5px"><a href="/wd/guicd/175jy_gcd.exe" style="color:red;" title="点击下载鬼吹灯之牧野诡事"><img src="/wd/guicd/gcd.jpg"/>微端下载</a></div>{/case}
-                                        {case value="72"}<div style="padding:5px"><a href="/wd/qmcj/175jy_qmcj.exe" style="color:red;" title="点击下载全民裁决微端"><img src="/wd/qmcj/gcd.jpg"/>微端下载</a></div>{/case}
-                                        {case value="73"}<div style="padding:5px"><a href="/wd/jtfs/175jy_jtfs.exe" style="color:red;" title="点击下载九天封神微端"><img src="/wd/jtfs/gcd.jpg"/>微端下载</a></div>{/case}
-                                        {case value="69"}<div style="padding:5px"><a href="/wd/bwzx/175jy_bwzx.exe" style="color:red;" title="点击下载霸王之心微端"><img src="/wd/bwzx/gcd.jpg"/>微端下载</a></div>{/case}
-                                        {case value="68"}<div style="padding:5px"><a href="/wd/myzs/175jy_myzs.exe" style="color:red;" title="点击下载新暮影战神微端"><img src="/wd/myzs/gcd.jpg"/>微端下载</a></div>{/case}
-                                        {case value="62"}<div style="padding:5px"><a href="/wd/lycq/lycqi.exe" style="color:red;" title="点击下载烈焰传奇微端"><img src="/wd/lycq/lycqi.jpg"/>微端下载</a></div>{/case}
-                                        {case value="82"}<div style="padding:5px"><a href="/wd/ztzn/175jy_ztzn.exe" style="color:red;" title="点击下载战天之怒之秀丽江山微端"><img src="/wd/images/img01.jpg"/>微端下载</a></div>{/case}
-                                    {/switch}
-                                    {volist name="gameArticle" id="vo" empty="$articleEmpty"}
-                                    <div style="padding:5px">
-                                        <a href="{:url('Article/news',['id'=>$vo.id])}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,18,'utf-8')}</a>
-                                    </div>
-                                    {/volist}
-                                </div>
-                            </div>
-                        </td>
-                        <td width="79%" valign="top">
-                            <div class="hei18B box_top" style="padding:10px">推荐服务器</div>
-                            <div class="box_top" style="height:80px;padding:10px">
-                                {volist name="recServer" id="vo" empty="$emptyServer"}
-                                <div style="width:420px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px">
-                                    <img src="__STATIC__/images/shou.png" align="absmiddle" />
-                                    <a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入游戏" target="_blank">{$vo.game}{$vo.name}-<span class='hui12'>{$vo.create_time}</span></a>
-                                    <img src="__STATIC__/images/hotser.gif" width="37" height="19" align="absmiddle" />
-                                    <img src="__STATIC__/images/newser.gif" width="37" height="19" align="absmiddle" />
-                                </div>
-                                {/volist}
-                            </div>
-                            <div class="hei18B box" style="padding:10px">所有服务器</div>
-                            <div class="box_top" style="padding:10px">
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                    <tr>
-                                        <td>
-                                            {volist name="gameServer" id="vo"}
-                                            <div style="width:415px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px">
-                                                <img src="__STATIC__/images/shou.png" align="absmiddle" />
-                                                <a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入游戏" target="_blank"> {$vo.game}{$vo.name}-<span class='hui12'>{$vo.create_time}</span></a>
-                                                <img src="__STATIC__/images/hotser.gif" width="37" height="19" align="absmiddle" />
-                                            </div>
-                                            {/volist}
-                                            {in name="$user.users" value="hecheng"}
-                                            {volist name="readyServer" id="vo" empty="$readyEmpty"}
-                                            <div style="width:415px;margin-right:10px;float:left; background-color:#EEEEEE;padding:10px;margin:5px">
-                                                <img src="__STATIC__/images/shou.png" align="absmiddle" />
-                                                <a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入游戏" target="_blank"> {$vo.game}{$vo.name}-<span class='hui12'>{$vo.create_time}</span></a>
-                                                <img src="__STATIC__/images/hotser.gif" width="37" height="19" align="absmiddle" />
-                                            </div>
-                                            {/volist}
-                                            {/in}
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="youxipage" style="text-align:left;">
-                                {$gameServer->render()}
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+        <div class="rel main-right">
+            <!--新闻公告-->
+            <div class="w_new">
+                <div class="w_newnav">
+                    <p><a href="{:url('article',['id' => $youxi.id])}" id="news_more" title="更多"><img src="__STATIC__/youxi/picture/jia.jpg" alt=""></a></p>
+                    <ul class="clear">
+                        <li class="news_nav" rec="zonghe/" attr="01"><a class="current ie6"  data="new1">综合</a></li>
+                        <li class="news_nav" rec="xinwen/" attr="02"><a class="ie6"  data="new2">新闻</a></li>
+                        <li class="news_nav" rec="gonggao/" attr="03"><a class="ie6"  data="new3">公告</a></li>
+                        <li class="news_nav" rec="huodong/" attr="04"><a class="ie6"  data="new4">活动</a></li>
+                    </ul>
+                </div>
+
+                <div class="new_contents">
+                    <div id="new1" style="display:block;">
+                        <p class="headlines">
+                            {volist name="gameArticle" id="vo" length="1"}
+                            <a href="{:url('Article/news',['id'=>$vo.id])}" target="_blank">{:mb_substr($vo.title,0,18,'utf-8')}</a>
+                            {/volist}
+                        </p>
+                        <ul>
+                            {volist name="gameArticle" id="vo" offset="1" length="7"}
+                            <li><a class="w-new-title" href="" target="_blank">[公告]</a><a class="w-new-content" href="{:url('Article/news',['id'=>$vo.id])}" title="{:mb_substr($vo.title,0,18,'utf-8')}" target="_blank">{:mb_substr($vo.title,0,18,'utf-8')}</a>[{$vo.create_time}]</li>
+                            {/volist}
+                        </ul>
+                    </div>
+
+                    <div id="new2" style="display:none;">
+                        <p class="headlines">
+
+                        </p>
+                        <ul>
+
+                        </ul>
+                    </div>
+                    <div id="new3" style="display:none;">
+                        <p class="headlines">
+
+                        </p>
+                        <ul>
+                        </ul>
+                    </div>
+                    <div id="new4" style="display:none;">
+                        <p class="headlines">
+
+                        </p>
+                        <ul>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--新闻公告-->
+            <!--游戏特色-->
+            <div class="yxts">
+                <p class="yxtsfont">{$youxi.content}</p>
+            </div>
+
+            <div class="zhiye layout3 clearfix">
+                <div class="box fl">
+                    <div class="rel box_title">
+                        <p class="tab-title abs">游戏资料</p>
+                        <i class="tab-title-line abs yxzl"></i>
+                        <a class="more_c" href="" title="更多"><img src="__STATIC__/youxi/picture/jia1.jpg" alt=""></a>
+                    </div>
+                    <div class="fl data-list-con"></div>
+                </div>
             </div>
         </div>
-        {include file="public/_footer"}
-        <script type="text/javascript">
-            var SCOPE = {
-                'login_url': "{:url('Register/login')}",
-                'register_url' : "{:url('Register/index')}",
-            }
-        </script>
-        <script type="text/javascript">
-            // function countTime() {
-            //     // 获取当前时间
-            //     var date = new Date();
-            //     var now = date.getTime();
-            //     // 设置截止时间
-            //     var endDate = new Date("2017-10-17 11:00:00");
-            //     var end = endDate.getTime();
-            //     // 时间差
-            //     var leftTime = end-now;
-            //     // 定义变量 d,h,m,s保存倒计时的时间
-            //     var d,h,m,s;
-            //
-            //     d = Math.floor(leftTime/1000/60/60/24);
-            //     h = Math.floor(leftTime/1000/60/60%24);
-            //     m = Math.floor(leftTime/1000/60%60);
-            //     s = Math.floor(leftTime/1000%60);
-            //     //将倒计时赋值到div中
-            //     document.getElementById("_d").innerHTML = d+"天";
-            //     document.getElementById("_h").innerHTML = h+"时";
-            //     document.getElementById("_m").innerHTML = m+"分";
-            //     document.getElementById("_s").innerHTML = s+"秒";
-            //     if(leftTime<0) {
-            //         clearInterval(t);
-            //         window.location.reload();
-            //     }
-            // }
-            // countTime();
-            // var t = setInterval(countTime,1000);
-        </script>
+        <div class="cl"></div>
     </div>
-</body>
 
-</html>
+
+<script type="text/javascript">
+//首页新闻切换
+$(".w_newnav ul li a").mouseover(function() {
+    var title = $(this);
+    $(this).parent().siblings().find("a").removeClass("current");
+    $(this).parent().css({"z-index":"2"});
+    $(this).parent().siblings("li").css({"z-index":"1"});
+    $(this).addClass("current");
+    $(".new_contents").find("div").hide();
+    $(".new_contents").find("#" + title.attr("data")).show();
+});
+</script>
+
+{include file="youxipublic/_foot"}

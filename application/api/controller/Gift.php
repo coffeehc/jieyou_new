@@ -14,7 +14,7 @@ class Gift extends Controller {
         }
         $user = session('user','','index');
         if(!$user) {
-            return $this->error('登录过期，请重新登录','index/index/index');
+            return show(0,'你还没有登录，请先登录:)');
         }
         $gsid = input('post.gsid'); // 游戏服务器ID
         $flag = true;

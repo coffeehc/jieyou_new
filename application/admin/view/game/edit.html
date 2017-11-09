@@ -59,21 +59,21 @@
             </div>
         </div> -->
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">游戏中图：</label>
+            <label class="form-label col-xs-4 col-sm-2">游戏小图：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <input id="file_upload_pic3"  type="file" multiple="true" >（220*120首页热门游戏小图片）
                 <img id="upload_org_code_img_pic3" src="{$game.pic3}" class="radius">
                 <input id="file_upload_image_pic3" name="pic3" type="hidden" multiple="true" value="{$game.pic3}">
             </div>
         </div>
-        <!-- <div class="row cl">
+        <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">游戏中图：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input id="file_upload_pic4"  type="file" multiple="true" >（500*300首页正中游戏页面图片）
-                <img style="display: none" id="upload_org_code_img_pic4" src="" class="radius">
-                <input id="file_upload_image_pic4" name="pic4" type="hidden" multiple="true" value="">
+                <input id="file_upload_pic4"  type="file" multiple="true" >（634*433首页正中游戏页面图片）
+                <img id="upload_org_code_img_pic4" src="{$game.pic4}" class="radius">
+                <input id="file_upload_image_pic4" name="pic4" type="hidden" multiple="true" value="{$game.pic4}">
             </div>
-        </div> -->
+        </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">游戏大图：</label>
             <div class="formControls col-xs-8 col-sm-9">
@@ -85,7 +85,8 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">游戏内容：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<script id="editor" name="content" type="text/plain" style="width:100%;height:400px;">{$game.content}</script>
+				<textarea name="content" rows="8" cols="80">{$game.content}</textarea>
+				<!-- <script id="editor" name="content" type="text/plain" style="width:100%;height:400px;">{$game.content}</script> -->
 			</div>
 		</div>
 		<div class="row cl">

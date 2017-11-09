@@ -1,0 +1,42 @@
+{include file="youxipublic/_meta"}
+<style type="text/css">
+    body{height:100%;background-image: url('{$youxi.picmax}');	background-repeat: no-repeat;background-position:top;}
+</style>
+</head>
+
+<body>
+    <div class="main wrap clearfix">
+        {include file="youxipublic/_top"}
+        {include file="youxipublic/_left"}
+        <div class="card-wrap">
+            <div class="con-title">新闻中心
+                <p>您当前所在的位置：<a href="{:url('index',['id' => $youxi.id])}">{$youxi.name}</a>>新闻中心</p>
+            </div>
+            <div class="contains">
+                <div class="select_new_wrap"></div>
+                <div class="cont-tab new-tab">
+                    <ul class="clearfix">
+                        <li class=""><a href="" title="综合" >综合</a></li>
+                        <li class=""><a href="" title="新闻" >新闻</a></li>
+                        <li class=""><a href="" title="公告" >公告</a></li>
+                        <li class=""><a href="" title="活动" >活动</a></li>
+                    </ul>
+                    <div class="new-h cont-h" data="0" style="left:0px;"></div>
+                </div>
+                <div class="new_list_wrap radiders">
+                    <ul>
+                        {volist name="gameArticle" id="vo"  offset="0" length="19"}
+                        <li>
+                            <span class="title-num">[综合]</span>
+                            <a href="{:url('Article/news',['id'=>$vo.id])}" title="{:mb_substr($vo.title,0,18,'utf-8')}" target="_blank">{:mb_substr($vo.title,0,18,'utf-8')}</a>
+                            {$vo.create_time}
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+                <div class="simple-pagination" id="light-pagination"></div>
+            </div>
+            <div class="xinbg"></div>
+        </div>
+    </div>
+    {include file="youxipublic/_foot"}

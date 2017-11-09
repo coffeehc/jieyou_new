@@ -1,0 +1,51 @@
+{include file="youxipublic/_meta"}
+<style type="text/css">
+    body {
+        height: 100%;
+        background-image: url('{$youxi.picmax}');
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+</style>
+</head>
+
+<body>
+    <div class="main wrap clearfix">
+        {include file="youxipublic/_top"} {include file="youxipublic/_left"}
+        <div class="card-wrap">
+            <div class="con-title">新手礼包领取
+                <p>您当前所在的位置：
+                    <a href="{:url('index',['id' => $youxi.id])}">{$youxi.name}</a>>新手礼包领取</p>
+            </div>
+            <div class="contains">
+                <div class="small_title">
+                    <h1>《{$youxi.name}》新手卡领取</h1>
+                </div>
+                <div class="card-box">
+                    <!--newslist star-->
+                    <div class="second_main">
+                        <div class="newscont">
+                            <h1>领取新手卡</h1>
+                            <div class="txt novice_card_content">
+                                请选择游戏服：
+                                <select id="gsid" name="gsid" style="padding:4px;">
+                                    {volist name="serverList" id="vo"}
+                                    <option value="{$vo.id}">{$vo.name}</option>
+                                    {/volist}
+                                </select>
+                                请选择卡类型：
+                                <select id="tid" name="tid" style="padding:4px;">
+                                    <option value="">新手礼包</option>
+                                </select>
+                                &nbsp;&nbsp;
+                                <input type="button" style=" cursor:pointer;padding:4px;" name="submit" class="qlb" id="submit" value="  领 取  ">
+                                <p id="cardInfo" style="color:red;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--newslist end-->
+            </div>
+        </div>
+    </div>
+    {include file="youxipublic/_foot"}

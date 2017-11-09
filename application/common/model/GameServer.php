@@ -108,7 +108,7 @@ class GameServer extends BaseModel {
                 ->field(true)
                 ->where("create_time <= ".time()." AND gid= '$gid'")
                 ->order('sid desc')
-                ->limit(2)
+                ->limit(3)
                 ->select();
         return $res;
     }
@@ -132,7 +132,7 @@ class GameServer extends BaseModel {
                 ->field(true)
                 ->where("create_time <= ".time()." and gid='$gid'")
                 ->order('sid desc')
-                ->paginate();
+                ->select();
         return $res;
     }
 

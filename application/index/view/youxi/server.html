@@ -1,0 +1,136 @@
+{include file="youxipublic/_meta"}
+<link href="__STATIC__/youxi/css/server.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    body {
+        height: 100%;
+        background-image: url('{$youxi.picmax}');
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+
+    .hotGame_wrap {
+        padding-top: 0px;
+    }
+
+    .aisle {
+        position: absolute;
+        right: -40px;
+        top: 30px;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="main wrap clearfix">
+
+        {include file="youxipublic/_top"}
+        <div class="main-left">
+            <div class="login_wrap">
+
+                <div id="user">
+                    {if condition="!$user"}
+                    <div class="loginLableBox">
+                        <span>用户登录</span>
+                    </div>
+                    <form id="user-login-form1" name="form1" style="display:block;">
+                        <div id="login_tip"></div>
+                        <ul>
+                            <li>
+                                <input type="text" name="users" id="users" status="error" class="text1" onfocus="if (this.value=='请输入用户名')this.value=''" onblur="if (this.value=='')this.value='请输入用户名'" value="请输入用户名" />
+                            </li>
+                            <li>
+                                <input type="password" name="password" id="password" status="error" class="text1" onfocus="if (this.value=='请输入密码')this.value=''" onblur="if (this.value=='')this.value='请输入密码'" value="请输入密码" />
+                            </li>
+                            <div class="touming2">
+                                <div class="logindv">
+                                    <input type="button" id="user-login-submit1" class="log_btn">
+                                    <a class="reg_btn" href="/" target="_blank">立即注册</a>
+                                    <div class="cl"></div>
+                                </div>
+                            </div>
+                            <li class="auto">
+                                <p class="third_p">
+                                    <span class="oth_third">第三方登录:</span>
+                                    <a class="abs qqlogin" href="{:url('qqlogin/index/index')}" title="用QQ账号登录" target="_blank"></a>
+                                    <a class="abs wxlogin" href="{:url('wxlogin/index/index')}" title="用微信账号登录" target="_blank"></a>
+                                    <a class="abs wblogin" href="{:url('wblogin/index/index')}" title="用微博账号登录" target="_blank"></a>
+                                </p>
+                            </li>
+                        </ul>
+                    </form>
+                    {else}
+                    <div id="logined" >
+                        <p>欢迎您：<span style="color:#55B2C3; font-weight:bold;" id="uname">{$user.name}</span></p>
+                        <p>最近玩过的游戏<a href="" id="newServ" style="color:#55B2C3;"></a></p>
+                        {volist name=":getUserGameByUid($user.id)" id="vo"}
+                        <p><a href="{:url('Game/index',['id'=>$vo.gsid])}" id="lastServ" target="_blank" style="color:#55B2C3;">{$vo.name}</a></p>
+                        {/volist}
+                    </div>
+                    {/if}
+                </div>
+            </div>
+            <div class="leftside_menu kefu">
+                <div class="rel box_title">
+                    <p class="tab-title abs">客服中心</p>
+                    <i class="tab-title-line abs"></i>
+                </div>
+                <div class="kfzx-wrap">
+                    <p>在线客服：<a href="" target="_blank" rel="nofollow">点击进入>></a></p>
+                    <p>客服热线：028-86051177<br>服务监督：9:00-18:00</p>
+                     <!-- <p>客服论坛：<a href="" target="_blank" rel="nofollow">点击进入>></a></p> -->
+                     <p>官方QQ交流群：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=176903662f155b79532b8bde5877d43dc33facb5bc9fb21b35d21ba20122ed92"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="一起玩玩家群" title="一起玩玩家群"></a></p>
+                     <div class="kfzx-btn"><a href="" target="_blank" rel="nofollow" title="进入客服中心">进入客服中心</a></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-wrap">
+            <div class="con-title">服务器列表
+                <p>您当前所在的位置：<a href="{:url('index',['id' => $youxi.id])}">{$youxi.name}</a>&gt;<a>服务器列表</a></p>
+            </div>
+            <div class="contains">
+                <div class="data">
+                    <div class="shuoming">
+                        <p><i class='tip1'></i> 通畅</p>
+                        <p><i class='tip2'></i> 待开</p>
+                        <p><i class='tip3'></i> 火爆</p>
+                        <p><i class='tip4'></i> 维护</p>
+                    </div>
+                    <div class="tuijian">
+                        <h3 class="tuijian-w">推荐服务器：</h3>
+                        <ul class="clearfix" id="recom_server">
+                            {volist name="recServer" id="vo"}
+                            <li class="hot_img">
+                                <a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入游戏" target="_blank">
+                                    <i class="tip1"></i>
+                                    <span class="ser_m">{$vo.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.create_time}</span>
+                                </a>
+                            </li>
+                            {/volist}
+                        </ul>
+                    </div>
+                    <div class="choose_ser clearfix">
+                        <input type="text" onBlur="if (value ==''){value='选择服务器'}" onClick="if(this.value=='选择服务器')this.value=''" value="选择服务器" id="snum" class="text" onKeyUp="value=value.replace(/[^\d]/g,'') "><a href="javascript:passport();" class="play" title="进入">进&nbsp;&nbsp;入</a>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="all" id="all_server_list">
+                        <h3 style="font-size:18px; padding-bottom:10px;">所有服务器：</h3>
+                        <ul class="clearfix" id="all_server">
+                            {volist name="gameServer" id="vo"}
+                            <li class="hot_img">
+                                <a href="{:url('Game/index',['id'=>$vo.id])}" title="点击进入游戏" target="_blank">
+                                    <i class="tip3"></i>
+                                    <span class="ser_m">{$vo.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.create_time}</span>
+                                </a>
+                            </li>
+                            {/volist}
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="xinbg"></div>
+        </div>
+    </div>
+    {include file="youxipublic/_foot"}

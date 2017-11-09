@@ -1,0 +1,90 @@
+<div class="main-left">
+    <div class="start_game">
+        <div class="abs fla"><img src="__STATIC__/youxi/picture/start_btn.jpg"></div>
+        <a class="abs start" href="{:url('server',['id'=>$youxi.id])}" title="开始游戏"></a>
+    </div>
+    <div class="login_wrap">
+        <div id="user">
+            {if condition="!$user"}
+            <div class="loginLableBox">
+                <span>用户登录</span>
+            </div>
+            <form id="user-login-form1" name="form1" style="display:block;">
+                <div id="login_tip"></div>
+                <ul>
+                    <li>
+                        <input type="text" name="users" id="users" status="error" class="text1" onfocus="if (this.value=='请输入用户名')this.value=''" onblur="if (this.value=='')this.value='请输入用户名'" value="请输入用户名" />
+                    </li>
+                    <li>
+                        <input type="password" name="password" id="password" status="error" class="text1" onfocus="if (this.value=='请输入密码')this.value=''" onblur="if (this.value=='')this.value='请输入密码'" value="请输入密码" />
+                    </li>
+                    <div class="touming2">
+                        <div class="logindv">
+                            <input type="button" id="user-login-submit1" class="log_btn">
+                            <a class="reg_btn" href="{:url('register/index')}" target="_blank">立即注册</a>
+                            <div class="cl"></div>
+                        </div>
+                    </div>
+                    <li class="auto">
+                        <span style="color:#eee;">第三方登录</span>
+                        <p class="third_p">
+                            <span class="oth_third">第三方登录:</span>
+                            <a class="abs qqlogin" href="{:url('qqlogin/index/index')}" title="用QQ账号登录" target="_blank"></a>
+                            <a class="abs wxlogin" href="{:url('wxlogin/index/index')}" title="用微信账号登录" target="_blank"></a>
+                            <a class="abs wblogin" href="{:url('wblogin/index/index')}" title="用微博账号登录" target="_blank"></a>
+                        </p>
+                    </li>
+                </ul>
+            </form>
+            {else}
+            <div id="logined" style="">
+                <p>欢迎您：<span style="color:#55B2C3; font-weight:bold;" id="uname">{$user.name}</span></p>
+                <p>最近玩过的游戏<a href="" id="newServ" style="color:#55B2C3;"></a></p>
+                {volist name=":getUserGameByUid($user.id)" id="vo"}
+                <p><a href="{:url('Game/index',['id'=>$vo.gsid])}" id="lastServ" target="_blank" style="color:#55B2C3;">{$vo.name}</a></p>
+                {/volist}
+            </div>
+            {/if}
+        </div>
+
+    </div>
+    <div class="leftside_menu">
+        <div class="rel box_title">
+            <p class="tab-title abs">推荐服务器</p>
+            <i class="tab-title-line2 abs"></i>
+            <a class="more_c"  href="{:url('server',['id'=>$youxi.id])}" title="更多"><img src="__STATIC__/youxi/picture/jia1.jpg" alt=""></a>
+        </div>
+        <div class="server-tj-wrap">
+            <div class="s-title">
+                <p style="margin-left:27px;">区服</p>
+                <p style="margin-left:49px;">日期</p>
+                <p style="margin-left:50px;">区服状态</p>
+            </div>
+            <ul id="slist">
+                {volist name="gameServer" id="vo" length="5"}
+                <li>
+                    <a href="{:url('Game/index',['id'=>$vo.id])}" target="_blank" alt="点击进入游戏">{$vo.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.create_time}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;火爆开启</a>
+                </li>
+                {/volist}
+            </ul>
+            <div class="aisle clearfix">
+                <input type="text" onBlur="if (value ==''){value='选择服务器'}" onClick="if(this.value=='选择服务器')this.value=''" value="选择服务器" id="snum" class="text" onKeyUp="value=value.replace(/[^\d]/g,'') "><a href="javascript:passport();" class="play"
+                    title="进入">进&nbsp;&nbsp;入</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="leftside_menu kefu">
+        <div class="rel box_title">
+            <p class="tab-title abs">客服中心</p>
+            <i class="tab-title-line abs"></i>
+        </div>
+        <div class="kfzx-wrap">
+            <p>在线客服：<a href="" target="_blank" rel="nofollow">点击进入>></a></p>
+            <p>客服热线：028-86051177<br>服务监督：9:00-18:00</p>
+            <!-- <p>客服论坛：<a href="" target="_blank" rel="nofollow">点击进入>></a></p> -->
+            <p>官方QQ交流群：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=176903662f155b79532b8bde5877d43dc33facb5bc9fb21b35d21ba20122ed92"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="一起玩玩家群" title="一起玩玩家群"></a></p>
+            <div class="kfzx-btn"><a href="" target="_blank" rel="nofollow" title="进入客服中心">进入客服中心</a></div>
+        </div>
+    </div>
+</div>

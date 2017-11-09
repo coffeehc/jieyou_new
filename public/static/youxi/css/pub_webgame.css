@@ -1,0 +1,30 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*网页游戏公用顶部*/
+.top_wrap{ height:32px; line-height:32px; background:#fefdfb; min-width:1000px; overflow:hidden;}
+#top{ width:1000px; margin:0 auto; padding-left:15px;}
+#top .top-left{ float:left;}
+#top .top-left a{ margin-right:15px; color:#555555;}
+#top .top-left a:hover{color:#C00;}
+#top .top-left .logo{ width:116px; height:32px; background:url(../images/small-logo.png) no-repeat; float:left; margin-right:40px;}
+#top .top-left .hot_game{ font-weight:bold; color:#ff4500; margin-right:10px;}
+#top .hot{ padding-right:28px; background:url(../images/hot.jpg) no-repeat right center;}
+#top .top-right{ float:right;}
+#top .top-right a{color:#555555;}
+#top .top-right a:hover{color:#C00;}
+.separate5{ padding:0 5px; color:#999999;}
+.separate10{ padding:0 10px; color:#999999;}
+
+/*网页游戏公用底部*/
+/* footer */
+.footer_wrap{ background:#e5e5e5; min-width:1000px;}
+.footer{ width:1000px; margin:0 auto; padding:10px 0 10px 0; overflow:hidden;}
+.footer .f-logo{  float:left; width:240px; overflow:hidden; margin-top:15px;}
+.company_info{ float:left; width:690px; height:122px; padding-left:35px; padding-top:10px; overflow:hidden; background:url(../images/foot-bj.jpg) left top no-repeat;}
+.company_info p{ line-height:24px;}
+.company_info a{ }
+.company_info a:hover{ text-decoration:underline;}
+
+
+
+

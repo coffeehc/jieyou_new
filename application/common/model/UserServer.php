@@ -10,7 +10,7 @@ class UserServer extends Model {
      * @return [type]     [description]
      */
     public function getPlayedGameByUid($id) {
-        $res = $this->field(true)->where('userid='.$id)->order('create_time desc')->paginate();
+        $res = $this->field(true)->where('userid='.$id)->order('update_time desc')->paginate();
         return $res;
     }
 

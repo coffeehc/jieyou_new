@@ -1,0 +1,22 @@
+<input type="hidden" name="gid" id="gid" value="{$youxi.gid}">
+
+<!-- 底部 -->
+<div class="hotGame_wrap">
+    <div id="hotgame_foot" class="hotGame">
+        <label class="recom"></label></div>
+</div>
+<div class="footer_wrap" style="font-size:14px;">
+    {include file="public/_footer"}
+</div>
+<!--@底部-->
+<script src="__STATIC__/youxi/js/function.js"></script>
+<script type="text/javascript">
+    var SCOPE = {
+        'login_url': "{:url('Register/login')}",
+        'getserver_url': "{:url('api/Getserver/index')}",
+        'getgift_url': "{:url('api/Gift/index')}"
+    }
+</script>
+</body>
+
+</html>

@@ -4,19 +4,38 @@ use think\Controller;
 
 class Youxi extends BaseController {
 
+    private $data = [];
+    private $youxi = [];
+    private $recServer = [];
+    private $gameServer = [];
+    /**
+     * 初始化
+     */
+    public function _initialize() {
+        parent::_initialize();
+        $this->data = input('param.');
+        $this->youxi = model('Game')->get($this->data['id']);
+        // 图片路径转换
+        $this->youxi['picmax'] = str_replace('\\','/',$this->youxi['picmax']);
+        // 推荐服务器
+        $this->recServer = model('GameServer')->getRecServerByGid($this->youxi['gid']);
+        
+        // 所有服务器
+        $this->gameServer = model('GameServer')->getGameServerByGid($this->youxi['gid']); 
+    }
+
     /**
      * 游戏页面
      * @return [type] [description]
      */
     public function index() {
-        $data = input('param.');
-        $youxi = model('Game')->get($data['id']);
-
-        // 图片路径
-
-        $youxi['picmax'] = str_replace('\\','/',$youxi['picmax']);
-
-
+        $data = $this->data;
+        $youxi = $this->youxi;
+        // 推荐服务器
+        $recServer = $this->recServer;
+        // 所有服务器
+        $gameServer = $this->gameServer;  
+        
         // 近期将要开放的服务器
         $readyServer = model('GameServer')->getReadyServerByGid($youxi['gid']);
         $readyEmpty = '<tr><td height="100" colspan="3" align="center" class="cheng">敬请期待</td></tr>';
@@ -24,13 +43,6 @@ class Youxi extends BaseController {
         // 游戏资讯
         $gameArticle = model('Article')->getGameArticleByGid($youxi['id']);
         $articleEmpty = '<div align="center" style="height:50px;padding-top:30px">暂时还没有游戏资讯!</div>';
-
-        // 推荐服务器
-
-        $recServer = model('GameServer')->getRecServerByGid($youxi['gid']);
-
-        // 所有服务器
-        $gameServer = model('GameServer')->getGameServerByGid($youxi['gid']);
 
         $emptyServer = '<div>
                             <span class="cheng">游戏还有</span>
@@ -63,22 +75,22 @@ class Youxi extends BaseController {
             session('sid',$statsId,'index');
         }
 
-        $isUser = $this->getLoginUser();
-        $kaishiyouxi = 0;
-        if(!$isUser) {
-            if(!$recServer->isEmpty()) {
-                $kaishiyouxi = $recServer[0]['id'];
-            }
-        }else {
-            $isPlayedGame = model('UserServer')->getIsPlayedGame($isUser['id'],$data['id']);
-            if($isPlayedGame) {
-                $kaishiyouxi =$isPlayedGame['id'];
-            }else {
-                if(!$recServer->isEmpty()) {
-                    $kaishiyouxi = $recServer[0]['id'];
-                }
-            }
-        }
+        // $isUser = $this->getLoginUser();
+        // $kaishiyouxi = 0;
+        // if(!$isUser) {
+        //     if(!$recServer->isEmpty()) {
+        //         $kaishiyouxi = $recServer[0]['id'];
+        //     }
+        // }else {
+        //     $isPlayedGame = model('UserServer')->getIsPlayedGame($isUser['id'],$data['id']);
+        //     if($isPlayedGame) {
+        //         $kaishiyouxi =$isPlayedGame['id'];
+        //     }else {
+        //         if(!$recServer->isEmpty()) {
+        //             $kaishiyouxi = $recServer[0]['id'];
+        //         }
+        //     }
+        // }
 
 
         return $this->fetch('',[
@@ -89,8 +101,61 @@ class Youxi extends BaseController {
             'articleEmpty' => $articleEmpty,
             'recServer' => $recServer,
             'gameServer' => $gameServer,
-            'kaishiyouxi' => $kaishiyouxi,
+            // 'kaishiyouxi' => $kaishiyouxi,
             'emptyServer' => $emptyServer,
+        ]);
+    }
+
+    /**
+     * 服务器列表页
+     * @return [type] [description]
+     */
+    public function server() {
+        $data = $this->data;
+        $youxi = $this->youxi;
+        // 推荐服务器
+        $recServer = $this->recServer;
+        // 所有服务器
+        $gameServer = $this->gameServer; 
+        return $this->fetch('',[
+            'youxi' => $youxi,
+            'recServer' => $recServer,
+            'gameServer' => $gameServer,
+        ]);
+    }
+
+    /**
+     * 文章列表页面
+     * @return [type] [description]
+     */
+    public function article() {
+        $data = $this->data;
+        $youxi = $this->youxi;
+        // 所有服务器
+        $gameServer = $this->gameServer; 
+        // 游戏资讯
+        $gameArticle = model('Article')->getGameArticleByGid($youxi['id']);
+        return $this->fetch('',[
+            'youxi' => $youxi,
+            'gameServer' => $gameServer,
+            'gameArticle' => $gameArticle,
+        ]);
+    }
+
+    /**
+     * 新手礼包页面
+     */
+    public function xinshouka() {
+        $data = $this->data;
+        $youxi = $this->youxi;
+        // 所有服务器
+        $gameServer = $this->gameServer; 
+        // 游戏对于的服务器列表
+        $serverList = model('GameServer')->getGameServerByGid($youxi['gid']);
+        return $this->fetch('',[
+            'youxi' => $youxi,
+            'gameServer' => $gameServer,
+            'serverList' => $serverList,
         ]);
     }
 }
