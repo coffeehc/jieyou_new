@@ -37,7 +37,7 @@
                 </ul>
             </form>
             {else}
-            <div id="logined" style="">
+            <div id="logined">
                 <p>欢迎您：<span style="color:#55B2C3; font-weight:bold;" id="uname">{$user.name}</span></p>
                 <p>最近玩过的游戏<a href="" id="newServ" style="color:#55B2C3;"></a></p>
                 {volist name=":getUserGameByUid($user.id)" id="vo"}

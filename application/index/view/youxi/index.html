@@ -55,7 +55,7 @@
                         </p>
                         <ul>
                             {volist name="gameArticle" id="vo" offset="1" length="7"}
-                            <li><a class="w-new-title" href="" target="_blank">[公告]</a><a class="w-new-content" href="{:url('Article/news',['id'=>$vo.id])}" title="{:mb_substr($vo.title,0,18,'utf-8')}" target="_blank">{:mb_substr($vo.title,0,18,'utf-8')}</a>[{$vo.create_time}]</li>
+                            <li><a class="w-new-title" href="" target="_blank">[综合]</a><a class="w-new-content" href="{:url('news',['id'=>$youxi.id,'aid'=>$vo.id])}" title="{:mb_substr($vo.title,0,18,'utf-8')}" target="_blank">{:mb_substr($vo.title,0,18,'utf-8')}</a>[{$vo.create_time}]</li>
                             {/volist}
                         </ul>
                     </div>

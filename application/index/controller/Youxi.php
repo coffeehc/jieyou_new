@@ -156,6 +156,31 @@ class Youxi extends BaseController {
         ]);
     }
 
+     /**
+     * 文章详情页面
+     * @return [type] [description]
+     */
+    public function news() {
+        $data = $this->data;
+        $youxi = $this->youxi;
+        // 所有服务器
+        $gameServer = $this->gameServer; 
+        // 游戏资讯
+        $gameArticle = model('Article')->getGameArticleByGid($youxi['id']);
+        // 即将开启服务器
+        $jijServer = $this->jijServer;
+        // 文章详情页面
+        $news = model('Article')->get($data['aid']);
+
+        return $this->fetch('',[
+            'youxi' => $youxi,
+            'gameServer' => $gameServer,
+            'gameArticle' => $gameArticle,
+            'jijServer' => $jijServer,
+            'news' => $news,
+        ]);
+    }
+
     /**
      * 新手礼包页面
      */
