@@ -40,7 +40,6 @@ class Register extends BaseController {
         if(model('User')->getUserByUsername($data['users'])) {
             return show(0,'用户名已存在');
         }
-        return show(0,$data['users']);
         if($data['name'] == '') {
             $data['name'] = hc_filter($data['users']);
         }

@@ -43,7 +43,7 @@ $(function() {
             if(result.code == 1) {
                 $("body").append(result.data.uc_login);
                 layer.msg(result.message,{icon:6,time:1500},function() {
-                    window.location.href = '/';
+                    window.history.back();
                 });
             }else {
                 layer.msg(result.message,{icon:5,time:1500});
