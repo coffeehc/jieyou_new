@@ -8,6 +8,7 @@ class Youxi extends BaseController {
     private $youxi = [];
     private $recServer = [];
     private $gameServer = [];
+    private $jijServer = [];
     /**
      * 初始化
      */
@@ -21,7 +22,9 @@ class Youxi extends BaseController {
         $this->recServer = model('GameServer')->getRecServerByGid($this->youxi['gid']);
         
         // 所有服务器
-        $this->gameServer = model('GameServer')->getGameServerByGid($this->youxi['gid']); 
+        $this->gameServer = model('GameServer')->getGameServerByGid($this->youxi['gid']);
+        // 即将开启服务器
+        $this->jijServer = model('GameServer')->getReadyServerByGid($this->youxi['gid']);
     }
 
     /**
@@ -35,7 +38,9 @@ class Youxi extends BaseController {
         $recServer = $this->recServer;
         // 所有服务器
         $gameServer = $this->gameServer;  
-        
+        // 即将开启服务器
+        $jijServer = $this->jijServer;
+
         // 近期将要开放的服务器
         $readyServer = model('GameServer')->getReadyServerByGid($youxi['gid']);
         $readyEmpty = '<tr><td height="100" colspan="3" align="center" class="cheng">敬请期待</td></tr>';
@@ -103,6 +108,7 @@ class Youxi extends BaseController {
             'gameServer' => $gameServer,
             // 'kaishiyouxi' => $kaishiyouxi,
             'emptyServer' => $emptyServer,
+            'jijServer' => $jijServer,
         ]);
     }
 
@@ -117,10 +123,14 @@ class Youxi extends BaseController {
         $recServer = $this->recServer;
         // 所有服务器
         $gameServer = $this->gameServer; 
+        // 即将开启服务器
+        $jijServer = $this->jijServer;
+
         return $this->fetch('',[
             'youxi' => $youxi,
             'recServer' => $recServer,
             'gameServer' => $gameServer,
+            'jijServer' => $jijServer,
         ]);
     }
 
@@ -135,10 +145,14 @@ class Youxi extends BaseController {
         $gameServer = $this->gameServer; 
         // 游戏资讯
         $gameArticle = model('Article')->getGameArticleByGid($youxi['id']);
+        // 即将开启服务器
+        $jijServer = $this->jijServer;
+
         return $this->fetch('',[
             'youxi' => $youxi,
             'gameServer' => $gameServer,
             'gameArticle' => $gameArticle,
+            'jijServer' => $jijServer,
         ]);
     }
 
@@ -150,12 +164,16 @@ class Youxi extends BaseController {
         $youxi = $this->youxi;
         // 所有服务器
         $gameServer = $this->gameServer; 
+        // 即将开启服务器
+        $jijServer = $this->jijServer;
+
         // 游戏对于的服务器列表
         $serverList = model('GameServer')->getGameServerByGid($youxi['gid']);
         return $this->fetch('',[
             'youxi' => $youxi,
             'gameServer' => $gameServer,
             'serverList' => $serverList,
+            'jijServer' => $jijServer,
         ]);
     }
 }

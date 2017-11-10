@@ -43,6 +43,7 @@
                 {volist name=":getUserGameByUid($user.id)" id="vo"}
                 <p><a href="{:url('Game/index',['id'=>$vo.gsid])}" id="lastServ" target="_blank" style="color:#55B2C3;">{$vo.name}</a></p>
                 {/volist}
+                <p><a href="{:url('User/index')}" style="color:#55B2C3;" target="_blank">[用户中心]</a>&nbsp;<a href="{:url('Pay/index')}" target="_blank" style="color:#55B2C3;">[我要充值]</a>&nbsp;<a href="javascript:logout();" style="color:#55B2C3;">[安全退出]</a></p>
             </div>
             {/if}
         </div>
@@ -61,6 +62,11 @@
                 <p style="margin-left:50px;">区服状态</p>
             </div>
             <ul id="slist">
+                {volist name="jijServer" id="vo"}
+                <li>
+                    <a >{$vo.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.create_time}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;即将开启</a>
+                </li>
+                {/volist}
                 {volist name="gameServer" id="vo" length="5"}
                 <li>
                     <a href="{:url('Game/index',['id'=>$vo.id])}" target="_blank" alt="点击进入游戏">{$vo.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.create_time}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;火爆开启</a>

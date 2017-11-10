@@ -51,6 +51,18 @@ function passport(){
 	},'json');
 }
 
+// 登出操作
+function logout() {
+	var url = SCOPE.logout_url;
+	
+	$.post(url,{target:1},function(result) {
+		if(result.code == 1) {
+			$("body").append(result.data.uc_logout);
+			window.location.reload();
+		}
+	},'json')
+}
+
 //内容页选项卡
 $(function(){
     var data = new Array;
