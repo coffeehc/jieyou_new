@@ -49,6 +49,9 @@ function getArticleClassName($cid) {
         case 3:
             $name = '玩家资讯';
             break;
+        case 4:
+            $name = '游戏资料';
+            break;
         default:
             $name = '其他';
             break;

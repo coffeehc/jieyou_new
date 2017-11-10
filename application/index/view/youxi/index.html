@@ -96,9 +96,13 @@
                     <div class="rel box_title">
                         <p class="tab-title abs">游戏资料</p>
                         <i class="tab-title-line abs yxzl"></i>
-                        <a class="more_c" href="" title="更多"><img src="__STATIC__/youxi/picture/jia1.jpg" alt=""></a>
+                        <!-- <a class="more_c" href="" title="更多"><img src="__STATIC__/youxi/picture/jia1.jpg" alt=""></a> -->
                     </div>
-                    <div class="fl data-list-con"></div>
+                    <div class="fl data-list-con">
+                        {volist name="gameZl" id="vo"}
+                        <a class="game-ziliao" href="{:url('news',['id'=>$youxi.id,'aid'=>$vo.id])}">{$vo.title}</a>
+                        {/volist}
+                    </div>
                 </div>
             </div>
         </div>

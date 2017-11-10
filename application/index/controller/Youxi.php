@@ -49,14 +49,8 @@ class Youxi extends BaseController {
         $gameArticle = model('Article')->getGameArticleByGid($youxi['id']);
         $articleEmpty = '<div align="center" style="height:50px;padding-top:30px">暂时还没有游戏资讯!</div>';
 
-        $emptyServer = '<div>
-                            <span class="cheng">游戏还有</span>
-                            <span id="_d">00</span>
-                            <span id="_h">00</span>
-                            <span id="_m">00</span>
-                            <span id="_s">00</span>
-                            <span class="cheng">开服，敬请期待</span>
-                        </div>';
+        // 游戏资料
+        $gameZl = model('Article')->getGameZlByGid($youxi['id']);
 
         // 来源统计
         if(isset($data['ly']) && $data['ly'] != '') {
@@ -80,24 +74,6 @@ class Youxi extends BaseController {
             session('sid',$statsId,'index');
         }
 
-        // $isUser = $this->getLoginUser();
-        // $kaishiyouxi = 0;
-        // if(!$isUser) {
-        //     if(!$recServer->isEmpty()) {
-        //         $kaishiyouxi = $recServer[0]['id'];
-        //     }
-        // }else {
-        //     $isPlayedGame = model('UserServer')->getIsPlayedGame($isUser['id'],$data['id']);
-        //     if($isPlayedGame) {
-        //         $kaishiyouxi =$isPlayedGame['id'];
-        //     }else {
-        //         if(!$recServer->isEmpty()) {
-        //             $kaishiyouxi = $recServer[0]['id'];
-        //         }
-        //     }
-        // }
-
-
         return $this->fetch('',[
             'youxi' => $youxi,
             'readyServer' => $readyServer,
@@ -106,9 +82,8 @@ class Youxi extends BaseController {
             'articleEmpty' => $articleEmpty,
             'recServer' => $recServer,
             'gameServer' => $gameServer,
-            // 'kaishiyouxi' => $kaishiyouxi,
-            'emptyServer' => $emptyServer,
             'jijServer' => $jijServer,
+            'gameZl' => $gameZl,
         ]);
     }
 

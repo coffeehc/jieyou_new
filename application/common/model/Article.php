@@ -4,6 +4,7 @@ use think\Model;
 
 class Article extends BaseModel {
 
+    public $cid = 4;
     protected $autoWriteTimestamp = true;
     /**
      * 咨询信息
@@ -45,9 +46,10 @@ class Article extends BaseModel {
      * @return [type] [description]
      */
     public function getGameArticle() {
-        $res = $this
+        $res = $this   
                 ->field('id,title,create_time')
                 ->order('create_time desc')
+                ->where('cid <>'.$this->cid)
                 ->limit(8)
                 ->select();
         return $res;
@@ -61,7 +63,7 @@ class Article extends BaseModel {
         $res = $this
                 ->field(true)
                 ->order('create_time desc')
-                ->where('status = 1')
+                ->where('status = 1 and cid <>'.$this->cid)
                 ->paginate(15);
         return $res;
     }
@@ -75,9 +77,20 @@ class Article extends BaseModel {
         $res = $this
                 ->field('title,id,gid')
                 ->order('update_time desc')
-                ->where('status = 1 and gid = '.$id)
+                ->where('status = 1 and gid = '.$id.' and cid <>'.$this->cid)
                 ->limit(10)
                 ->select();
+        return $res;
+    }
+
+    /**
+     * 获取游戏 资料 cid == 4
+     */
+    public function getGameZlByGid($id) {
+        $res = $this
+            ->field('title,id,gid')
+            ->where('status = 1 and gid = '.$id.' and cid ='.$this->cid)
+            ->select();
         return $res;
     }
 }

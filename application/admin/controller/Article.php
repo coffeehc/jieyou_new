@@ -60,7 +60,11 @@ class Article extends BaseController {
 
         }else {
             $game = model('Game')->getGameInfo();
-            $articleClass = config('article.article_class');
+            if(input('param.type') == 1) {
+                $articleClass = [4=>'游戏资料'];
+            }else {
+                $articleClass = config('article.article_class');
+            }
             return $this->fetch('',[
                 'game' => $game,
                 'articleClass' => $articleClass,
