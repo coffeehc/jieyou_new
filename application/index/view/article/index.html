@@ -17,7 +17,7 @@
                                 <div class="hong20T">游戏资讯</div>
                                 {volist name="article" id="vo"}
                                 <div class="news_list_bk">
-                                    <div><a href="{:url('news',['id'=>$vo.id])}" title="{$vo.title}"><span class="cheng18">{$vo.title}</span></a></div>
+                                    <div><a href="{:url('Youxi/news',['id'=>$vo.gid,'aid'=>$vo.id])}" title="{$vo.title}"><span class="cheng18">{$vo.title}</span></a></div>
                                     <div class="hei12">{$vo.description}</div>
                                 </div>
                                 {/volist}
@@ -68,14 +68,11 @@
                             </div>
 
                             <!--@新服预告-->
-                            <div class="box">
-                                <div class="hong20T">游戏公告</div>
-                                <div style="min-height:200px;padding:5px">
-                                    {volist name="gameArticle" id="vo"}
-                                    <li class="slist"><a href="{:url('Article/news',['id'=>$vo.id])}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
-                                    {/volist}
-                                </div>
-                            </div>
+
+                            <!-- 游戏公告 -->
+                            {include file="public/article"}
+                            <!-- @游戏公告 -->
+
                         </td>
                     </tr>
                 </table>

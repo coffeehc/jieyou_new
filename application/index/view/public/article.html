@@ -1,0 +1,8 @@
+<div class="box">
+    <div class="hong20T">游戏公告</div>
+    <div style="min-height:200px;padding:5px">
+        {volist name="gameArticle" id="vo" empty="$articleEmpty"}
+        <li class="slist"><a href="{:url('Youxi/news',['id'=>$vo.gid,'aid'=>$vo.id])}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
+        {/volist}
+    </div>
+</div>

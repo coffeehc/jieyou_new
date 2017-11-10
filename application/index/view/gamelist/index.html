@@ -102,14 +102,7 @@
                             <!--@最新开服-->
 
                             <!--游戏公告-->
-                            <div class="box">
-                                <div class="hong20T">游戏公告</div>
-                                <div style="min-height:200px;padding:5px">
-                                    {volist name="gameArticle" id="vo"}
-                                    <li class="slist"><a href="{:url('Article/news',['id'=>$vo.id])}" title="{$vo.title}" target="_blank">{:mb_substr($vo.title,0,15,'utf-8')}</a></li>
-                                    {/volist}
-                                </div>
-                            </div>
+                            {include file="public/article"}
                             <!--@游戏公告-->
                         </td>
                     </tr>

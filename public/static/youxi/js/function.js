@@ -11,6 +11,7 @@ $(function() {
 		}
 		$.post(url,{users:users,password,password},function(result) {
 			if(result.code == 1) {
+				$('body').append(result.data.uc_login);
 				window.location.reload();
 			}else {
 				$("#login_tip").text(result.message);

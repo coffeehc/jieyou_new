@@ -50,7 +50,7 @@
                     <div id="new1" style="display:block;">
                         <p class="headlines">
                             {volist name="gameArticle" id="vo" length="1"}
-                            <a href="{:url('Article/news',['id'=>$vo.id])}" target="_blank">{:mb_substr($vo.title,0,18,'utf-8')}</a>
+                            <a href="{:url('news',['id'=>$youxi.id,'aid'=>$vo.id])}" target="_blank">{:mb_substr($vo.title,0,18,'utf-8')}</a>
                             {/volist}
                         </p>
                         <ul>

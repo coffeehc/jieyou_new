@@ -1,6 +1,6 @@
 <?php
 //Discuz! cache file, DO NOT modify me!
-//Identify: c11842693023ff2c81a296b354abd764
+//Identify: 321a2dccff1953940064d9652d3370ce
 
 $new_post_threadlist = array (
   0 => 
@@ -268,108 +268,108 @@ $hot_post_threadlist = '';
 $newbie_list_7ree = array (
   0 => 
   array (
+    'username' => 'hecheng006',
+    'uid' => '26',
+    'regdate' => '2017-11-10 10:55:02',
+    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=26&size=small" />',
+  ),
+  1 => 
+  array (
+    'username' => 'hecheng005',
+    'uid' => '25',
+    'regdate' => '2017-11-10 10:53:01',
+    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=25&size=small" />',
+  ),
+  2 => 
+  array (
+    'username' => 'hecheng004',
+    'uid' => '24',
+    'regdate' => '2017-11-10 10:48:36',
+    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=24&size=small" />',
+  ),
+  3 => 
+  array (
+    'username' => 'hecheng03',
+    'uid' => '23',
+    'regdate' => '2017-11-10 10:44:11',
+    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=23&size=small" />',
+  ),
+  4 => 
+  array (
     'username' => 'pceshi',
     'uid' => '22',
     'regdate' => '2017-10-31 13:52:29',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=22&size=small" />',
   ),
-  1 => 
+  5 => 
   array (
     'username' => '测试',
     'uid' => '21',
     'regdate' => '2017-10-26 09:42:22',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=21&size=small" />',
   ),
-  2 => 
+  6 => 
   array (
     'username' => 'wll05',
     'uid' => '20',
     'regdate' => '2017-10-25 15:16:58',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=20&size=small" />',
   ),
-  3 => 
+  7 => 
   array (
     'username' => 'wll04',
     'uid' => '19',
     'regdate' => '2017-10-25 15:13:18',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=19&size=small" />',
   ),
-  4 => 
+  8 => 
   array (
     'username' => 'wll01',
     'uid' => '18',
     'regdate' => '2017-10-25 15:08:05',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=18&size=small" />',
   ),
-  5 => 
+  9 => 
   array (
     'username' => 'wll03',
     'uid' => '17',
     'regdate' => '2017-10-24 17:23:08',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=17&size=small" />',
   ),
-  6 => 
+  10 => 
   array (
     'username' => 'hecheng123',
     'uid' => '13',
     'regdate' => '2017-10-19 15:59:43',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=13&size=small" />',
   ),
-  7 => 
+  11 => 
   array (
     'username' => 'wanghe055',
     'uid' => '12',
     'regdate' => '2017-10-19 15:51:04',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=12&size=small" />',
   ),
-  8 => 
+  12 => 
   array (
     'username' => 'hcwll',
     'uid' => '11',
     'regdate' => '2017-10-18 17:56:02',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=11&size=small" />',
   ),
-  9 => 
+  13 => 
   array (
     'username' => 'luntcs03',
     'uid' => '10',
     'regdate' => '2017-10-18 16:04:51',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=10&size=small" />',
   ),
-  10 => 
+  14 => 
   array (
     'username' => 'hecheng',
     'uid' => '8',
     'regdate' => '2017-10-25 13:33:10',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=8&size=small" />',
-  ),
-  11 => 
-  array (
-    'username' => '18829396478',
-    'uid' => '6',
-    'regdate' => '2017-10-18 14:58:42',
-    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=6&size=small" />',
-  ),
-  12 => 
-  array (
-    'username' => 'hc123',
-    'uid' => '5',
-    'regdate' => '2017-10-18 14:40:11',
-    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=5&size=small" />',
-  ),
-  13 => 
-  array (
-    'username' => 'uchcs',
-    'uid' => '4',
-    'regdate' => '2017-10-18 13:55:57',
-    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=4&size=small" />',
-  ),
-  14 => 
-  array (
-    'username' => 'ceshi',
-    'uid' => '3',
-    'regdate' => '2017-10-12 15:50:51',
-    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=3&size=small" />',
   ),
 );
 
