@@ -276,3 +276,106 @@ div.flicking_con a.on {background-position:0 -21px}
     font-size: 0;
     line-height: 0;
 }
+
+.stat{
+    background-color:#FFFFFF;
+    height: 410px;
+    width: 240px;
+    overflow: hidden;
+}
+.stat-title{
+    width: 90%;
+    height: 8%;
+    margin: 0 auto;
+}
+
+.stat-title .title-all{
+    width: 50%;
+    float: left;
+    font-size: 16px;
+    line-height: 39px;
+    text-align: center;
+}
+
+.stat-body{
+    margin: 6px 0 0 0;
+    line-height: 34px;
+    position: relative;
+}
+
+.stat table{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.stat table td{
+    overflow: hidden;
+    vertical-align: top;
+    padding: 5px;
+}
+.stat .stat-body .t{
+    height: 39px;
+    margin: 0 0 0 10px;
+    display: block;
+    width: 215px;
+    border-bottom: 1px dashed #ccc;
+}
+.stat-body .t li{
+    list-style-type: none;
+    width: 100%;
+}
+.stat .stat-body a{
+    color: #333;
+    font-size: 12px;
+    text-decoration: none;
+}
+.stat .stat-body .a1{
+    display: block;
+    float: left;
+    width: 85px;
+    height: 25px;
+    overflow: hidden;
+}
+.stat .stat-body .a2{
+    width: 50px;
+    display: block;
+    float: left;
+}
+.stat .stat-body .a3{
+    width: 80px;
+    display: block;
+    float: right;
+    text-align: right;
+}
+.nserver_page_box{
+    text-align: center;
+}
+
+.nserver_page_box span{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+.nserver_page_box span.on{
+    background-color: red;
+}
+.tserver_page_box{
+    text-align: center;
+}
+
+.tserver_page_box span{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+.tserver_page_box span.on{
+    background-color: red;
+}

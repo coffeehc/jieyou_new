@@ -1,6 +1,6 @@
 <?php
 //Discuz! cache file, DO NOT modify me!
-//Identify: 321a2dccff1953940064d9652d3370ce
+//Identify: a94b55e505d6582a6f5246776c294a6f
 
 $new_post_threadlist = array (
   0 => 
@@ -268,108 +268,108 @@ $hot_post_threadlist = '';
 $newbie_list_7ree = array (
   0 => 
   array (
+    'username' => '竖线|',
+    'uid' => '28',
+    'regdate' => '2017-11-14 17:56:50',
+    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=28&size=small" />',
+  ),
+  1 => 
+  array (
+    'username' => '何成',
+    'uid' => '27',
+    'regdate' => '2017-11-14 17:42:54',
+    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=27&size=small" />',
+  ),
+  2 => 
+  array (
     'username' => 'hecheng006',
     'uid' => '26',
     'regdate' => '2017-11-10 10:55:02',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=26&size=small" />',
   ),
-  1 => 
+  3 => 
   array (
     'username' => 'hecheng005',
     'uid' => '25',
     'regdate' => '2017-11-10 10:53:01',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=25&size=small" />',
   ),
-  2 => 
+  4 => 
   array (
     'username' => 'hecheng004',
     'uid' => '24',
     'regdate' => '2017-11-10 10:48:36',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=24&size=small" />',
   ),
-  3 => 
+  5 => 
   array (
     'username' => 'hecheng03',
     'uid' => '23',
     'regdate' => '2017-11-10 10:44:11',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=23&size=small" />',
   ),
-  4 => 
+  6 => 
   array (
     'username' => 'pceshi',
     'uid' => '22',
     'regdate' => '2017-10-31 13:52:29',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=22&size=small" />',
   ),
-  5 => 
+  7 => 
   array (
     'username' => '测试',
     'uid' => '21',
     'regdate' => '2017-10-26 09:42:22',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=21&size=small" />',
   ),
-  6 => 
+  8 => 
   array (
     'username' => 'wll05',
     'uid' => '20',
     'regdate' => '2017-10-25 15:16:58',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=20&size=small" />',
   ),
-  7 => 
+  9 => 
   array (
     'username' => 'wll04',
     'uid' => '19',
     'regdate' => '2017-10-25 15:13:18',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=19&size=small" />',
   ),
-  8 => 
+  10 => 
   array (
     'username' => 'wll01',
     'uid' => '18',
     'regdate' => '2017-10-25 15:08:05',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=18&size=small" />',
   ),
-  9 => 
+  11 => 
   array (
     'username' => 'wll03',
     'uid' => '17',
     'regdate' => '2017-10-24 17:23:08',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=17&size=small" />',
   ),
-  10 => 
+  12 => 
   array (
     'username' => 'hecheng123',
     'uid' => '13',
     'regdate' => '2017-10-19 15:59:43',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=13&size=small" />',
   ),
-  11 => 
+  13 => 
   array (
     'username' => 'wanghe055',
     'uid' => '12',
     'regdate' => '2017-10-19 15:51:04',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=12&size=small" />',
   ),
-  12 => 
+  14 => 
   array (
     'username' => 'hcwll',
     'uid' => '11',
     'regdate' => '2017-10-18 17:56:02',
     'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=11&size=small" />',
-  ),
-  13 => 
-  array (
-    'username' => 'luntcs03',
-    'uid' => '10',
-    'regdate' => '2017-10-18 16:04:51',
-    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=10&size=small" />',
-  ),
-  14 => 
-  array (
-    'username' => 'hecheng',
-    'uid' => '8',
-    'regdate' => '2017-10-25 13:33:10',
-    'avatar_7ree' => '<img src="http://newjy.net/forum/uc_server/avatar.php?uid=8&size=small" />',
   ),
 );
 

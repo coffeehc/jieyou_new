@@ -96,11 +96,11 @@ class Game extends BaseController {
             // 根据游戏gid 获取游戏信息
             $gameGid = $serverInfo['gid'];
             $gameInfo = model('Game')->field(true)->where("gid = '$gameGid'")->find();
-
             if($user && $user['id']) {
                 $userInfo = model('User')->field(true)->where('id = '.$user['id'])->find();
                 // 如果游戏开区时间大于当前时间 则提示游戏还没有开区
-                if($serverInfo['create_time'] > time()) {
+                $year = date('Y',time());
+                if(strtotime($year.'-'.$serverInfo['create_time']) > time()) {
                     return $this->error('游戏还没有开启');
                 }else {
                     // 如果游戏已经开区 则添加一条数据到数据库

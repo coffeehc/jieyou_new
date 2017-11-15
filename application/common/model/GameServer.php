@@ -170,4 +170,36 @@ class GameServer extends BaseModel {
         $res = $this->field(true)->where("sid = $sid and gid = '$gid'")->find();
         return $res;
     }
+
+    /**
+     * 获取今日服务器列表
+     */
+    public function getTodayGameServer() {
+        $beginToday = mktime(0,0,0,date('m'),date('d'),date('Y'));
+        $endToday = mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
+        
+        $res = $this
+            ->field(true)
+            ->where("create_time between $beginToday and $endToday")
+            ->order('create_time desc')
+            ->select()
+            ->toArray();
+        return $res;
+    }
+
+    /**
+     * 获取明日服务器列表
+     */
+    public function getTomorrowGameServer() {
+        $beginTomorrow = mktime(0,0,0,date('m'),date('d')+1,date('Y'));
+        $endToday = mktime(0,0,0,date('m'),date('d')+2,date('Y'))-1;
+
+        $res = $this
+            ->field(true)
+            ->where("create_time between $beginTomorrow and $endToday")
+            ->order('create_time desc')
+            ->select()
+            ->toArray();
+        return $res;
+    }
 }

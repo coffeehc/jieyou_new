@@ -14,13 +14,11 @@ $(function() {
         html.push('<tr><td colspan="2" style="text-align:center;"><hr size="1px" style="height:1px" /><span class="hei14B">使用第三方登录</span></td></tr>');
         html.push('<tr><td colspan="2"><ul class="clear_here"><li class="o_qq"><a href="/qqlogin/index/index.html">QQ账号登录</a></li><li class="o_wechat"><a href="/wxlogin/index/index.html">微信账号登录</a></li><li class="o_weibo"><a href="/wblogin/index/index.html">新浪微博账号</a></li></ul></td></tr>');
         hhtml.push('<a href="/#user-login-form">登陆</a> | <a href="/index/register/index.html">注册</a>|<a href="javascript:;" onclick="addFavorite2()">加入收藏</a>');
+        $(".touming2").html(html.join(""));
+        $("#header_user").html(hhtml.join(""));
         $.post(logout_url,{target:1},function(result) {
             if(result.code == 1) {
                 $("body").append(result.data.uc_logout);
-                layer.msg(result.message,{icon:6,time:1500},function() {
-                    $(".touming2").html(html.join(""));
-                    $("#header_user").html(hhtml.join(""));
-                });
             }else {
                 layer.msg(result.message,{icon:5,time:1500});
             }
@@ -91,7 +89,6 @@ $(function() {
         hhtml.push();
         $.post(url, postData, function(result) {
             if (result.code == 1) {
-                $(".touming2").append(result.data.uc_login);
                 // console.log(result.data);return;
                 if(result.data.user.pic == "") {
                     html.push('<td width="29%"><img src="/images/nopic.jpg" width="90" height="90" /></td>');
@@ -110,14 +107,16 @@ $(function() {
                 html.push('</table>');
                 hhtml.push(':欢迎您！ | <a href="/index/user/index.html" title="用户中心">用户中心</a> | <span id="logout" title="点击退出平台">退出平台</span> |');
                 hhtml.push('<a href="javascript:;" onclick="addFavorite2()">加入收藏</a>');
-                layer.msg(result.message, {icon: 6,time: 1000}, function() {
-                    $(".touming2").html(html.join(""));
-                    $("#header_user").html(hhtml.join(""));
-                });
+                $(".touming2").html(html.join(""));
+                $("#header_user").html(hhtml.join(""));
+                $(".touming2").append(result.data.uc_login);
             } else {
                 layer.msg(result.message, {icon: 5,time: 1500});
             }
-        }, 'json')
+        }, 'json');
+
+
+
     });
 
     /**
@@ -155,3 +154,34 @@ function addFavorite2(){
         alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
     }
 }
+
+jQuery(document).ready(function($) {
+            
+    //开服列表
+    $('.title-new').css({'borderBottom':'2px solid red','color':'red'});
+    $(".title-new").click(function(){
+        $(this).css({'borderBottom':'2px solid red','color':'red'});
+        $('.title-old').css({'borderBottom':'none','color':'black'});
+    });
+    $(".title-old").click(function(){
+        $(this).css({'borderBottom':'2px solid red','color':'red'});
+        $('.title-new').css({'borderBottom':'none','color':'black'});
+    });
+
+    $('.tt2').hide();
+    $('.old-body').hide();
+    $('.title-new').click(function(){$('.old-body').hide();$('.new-body').show();});
+    $('.title-old').click(function(){$('.old-body').show();$('.new-body').hide();});
+    $('.nserver_page_box span').click(function(){
+		var j=$('.nserver_page_box span').index($(this)[0]);
+		$('.nserver_page_box span').eq(j).addClass('on').siblings().removeClass('on');
+		var stepWidth=$('.new-body').outerWidth();
+		$('.nserver_page_box').prev('table').stop().animate({'left':(-j*stepWidth)+'px'},'quick');
+    });
+    $('.tserver_page_box span').click(function(){
+		var j=$('.tserver_page_box span').index($(this)[0]);
+		$('.tserver_page_box span').eq(j).addClass('on').siblings().removeClass('on');
+		var stepWidth=$('.old-body').outerWidth();
+		$('.tserver_page_box').prev('table').stop().animate({'left':(-j*stepWidth)+'px'},'quick');
+	});
+})

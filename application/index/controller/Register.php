@@ -29,8 +29,8 @@ class Register extends BaseController {
             return $this->error('请求错误');
         }
         $data = input('post.');
-        if(!preg_match("/^[a-zA-Z0-9]\S*$/",$data['users'])) {
-            return show(0,'用户名只能以数字或字母开头');
+        if(preg_match("/\s/",$data['users'])) {
+            return show(0,'用户名不能有空格');
         }
         $validate = validate('Register');
         if(!$validate->scene('add')->check($data)) {
@@ -53,7 +53,7 @@ class Register extends BaseController {
 
                 // 门户网站注册同时注册到论坛
                 if($data['email'] == '') {
-                    $uc_email = $data['users'].'@mail.com';
+                    $uc_email = time().'@mail.com';
                 }else {
                     $uc_email = $data['email'];
                 }

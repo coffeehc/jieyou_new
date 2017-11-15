@@ -69,20 +69,62 @@
                         </td>
                         <td valign="top">
                             <!--最新开服-->
-                            <div class="box_top" style="width:240px">
-                                <div class="hong20T">最新开服务器</div>
-                                <div>
-                                    <table width="100%" border="0" cellspacing="1" cellpadding="0">
-                                        {volist name="newServer" id="vo"}
-                                        <tr>
-                                            <td width="12%" align="center"><img src="__STATIC__/images/no/{$i}.gif" width="13" height="13" /></td>
-                                            <td width="65%" nowrap="nowrap">
-                                                <a href="{:url('game/index',['id'=>$vo.id])}" target="_blank" title="点击进入{$vo.game}{$vo.name}">{$vo.game}{$vo.name}</a>
-                                            </td>
-                                            <td width="23%" nowrap="nowrap"><a href="{:url('game/index',['id'=>$vo.id])}" target="_blank" title="点击进入{$vo.game}{$vo.name}"><span class="hui12">{$vo.create_time}</span></a></td>
-                                        </tr>
-                                        {/volist}
+                            <div class="stat">
+                                <div class="stat-title">
+                                    <div class="title-new title-all">今日开服</div>
+                                    <div class="title-old title-all">明日开服</div>
+                                </div>
+                                <div class="stat-body new-body" style="display:block;">
+                                    <table style="left:0px;">
+                                        <tbody>
+                                            <tr>
+                                            {volist name="todayGameServer" id="vo1"}
+                                               <td>
+                                                   {volist name="vo1" id="vo2"}
+                                                   <div class="t">
+                                                       <li class="tt1">
+                                                           <a href="{:url('Game/index',['id'=>$vo2.id])}" class="a1">{$vo2.game}</a>
+                                                           <a class="a2">{$vo2.sid}区</a>
+                                                           <a class="a3">{$vo2.create_time}</a>
+                                                       </li>
+                                                   </div>
+                                                   {/volist}
+                                               </td>
+                                               {/volist}
+                                            </tr>
+                                        </tbody>
                                     </table>
+                                    <div class="nserver_page_box">
+                                        {volist name="todayGameServer" id="vo"}
+                                        <span {if condition="$i = 1"}class="on"{/if}></span>
+                                        {/volist}
+                                    </div>
+                                </div>
+                                <div class="stat-body old-body" style="display:none;">
+                                    <table style="left:0px;">
+                                        <tbody>
+                                                <tr>
+                                                    {volist name="tomorrowGameServer" id="vo1"}
+                                                    <td>
+                                                        {volist name="vo1" id="vo2"}
+                                                        <div class="t">
+                                                            <li class="tt1">
+                                                                <a class="a1">{$vo2.game}</a>
+                                                                <a class="a2">{$vo2.sid}区</a>
+                                                                <a class="a3">{$vo2.create_time}</a>
+                                                            </li>
+                                                        </div>
+                                                        {/volist}
+                                                    </td>
+                                                    {/volist}
+                                                </tr>
+                                            </tbody>
+                                    </table>
+                                    <div class="tserver_page_box">
+                                        {volist name="tomorrowGameServer" id="vo"}
+                                        <span {if condition="$i = 1"}class="on"{/if}></span>
+                                        {/volist}
+                                    </div>
                                 </div>
                             </div>
                             <!--@最新开服-->
@@ -92,7 +134,7 @@
                             <!--@r_gg-->
 
                             <!--@新服预告-->
-                            <div class="box" style="width:240px">
+                            <!-- <div class="box" style="width:240px">
                                 <div class="hong20T">游戏开服预告</div>
                                     <div style="min-height:100px">
                                         <table width="100%" border="0" cellspacing="1" cellpadding="0">
@@ -107,15 +149,16 @@
                                             {/volist}
                                         </table>
                                     </div>
-                            </div>
+                            </div> -->
                             <!--@新服预告-->
+                            <!--游戏公告-->
+                            {include file="public/article"}
+                            <!--@游戏公告-->
                             <!--右下广告-->
                             <div class="r_gg2"><a href="{:url('Youxi/index',['id'=>$youxia_img.gid])}" target="_blank"><img src="{$youxia_img.youxia_img}" /></a></div>
                             <!--@r_gg-->
 
-                            <!--游戏公告-->
-                            {include file="public/article"}
-                            <!--@游戏公告-->
+                            
                         </td>
                     </tr>
                 </table>

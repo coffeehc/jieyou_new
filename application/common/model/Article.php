@@ -50,7 +50,7 @@ class Article extends BaseModel {
                 ->field(true)
                 ->order('create_time desc')
                 ->where('cid <>'.$this->cid)
-                ->limit(8)
+                ->limit(9)
                 ->select();
         return $res;
     }
