@@ -44,7 +44,6 @@ class GameServer extends BaseController {
         $data['game'] = $gameInfo['name'];
         $data['gid'] =  $gameInfo['gid'];
         $data['create_time'] = strtotime($data['create_time']);
-        $data['ptid'] = 2;
         try {
             $res = $this->_db->insert($data);
             if($res) {
@@ -72,7 +71,6 @@ class GameServer extends BaseController {
             $data['name'] = '双线'.$data['sid'].'区';
             $data['game'] = getGameNameByGid($data['gid']);
             $data['create_time'] = strtotime($data['create_time']);
-            $data['ptid'] = 2;
             try {
                 $res = $this->_db->where('id',$data['id'])->update($data);
                 if($res) {

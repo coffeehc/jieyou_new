@@ -19,7 +19,14 @@
                     <option value="{$vo.gid}" {eq name="$server.gid" value="$vo.gid"}selected{/eq}>{$vo.name}</option>
                     {/volist}
     			</select>
-			</span>
+            </span>
+            <span class="select-box" style="width:250px">
+                <select class="select" name="ptid" size="1">
+                    <option value="">选择平台</option>
+                    <option value="2" {eq name="$server.ptid" value="2"}selected{/eq}>星蝶游戏平台</option>
+                    <option value="4" {eq name="$server.ptid" value="4"}selected{/eq}>57ac</option>
+                </select>
+            </span>
             <input type="hidden" name="id" value="{$server.id}">
             <button type="button" class="btn btn-success" id="hecheng-button-submit"><i class="Hui-iconfont">&#xe600;</i> 修改</button>
 		</form>

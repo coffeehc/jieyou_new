@@ -120,25 +120,36 @@ class Game extends BaseController {
 
                 // 对接游戏借口
                 $apijk = model('Apikey')->field(true)->where('id = '.$serverInfo['ptid'])->find();
-
-                // 构造接口数据
-                $uid = trim($userInfo['id']);
-                $uid2 = $userInfo['users'];
-                $gid = $serverInfo['gid'];
-                $sid = $serverInfo['sid'];
-                $dateline = time();
-                $mid = $apijk['pid'];
-                $pc = '0';
-                $fcm = '0';
-                $key = $apijk['apikey'];
-
-                if($serverInfo['ptid'] == 2) {
+                if($serverInfo['ptid'] == 2) {  // 星蝶游戏平台
+                    // 构造接口数据
+                    $uid = trim($userInfo['id']);
+                    $uid2 = $userInfo['users'];
+                    $gid = $serverInfo['gid'];
+                    $sid = $serverInfo['sid'];
+                    $dateline = time();
+                    $mid = $apijk['pid'];
+                    $pc = '0';
+                    $fcm = '0';
+                    $key = $apijk['apikey'];
                     $sign = strtolower(md5($mid.$gid.$sid.$uid2.$dateline.$key));
                     if($client && $client == 'pc') {
                         $url = "http://www.ufojoy.com/auth/go.phtml?agent_id=".$mid."&game_id=".$gid."&serverNo=".$sid."&uid=".$uid2."&time=".$dateline."&sign=".$sign."&client=pc";
                     }else {
                         $url = "http://www.ufojoy.com/auth/go.phtml?agent_id=".$mid."&game_id=".$gid."&serverNo=".$sid."&uid=".$uid2."&time=".$dateline."&sign=".$sign;
                     }
+                   
+                }elseif($serverInfo['ptid'] == 4) {  // 57ac 平台
+                    // 构造接口数据
+                    $pid = $apijk['pid'];  // 平台ID
+                    $account = $userInfo['users'];  // 玩家账号
+                    $gid = $serverInfo['gid'];    // 游戏ID
+                    $sid = $serverInfo['sid'];    // 服务器编号
+                    $fcm = 1;  // 防沉迷  先默认为 1
+                    $time = time(); // 当前时间戳
+                    $isclient = 0;  // 对接游戏有微端时微端登录则传 1，网页登录传0
+                    $key = $apijk['apikey'];
+                    $sign = md5($pid.$account.$gid.$sid.$time.$key);
+                    $url = "http://www.57ac.com/api/GameLoginHandler.ashx?pid=".$pid."&account=".$account."&gid=".$gid."&sid=".$sid."&fcm=".$fcm."&time=".$time."&isclient=".$isclient."&sign=".$sign;
                 }
             }
             return $this->fetch('',[

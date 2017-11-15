@@ -187,7 +187,7 @@ class Pay extends BaseController {
                 echo $key."<br>";
         		//die($url);
         		header('location:'.$url);
-            }else if($gameServerInfo['ptid'] == 2) {
+            }else if($gameServerInfo['ptid'] == 2) {  // 星蝶游戏平台
                 $agent_id = $ptInfo['pid'];
                 $game_id = $gameServerInfo['gid'];
                 $serverNo = $gameServerInfo['sid'];
@@ -211,6 +211,8 @@ class Pay extends BaseController {
                     'bank' => $paytype,
                 ];
                 model('UserPay')->save($insertData);
+            }else if($gameServerInfo['ptid'] == 4) {  // 57ac平台
+                // todo
             }
         }
         return $this->fetch('',[
