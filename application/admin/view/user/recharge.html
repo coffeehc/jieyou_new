@@ -69,15 +69,16 @@ $(function() {
 	 */
     $("#gid").change(function() {
         var gid = $(this).val();
-        var url = '{:url('getGameServer')}';
+        var url = "{:url('getGameServer')}";
         var postData = {'gid':gid};
         $.post(url,postData,function(result) {
             if(result.code == 1) {
-                data = result.data.data;
+                var data = result.data;
                 sid_html = "";
                 $(data).each(function(i) {
                     sid_html += "<option value='"+this.id+"'>"+this.name+"</option>";
                 });
+                console.log(sid_html);return;
                 $('#sid').html(sid_html);
             }else {
                 $('#sid').html(result.message);

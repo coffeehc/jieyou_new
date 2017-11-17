@@ -29,14 +29,10 @@ class Register extends BaseController {
             return $this->error('请求错误');
         }
         $data = input('post.');
-        if(preg_match("/\s/",$data['users'])) {
-            return show(0,'用户名不能有空格');
-        }
         $validate = validate('Register');
         if(!$validate->scene('add')->check($data)) {
             return show(0,$validate->getError());
         }
-
         if(model('User')->getUserByUsername($data['users'])) {
             return show(0,'用户名已存在');
         }
@@ -80,6 +76,25 @@ class Register extends BaseController {
             return show(0,$e->getMessage());
         }
     }
+
+    /**
+     * 检查用户名
+     */
+    public function checkUser() {
+        $data = input('param.');
+        if(preg_match("/\s/",$data['users'])) {
+            return '用户名不能有空格';
+        }
+        $validate = validate('Register');
+        if(!$validate->scene('checkUser')->check($data)) {
+            return $validate->getError();
+        }
+        if(model('User')->getUserByUsername($data['users'])) {
+            return '用户名已存在';
+        }
+        return true;
+    }
+
 
     /**
      * 用户登录

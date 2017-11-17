@@ -83,7 +83,7 @@
                                                    {volist name="vo1" id="vo2"}
                                                    <div class="t">
                                                        <li class="tt1">
-                                                           <a href="{:url('Game/index',['id'=>$vo2.id])}" class="a1">{$vo2.game}</a>
+                                                           <a href="{:url('Game/index',['id'=>$vo2.id])}" class="a1">{$vo2.game|subtext=6}</a>
                                                            <a class="a2">{$vo2.sid}区</a>
                                                            <a class="a3">{$vo2.create_time}</a>
                                                        </li>
@@ -109,7 +109,7 @@
                                                         {volist name="vo1" id="vo2"}
                                                         <div class="t">
                                                             <li class="tt1">
-                                                                <a class="a1">{$vo2.game}</a>
+                                                                <a class="a1">{$vo2.game|mb_substr=0,6,'utf-8'}</a>
                                                                 <a class="a2">{$vo2.sid}区</a>
                                                                 <a class="a3">{$vo2.create_time}</a>
                                                             </li>

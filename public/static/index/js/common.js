@@ -97,7 +97,7 @@ $(function() {
                     html.push('<td width="29%"><img src="'+result.data.user.pic+'" width="90" height="90" /></td>');
                     hhtml.push('<img src="'+result.data.user.pic+'" width="30"  align="absmiddle"  style="border-radius: 15px;overflow:hidden" />');
                 }
-                html.push('<td width="71%" class="hei12"><div>昵称：'+result.data.user.name+'</div><div>QQ号：'+result.data.user.qq+'</div><div>邮箱：'+result.data.user.email+'</div><div>登陆次数：'+result.data.user.hits+'</div></td>');
+                html.push('<td width="71%" class="hei12"><div>昵称：'+result.data.user.name+'</div><div>登陆次数：'+result.data.user.hits+'</div></td>');
                 html.push('<tr><td colspan="2" class="hei18B">最近玩过的游戏</td>');
                 // 构建最近玩过的游戏 html
                 $.each(result.data.lastplay,function(index,val) {

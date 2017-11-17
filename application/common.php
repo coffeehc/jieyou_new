@@ -357,3 +357,13 @@ function getBankNameById($id) {
     $res = model('Payfs')->field('name')->find($id);
     return $res['name'];
 }
+
+/**
+ * 按字数截取字符串长度 超出部分 。。。 代替
+ */
+function subtext($text,$length){
+    if(mb_strlen($text,'utf8') > $length) {
+        return mb_substr($text,0,$length,'utf8').'...';
+    }
+    return $text;
+}

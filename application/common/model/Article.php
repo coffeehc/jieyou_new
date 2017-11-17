@@ -75,7 +75,7 @@ class Article extends BaseModel {
      */
     public function getGameArticleByGid($id) {
         $res = $this
-                ->field('title,id,gid')
+                ->field(true)
                 ->order('update_time desc')
                 ->where('status = 1 and gid = '.$id.' and cid <>'.$this->cid)
                 ->limit(10)
