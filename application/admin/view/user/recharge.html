@@ -74,11 +74,10 @@ $(function() {
         $.post(url,postData,function(result) {
             if(result.code == 1) {
                 var data = result.data;
-                sid_html = "";
+                var sid_html = "";
                 $(data).each(function(i) {
                     sid_html += "<option value='"+this.id+"'>"+this.name+"</option>";
                 });
-                console.log(sid_html);return;
                 $('#sid').html(sid_html);
             }else {
                 $('#sid').html(result.message);
