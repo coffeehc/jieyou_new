@@ -14,6 +14,9 @@ class Game extends BaseController {
                 if(empty($data['password'])) {
                     return show(0,'密码不能为空');
                 }
+                if(empty($data['password1']) || $data['password'] != $data['password1']) {
+                    return show(0,'两次密码不一致');
+                }
                 if(model('User')->getUserByUsername($data['users1'])) {
                     return show(0,'用户名已存在');
                 }
