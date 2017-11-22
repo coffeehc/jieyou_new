@@ -71,7 +71,7 @@ class UserPay extends Model {
      * @return [type]     [description]
      */
     public function getUserPayInfoByUid($id) {
-        $res = $this->field(true)->where('uid='.$id)->order('create_time desc')->paginate();
+        $res = $this->field(true)->where('uid='.$id)->order('create_time desc')->paginate(10);
         return $res;
     }
 

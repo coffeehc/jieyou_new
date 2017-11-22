@@ -27,8 +27,14 @@ class User extends BaseController {
         }
         // 最近五笔充值记录
         $userPay = model('UserPay')->getUserPayByUid($user['id'],5);
+        // 用户信息
+        $userInfo = model('User')->getUserInfoByUsers($user['users']);
+        // 充值记录
+        $payInfos = model('UserPay')->getUserPayInfoByUid($user['id']);
         return $this->fetch('',[
             'userPay' => $userPay,
+            'userInfo' => $userInfo,
+            'payInfos' => $payInfos,
         ]);
     }
 

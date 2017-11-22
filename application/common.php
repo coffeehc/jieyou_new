@@ -367,3 +367,14 @@ function subtext($text,$length){
     }
     return $text;
 }
+
+/**
+ * 加密信息
+ */
+function mhtext($text,$length) {
+    if($length == -1) {
+        return mb_substr($text,0,1,'utf8').'**';
+    }else {
+        return '**************' . mb_substr($text,$length);
+    }
+}

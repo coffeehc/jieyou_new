@@ -1,85 +1,349 @@
-{include file="userpublic/_meta"}
-<title>{$user.users}：欢迎登陆一起玩.游戏用户中心！_一起玩.游戏</title>
-<body>
-    <div align="center" style="background-color:#EEEEEE">
-        <div style="width:1200px" align="left">
-            <!--top-->
-            <div style="background-color:#FFFFFF;">
-                {include file="userpublic/_top"}
-            </div>
-            <!--@top-->
-            <div class="box" style="height:100%">
-                <!--right-->
-                <div class="right">
-                    <div>当前位置：<a href="{:url('index')}">会员中心</a> >> <a href="">首页</a></div>
-                    <div class="box">
-                        <span class="hei18B">个人资料</span>
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td width="14%">
-                                    <div>
-                                        {if condition = "$user.pic"}
-                                        <img id="tx" src="{$user.pic}" width="100" height="100" style="border-radius:50px;overflow:hidden" />
-                                        {else}
-                                        <img id="tx" src="/images/nopic.jpg" width="100" height="100" style="border-radius:50px;overflow:hidden" />
-                                        {/if}
-                                    </div>
-                                </td>
-                                <td width="34%">
-                                    <li>用户名：{$user.users}</li>
-                                    <li>昵称：{$user.name}</li>
-                                    <li>登陆次数：{$user.hits}次</li>
-                                    <li>最近登陆：{$user.update_time}</li>
-                                </td>
-                                <td width="52%">会员级别:<img src="__STATIC__/images/vip6.png" align="absmiddle" /></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="box">
-                        <span class="hei18B">财务信息</span> (最近五笔充值记录)
-                        <div>
-                            <table class="table table-striped table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <td width="19%">订单号</td>
-                                        <td width="21%">游戏</td>
-                                        <td width="13%">金额</td>
-                                        <td width="27%">充值时间</td>
-                                        <td width="20%">状态</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {volist name="userPay" id="vo" empty="还没有充值记录"}
-                                    <tr onmouseover="this.bgColor='#CCC'" onmouseout="this.bgColor='#FFF'">
-                                        <td>{$vo.oid}</td>
-                                        <td>{$vo.game}</td>
-                                        <td>￥{$vo.money}.00</td>
-                                        <td>{$vo.create_time}</td>
-                                        <td>
-                                            {if condition="$vo.qx" value="1"}
-                                            <span class='cheng12'>充值成功</span>
-                                            {else /}
-                                            <span class='hui12'>未支付</span>
-                                            {/if}
-                                        </td>
-                                    </tr>
-                                    {/volist}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!--@right-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-CN">
 
-                <!--left-->
-                <div class="left">
-                    {include file="userpublic/_left"}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="__STATIC__/index/css/pay.css">
+    <link rel="stylesheet" href="__STATIC__/index/css/user.css">
+    <script type="text/javascript" src="__STATIC__/index/js/jquery181.js"></script>
+    <title>{$user.users}：欢迎登陆一起玩.游戏用户中心！_一起玩.游戏</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="hd-top">
+            <div class="w1200">
+                <div class="top-logo fl">
+                    <a href="/" target="_blank">
+                        <img src="__STATIC__/images/logo.png" alt="" width="150" height="80">
+                    </a>
+                    <h1 class="logo-pay">用户中心</h1>
                 </div>
-                <!--@left-->
-                <div style="clear:both"></div>
             </div>
         </div>
     </div>
-    {include file="public/_footer"}
+    <div class="container" style="width:1400px;">
+        <div class="PageMain">
+            <div class="PageContent f-cb" style="color:#777;font-size:14px;">
+
+                <div class="sideBar fl">
+                    <div class="userBox">
+                        <div class="userIco">
+                            {if condition = "$userInfo.pic"}
+                            <img src="{$userInfo.pic}" width="100" height="100" id="userpic" /> {else}
+                            <img src="/images/nopic.jpg" width="100" height="100" id="userpic" /> {/if}
+                            <div class="uName" style="cursor: pointer;" onClick="menu_click(4);">更换头像</div>
+                        </div>
+                        <div class="userRight">
+                            <div class="uNum">
+                                <a href="" class="exBtn logoutBtn">[退出]</a>
+                                <span class="f20" title="{$user.users}">{$user.users}</span>
+                                <input type="hidden" name="userid" id="userid" value="{$user.id}">
+                            </div>
+                            <div class="userBtn">
+                                <a href="{:url('Pay/index')}" class="rg">充值</a>
+                                <a href="javascript:menu_click(2);" class="ep">修改密码</a>
+                            </div>
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="subMenu uMenu" id="menu-l">
+                        <ul>
+                            <li class="nav4">
+                                <a href="javascript:;" class="cur">安全邮箱</a>
+                            </li>
+                            <li class="nav5">
+                                <a href="javascript:;">手机绑定</a>
+                            </li>
+                            <li class="nav2">
+                                <a href="javascript:;">修改密码</a>
+                            </li>
+                            <li class="nav3">
+                                <a href="javascript:;">更换头像</a>
+                            </li>
+                            <li class="nav1">
+                                <a href="javascript:;">实名认证</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">充值记录</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="PageContent_side fl">
+                    <div class="content">
+                        <div class="emaiBox">
+                            <div class="tab">
+                                <ul id="menu-r">
+                                    <li>
+                                        <a href="javascript:;" class="cur">安全邮箱</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="">手机绑定</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="">修改密码</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="">更换头像</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="">实名认证</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="">充值记录</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="tabcon">
+                                <div class="bor" style="display: block;">
+                                    <div class="ctxt">
+                                        <p class="email_line">
+                                            安全邮箱
+                                        </p>
+                                        <div class="clear"></div>
+                                        <p class="e_txt">绑定邮箱是找回密码的一种方式，增强密码安全 </p>
+                                        <p class="e_red">找回密码过程，1填写注册账号，2在您的邮箱查收邮件，3根据邮件提示操作找回密码</p>
+                                    </div>
+                                    {if condition="$userInfo.email neq ''"}
+                                    <div class="ctxt">
+                                        <p class="e_txt">您已绑定邮箱：{$userInfo.email}</p>
+                                        <p class="e_red">如需重新绑定请联系在线客服</p>
+                                    </div>
+                                    {else}
+                                    <form action="" method="post" class="form_up_pswd" id="email_form">
+                                        <div class="psdBox">
+                                            <div class="line">
+                                                <div class="lab">邮箱：</div>
+                                                <input type="text" name="email" id="email" class="pInput">
+                                            </div>
+                                            <div class="msg email_warn" id="email_div"></div>
+                                            <input type="submit" class="submit" value="确认提交">
+                                        </div>
+                                    </form>
+                                    {/if}
+                                </div>
+
+                                <div class="bor" style="display: none;">
+                                    <form name="form5" method="post" action="" id="mobile_form" class="form_up_pswd" target="iframe_form_my">
+                                        <!-- name名 -->
+                                        <div class="psdBox">
+                                            {if condition="$userInfo.phone != 0"}
+                                            <div class="ctxt">
+                                                <p class="e_txt">您已绑定手机：{$userInfo.phone}</p>
+                                                <p class="e_red">如需重新绑定请联系在线客服</p>
+                                            </div>
+                                            {else}
+                                            <div class="line">
+                                                <div class="lab">手机 :</div>
+                                                <input type="text" name="phone" id="mobile" class="pInput" value="">
+                                            </div>
+                                            <div class='line'>
+                                                <div class="lab"></div>
+                                                <input type="text" id='mobileid' name="smscode" data-fyll="hackmeplease" class="pInput delay3 sim hierr" value="" placeholder='验证码'
+                                                    size="6" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                                                    maxlength="6" style='width:200px;' />
+                                                <input type="button" class='fadeIn buyzm sms_btn' onclick="sendSms(this)" value="发送验证码">
+                                            </div>
+                                            <div class="msg mobile_warn" id="mobile_div"></div>
+                                            <input type="submit" class="submit mosub" value="确认绑定" /> {/if}
+                                        </div>
+                                    </form>
+                                </div>
+
+
+                                <div class="bor" style="display: none;">
+                                    <form name="form2" method="post" action="" id="password_form" class="form_up_pswd" target="iframe_form_my">
+                                        <div class="psdBox">
+                                            <div class="line">
+                                                <div class="lab">老密码 :</div>
+                                                <input type="password" name="fik1" id="oldpw" class="pInput" value=''>
+                                            </div>
+                                            <div class="msg oldpw_warn">
+                                            </div>
+                                            <div class="line">
+                                                <div class="lab">新密码 :</div>
+                                                <input type="password" name="fik2" id="newpw" class="pInput" value=''>
+                                            </div>
+                                            <div class="msg newpw_warn">
+                                            </div>
+                                            <div class="line">
+                                                <div class="lab">确认新密码 :</div>
+                                                <input type="password" name="fik3" id="newpw_repeat" class="pInput" value=''>
+                                            </div>
+                                            <div class="msg newpw_repeat_warn" id="password_div"></div>
+                                            <input type="submit" class="submit" value="确认修改" />
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="bor" style="display: none;">
+                                    <form name="form3" method="post" action="" id="avatar_form" class="form_up_pswd" enctype="multipart/form-data" target="iframe_form_my">
+                                        <div class="psdBox" style="height:300px;">
+                                            <p>选择一个新照片进行保存，即可获得全新造型。</p>
+
+                                            <a href="javascript:;" class="item">
+                                                <img src="/images/tx1.jpg" alt="">
+                                            </a>
+                                            <a href="javascript:;" class="item">
+                                                <img src="/images/tx2.jpg" alt="">
+                                            </a>
+                                            <a href="javascript:;" class="item">
+                                                <img src="/images/tx3.jpg" alt="">
+                                            </a>
+                                            <a href="javascript:;" class="item">
+                                                <img src="/images/tx4.jpg" alt="">
+                                            </a>
+                                            <a href="javascript:;" class="item">
+                                                <img src="/images/tx5.jpg" alt="">
+                                            </a>
+                                            <a href="javascript:;" class="item">
+                                                <img src="/images/tx6.jpg" alt="">
+                                            </a>
+                                            <a href="javascript:;" class="item">
+                                                <img src="/images/tx7.jpg" alt="">
+                                            </a>
+                                            <a href="javascript:;" class="item">
+                                                <img src="/images/tx8.jpg" alt="">
+                                            </a>
+                                            <input type="hidden" name="pic" id="pic">
+                                            <input type="submit" class="submit" value="确认修改" />
+                                        </div>
+                                    </form>
+                                </div>
+
+
+                                <div class="bor" style="display: none;">
+                                    <form name="form4" method="post" action="" id="id_form" class="form_up_pswd" target="iframe_form_my">
+                                        <div class="psdBox">
+                                            {if condition="$userInfo.realname eq ''"}
+                                            <div class="line">
+                                                <div class="lab">真实姓名 :</div>
+                                                <input type="text" name="realname" id="realname" class="pInput">
+                                            </div>
+                                            <div class="msg oldpw_warn"></div>
+                                            <div class="line">
+                                                <div class="lab">身份证号码 :</div>
+                                                <input type="text" name="realid" id="realid" class="pInput">
+                                            </div>
+                                            <div class="msg newpw_warn" id="real_div"></div>
+                                            <input type="submit" class="submit" value="确认" /> {else}
+                                            <div class="ctxt">
+                                                <p class="e_txt">您已实名认证，姓名：{$userInfo.realname|mhtext=-1}</p>
+                                                <p class="e_txt">您已实名认证，身份证：{$userInfo.idcard|mhtext=-4}</p>
+                                                <p class="e_red">如需重新绑定请联系在线客服</p>
+                                            </div>
+                                            {/if}
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="bor" style="display: none;">
+                                    <div class="psdBox">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>工单编号</td>
+                                                    <td>游戏服务器</td>
+                                                    <td>充值金额</td>
+                                                    <td>充值方式</td>
+                                                    <td>充值时间</td>
+                                                    <td>充值结果</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {volist name="payInfos" id="vo"}
+                                                <tr bgcolor="#FFFFFF">
+                                                    <td>{$vo.oid}</td>
+                                                    <td>{$vo.game}</td>
+                                                    <td>
+                                                        {if condition="$vo.qx" value="1"}<span class='cheng12'>{else}<span class='hui12'>{/if}￥{$vo.money}.00</span></td>
+                                                    <td>{$vo.bank}</td>
+                                                    <td>{$vo.create_time}</td>
+                                                    <td>
+                                                        {if condition="$vo.qx" value="1"}<span class='cheng12'>充值成功！{else}<span class='hui12'>未支付{/if}</span></td>
+                    
+                                                </tr>
+                                                {/volist}
+                                            </tbody>
+                                        </table>
+                                        {$payInfos->render()}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" align="center" style="margin-top:100px;">
+        <div style="width:1200px">
+            <div>防沉迷认证 | 意见反馈 | 家长监护 | 关于我们 | 人才招聘 | 商务合作 </div>
+            <div>＠2015-2017 {$config.bq}
+                <a href="{$config.xukez}" target="_blank" style="color:#333333;">{$config.xuke}</a> 备案号：{$config.icp} 客服电话:{$config.phone}
+            </div>
+            <div>公司地址：成都市天府大道530号天祥广场10楼 邮箱：2477037269@qq.com {if condition="$_SERVER['SERVER_NAME'] eq 'www.comecrazy.com'"}
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002000968 " style="display:inline-block;text-decoration:none;height:14px;line-height:20px;">
+                    <img src="__STATIC__/images/batb.png" style="float:left;" />
+                    <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#333333;">川公网安备 51019002000968号</p>
+                </a>
+                {else /}
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002000995 " style="display:inline-block;text-decoration:none;height:14px;line-height:20px;">
+                    <img src="__STATIC__/images/batb.png" style="float:left;" />
+                    <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#333333;">川公网安备 51019002000995号</p>
+                </a>
+                {/if}
+            </div>
+        </div>
+    </div>
 </body>
+
+<script>
+    function menu_click(i) {
+        if ($('#menu-r a').eq(i).hasClass('cur')) return;
+        else {
+            $('#menu-r a').eq(i).addClass('cur').closest('li').siblings().find("a").removeClass('cur');
+            $('#menu-l a').eq(i).addClass('cur').closest('li').siblings().find("a").removeClass('cur');
+            $('.tabcon .bor').eq(i).show().siblings().hide();
+        }
+    }
+
+    $(document).ready(function () {
+        var i = window.location.href.indexOf('#');
+        if (i > 1) {
+            var rel = window.location.href.substr(i + 1, window.location.href.length);
+            if (rel == 'weixin') menu_click(2);
+            else if (rel == 'phone') menu_click(1);
+            else if (rel == 'realname') menu_click(5);
+        }
+        $('#menu-l a').click(function () {
+            var i = $('#menu-l a').index(this);
+            menu_click(i);
+        });
+        $('#menu-r a').click(function () {
+            var i = $('#menu-r a').index(this);
+            menu_click(i);
+        });
+        $('#sms_btn1').click(function () {
+            var phone = $('#mobile').val();
+            sendsms(phone, 1);
+
+        });
+    })
+</script>
+<script type="text/javascript">
+    var SCOPE = {
+        'update_url': "{:url('api/Updateuserinfo/index')}",
+        'sendSms_url': "{:url('api/Sendsms/index')}",
+        'checkCaptcha_url': "{:url('api/Sendsms/checkCaptcha')}",
+        'checkPassword_url': "{:url('api/CheckPassword/index')}",
+    };
+</script>
+<script src="__STATIC__/index/js/jquery.validator.js"></script>
+<script src="__STATIC__/index/js/user.js"></script>
+
 </html>
