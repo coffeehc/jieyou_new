@@ -251,8 +251,25 @@ function updateUserInfo(data) {
 	},'json');
 }
 
+/**
+ * 选择头像
+ */
 $('.psdBox .item').click(function() {
 	var pic = $(this).find('img').attr('src');
 	$("#userpic").attr('src',pic);
 	$("#pic").val(pic);
-})
+});
+
+/**
+ * 退出操作
+ */
+$('#logout').click(function() {
+	var url = SCOPE.logout_url;
+	$.post(url,{target:1},function(result) {
+		if(result.code == 1) {
+			window.location.href = '/';
+		}else {
+			alert(result.message);
+		}
+	},'json')
+});

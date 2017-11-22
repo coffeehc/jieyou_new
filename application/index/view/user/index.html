@@ -37,7 +37,7 @@
                         </div>
                         <div class="userRight">
                             <div class="uNum">
-                                <a href="" class="exBtn logoutBtn">[退出]</a>
+                                <a id="logout" class="exBtn logoutBtn">[退出]</a>
                                 <span class="f20" title="{$user.users}">{$user.users}</span>
                                 <input type="hidden" name="userid" id="userid" value="{$user.id}">
                             </div>
@@ -107,7 +107,7 @@
                                         </p>
                                         <div class="clear"></div>
                                         <p class="e_txt">绑定邮箱是找回密码的一种方式，增强密码安全 </p>
-                                        <p class="e_red">找回密码过程，1填写注册账号，2在您的邮箱查收邮件，3根据邮件提示操作找回密码</p>
+                                        <p class="e_red">找回密码过程，1填写注册账号，2选择验证方式，3根据验证方式填写验证信息</p>
                                     </div>
                                     {if condition="$userInfo.email neq ''"}
                                     <div class="ctxt">
@@ -132,6 +132,11 @@
                                     <form name="form5" method="post" action="" id="mobile_form" class="form_up_pswd" target="iframe_form_my">
                                         <!-- name名 -->
                                         <div class="psdBox">
+                                            <div class="ctxt">
+                                                <div class="clear"></div>
+                                                <p class="e_txt">绑定手机是找回密码的一种方式，增强密码安全 </p>
+                                                <p class="e_red">找回密码过程，1填写注册账号，2选择验证方式，3根据验证方式填写验证信息</p>
+                                            </div>
                                             {if condition="$userInfo.phone != 0"}
                                             <div class="ctxt">
                                                 <p class="e_txt">您已绑定手机：{$userInfo.phone}</p>
@@ -139,11 +144,11 @@
                                             </div>
                                             {else}
                                             <div class="line">
-                                                <div class="lab">手机 :</div>
+                                                <div class="lab">手机:</div>
                                                 <input type="text" name="phone" id="mobile" class="pInput" value="">
                                             </div>
                                             <div class='line'>
-                                                <div class="lab"></div>
+                                                <div class="lab">验证码:</div>
                                                 <input type="text" id='mobileid' name="smscode" data-fyll="hackmeplease" class="pInput delay3 sim hierr" value="" placeholder='验证码'
                                                     size="6" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
                                                     maxlength="6" style='width:200px;' />
@@ -260,12 +265,18 @@
                                                     <td>{$vo.oid}</td>
                                                     <td>{$vo.game}</td>
                                                     <td>
-                                                        {if condition="$vo.qx" value="1"}<span class='cheng12'>{else}<span class='hui12'>{/if}￥{$vo.money}.00</span></td>
+                                                        {if condition="$vo.qx" value="1"}
+                                                        <span class='cheng12'>{else}
+                                                            <span class='hui12'>{/if}￥{$vo.money}.00</span>
+                                                    </td>
                                                     <td>{$vo.bank}</td>
                                                     <td>{$vo.create_time}</td>
                                                     <td>
-                                                        {if condition="$vo.qx" value="1"}<span class='cheng12'>充值成功！{else}<span class='hui12'>未支付{/if}</span></td>
-                    
+                                                        {if condition="$vo.qx" value="1"}
+                                                        <span class='cheng12'>充值成功！{else}
+                                                            <span class='hui12'>未支付{/if}</span>
+                                                    </td>
+
                                                 </tr>
                                                 {/volist}
                                             </tbody>
@@ -341,6 +352,7 @@
         'sendSms_url': "{:url('api/Sendsms/index')}",
         'checkCaptcha_url': "{:url('api/Sendsms/checkCaptcha')}",
         'checkPassword_url': "{:url('api/CheckPassword/index')}",
+        'logout_url': "{:url('Register/logout')}",
     };
 </script>
 <script src="__STATIC__/index/js/jquery.validator.js"></script>

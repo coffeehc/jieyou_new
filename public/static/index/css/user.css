@@ -186,7 +186,7 @@ a.code,
 .userBtn a{display:inline-block;width:73px;line-height:23px;color:#fff;text-align:center; margin:10px 0 8px}
 .userBtn a:hover{text-decoration:none}
 .userBtn a.rg{background:#fe9500}
-.userBtn a.ep{background:#7494d4;margin-left:14px;}
+.userBtn a.ep{background:#7494d4;margin-left:10px;}
 .exBtn{color:#909090; float:right; position:relative; z-index:2; }
 .uNum{line-height:37px;height:37px;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;}
 .sTime,.sIp{font-size:12px; line-height:18px;float:left;width:165px;}
