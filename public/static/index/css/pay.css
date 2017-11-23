@@ -49,7 +49,7 @@ a, a:hover{
 .fl{
     float: left;
 }
-
+.fr{float: right;display: inline;}
 .logo-175{
     background-image: url(../../images/logo.png);
     width: 178px;
@@ -63,6 +63,21 @@ a, a:hover{
     left: 515px;
     top:8px;
     position: absolute;
+}
+.hd-right{
+    position:relative;
+}
+.hd-top .menu li{
+    margin-left: 30px;
+    float: left;
+}
+.hd-top .menu a{
+    display: block;
+    height: 86px;
+    line-height: 86px;
+}
+.hd-top .menu a:hover{
+    color: red;
 }
 .container{
     width: 1200px;
